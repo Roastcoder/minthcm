@@ -1,0 +1,314 @@
+<?php
+
+if (!defined('sugarEntry')) {
+    define('sugarEntry', true);
+}
+
+use Symfony\Component\Yaml\Yaml;
+
+require_once 'lib/Search/ElasticSearch/ElasticSearchVardefsReader.php';
+
+#[\AllowDynamicProperties]
+class MappingsGenerator
+{
+    protected $metadata_file = 'eslistviewdefs.php';
+    protected $output_file_path = 'lib/Search/ElasticSearch/defaultParams.yml';
+    protected $json_file_path = '../api/lib/Search/ElasticSearch/defaultParams.json';
+    protected $not_standard_fields = [
+        'name' => 'name.name',
+        'first_name' => 'name.first',
+        'last_name' => 'name.last',
+        'date_entered' => 'meta.created.date',
+        'created_by' => 'meta.created.user_id',
+        'date_modified' => 'meta.modified.date',
+        'modified_user_id' => 'meta.modified.user_id',
+        'assigned_user_id' => 'meta.assigned.user_id',
+        'modified_by_name' => 'meta.modified.user_name',
+        'created_by_name' => 'meta.created.user_name',
+        'assigned_user_name' => 'meta.assigned.user_name',
+        'primary_address_city' => 'address.primary.city',
+        'primary_address_state' => 'address.primary.state',
+        'primary_address_postalcode' => 'address.primary.postalcode',
+        'primary_address_street' => 'address.primary.street',
+        'primary_address_country' => 'address.primary.country',
+        'phone_mobile' => 'phone.mobile',
+        'employee_name' => 'employee_name',
+        'offboarding_id' => 'offboarding_id',
+        'offboarding_name' => 'offboarding_name',
+    ];
+
+    // From vardefs to elastic
+    protected $type_mapping = [
+        'date' => 'date',
+        'datetime' => 'date',
+        'datetimecombo' => 'date',
+        'bool' => 'boolean',
+        'text' => 'text',
+        'int' => 'integer',
+        'currency' => 'float',
+        'float' => 'float',
+    ];
+
+    protected $types = [
+        'date' => [
+            'type' => 'date',
+            'format' => 'yyyy-MM-dd HH:mm:ss||yyyy-MM-dd',
+        ],
+        'text' => [
+            'type' => 'text',
+            'fields' => [
+                'keyword' => [
+                    'type' => 'keyword',
+                    'ignore_above' => 256,
+                ],
+            ],
+        ],
+        'boolean' => [
+            'type' => 'boolean',
+        ],
+        'long' => [
+            'type' => 'long',
+        ],
+        'integer' => [
+            'type' => 'integer',
+        ],
+        'float' => [
+            'type' => 'float',
+        ]
+    ];
+
+    protected $fields_must_be_added_to_mappings_because_of_security = [
+        'assigned_user_name' => 'assigned_user_id',
+        'created_by_name' => 'created_by',
+        'modified_by_name' => 'modified_user_id',
+        'employee_name' => 'employee_id'
+    ];
+
+    protected const DEFAULT_FIELDS = [
+        'date_entered',
+        'date_modified',
+        'created_by_name',
+        'modified_by_name',
+    ];
+
+    protected function getModulesWithElastic()
+    {
+        global $beanList;
+        $modulesWithElastic = [];
+        foreach ($beanList as $module => $value) {
+            if (file_exists("custom/modules/{$module}/metadata/{$this->metadata_file}")) {
+                $data = [
+                    'module' => $module,
+                    'path' => "custom/modules/{$module}/metadata/{$this->metadata_file}",
+                ];
+                array_push($modulesWithElastic, $data);
+            } else if (file_exists("modules/{$module}/metadata/{$this->metadata_file}")) {
+                $data = [
+                    'module' => $module,
+                    'path' => "modules/{$module}/metadata/{$this->metadata_file}",
+                ];
+                array_push($modulesWithElastic, $data);
+            }
+        }
+
+        return $modulesWithElastic;
+    }
+
+    public function generateMappings()
+    {
+        $esv_reader = new \ElasticSearchVardefsReader;
+        $modulesWithElastic = $this->getModulesWithElastic();
+        $mappings = [];
+        foreach ($modulesWithElastic as $module) {
+            include $module['path'];
+            $bean = BeanFactory::newBean($module['module']);
+            $data = $ESListViewDefs[$module['module']];
+            $fields_to_map = $this->setFieldsToMap($data, $bean);
+            $defs = $bean->field_defs;
+            $key = !empty($data['es_module']) ? $data['es_module'] : $module['module'];
+
+            foreach ($fields_to_map as $field) {
+                if (
+                    $defs[$field]['source'] != "non-db"
+                    || $defs[$field]['type'] == 'relate' 
+                    || $defs[$field]['type'] == 'parent'
+                    || $defs[$field]['type'] == 'varchar'
+                ) {
+                    $es_type_name = $this->type_mapping[$defs[$field]['type']] ?? 'text';
+                    $es_type = $this->types[$es_type_name];
+
+                    if (!empty($this->not_standard_fields[$field])) {
+                        $mappings = $this->handleNotStandardField($this->not_standard_fields[$field], $mappings, $key, $es_type);
+                    } else if (!empty($defs[$field])) {
+                        // else if because script does not work well for fields: search_name, recr_contact_agree oraz current_user_only
+                        $index_mapping = $key . '__' . $field;
+                        $mappings['mappings'][$key]['properties'][$index_mapping] = $this->getPropertyMappingConfig($defs[$field]);
+                    }
+                }
+            }
+            $tracked_links = [];
+            $nested_properties = $esv_reader->getModuleNestedProperties($bean->object_name);
+            foreach ($nested_properties as $property_name => $nested_config) {
+                $nested_type = $nested_config['type'] ?? 'link';
+                switch ($nested_type) {
+                    case 'function':
+                        $this->generateFunctionMappings($property_name, $nested_config, $key, $esv_reader, $mappings);
+                        break;
+                    case 'link':
+                        $this->generateLinkMappings($bean, $nested_config, $esv_reader, $mappings, $key, $tracked_links, $property_name);
+                        break;
+                }
+            }
+
+            $this->saveNestedTrackingCache($module['module'], $tracked_links);
+        }
+
+        $this->parseMappingsToYaml($mappings);
+        $this->parseMappingsToJson($mappings);
+    }
+
+    protected function includesAtMostPrimaryKey(array $fields): bool
+    {
+        return $fields === [] || $fields === ['id'];
+    }
+
+    protected function saveNestedTrackingCache(string $module_name, array $tracked_links): void
+    {
+        $nested_cache_file = "cache/modules/{$module_name}/es.nested.php";
+        $array_items = empty($tracked_links)
+            ? ''
+            : '"' . implode('","', $tracked_links). '"';
+
+        $cache_file_content = '<?php $tracked_links = [' . $array_items . '];';
+        file_put_contents($nested_cache_file, $cache_file_content);
+    }
+
+    protected function getPropertyMappingConfig(array $field_def): array
+    {
+        $type = $this->type_mapping[$field_def['type']] ?? 'text';
+        return $this->types[$type] ?? $this->types['text'];
+    }
+
+    protected function parseMappingsToYaml($mappings)
+    {
+        $yaml = Yaml::dump($mappings, 10, 2);
+        file_put_contents($this->output_file_path, $yaml);
+    }
+
+    protected function parseMappingsToJson($mappings)
+    {
+        $json = json_encode($mappings, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        if ($json === false) {
+            throw new \RuntimeException('Failed to encode mappings to JSON: ' . json_last_error_msg());
+        }
+        file_put_contents($this->json_file_path, $json);
+    }
+
+    protected function handleNotStandardField($es_field, $mappings, $key, $es_type)
+    {
+        $es_field_parts = explode('.', $es_field);
+        $count = is_countable($es_field_parts) ? count($es_field_parts) : 0;
+        $sub_mappings = &$mappings['mappings'][$key];
+        foreach ($es_field_parts as $es_field_part) {
+            $index_mapping = $key . '__' . $es_field_part;
+
+            if (!isset($sub_mappings['properties'][$index_mapping])) {
+                $sub_mappings['properties'][$index_mapping] = [];
+            }
+            $sub_mappings = &$sub_mappings['properties'][$index_mapping];
+            $count--;
+            if ($count == 0) {
+                $sub_mappings = $es_type;
+            }
+        }
+        return $mappings;
+    }
+
+    protected function setFieldsToMap($data, $bean)
+    {
+        $fields_to_map = [];
+        $columns = array_map('strtolower', array_keys($data['columns'] ? $data['columns'] : []));
+        $search = array_map('strtolower', array_keys($data['search'] ? $data['search'] : []));
+        $default = [];
+        foreach (static::DEFAULT_FIELDS as $field) {
+            if (!empty($bean->field_name_map[$field])) {
+                $default[] = $field;
+            }
+        }
+        
+        $fields_to_map = array_unique(array_merge($columns, $search, $default));
+
+        foreach ($this->fields_must_be_added_to_mappings_because_of_security as $name_field => $id_field) {
+            if (in_array($name_field, $fields_to_map) && !in_array($id_field, $fields_to_map)) {
+                $fields_to_map[] = $id_field;
+            }
+        }
+        
+        $this->addIdFieldsToFieldsToMap($data, $fields_to_map, $bean);
+        
+        return $fields_to_map;
+    }
+
+    protected function generateFunctionMappings($property_name, array $nested_config, $key, $esv_reader, array &$mappings): void
+    {
+        $are_fields_set = $esv_reader->areBeanAndFunctionSet($nested_config);
+        if ($are_fields_set) {
+            $properties = []; 
+            $related_bean = BeanFactory::newBean($nested_config['bean']);
+            foreach ($nested_config['fields'] as $field_name) {
+                $properties[$field_name] = $this->getPropertyMappingConfig($related_bean->field_defs[$field_name]);
+            }
+            $mappings['mappings'][$key]['properties'][$property_name] = [
+                'type' => 'nested',
+                'properties' => $properties,
+            ];
+        }
+    }
+
+    protected function generateLinkMappings($bean, array $nested_config, \ElasticSearchVardefsReader $esv_reader, array &$mappings, string $key, array &$tracked_links, string $property_name): void
+    {
+        $link_field_name = $esv_reader->getLinkFieldName($property_name, $nested_config);
+        if (!$bean->load_relationship($link_field_name)) {
+            return;
+        }
+
+        $link_field_name = $esv_reader->getLinkFieldName($property_name, $nested_config);
+        $related_module_name = $esv_reader->getRelatedModuleName($bean, $link_field_name);
+        $related_bean = BeanFactory::newBean($related_module_name);
+
+        $properties = [];
+        foreach ($nested_config['fields'] as $field_name) {
+            if (!empty($related_bean->field_defs[$field_name])) {
+                $properties[$field_name] = $this->getPropertyMappingConfig($related_bean->field_defs[$field_name]);
+            }
+        }
+
+        $mappings['mappings'][$key]['properties'][$property_name] = [
+            'type' => 'nested',
+            'properties' => $properties,
+        ];
+
+
+        // If more than the primary key is indexed in the document.
+        // We will have to take care to index related records even when writing a record from another module 
+        // - the relationship does not have to change
+        if (!$this->includesAtMostPrimaryKey($nested_config['fields'])) {
+            $tracked_links[] = $link_field_name;
+        }
+    }
+
+
+    protected function addIdFieldsToFieldsToMap($data, array &$fields_to_map, $bean)
+    {
+        foreach ($data['columns'] as $field => $def) {
+            if (!empty($def['link']) && $def['link'] == true) {
+                if (!empty($bean->field_defs[$field]['id_name'])) {
+                    $id_field = $bean->field_defs[$field]['id_name'];
+                    if (!in_array($id_field, $fields_to_map)) {
+                        $fields_to_map[] = $id_field;
+                    }
+                }
+            }
+        }
+    }
+}

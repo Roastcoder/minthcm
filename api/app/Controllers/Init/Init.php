@@ -1,0 +1,290 @@
+<?php
+
+/**
+ *
+ * SugarCRM Community Edition is a customer relationship management program developed by
+ * SugarCRM, Inc. Copyright (C) 2004-2013 SugarCRM Inc.
+ *
+ * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
+ * Copyright (C) 2011 - 2018 SalesAgility Ltd.
+ *
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Affero General Public License version 3 as published by the
+ * Free Software Foundation with the addition of the following permission added
+ * to Section 15 as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK
+ * IN WHICH THE COPYRIGHT IS OWNED BY SUGARCRM, SUGARCRM DISCLAIMS THE WARRANTY
+ * OF NON INFRINGEMENT OF THIRD PARTY RIGHTS.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with
+ * this program; if not, see http://www.gnu.org/licenses or write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301 USA.
+ *
+ * You can contact SugarCRM, Inc. headquarters at 10050 North Wolfe Road,
+ * SW2-130, Cupertino, CA 95014, USA. or at email address contact@sugarcrm.com.
+ *
+ * The interactive user interfaces in modified source and object code versions
+ * of this program must display Appropriate Legal Notices, as required under
+ * Section 5 of the GNU Affero General Public License version 3.
+ *
+ * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
+ * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * If the display of the logos is not reasonably feasible for technical reasons, the
+ * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ */
+
+namespace MintHCM\Api\Controllers\Init;
+
+use Doctrine\ORM\EntityManagerInterface;
+use MintHCM\Api\Controllers\Init\Languages;
+use MintHCM\Api\Controllers\Init\Module;
+use MintHCM\Api\Controllers\Init\Preferences;
+use MintHCM\Utils\ConstantsLoader;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Psr7\Response;
+use User;
+
+#[\AllowDynamicProperties]
+class Init
+{
+    protected $preferences_controller, $languages_controller, $module_init_controller, $mintRebuildID, $request_language, $user_id, $all_modules;
+
+    const VIEW_META = [
+        "DetailView",
+        "EditView",
+        "Subpanels",
+        "RecordView",
+    ];
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->preferences_controller = new Preferences($entityManager);
+        $this->languages_controller = new Languages();
+        $this->module_init_controller = new Module($entityManager);
+    }
+
+    public function __invoke(Request $request, Response $response, array $args): Response
+    {
+        $this->mintRebuildID = $this->getMintRebuildID();
+        $this->request_language = $request->getAttribute('current_language');
+        $this->user_id = $request->getAttribute('user_id');
+        $response = $response->withHeader('Content-type', 'application/json');
+        $response_body = $request->getAttribute('mintRebuildID') === $this->mintRebuildID ? $this->getFullData(true) : $this->getFullData();
+        $response->getBody()->write(json_encode($response_body));
+        return $response;
+    }
+
+    public function getFullData($only_minimum_data = false)
+    {
+        $rebuild_array = json_decode(base64_decode($this->mintRebuildID), true) ?? [];
+
+        $response_body = [];
+        $response_body['installed'] = true;
+        $response_body['user'] = $this->getCurrentUserData();
+        $response_body['preferences'] = $this->preferences_controller->getUserPreferences();
+        $response_body['global'] = $this->preferences_controller->getGlobalSettings($only_minimum_data, $rebuild_array);
+        $response_body['responseType'] = $only_minimum_data ? 'minified' : 'full';
+
+        if (
+            (!$only_minimum_data && empty($rebuild_array))
+            || $this->request_language !== $_SESSION["authenticated_user_language"]
+        ) {
+            $response_body['languages'] = $this->languages_controller->getLanguages();
+        }
+
+        if (
+            in_array('reload_module_menu', $rebuild_array)
+            || (!$only_minimum_data && empty($rebuild_array))
+            || $response_body['user']['id'] !== $this->user_id
+            || false !== $response_body['preferences']['reload_module_menu']
+            || $this->request_language !== $_SESSION["authenticated_user_language"]
+        ) {
+            $this->all_modules = $this->getAllModules();
+            $modules_menu = $this->getModules();
+            $modules_data = $this->getModulesData();
+            $response_body['menu_modules'] = $modules_menu;
+            $response_body['modules'] = $modules_data;
+            $response_body['quick_create'] = $this->getQuickCreate();
+            $response_body['legacy_views'] = $this->getLegacyViews($modules_data);
+        }
+        if ($only_minimum_data) {
+            $this->all_modules = $this->getAllModules();
+            $response_body['acls'] = $this->module_init_controller->getACLs($this->all_modules);
+        }
+
+        if (!empty($rebuild_array)) {
+            chdir('../legacy');
+            $this->mintRebuildID = updateMintRebuildFile(null, true);
+            chdir('../api');
+        }
+        $response_body['mintRebuildID'] = $this->mintRebuildID;
+        $response_body['system_name'] = $GLOBALS['system_config']->settings['system_name'];
+        global $sugar_config;
+        $response_body['upload_maxsize'] = $sugar_config['upload_maxsize'] ?? '3000000';
+        $response_body['field_variables']['ColoredEnum']['options_colors'] = ConstantsLoader::getConstants('colored_enum');
+        return $response_body;
+    }
+
+    public function getCurrentUserData()
+    {
+        /**
+         * @var User $current_user
+         * */
+        global $current_user;
+        if (empty($current_user->id)) {
+            return array();
+        }
+        return array(
+            "id" => $current_user->id,
+            "is_admin" => "1" === $current_user->is_admin ? true : false,
+            "first_name" => $current_user->first_name,
+            "last_name" => $current_user->last_name,
+            "full_name" => $current_user->full_name,
+            "email" => $current_user->email1,
+            "photo" => $current_user->photo,
+            "show_login_wizard" => empty($current_user->getPreference('ut')),
+        );
+    }
+
+    private function getModules()
+    {
+        global $current_user;
+
+        chdir('../legacy');
+        require_once 'modules/MySettings/TabController.php';
+        $controller = new \TabController();
+        $tabArray = $controller->get_tabs($current_user);
+        chdir('../api');
+        return array_keys($tabArray[0]);
+    }
+
+    private function getModulesData()
+    {
+        $modules_data = array();
+        if (!is_array($this->all_modules)) {
+            return $modules_data;
+        }
+        foreach ($this->all_modules as $module) {
+            $modules_data[$module] = $this->module_init_controller->getModuleData($module);
+        }
+        return $modules_data;
+    }
+
+    private function getALLModules()
+    {
+        global $beanList, $moduleList, $current_user;
+        
+        $modules = $moduleList;
+        if ($current_user->isAdmin()) {
+            $modules = array_unique(array_merge($modules, array_keys($beanList)));
+        }
+        chdir('../legacy');
+        require_once 'modules/ACL/ACLController.php';
+        \ACLController::filterModuleList($modules);
+        chdir('../api');
+        return array_merge(['Users', 'EAPM'], $modules );
+    }
+
+    private function getQuickCreate()
+    {
+        chdir('../api');
+        $modules = ConstantsLoader::getConstants('quick_create', true);
+        $response = array();
+
+        if (!is_array($modules)) {
+            return $response;
+        }
+
+        foreach ($modules as $module => $name) {
+            if (!in_array($module, $this->all_modules)) {
+                continue;
+            }
+            $response[] = array(
+                "module" => $module,
+                "name" => $name,
+            );
+        }
+        return $response;
+    }
+
+    private function getLegacyViews($modules_data)
+    {
+        $legacy_views = ConstantsLoader::getConstants('legacy_views');
+        chdir('../legacy');
+        foreach ($modules_data as $module => $data) {
+            $this->processESListViewConfig($module, $legacy_views);
+            $this->processRecordViewConfig($module, $legacy_views);
+            }
+        chdir('../api');
+        return $legacy_views;
+    }
+
+    private function processESListViewConfig(string $module, array &$legacy_views): void
+    {
+        if (!$this->isModuleConfigured($module, $legacy_views, 'list') && $this->checkMetadataFiles($module, 'eslist')) {
+            $legacy_views[$module]['list'] = false;
+        }
+    }
+
+    private function processRecordViewConfig(string $module, array &$legacy_views): void
+    {
+        if (!$this->checkMetadataFiles($module, 'record')) {
+            $legacy_views[$module]['record'] = true;
+        }
+    }
+
+    private function isModuleConfigured(string $module, array $config, string $view): bool
+    {
+        return (
+            array_key_exists($module, $config)
+            && isset($config[$module][$view])
+        );
+    }
+
+    private function checkMetadataFiles(string $module, string $view): bool
+    {
+        return (
+            file_exists('modules/' . $module . '/metadata/' . $view . 'viewdefs.php')
+            || file_exists('custom/modules/' . $module . '/metadata/' . $view . 'viewdefs.php')
+        );
+    }
+
+    private function getMenuForAllModules($modules_data, $modules)
+    {
+        global $beanList;
+        foreach ($beanList as $key => $module) {
+            if (!array_key_exists($key, $modules_data)) {
+                $modules_data[$key] = $this->module_init_controller->getModuleData($key);
+            }
+        }
+        return [array_keys($modules), $modules_data];
+    }
+
+    private function getMintRebuildID()
+    {
+        if (isset($_SESSION['mintRebuildID']) && !empty($_SESSION['mintRebuildID'])) {
+            return $_SESSION['mintRebuildID'];
+        }
+        chdir('../legacy');
+        $mintRebuildFile = fopen("cache/mintRebuild", 'r');
+        if (!$mintRebuildFile) {
+            $_SESSION['mintRebuildID'] = updateMintRebuildFile(null, true);
+            return $_SESSION['mintRebuildID'];
+        }
+        $mintRebuildID = fread($mintRebuildFile, filesize("cache/mintRebuild"));
+        $_SESSION['mintRebuildID'] = $mintRebuildID;
+        fclose($mintRebuildFile);
+        chdir('../api');
+        return $mintRebuildID;
+    }
+}
