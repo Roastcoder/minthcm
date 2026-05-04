@@ -17,8 +17,9 @@ services:
     env_file:
       - .env
     volumes:
-      - minthcm_config:/var/www/html/MintHCM/config
-      - minthcm_upload:/var/www/html/MintHCM/legacy/upload
+      - minthcm_config:/var/www/MintHCM/config
+      - minthcm_upload:/var/www/MintHCM/upload
+      - minthcm_custom:/var/www/MintHCM/custom
       - minthcm_cron:/var/spool/cron/crontabs
     networks:
       minthcm:
