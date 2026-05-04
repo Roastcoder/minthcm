@@ -26,6 +26,10 @@ COPY docker/config/000-default.conf /etc/apache2/sites-available/000-default.con
 
 COPY docker/script/generate_config.php /var/www/script/
 
+# Copy application code
+COPY . /var/www/MintHCM
+RUN chown -R www-data:www-data /var/www/MintHCM && chmod -R 755 /var/www/MintHCM
+
 #RUN SERVICES
 COPY docker/script/start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh

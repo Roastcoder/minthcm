@@ -7,11 +7,9 @@ if [ -f "$FILE" ]; then
   service cron start
   service apache2 start
 else
-  # Download MintHCM
-  minthcm_temp=$(mktemp -d)
-  git clone https://github.com/minthcm/minthcm.git $minthcm_temp
-  cp -R $minthcm_temp/* /var/www/MintHCM/
-  rm -r $minthcm_temp
+  # Use existing code in the container instead of downloading
+  printf "Using existing code for installation...\n"
+  # The code is already in /var/www/MintHCM via Dockerfile COPY
   php /var/www/script/generate_config.php
   chown -R www-data:www-data /var/www/MintHCM
   chmod -R 755 /var/www/MintHCM
