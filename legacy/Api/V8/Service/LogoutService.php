@@ -27,7 +27,7 @@ class LogoutService
      * @return DocumentResponse
      * @throws \InvalidArgumentException When access token is not found.
      */
-    public function logout($accessToken, $request) // mehar finance #136592
+    public function logout($accessToken, $request) // MintHCM #136592
     {
         // same logic in Access and Refresh token repository, refactor this later
         $token = $this->beanManager->newBeanSafe(\OAuth2Tokens::class);
@@ -41,7 +41,7 @@ class LogoutService
 
         $token->mark_deleted($token->id);
 
-        // mehar finance #136592 start
+        // MintHCM #136592 start
         $device_id = $request->getParam('device_id');
         $user_name = $request->getParam('user_name');
         $user_bean = $this->beanManager->newBeanSafe('Users'); /** @var User $user_bean */
@@ -55,7 +55,7 @@ class LogoutService
                 $user_bean->save();
             }
         }
-        // mehar finance #136592 end
+        // MintHCM #136592 end
 
         $response = new DocumentResponse();
         $response->setMeta(

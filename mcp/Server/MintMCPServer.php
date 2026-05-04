@@ -66,7 +66,7 @@ class MintMCPServer
                                 ]
                             ],
                             'serverInfo' => [
-                                'name' => 'mehar finance MCP Server',
+                                'name' => 'MintHCM MCP Server',
                                 'version' => '1.0.0'
                             ],
                         ]

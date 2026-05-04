@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Data\ORM\Doctrine\Filter;
+namespace MintHCM\Data\ORM\Doctrine\Filter;
 
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query\Filter\SQLFilter;

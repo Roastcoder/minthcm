@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Services;
+namespace MintHCM\MintCLI\Services;
 
 #[\AllowDynamicProperties]
 class ConfigOverrideService

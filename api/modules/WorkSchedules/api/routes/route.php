@@ -1,7 +1,7 @@
 <?php
 
-use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
-use mehar finance\Modules\WorkSchedules\api\controllers\CloseWorkSchedule;
+use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
+use MintHCM\Modules\WorkSchedules\api\controllers\CloseWorkSchedule;
 
 $routes = array(
     "checkIfCanBeClosed" => array(

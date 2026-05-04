@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\InputValidators;
+namespace MintHCM\MintCLI\InputValidators;
 
 #[\AllowDynamicProperties]
 abstract class Validator

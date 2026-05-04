@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -70,7 +70,7 @@ class UploadFile
     public $file;
     public $file_ext;
     public $mime_type;
-    protected $is_http_upload = true; // mehar finance
+    protected $is_http_upload = true; // MintHCM
     protected static $url = "upload/";
 
     /**
@@ -112,7 +112,7 @@ class UploadFile
         $this->file = $file;
     }
 
-    // mehar finance Start
+    // MintHCM Start
     /**
      * Set if the upload is from HTTP request
      * @param bool $is_http_upload
@@ -121,7 +121,7 @@ class UploadFile
     {
         $this->is_http_upload = $is_http_upload;
     }
-    // mehar finance End
+    // MintHCM End
 
     /**
      * Get URL for a document
@@ -304,9 +304,9 @@ class UploadFile
             return false;
         }
 
-        // mehar finance Start
+        // MintHCM Start
         if ($this->is_http_upload && !is_uploaded_file($_FILES[$this->field_name]['tmp_name'])) {
-        // mehar finance End
+        // MintHCM End
             return false;
         } elseif ($_FILES[$this->field_name]['size'] > $sugar_config['upload_maxsize']) {
             $GLOBALS['log']->fatal("ERROR: uploaded file was too big: max filesize: {$sugar_config['upload_maxsize']}");
@@ -495,7 +495,7 @@ class UploadFile
                 $log->fatal('Unable to save file to ' . $destination);
                 return false;
             }
-        // mehar finance Start
+        // MintHCM Start
         } elseif ($this->is_http_upload && !UploadStream::move_uploaded_file($_FILES[$this->field_name]['tmp_name'], $destination)) {
             $log->fatal(
                 'Unable to move move_uploaded_file to ' . $destination .
@@ -511,7 +511,7 @@ class UploadFile
 
             return false;
         }
-        // mehar finance End
+        // MintHCM End
 
         return true;
     }

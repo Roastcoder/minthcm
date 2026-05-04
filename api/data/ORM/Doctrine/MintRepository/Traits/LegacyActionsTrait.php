@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Data\ORM\Doctrine\MintRepository\Traits;
+namespace MintHCM\Data\ORM\Doctrine\MintRepository\Traits;
 
 use Doctrine\ORM\ORMInvalidArgumentException;
-use mehar finance\Data\ORM\Doctrine\MintEntity\MintEntity;
+use MintHCM\Data\ORM\Doctrine\MintEntity\MintEntity;
 
 trait LegacyActionsTrait
 {

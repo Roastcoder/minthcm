@@ -63,13 +63,13 @@ class ComposerStaticInit7e06883b42b234786d0786e036dc6809
         ),
         'M' => 
         array (
-            'mehar finance\\Utils\\' => 14,
-            'mehar finance\\Modules\\' => 16,
-            'mehar finance\\Lib\\' => 12,
-            'mehar finance\\Data\\' => 13,
-            'mehar finance\\Custom\\Modules\\' => 23,
-            'mehar finance\\Custom\\Api\\' => 19,
-            'mehar finance\\Api\\' => 12,
+            'MintHCM\\Utils\\' => 14,
+            'MintHCM\\Modules\\' => 16,
+            'MintHCM\\Lib\\' => 12,
+            'MintHCM\\Data\\' => 13,
+            'MintHCM\\Custom\\Modules\\' => 23,
+            'MintHCM\\Custom\\Api\\' => 19,
+            'MintHCM\\Api\\' => 12,
         ),
         'L' => 
         array (
@@ -219,31 +219,31 @@ class ComposerStaticInit7e06883b42b234786d0786e036dc6809
         array (
             0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
         ),
-        'mehar finance\\Utils\\' => 
+        'MintHCM\\Utils\\' => 
         array (
             0 => __DIR__ . '/../..' . '/utils',
         ),
-        'mehar finance\\Modules\\' => 
+        'MintHCM\\Modules\\' => 
         array (
             0 => __DIR__ . '/../..' . '/modules',
         ),
-        'mehar finance\\Lib\\' => 
+        'MintHCM\\Lib\\' => 
         array (
             0 => __DIR__ . '/../..' . '/lib',
         ),
-        'mehar finance\\Data\\' => 
+        'MintHCM\\Data\\' => 
         array (
             0 => __DIR__ . '/../..' . '/data',
         ),
-        'mehar finance\\Custom\\Modules\\' => 
+        'MintHCM\\Custom\\Modules\\' => 
         array (
             0 => __DIR__ . '/../..' . '/custom/modules',
         ),
-        'mehar finance\\Custom\\Api\\' => 
+        'MintHCM\\Custom\\Api\\' => 
         array (
             0 => __DIR__ . '/../..' . '/custom/app',
         ),
-        'mehar finance\\Api\\' => 
+        'MintHCM\\Api\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),

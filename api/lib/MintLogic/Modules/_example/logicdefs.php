@@ -1,10 +1,10 @@
 <?php
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Formula;
-use mehar finance\Lib\MintLogic\Hook;
-use mehar finance\Lib\MintLogic\Validators\IsUnique;
-use mehar finance\Lib\MintLogic\Modules\_example\Validators\ExampleValidator;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Hook;
+use MintHCM\Lib\MintLogic\Validators\IsUnique;
+use MintHCM\Lib\MintLogic\Modules\_example\Validators\ExampleValidator;
 
 return [
     'bean' => [

@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Api\Controllers;
+namespace MintHCM\Api\Controllers;
 
-use mehar finance\Utils\CyclicRecordsSaver;
-use mehar finance\Data\BeanFactory;
+use MintHCM\Utils\CyclicRecordsSaver;
+use MintHCM\Data\BeanFactory;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;
 use Doctrine\ORM\EntityManagerInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Commands;
+namespace MintHCM\MintCLI\Commands;
 
 if (! defined('sugarEntry')) {
     define('sugarEntry', true);
@@ -36,7 +36,7 @@ class CreateOAuth2Keys extends Command
 
         $io->title("Create new OAuth2 keys\n");
         try {
-            $service = new \mehar finance\MintCLI\Services\OAuth2Service();
+            $service = new \MintHCM\MintCLI\Services\OAuth2Service();
             $service->generateNewKeys();
             $io->success('Createing new OAuth2 keys was successful.');
         } catch (\Exception $e) {

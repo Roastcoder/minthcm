@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Modules\Delegations\Validators;
+namespace MintHCM\Lib\MintLogic\Modules\Delegations\Validators;
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Validator;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Validator;
 
 class DelegationValidator extends Validator
 {

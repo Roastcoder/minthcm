@@ -1,12 +1,12 @@
 <?php
 
-namespace mehar finance\Lib\Search\ElasticSearch;
+namespace MintHCM\Lib\Search\ElasticSearch;
 
 class NestedQueryFactory
 {
-    const NAMESPACE_PREFIX = "mehar finance\\Modules\\";
+    const NAMESPACE_PREFIX = "MintHCM\\Modules\\";
     const CLASS_SUFIX = "NestedQuery";
-    const BASE_CLASS = "mehar finance\\Lib\\Search\\ElasticSearch\\BaseNestedQuery";
+    const BASE_CLASS = "MintHCM\\Lib\\Search\\ElasticSearch\\BaseNestedQuery";
 
     public static function getModuleNestedQueryObject(string $module): BaseNestedQuery
     {

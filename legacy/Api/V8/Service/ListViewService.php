@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 namespace Api\V8\Service;
@@ -137,28 +137,28 @@ $this->varDefHelper = $varDefHelper;
     {
         $moduleName = $params->getModuleName();
         /** @var SugarBean */
-        // mehar finance Start #84951
+        // MintHCM Start #84951
         $bean = $this->beanManager->newBeanSafe($moduleName);
         $fields = $this->varDefHelper->getModuleVardefs($bean);
-        // mehar finance End #84951
-        /* mehar finance Start #84318
+        // MintHCM End #84951
+        /* MintHCM Start #84318
         $text = new LangText(null, null, LangText::USING_ALL_STRINGS, true, false, $moduleName);
-        mehar finance End #84318 */
+        MintHCM End #84318 */
         $displayColumns = ListViewFacade::getDisplayColumns($moduleName);
         $data = [];
         foreach ($displayColumns as $key => $column) {
             $column = array_merge(self::$listViewColumnInterface, $column);
-            /* mehar finance Start #84318
+            /* MintHCM Start #84318
             $column['fieldName'] = $key; // get the vardef instead this "intuitive fieldName"
             $translated = $text->getText($column['label']);
             if (!$translated) {
                 $translated = $text->getText($bean->field_name_map[strtolower($key)]['vname']);
             }
             $column['label'] = $translated ? $translated : $column['label'];
-            mehar finance End #84318 */ 
+            MintHCM End #84318 */ 
             
             // TODO: validate the column name (for e.g label and name should be requered etc...) also check the ListViewColumnInterface keys are match..
-            // mehar finance Start #84951
+            // MintHCM Start #84951
             if (!empty($fields)) {
                 $field = $fields[strtolower($key)];
                 if(empty($field) || empty($field['name'])){
@@ -178,7 +178,7 @@ $this->varDefHelper = $varDefHelper;
                     $column['id_name'] = $field['id_name'] ?? '';
                 }
             }
-            //mehar finance End #84951
+            //MintHCM End #84951
             $data[] = $column;
         }
         $response = new AttributeResponse($data);

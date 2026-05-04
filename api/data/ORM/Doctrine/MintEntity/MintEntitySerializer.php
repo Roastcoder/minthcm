@@ -1,12 +1,12 @@
 <?php
 
-namespace mehar finance\Data\ORM\Doctrine\MintEntity;
+namespace MintHCM\Data\ORM\Doctrine\MintEntity;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\ORM\EntityManagerInterface;
-use mehar finance\Data\MintBean;
-use mehar finance\Data\ORM\Doctrine\MintRepository\MintEntityRepository;
-use mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeManager;
+use MintHCM\Data\MintBean;
+use MintHCM\Data\ORM\Doctrine\MintRepository\MintEntityRepository;
+use MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeManager;
 
 class MintEntitySerializer
 {
@@ -174,7 +174,7 @@ class MintEntitySerializer
             return $value;
         }
 
-        if ($type instanceof \mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeInterface) {
+        if ($type instanceof \MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeInterface) {
             return $type->convertToExternalFormat($value);
         }
 

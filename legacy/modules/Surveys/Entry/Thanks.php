@@ -20,7 +20,7 @@ $surveyName = !empty($_REQUEST['name']) ? $_REQUEST['name'] : 'Survey';
 </head>
 <body>
 <div class="container">
-    <!-- mehar finance #102681 START -->
+    <!-- MintHCM #102681 START -->
     <div class="row">
             <div class="col-md-12" style="text-align:center;margin-bottom: 10px;">
                 <div class="text-center">
@@ -37,7 +37,7 @@ $surveyName = !empty($_REQUEST['name']) ? $_REQUEST['name'] : 'Survey';
             </button>
         </div>
     </div>
-    <!-- mehar finance #102681 END -->
+    <!-- MintHCM #102681 END -->
 </div>
 <script src="include/javascript/jquery/jquery-min.js"></script>
 <script src="include/javascript/jquery/jquery-ui-min.js"></script>

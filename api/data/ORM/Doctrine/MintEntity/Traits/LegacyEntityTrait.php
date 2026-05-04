@@ -1,11 +1,11 @@
 <?php
 
-namespace mehar finance\Data\ORM\Doctrine\MintEntity\Traits;
+namespace MintHCM\Data\ORM\Doctrine\MintEntity\Traits;
 
 use Doctrine\ORM\EntityManagerInterface;
-use mehar finance\Data\BeanFactory;
-use mehar finance\Data\MintBean;
-use mehar finance\Utils\LegacyConnector;
+use MintHCM\Data\BeanFactory;
+use MintHCM\Data\MintBean;
+use MintHCM\Utils\LegacyConnector;
 
 trait LegacyEntityTrait
 {

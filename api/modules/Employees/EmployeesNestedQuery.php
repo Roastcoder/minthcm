@@ -1,8 +1,8 @@
 <?php
 
-namespace mehar finance\Modules\Employees;
+namespace MintHCM\Modules\Employees;
 
-use mehar finance\Lib\Search\ElasticSearch\BaseNestedQuery;
+use MintHCM\Lib\Search\ElasticSearch\BaseNestedQuery;
 
 class EmployeesNestedQuery extends BaseNestedQuery
 {

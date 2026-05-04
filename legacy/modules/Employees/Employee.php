@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 use SuiteCRM\Search\ElasticSearch\ElasticSearchHooks;
@@ -50,9 +50,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 require_once 'include/SugarObjects/templates/person/Person.php';
 require_once __DIR__ . '/../../include/EmailInterface.php';
-// mehar finance #77675 start
+// MintHCM #77675 start
 require_once 'modules/SecurityGroups/PrivateGroup.php';
-// mehar finance #77675 end
+// MintHCM #77675 end
 
 // Employee is used to store customer information.
 #[\AllowDynamicProperties]
@@ -104,10 +104,10 @@ class Employee extends Person implements EmailInterface
     // This is used to retrieve related fields from form posts.
     public $additional_column_fields = array('reports_to_name');
     public $new_schema = true;
-    // mehar finance #123323 START
+    // MintHCM #123323 START
     public $securitygroup_id;
     public $SecurityGroups;
-    // mehar finance #123323 END
+    // MintHCM #123323 END
 
     public function __construct()
     {
@@ -338,7 +338,7 @@ class Employee extends Person implements EmailInterface
         return parent::save($check_notify);
     }
 
-    // mehar finance start
+    // MintHCM start
     public function fetchAllResponsibilities()
     {
 
@@ -396,9 +396,9 @@ class Employee extends Person implements EmailInterface
             }
         }
     }
-    // mehar finance end
+    // MintHCM end
 
-    // mehar finance start
+    // MintHCM start
 
     public function getActiveWorkplaces($workplace_id = null, $date_start = null, $date_end = null)
     {
@@ -429,7 +429,7 @@ class Employee extends Person implements EmailInterface
         }
         return $result;
     }
-    // mehar finance end
+    // MintHCM end
 
     /**
      * Check if current user can save the current employee record
@@ -473,7 +473,7 @@ class Employee extends Person implements EmailInterface
         return !empty($this->id) && !$this->new_with_id;
     }
 
-    // mehar finance #123323 Users|Employees ACLAccess START
+    // MintHCM #123323 Users|Employees ACLAccess START
     public function ACLAccess($view, $is_owner = 'not_set', $in_group = 'not_set')
     {
         global $current_user;
@@ -491,7 +491,7 @@ class Employee extends Person implements EmailInterface
         return $access;
 
     }
-    // mehar finance #123323 Users|Employees ACLAccess END
+    // MintHCM #123323 Users|Employees ACLAccess END
 
     public function isOwner(?string $user_id) : bool
     {

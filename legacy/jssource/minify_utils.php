@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
-* mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+* MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -181,9 +181,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
                         if ($num=== false) {
                             //log error, file did not get appended
-                            if( isCommandLineInterface() ){ // mehar finance
+                            if( isCommandLineInterface() ){ // MintHCM
                                 echo "Error while concatenating file $loc to target file $trgt \n";
-                            } // mehar finance
+                            } // MintHCM
                         }
                         //close file opened.
                         fclose($trgt_handle);
@@ -348,15 +348,15 @@ if (!defined('sugarEntry') || !sugarEntry) {
                 }
             } else {
                 //log failure
-                if( isCommandLineInterface() ){ // mehar finance
+                if( isCommandLineInterface() ){ // MintHCM
                     echo"<B> COULD NOT COMPRESS $from_path, it is not a file \n";
-                } // mehar finance
+                } // MintHCM
             }
         } else {
             //log failure
-            if( isCommandLineInterface() ){ // mehar finance
+            if( isCommandLineInterface() ){ // MintHCM
                 echo"<B> COULD NOT COMPRESS $from_path, missing variables \n";
-            } // mehar finance
+            } // MintHCM
         }
     }
 
@@ -372,9 +372,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
         if (!file_exists($from_path)) {
             //log error
-            if( isCommandLineInterface() ){ // mehar finance
+            if( isCommandLineInterface() ){ // MintHCM
                 echo "JS Source directory at $from_path Does Not Exist<p>\n";
-            } // mehar finance
+            } // MintHCM
             return;
         }
 
@@ -407,9 +407,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
             if (!file_exists($bu_dir)) {
                 //directory does not exist, log it and return
-                if( isCommandLineInterface() ){ // mehar finance
+                if( isCommandLineInterface() ){ // MintHCM
                     echo" directory $bu_dir does not exist, could not restore $bu_path";
-                } // mehar finance
+                } // MintHCM
                 return;
             }
 
@@ -435,9 +435,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
         //check to see if provided paths are legit
         if (!file_exists($from_path)) {
             //log error
-            if( isCommandLineInterface() ){ // mehar finance
+            if( isCommandLineInterface() ){ // MintHCM
                 echo "The from directory, $from_path Does Not Exist<p>\n";
-            } // mehar finance
+            } // MintHCM
             return;
         } else {
             $from_path = str_replace('\\', '/', (string) $from_path);
@@ -447,9 +447,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
             $to_path = $from_path;
         } elseif (!file_exists($to_path)) {
             //log error
-            if( isCommandLineInterface() ){ // mehar finance
+            if( isCommandLineInterface() ){ // MintHCM
                 echo "The to directory, $to_path Does Not Exist<p>\n";
-            } // mehar finance
+            } // MintHCM
             return;
         }
 
@@ -513,9 +513,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
             }
         }
     }
-    // mehar finance START
+    // MintHCM START
     function isCommandLineInterface()
     {
         return (substr(php_sapi_name(), 0, 3) === 'cli' && strpos($_SERVER['SCRIPT_NAME'], 'MintCLI') === false);
     }
-    // mehar finance END
+    // MintHCM END

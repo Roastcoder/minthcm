@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Modules\_example\Validators;
+namespace MintHCM\Lib\MintLogic\Modules\_example\Validators;
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Validator;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Validator;
 
 class ExampleValidator extends Validator
 {

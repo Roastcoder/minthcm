@@ -467,7 +467,7 @@ if (!$focus->verify_data()) {
     $new_pwd = '';
     if ((isset($_POST['old_password']) || $focus->portal_only) &&
         (isset($_POST['new_password']) && !empty($_POST['new_password'])) &&
-        /* mehar finance #74303 START */
+        /* MintHCM #74303 START */
         // (isset($_POST['password_change']) && $_POST['password_change'] == 'true')) {
         (isset($_POST['password_change']) && 'true' == $_POST['password_change'])
         && (!isset($_POST['password_change_attempt_made']) || true !== $_POST['password_change_attempt_made'])) {
@@ -610,8 +610,8 @@ $redirect .= ('' != $new_pwd) ? "&pwd_set=" . $new_pwd : '';
 if (array_key_exists('do_not_redirect', $_REQUEST) && true === $_REQUEST['do_not_redirect']) {
     // do nothing
 } else {
-    /* mehar finance #125694 START */
+    /* MintHCM #125694 START */
     //header("Location: {$redirect}");
     SugarApplication::redirect($redirect);
-    /* mehar finance #125694 END */
+    /* MintHCM #125694 END */
 }

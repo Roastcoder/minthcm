@@ -186,10 +186,10 @@ class Message
             return false;
         }
         
-        // mehar finance #110041 START
+        // MintHCM #110041 START
         $messages = array_values($messages);
         $messageNum = 0;
-        // mehar finance #110041 END
+        // MintHCM #110041 END
 
         if ($section) {
             return $messages[$messageNum]->bodypart[$section];

@@ -20,7 +20,7 @@ class UpdateRecord extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return "Update a record in mehar finance module.";
+        return "Update a record in MintHCM module.";
     }
 
     public function getInputSchema(): ToolInputSchema

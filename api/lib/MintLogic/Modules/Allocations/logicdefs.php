@@ -1,7 +1,7 @@
 <?php
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Hook;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Hook;
 
 return [
     'rules' => [

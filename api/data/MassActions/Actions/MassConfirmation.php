@@ -1,8 +1,8 @@
 <?php
 
-namespace mehar finance\Data\MassActions\Actions;
+namespace MintHCM\Data\MassActions\Actions;
 
-use mehar finance\Data\MassActions\MassAction;
+use MintHCM\Data\MassActions\MassAction;
 
 class MassConfirmation extends MassAction
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * mehar finance MCP OAuth 2.1 Server Entry Point
+ * MintHCM MCP OAuth 2.1 Server Entry Point
  */
 
 if (!defined('sugarEntry')) {

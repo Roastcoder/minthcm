@@ -9,8 +9,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2025 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2025 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -38,26 +38,26 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
-namespace mehar finance\Data\MassActions;
+namespace MintHCM\Data\MassActions;
 
 class MassActionLoader
 {
     public static function getAction($class, ...$args)
     {   
         if (strpos($class, '\\') === false) {
-            $class = 'mehar finance\Data\MassActions\Actions\\' . $class;
+            $class = 'MintHCM\Data\MassActions\Actions\\' . $class;
         }
-        if (!class_exists($class) || !is_subclass_of($class, 'mehar finance\Data\MassActions\MassAction')) {
-            throw new \InvalidArgumentException("Class $class does not exist or is not a subclass of mehar finance\Data\MassActions\MassAction");
+        if (!class_exists($class) || !is_subclass_of($class, 'MintHCM\Data\MassActions\MassAction')) {
+            throw new \InvalidArgumentException("Class $class does not exist or is not a subclass of MintHCM\Data\MassActions\MassAction");
         }
         $classReflection = new \ReflectionClass($class);
-        $custom_class = str_replace('mehar finance', 'mehar finance\Custom', $classReflection->getName());
+        $custom_class = str_replace('MintHCM', 'MintHCM\Custom', $classReflection->getName());
         if (class_exists($custom_class) && is_subclass_of($custom_class, $class)) {
             return new $custom_class(...$args);
         }

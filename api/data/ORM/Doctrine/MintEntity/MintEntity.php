@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Data\ORM\Doctrine\MintEntity;
+namespace MintHCM\Data\ORM\Doctrine\MintEntity;
 
 use Doctrine\ORM\EntityManagerInterface;
-use mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeManager;
+use MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeManager;
 
 abstract class MintEntity
 {

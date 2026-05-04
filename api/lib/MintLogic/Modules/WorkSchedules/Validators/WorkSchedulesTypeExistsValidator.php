@@ -1,10 +1,10 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators;
+namespace MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators;
 
 use DBManagerFactory;
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Validator;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Validator;
 use SugarDateTime;
 
 class WorkSchedulesTypeExistsValidator extends Validator

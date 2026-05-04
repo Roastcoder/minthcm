@@ -6,7 +6,7 @@ use MintMCP\Server\Logger;
 use BeanFactory;
 
 /**
- * Authentication Manager for mehar finance MCP
+ * Authentication Manager for MintHCM MCP
  * 
  * Handles token validation and user authentication
  */

@@ -77,7 +77,7 @@ $scopeLabels = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mehar finance MCP Login</title>
+    <title>MintHCM MCP Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script type="importmap">{"imports":{"@material/web/":"https://esm.run/@material/web/"}}</script>
     <script type="module">
@@ -188,11 +188,11 @@ $scopeLabels = [
 <body>
     <div class="login-container">
         <div class="logo">
-            <img src="../assets/mint_logo.png" alt="mehar finance Logo">
+            <img src="../assets/mint_logo.png" alt="MintHCM Logo">
         </div>
         <div class="client-info">
             <h3>Application Authorization</h3>
-            <p><strong><?= $clientName ?></strong> is requesting access to your mehar finance account.</p>
+            <p><strong><?= $clientName ?></strong> is requesting access to your MintHCM account.</p>
             <div class="scope-list">
                 <p><strong>Permissions requested:</strong></p>
                 <?php foreach ($scopeList as $s): ?>

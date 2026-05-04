@@ -19,7 +19,7 @@ class CreateRecord extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return "Create a new record in mehar finance modules, for example new employees, new candidates etc. Don't use this tool for meetings. Use add_meeting for meetings.";
+        return "Create a new record in MintHCM modules, for example new employees, new candidates etc. Don't use this tool for meetings. Use add_meeting for meetings.";
     }
 
     public function getInputSchema(): ToolInputSchema

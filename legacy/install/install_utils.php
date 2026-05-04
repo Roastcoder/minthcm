@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -815,8 +815,8 @@ function handleSugarConfig()
     $sugar_config['disable_convert_lead']           = false;
     $sugar_config['log_dir']                        = $setup_site_log_dir;
     $sugar_config['log_file']                       = $setup_site_log_file;
-    $sugar_config['enable_line_editing_detail']     = false; // mehar finance
-    $sugar_config['enable_line_editing_list']       = false; // mehar finance
+    $sugar_config['enable_line_editing_detail']     = false; // MintHCM
+    $sugar_config['enable_line_editing_list']       = false; // MintHCM
     $sugar_config['filter_module_fields']           = array(
         'Users' => array(
             'show_on_employees',
@@ -853,7 +853,7 @@ function handleSugarConfig()
     );
 
     $sugar_config['hide_subpanels']       = true;
-    $sugar_config['disableAjaxUI'] = true; // mehar finance
+    $sugar_config['disableAjaxUI'] = true; // MintHCM
 
     // Setup FTS
     if (!empty($_SESSION['setup_fts_type'])) {
@@ -917,7 +917,7 @@ function handleSugarConfig()
         }
    }
 
-   // mehar finance #110041 START
+   // MintHCM #110041 START
    if (!isset($sugar_config['http_referer'])) {
       $sugar_config['http_referer'] = [];
    }
@@ -926,7 +926,7 @@ function handleSugarConfig()
    }
    $sugar_config['http_referer']['list'][] = 'accounts.google.com';
    $sugar_config['http_referer']['list']  = array_unique($sugar_config['http_referer']['list']);
-   // mehar finance #110041 END
+   // MintHCM #110041 END
 
     if (!isset($sugar_config['elasticsearch_index_prefix'])) {
         $sugar_config['elasticsearch_index_prefix'] = substr(str_shuffle(uniqid()), 0, 4);
@@ -1057,9 +1057,9 @@ EOQ;
     # -----------------------------
 
     RewriteRule ^Api/(.*)$ - [env=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-    # mehar finance #110041 START
+    # MintHCM #110041 START
     RewriteRule ^oauth-handler/(.*)$ index.php?module=EAPM&action=$1 [L,QSA]
-    # mehar finance #110041 END
+    # MintHCM #110041 END
     RewriteRule ^Api/access_token$ Api/index.php [L]
     RewriteRule ^Api/V8/(.*?)$ Api/index.php [L]
 </IfModule>
@@ -1386,7 +1386,7 @@ function insert_default_settings()
         $fromName = $_SESSION['smtp_from_name'];
     }
 
-    // mehar finance Start
+    // MintHCM Start
     $visible_modules = array(
     'Home',
     'Calendar',
@@ -1486,7 +1486,7 @@ function insert_default_settings()
       $value = $record['value'];
       $db->query("INSERT INTO config (id, category, name, value) VALUES ('{$id}', '{$category}', '{$name}', '{$value}')");
    }
-    // mehar finance End
+    // MintHCM End
 
     $db->query("INSERT INTO config (category, name, value) VALUES ('notify', 'fromaddress', '$fromAddress')");
     $db->query("INSERT INTO config (category, name, value) VALUES ('notify', 'fromname', '$fromName')");

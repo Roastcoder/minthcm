@@ -26,10 +26,10 @@ if ($survey->status === 'Closed') {
     displayClosedPage($survey);
     exit();
 }
-//mehar finance #74241 START
+//MintHCM #74241 START
 //if ($survey->status != 'Public') {
 if ($survey->status != 'Active') {
-    //mehar finance #74241 END
+    //MintHCM #74241 END
     header('HTTP/1.0 404 Not Found');
     exit();
 }
@@ -41,7 +41,7 @@ if (!empty($_REQUEST['employee']) && $isValidator->isValidId($_REQUEST['employee
 } else {
     LoggerManager::getLogger()->warn('Invalid employee ID in survey.');
 }
-//mehar finance #102681 START
+//MintHCM #102681 START
 if (empty($employeeId)) {
     if(empty($_SESSION['authenticated_user_id'])){
         header("HTTP/1.0 404 Not Found");
@@ -83,7 +83,7 @@ if (empty($db->fetchOne($sql2))) {
     displayEmployeeNotExsistPage($survey);
     return;
 }
-//mehar finance #102681 END
+//MintHCM #102681 END
 $trackerId = '';
 
 if (!empty($_REQUEST['tracker']) && $isValidator->isValidId($_REQUEST['tracker'])) {
@@ -134,14 +134,14 @@ EOF;
         <title><?=$survey->name;?></title>
 
         <link href="themes/SuiteP/css/bootstrap.min.css" rel="stylesheet">
-        <!-- mehar finance #102681 START -->
+        <!-- MintHCM #102681 START -->
         <link href="themes/SuiteP/css/Mint/style.css" rel="stylesheet">
-        <!-- mehar finance #102681 END -->
+        <!-- MintHCM #102681 END -->
         <link href="modules/Surveys/javascript/rating/rating.min.css" rel="stylesheet">
         <link href="modules/Surveys/javascript/datetimepicker/jquery-ui-timepicker-addon.css" rel="stylesheet">
         <link href="include/javascript/jquery/themes/base/jquery.ui.all.css" rel="stylesheet">
     </head>
-    <!-- mehar finance #102681 START -->
+    <!-- MintHCM #102681 START -->
     <body style="background-color: #ffffff;">
     <div class="container">
         <div class="survey">
@@ -158,14 +158,14 @@ EOF;
                 <h1><?=$survey->name;?></h1>
                         <span class="survey-description"><?=$survey->description;?></span>
                     </div>
-                <!-- mehar finance #74238 START -->
+                <!-- MintHCM #74238 START -->
                 <?=displaySurvey($survey, $employeeId, $trackerId);?>
-                <!-- mehar finance #74238 END -->
+                <!-- MintHCM #74238 END -->
             </div>
         </div>
     </div>
     </div>
-    <!-- mehar finance #102681 END -->
+    <!-- MintHCM #102681 END -->
     <script src="include/javascript/jquery/jquery-min.js"></script>
     <script src="include/javascript/jquery/jquery-ui-min.js"></script>
     <script src="modules/Surveys/javascript/datetimepicker/jquery-ui-timepicker-addon.js"></script>
@@ -201,18 +201,18 @@ EOF;
 
 
 <?php
-//mehar finance #74238 START
+//MintHCM #74238 START
 // function displaySurvey($survey, $contactId, $trackerId)
-//mehar finance #74238 END
+//MintHCM #74238 END
 function displaySurvey($survey, $employeeId, $trackerId)
 {
     ?>
     <form method="post" onsubmit="disableSubmitButton(this)">
         <input type="hidden" name="entryPoint" value="surveySubmit">
         <input type="hidden" name="id" value="<?=$survey->id;?>">
-        <!-- mehar finance #74238 START -->
+        <!-- MintHCM #74238 START -->
         <input type="hidden" name="employee" value="<?=$employeeId;?>">
-        <!-- mehar finance #74238 END -->
+        <!-- MintHCM #74238 END -->
         <input type="hidden" name="tracker" value="<?=$trackerId;?>">
         <?php
 $questions = $survey->get_linked_beans('surveys_surveyquestions', 'SurveyQuestions');
@@ -241,7 +241,7 @@ function displayQuestion($survey, $question)
     ?>
     <div class="panel panel-default">
         <div class="panel-heading">
-        <!-- mehar finance #102681 START -->
+        <!-- MintHCM #102681 START -->
         <?php
             if('Checkbox'==$question->type){
                 echo '';
@@ -250,7 +250,7 @@ function displayQuestion($survey, $question)
                 echo "<h3 class='panel-title'><label for='question".$question->id."'>".$question->name."</label></h3>";
             }
         ?>
-        <!-- mehar finance #102681 END -->
+        <!-- MintHCM #102681 END -->
         </div>
         <div class="panel-body">
             <div class="form-group">
@@ -275,7 +275,7 @@ $options = array();
             $question->id .
                 "]'></textarea>";
             break;
-        //mehar finance #102681 START
+        //MintHCM #102681 START
         case "Checkbox":
             echo "<div class='checkbox checkbox-lg'><label>";
             echo "<input id='question" .
@@ -297,7 +297,7 @@ $options = array();
             }
             echo "</select>";
             break;
-        //mehar finance #102681 END
+        //MintHCM #102681 END
         case "Radio":
             foreach ($options as $option) {
                 echo "<div class='custom-radio'>";
@@ -359,12 +359,12 @@ function displayTextField($question)
     echo "<input class=\"form-control\" id='question" .
     $question->id .
     "' name='question[" .
-    //mehar finance #102681 START
+    //MintHCM #102681 START
     $question->id .
         "]'  type='text'
         placeholder='".translate('LBL_SURVEY_YOUR_ANSWER_PLACEHOLDER', 'Surveys')."'
         />";
-    //mehar finance #102681 END
+    //MintHCM #102681 END
 }
 
 function displayScaleField($question)
@@ -490,7 +490,7 @@ EOF;
 
     echo $ss->fetch('modules/Surveys/tpls/closeSurvey.tpl');
 }
-//mehar finance #102681 START
+//MintHCM #102681 START
 function displayAlreadyFilledPage($survey)
 {
     ?>
@@ -564,4 +564,4 @@ function displayEmployeeNotExsistPage($survey)
     </html>
     <?php
 }
-//mehar finance #102681 END
+//MintHCM #102681 END

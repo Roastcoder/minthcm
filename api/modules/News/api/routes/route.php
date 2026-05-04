@@ -1,8 +1,8 @@
 <?php
 
-use mehar finance\Modules\News\api\controllers\ListAction;
-use mehar finance\Modules\News\api\controllers\UpdateAction;
-use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
+use MintHCM\Modules\News\api\controllers\ListAction;
+use MintHCM\Modules\News\api\controllers\UpdateAction;
+use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "drawer_list" => array(

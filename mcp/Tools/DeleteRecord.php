@@ -17,7 +17,7 @@ class DeleteRecord extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return "Delete record in mehar finance modules. Use search tool to retrieve ID of the record you want to delete if you don't know it.";
+        return "Delete record in MintHCM modules. Use search tool to retrieve ID of the record you want to delete if you don't know it.";
     }
 
     public function getInputSchema(): ToolInputSchema

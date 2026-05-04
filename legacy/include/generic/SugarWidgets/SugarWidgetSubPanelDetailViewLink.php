@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -128,12 +128,12 @@ class SugarWidgetSubPanelDetailViewLink extends SugarWidgetField
             ($detailView && !$layout_def['owner_module']
             || $detailView && !ACLController::moduleSupportsACL($layout_def['owner_module'])
             || ACLController::checkAccess($ownerModule, 'view', $ownerId == $current_user->id, 'module',  $groupAccessView))) {
-            // mehar finance start #57627
+            // MintHCM start #57627
             if ( $layout_def['owner_module'] && !empty($layout_def['fields']['PARENT_ID']) && !empty($layout_def['fields']['PARENT_NAME']) && !empty($layout_def['fields']['PARENT_TYPE']) ) {
                 $module = $layout_def['fields']['PARENT_TYPE'];
                 $record = $layout_def['fields']['PARENT_ID'];
             }
-            // mehar finance end #57627
+            // MintHCM end #57627
             $link = ajaxLink("index.php?module=$module&action=$action&record={$record}{$parent}");
             if ($module == 'EAPM') {
                 $link = "index.php?module=$module&action=$action&record={$record}{$parent}";

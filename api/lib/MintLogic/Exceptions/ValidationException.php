@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Exceptions;
+namespace MintHCM\Lib\MintLogic\Exceptions;
 
 class ValidationException extends \Exception
 {

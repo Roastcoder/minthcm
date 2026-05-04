@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Modules\Candidatures\api\controllers;
+namespace MintHCM\Modules\Candidatures\api\controllers;
 
 use Doctrine\ORM\EntityManagerInterface;
-use mehar finance\Utils\LegacyConnector;
+use MintHCM\Utils\LegacyConnector;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Psr7\Response;

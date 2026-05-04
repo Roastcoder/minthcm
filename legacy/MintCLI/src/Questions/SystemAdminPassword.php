@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\MintCLI\Questions;
+namespace MintHCM\MintCLI\Questions;
 
-use mehar finance\MintCLI\InputValidators\NotEmptyValidator;
-use mehar finance\MintCLI\InputValidators\NoWhitespaceValidator;
+use MintHCM\MintCLI\InputValidators\NotEmptyValidator;
+use MintHCM\MintCLI\InputValidators\NoWhitespaceValidator;
 
 class SystemAdminPassword extends Question
 {

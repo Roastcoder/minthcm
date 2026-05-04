@@ -1,12 +1,12 @@
 <?php
 
-namespace mehar finance\MintCLI\Installer;
+namespace MintHCM\MintCLI\Installer;
 
-use mehar finance\MintCLI\Services\ConfigOverrideService;
-use mehar finance\MintCLI\Services\HtaccessService;
-use mehar finance\MintCLI\Services\ServerService;
-use mehar finance\MintCLI\Services\ElasticsearchService;
-use mehar finance\MintCLI\Services\OAuth2Service;
+use MintHCM\MintCLI\Services\ConfigOverrideService;
+use MintHCM\MintCLI\Services\HtaccessService;
+use MintHCM\MintCLI\Services\ServerService;
+use MintHCM\MintCLI\Services\ElasticsearchService;
+use MintHCM\MintCLI\Services\OAuth2Service;
 
 #[\AllowDynamicProperties]
 class Installer
@@ -51,7 +51,7 @@ class Installer
             '_INSTALL_DD_' => $userData['demoData'] ? 'yes' : 'no',
             '_MINT_USER_' => $userData['systemAdminName'],
             '_MINT_PASS_' => $userData['systemAdminPassword'],
-            '_SETUP_SYSTEM_NAME_' => 'mehar finance',
+            '_SETUP_SYSTEM_NAME_' => 'MintHCM',
             '_SITE_URL_' => $userData['siteUrl'],
         ];
         $config = str_replace(array_keys($configData), array_values($configData), $config);
@@ -82,7 +82,7 @@ class Installer
         $argv[2] = 'true';
         include 'install.php';
         chdir('../');
-        file_put_contents(self::INSTALL_LOG_FILE, "Installing mehar finance System Core...\n\n");
+        file_put_contents(self::INSTALL_LOG_FILE, "Installing MintHCM System Core...\n\n");
         return true;
     }
 
@@ -91,7 +91,7 @@ class Installer
         //chdir(self::FRONTEND_DIR);
         //exec("npm install 2>&1", $installationResult, $installationStatus);
         //chdir('../');
-        file_put_contents(self::INSTALL_LOG_FILE, "\n\nInstalling mehar finance UX...\n\n", FILE_APPEND);
+        file_put_contents(self::INSTALL_LOG_FILE, "\n\nInstalling MintHCM UX...\n\n", FILE_APPEND);
         //file_put_contents(self::INSTALL_LOG_FILE, implode("\n", $installationResult), FILE_APPEND);
         // if ($installationStatus !== 0) {
             // return false;
@@ -113,7 +113,7 @@ class Installer
         // chdir(self::FRONTEND_DIR);
         // exec("npm run build:repo 2>&1", $buildingResult, $buildingStatus);
         // chdir('../');
-        // file_put_contents(self::INSTALL_LOG_FILE, "\n\nBuilding mehar finance UX...\n\n", FILE_APPEND);
+        // file_put_contents(self::INSTALL_LOG_FILE, "\n\nBuilding MintHCM UX...\n\n", FILE_APPEND);
         // file_put_contents(self::INSTALL_LOG_FILE, implode("\n", $buildingResult), FILE_APPEND);
         // if ($buildingStatus !== 0) {
             // return false;

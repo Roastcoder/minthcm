@@ -1,10 +1,10 @@
 <?php
 function survey_url_display(Surveys $survey)
 {
-    //mehar finance #74241 START
+    //MintHCM #74241 START
     //if ($survey->status != 'Public') {
     if ($survey->status != 'Active') {
-        //mehar finance #74241 END
+        //MintHCM #74241 END
         return '';
     }
     global $sugar_config, $current_user;

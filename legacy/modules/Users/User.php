@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 use SuiteCRM\Search\ElasticSearch\ElasticSearchHooks;
@@ -144,7 +144,7 @@ class User extends Person implements EmailInterface
      * @var bool|null
      */
     public $lastSaveErrorIsEmailAddressSaveError = null;
-    public $app_tokens; // mehar finance #122506
+    public $app_tokens; // MintHCM #122506
 
     public function __construct()
     {
@@ -713,12 +713,12 @@ class User extends Person implements EmailInterface
         $set_new_password_after_save = false;
         if ((isset($_POST['old_password']) || $this->portal_only) &&
             (isset($_POST['new_password']) && !empty($_POST['new_password'])) &&
-            /* mehar finance #74303 START */
+            /* MintHCM #74303 START */
             //  (isset($_POST['password_change']) && $_POST['password_change'] === 'true') ) {
             (isset($_POST['password_change']) && 'true' === $_POST['password_change'])
             && (!isset($_POST['password_change_attempt_made']) || true !== $_POST['password_change_attempt_made'])) {
             $_POST['password_change_attempt_made'] = true;
-            /* mehar finance #74303 END */
+            /* MintHCM #74303 END */
             if (!$this->change_password($_POST['old_password'], $_POST['new_password'], '0', true)) {
                 if (isset($_POST['page']) && 'EditView' === $_POST['page']) {
                     SugarApplication::appendErrorMessage($this->error_string);
@@ -1193,9 +1193,9 @@ EOQ;
             $messages[] = $mod_strings['ERR_PASSWORD_ONENUMBER'];
         }
 
-        // mehar finance #103191 start
+        // MintHCM #103191 start
         if ($onespecial && false === strpbrk($newPassword, "!@#$%^&*()+=-[]';,./{}|:<>?~")) {
-        // mehar finance #103191 end
+        // MintHCM #103191 end
             $messages[] = $mod_strings['ERR_PASSWORD_SPECCHARS'];
         }
 
@@ -1277,7 +1277,7 @@ EOQ;
                 $query = "SELECT reports_to_id FROM users WHERE id='" . $this->db->quote($check_user) . "'";
                 $result = $this->db->query($query, true, "Error checking for reporting-loop");
                 $row = $this->db->fetchByAssoc($result);
-                //echo ("fetched: " . $row['reports_to_id'] . " from " . $check_user . "<br>"); mehar finance #88363
+                //echo ("fetched: " . $row['reports_to_id'] . " from " . $check_user . "<br>"); MintHCM #88363
                 $check_user = $row['reports_to_id'];
             }
 
@@ -2231,7 +2231,7 @@ EOQ;
 
     public function ACLAccess($view, $is_owner = 'not_set', $in_group = 'not_set')
     {
-        // mehar finance #123323 START
+        // MintHCM #123323 START
         global $current_user;
         if(in_array($this->ACLNormalizeViewContext($view), ['delete']) && !$current_user->isAdmin()){
             return false;
@@ -2239,7 +2239,7 @@ EOQ;
         if(!empty($this->id) && in_array($this->ACLNormalizeViewContext($view), ['edit']) && !($current_user->isAdmin() || $this->id == $current_user->id)){
             return false;
         }
-        // mehar finance #123323 END
+        // MintHCM #123323 END
         $result = parent::ACLAccess($view, $is_owner, $in_group);
         if (isset($_REQUEST['module']) && 'SecurityGroups' == $_REQUEST['module'] && isset($_REQUEST['record']) && $this->isGroupPrivate($_REQUEST['record'])) {
             $result = false;
@@ -2376,7 +2376,7 @@ EOQ;
         return !empty($this->id) && !$this->new_with_id;
     }
 
-    // mehar finance #122506 start
+    // MintHCM #122506 start
     public function getTokens()
     {
         return array_filter(
@@ -2386,7 +2386,7 @@ EOQ;
             )
         );
     }
-    // mehar finance #122506 end
+    // MintHCM #122506 end
     
     public function hasActionAccess(string $module, string $action): bool
     {

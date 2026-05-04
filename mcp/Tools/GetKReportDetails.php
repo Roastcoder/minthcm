@@ -17,7 +17,7 @@ class GetKReportDetails extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Get details of a specific report available in mehar finance, including for each filter: possible operators (e.g. Equals, Between), value inputs (single value vs From/To), and when applicable the list of possible values for the filter field.';
+        return 'Get details of a specific report available in MintHCM, including for each filter: possible operators (e.g. Equals, Between), value inputs (single value vs From/To), and when applicable the list of possible values for the filter field.';
     }
 
     public function getInputSchema(): ToolInputSchema

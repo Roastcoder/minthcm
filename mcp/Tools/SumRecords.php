@@ -19,7 +19,7 @@ class SumRecords extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Sum the values of a specific numeric field for records in a mehar finance module matching given filters.';
+        return 'Sum the values of a specific numeric field for records in a MintHCM module matching given filters.';
     }
 
     public function getInputSchema(): ToolInputSchema

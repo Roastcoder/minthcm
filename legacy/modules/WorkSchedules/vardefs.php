@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 $dictionary['WorkSchedules'] = array(
@@ -395,9 +395,9 @@ $dictionary['WorkSchedules'] = array(
          'enable_range_search' => true,
          'options' => 'numeric_range_search_dom',
          'vt_dependency' => "equals(\$type,'delegation')",
-         // mehar finance #66889, #89498 START
+         // MintHCM #66889, #89498 START
          'vt_validation' => "AEM(ifElse(equals(\$type,'delegation'),callCustomApi('WorkSchedules','validateDelegationDurationValue',\$delegation_duration),true),'LBL_ERR_DELEGATION_DURATION_NOT_VALID')",
-         // mehar finance #66889, #89498 END
+         // MintHCM #66889, #89498 END
       ),
       'comments' => array(
          'name' => 'comments',

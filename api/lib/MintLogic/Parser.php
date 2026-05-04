@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic;
+namespace MintHCM\Lib\MintLogic;
 
 class Parser
 {

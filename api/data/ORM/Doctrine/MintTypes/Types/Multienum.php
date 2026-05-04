@@ -1,9 +1,9 @@
 <?php
-namespace mehar finance\Data\ORM\Doctrine\MintTypes\Types;
+namespace MintHCM\Data\ORM\Doctrine\MintTypes\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
-use mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeInterface;
+use MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeInterface;
 
 /**
  * Field type mapping for the Doctrine Database Abstraction Layer (DBAL).

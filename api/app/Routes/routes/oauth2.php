@@ -1,7 +1,7 @@
 <?php
 
-use mehar finance\Api\Controllers\OAuth2;
-use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
+use MintHCM\Api\Controllers\OAuth2;
+use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "generate_token" => array(

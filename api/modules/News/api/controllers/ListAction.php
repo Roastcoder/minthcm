@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Modules\News\api\controllers;
+namespace MintHCM\Modules\News\api\controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;

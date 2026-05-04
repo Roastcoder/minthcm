@@ -1,5 +1,5 @@
 <?php
-namespace mehar finance\Utils;
+namespace MintHCM\Utils;
 
 class EnvironmentUtils
 {

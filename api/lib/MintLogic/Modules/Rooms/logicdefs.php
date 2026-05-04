@@ -1,8 +1,8 @@
 <?php
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Formula;
-use mehar finance\Lib\MintLogic\Hook;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Hook;
 
 return [
     'rules' => [
@@ -34,7 +34,7 @@ return [
                         function ($bean) {
                             /** @var SecurityGroup $group */
                             $sg_id = $bean->security_group_id;
-                            $group = mehar finance\Data\BeanFactory::getBean('SecurityGroups', $sg_id);
+                            $group = MintHCM\Data\BeanFactory::getBean('SecurityGroups', $sg_id);
                             if (empty($group->id) || $group->group_type !== 'business_unit') {
                                 throw new ValidationException('LBL_ERR_CANT_SELECT_SEC_GROUP');
                             }

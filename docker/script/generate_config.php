@@ -1,5 +1,5 @@
 <?php
-$outputFile = '/var/www/mehar finance/configMint4';
+$outputFile = '/var/www/MintHCM/configMint4';
 
 // Retrieve environment variables
 $dbHost = getenv('DB_HOST') ?: 'default_db_host';
@@ -18,7 +18,7 @@ $elasticsearchPassword = getenv('ELASTICSEARCH_PASSWORD') ?: 'changeme';
 $installDemoData = getenv('INSTALL_DEMO_DATA') ?: 'no';
 $ssl = getenv('SSL') ?: 'no';
 $rebuildFrontend = getenv('REBUILD_FRONTEND') ?: 'no';
-$applicationRootDirectory = '/var/www/mehar finance';
+$applicationRootDirectory = '/var/www/MintHCM';
 
 // Open the file in write mode or create it if it doesn't exist
 $fileHandle = fopen($outputFile, 'w');

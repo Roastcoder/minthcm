@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -442,12 +442,12 @@ class SugarBean
      */
     public $createdAuditRecords;
 
-    // mehar finance #122846 START
+    // MintHCM #122846 START
     /**
      * @var bool $mint_is_update
      */
     public $mint_is_update;
-    // mehar finance #122846 END
+    // MintHCM #122846 END
 
     /**
      * Keeps track of emails sent to notify_user ids to avoid duplicate emails
@@ -510,11 +510,11 @@ class SugarBean
                     $this->field_defs = $dictionary[$this->object_name]['fields'];
                 }
 
-                // mehar finance Start
+                // MintHCM Start
                 if(isset($dictionary[$this->object_name]['search_boost'])) {
                     $this->search_boost = $dictionary[$this->object_name]['search_boost'];
                 }
-                // mehar finance End
+                // MintHCM End
 
                 if (!empty($dictionary[$this->object_name]['optimistic_locking'])) {
                     $this->optimistic_lock = true;
@@ -525,14 +525,14 @@ class SugarBean
             $loaded_definitions[$this->object_name]['required_fields'] =& $this->required_fields;
             $loaded_definitions[$this->object_name]['field_name_map'] =& $this->field_name_map;
             $loaded_definitions[$this->object_name]['field_defs'] =& $this->field_defs;
-            $loaded_definitions[$this->object_name]['search_boost'] =& $this->search_boost; // mehar finance
+            $loaded_definitions[$this->object_name]['search_boost'] =& $this->search_boost; // MintHCM
         } else {
             $this->column_fields =& $loaded_definitions[$this->object_name]['column_fields'];
             $this->list_fields =& $loaded_definitions[$this->object_name]['list_fields'];
             $this->required_fields =& $loaded_definitions[$this->object_name]['required_fields'];
             $this->field_name_map =& $loaded_definitions[$this->object_name]['field_name_map'];
             $this->field_defs =& $loaded_definitions[$this->object_name]['field_defs'];
-            $this->search_boost = & $loaded_definitions[$this->object_name]['search_boost']; // mehar finance
+            $this->search_boost = & $loaded_definitions[$this->object_name]['search_boost']; // MintHCM
             $this->added_custom_field_defs = true;
 
             if (!isset($this->custom_fields) &&
@@ -617,10 +617,10 @@ class SugarBean
                         }
                     // no break
                     default:
-                        // mehar finance Start
+                        // MintHCM Start
                         $this->field_defs[$field]['field_module_name'] = $_REQUEST['module'] ?? '';
                         $this->field_defs[$field]['field_record'] = $_REQUEST['record'] ?? '';
-                        // mehar finance End
+                        // MintHCM End
                         if (isset($value['default']) && $value['default'] !== '') {
                             $this->$field = htmlentities((string) $value['default'], ENT_QUOTES, 'UTF-8');
                         } else {
@@ -981,7 +981,7 @@ class SugarBean
                     $query = ' UNION ALL ( ' . $query . ' )';
                     $final_query_rows .= " UNION ALL ";
                 } else {
-                    // $query = '(' . $query . ')'; // mehar finance
+                    // $query = '(' . $query . ')'; // MintHCM
                     $first = false;
                 }
                 $query_array = $subquery['query_array'];
@@ -1726,7 +1726,7 @@ class SugarBean
      * @return bool
      */
     public function isOwner(?string $user_id) {
-        // mehar finance Begin #70311 - whole isOwner function redesigned
+        // MintHCM Begin #70311 - whole isOwner function redesigned
         $controller = ControllerFactory::getController('Users');
         $subordinates_ids = $controller::getIDOfSubordinates(array($user_id));
         $is_owner = false;
@@ -1755,7 +1755,7 @@ class SugarBean
         }
 
         return $is_owner;
-        // mehar finance End #70311
+        // MintHCM End #70311
     }
 
     /**
@@ -2415,12 +2415,12 @@ class SugarBean
             if (!$this->new_with_id) {
                 $this->id = create_guid();
             }
-            // mehar finance begin #70311
+            // MintHCM begin #70311
             include 'modules/Employees/access_config.php';
             if(isset($GLOBALS["dictionary"][$this->object_name]["templates"]['employee_related']) && in_array($this->module_dir,$employee_related_copy_assigned)  && empty($this->employee_id)){
                 $this->employee_id = isset($this->assigned_user_id)? $this->assigned_user_id : "";
             }
-            // mehar finance end #70311
+            // MintHCM end #70311
       }
 
         require_once("data/BeanFactory.php");
@@ -2446,9 +2446,9 @@ class SugarBean
 
         $this->call_custom_logic("before_save", $custom_logic_arguments);
         unset($custom_logic_arguments);
-        #mehar finance start
+        #MintHCM start
         $this->preSave();
-        #mehar finance end
+        #MintHCM end
         // View Tools start #38123
         if ( $this->vt_prevent_saving !== true || $this->skip_vt_validation === true ) {
          // View Tools end #38123
@@ -2508,16 +2508,16 @@ class SugarBean
         if (isset($GLOBALS['current_user']) && isset($this->module_dir)) {
             $this->track_view($current_user->id, $this->module_dir, 'save');
         }
-         #mehar finance start
+         #MintHCM start
          $this->mint_is_update = $isUpdate;
          $this->postSave();
-         #mehar finance end
+         #MintHCM end
         $this->call_custom_logic('after_save', '');
-         #mehar finance start
+         #MintHCM start
          SugarAutoLoader::requireWithCustom("include/ViewTools/globalhooks/related.php");
          $vt_related = new Related();
          $vt_related->relatedRecalculation($this);
-         #mehar finance end
+         #MintHCM end
 
         $this->auditBean($isUpdate);
 
@@ -3484,10 +3484,10 @@ class SugarBean
         if (in_array('set_notification_body', get_class_methods($this))) {
             $xtpl = $this->set_notification_body($xtpl, $this);
         } else {
-            // mehar finance #75607 START
+            // MintHCM #75607 START
             //$xtpl->assign("OBJECT", translate('LBL_MODULE_NAME', $this->module_name));
             $xtpl->assign("OBJECT", return_app_list_strings_language($current_language)['moduleList'][$this->module_name] ?? $this->module_name);
-            // mehar finance #75607 END
+            // MintHCM #75607 END
             $template_name = "Default";
         }
         if (!empty($_SESSION["special_notification"]) && $_SESSION["special_notification"]) {
@@ -3688,7 +3688,7 @@ class SugarBean
     * @return string
     */
    public function getOwnerWhere($user_id) {
-      // mehar finance Begin #70311 - whole isOwner function redesigned
+      // MintHCM Begin #70311 - whole isOwner function redesigned
       include 'modules/Employees/access_config.php';
 
       $controller = ControllerFactory::getController('Users');
@@ -3718,7 +3718,7 @@ class SugarBean
       }
       
       return '';
-      // mehar finance End #70311 - whole isOwner function redesigned
+      // MintHCM End #70311 - whole isOwner function redesigned
     }
 
     /**
@@ -4245,11 +4245,11 @@ class SugarBean
                $ret_array[$eVSecGroupUpdKey] .= $n;
             }
          }
-         /* mehar finance #179746 START */
+         /* MintHCM #179746 START */
          if (strpos($group_where, "INNER JOIN securitygroups_records secr") === false) {
          /* eVolpe #179746 END */
             $ret_array['where'] = str_replace($group_where, "secg.id is not null", $ret_array['where']);
-         /* mehar finance #179746 START */
+         /* MintHCM #179746 START */
          }
          /* eVolpe #179746 END */
       }
@@ -5424,9 +5424,9 @@ class SugarBean
             $custom_logic_arguments = [];
             $custom_logic_arguments['id'] = $id;
             $this->call_custom_logic("before_delete", $custom_logic_arguments);
-            #mehar finance start
+            #MintHCM start
             $this->preMarkDeleted();
-            #mehar finance end
+            #MintHCM end
             $this->deleted = 1;
             $this->mark_relationships_deleted($id);
             if (isset($this->field_defs['modified_user_id'])) {
@@ -5450,9 +5450,9 @@ class SugarBean
 
 
             $this->deleteFiles();
-            #mehar finance start
+            #MintHCM start
             $this->postMarkDeleted();
-            #mehar finance end
+            #MintHCM end
             // call the custom business logic
             $this->call_custom_logic("after_delete", $custom_logic_arguments);
         }
@@ -5909,7 +5909,7 @@ class SugarBean
     public function get_list_view_array()
     {
         static $cache = array();
-        $this->retrieve($this->id); // mehar finance
+        $this->retrieve($this->id); // MintHCM
         // cn: bug 12270 - sensitive fields being passed arbitrarily in listViews
         $sensitiveFields = array('user_hash' => '');
 
@@ -6516,7 +6516,7 @@ class SugarBean
 
     }
 
-    // mehar finance #123323 START
+    // MintHCM #123323 START
     public function ACLNormalizeViewContext($view)
     {
         $view = strtolower($view);
@@ -6543,5 +6543,5 @@ class SugarBean
         }
         return '';
     }
-    // mehar finance #123323 END
+    // MintHCM #123323 END
 }

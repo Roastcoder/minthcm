@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -190,7 +190,7 @@ class TabController
         $system_tabs = $this->get_system_tabs();
         $tabs = $user->getPreference($type . '_tabs');
         if (!empty($tabs)) {
-            /* mehar finance #125694 START */
+            /* MintHCM #125694 START */
             
             if ($type == 'display' && $user->getPreference('sort_modules_by_name') == 'on') {
                 //$home = $tabs[0]; unset($tabs[0]);
@@ -204,7 +204,7 @@ class TabController
 
                 //array_unshift($tabs, $home);
             }
-            /* mehar finance #125694 END */
+            /* MintHCM #125694 END */
 
             $tabs = self::get_key_array($tabs);
             if ($type == 'display') {
@@ -263,10 +263,10 @@ class TabController
         return array($tabs,$system_tabs);
     }
 
-    /* mehar finance #125694 START */
+    /* MintHCM #125694 START */
     //public function get_tabs($user)
     public function get_tabs($user, $nav_settings = false)
-    /* mehar finance #125694 END */
+    /* MintHCM #125694 END */
     {
         $display_tabs = $this->get_user_tabs($user, 'display');
         $hide_tabs = $this->get_user_tabs($user, 'hide');
@@ -308,7 +308,7 @@ class TabController
                 unset($hide_tabs[$key]);
             }
         }
-        /* mehar finance #125694 START */
+        /* MintHCM #125694 START */
         if($user->getPreference('sort_modules_by_name') === 'on' && !$nav_settings){
             global $app_list_strings;
             $translated_tabs = [];
@@ -318,7 +318,7 @@ class TabController
             asort($translated_tabs);
             $display_tabs = array_merge(array_flip(array_keys($translated_tabs)), $display_tabs);
         }
-        /* mehar finance #125694 END */
+        /* MintHCM #125694 END */
         return array($display_tabs, $hide_tabs, $remove_tabs);
     }
 

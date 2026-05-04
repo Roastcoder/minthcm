@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Questions;
+namespace MintHCM\MintCLI\Questions;
 
 use Symfony\Component\Console\Question\ConfirmationQuestion as BasicConfirmationQuestion;
 

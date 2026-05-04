@@ -1,6 +1,6 @@
 <?php
 
-// mehar finance #54195
+// MintHCM #54195
 
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -378,7 +378,7 @@ EOQ;
             }
 
 
-            // mehar finance #54195 Start
+            // MintHCM #54195 Start
             // Get all candidates for the call
             if ( !empty($_POST['candidate_invitees']) ) {
                $candidateInvitees = explode(',', trim($_POST['candidate_invitees'], ','));
@@ -404,8 +404,8 @@ EOQ;
                   $focus->candidates->delete($focus->id, $u);
                }
             }
-            // mehar finance #54195 End
-            // mehar finance #59793 Start
+            // MintHCM #54195 End
+            // MintHCM #59793 Start
             // Get all resources for the call
             if ( !empty($_POST['resource_invitees']) ) {
                $resourceInvitees = explode(',', trim($_POST['resource_invitees'], ','));
@@ -431,7 +431,7 @@ EOQ;
                   $focus->resources->delete($focus->id, $u);
                }
             }
-            // mehar finance #59793 End
+            // MintHCM #59793 End
             ////	END REMOVE
             ///////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////
@@ -440,23 +440,23 @@ EOQ;
             $focus->users_arr = $userInvitees;
             $focus->contacts_arr = array();
             $focus->contacts_arr = $contactInvitees;
-            // mehar finance #54195 Start
+            // MintHCM #54195 Start
             $focus->candidates_arr = array();
             $focus->candidates_arr = $candidateInvitees;
-            // mehar finance #54195 End
-            // mehar finance #59793 Start
+            // MintHCM #54195 End
+            // MintHCM #59793 Start
             $focus->resources_arr = array();
             $focus->resources_arr = $resourceInvitees;
-            // mehar finance #59793 End
+            // MintHCM #59793 End
 
             if ( !empty($_POST['parent_id']) && $_POST['parent_type'] == 'Contacts' ) {
                $focus->contacts_arr[] = $_POST['parent_id'];
             }
-            // mehar finance #54195 Start
+            // MintHCM #54195 Start
             if ( !empty($_POST['parent_id']) && $_POST['parent_type'] == 'Candidates' ) {
                $focus->candidates_arr[] = $_POST['parent_id'];
             }
-            // mehar finance #54195 End
+            // MintHCM #54195 End
             // Call the Call module's save function to handle saving other fields besides
             // the users and contacts relationships
             $focus->update_vcal = false;    // Bug #49195 : don't update vcal b/s related users aren't saved yet, create vcal cache below
@@ -509,7 +509,7 @@ EOQ;
                }
             }
 
-            // mehar finance #54195 Start
+            // MintHCM #54195 Start
             // Process Candidates
             $existing_candidates = array();
             if ( !empty($_POST['existing_candidate_invitees']) ) {
@@ -531,8 +531,8 @@ EOQ;
                   $focus->db->query($qU);
                }
             }
-            // mehar finance #54195 End
-            // mehar finance #59793 Start
+            // MintHCM #54195 End
+            // MintHCM #59793 Start
             // Process Resources
             $existing_resources = array();
             if ( !empty($_POST['existing_resource_invitees']) ) {
@@ -548,7 +548,7 @@ EOQ;
                   $focus->resources->add($resource_id);
                }
             }
-            // mehar finance #59793 End
+            // MintHCM #59793 End
             // Bug #49195 : update vcal
             vCal::cache_sugar_vcal($current_user);
 
@@ -568,20 +568,20 @@ EOQ;
          echo $json->encode(array( 'status' => 'success', 'get' => '' ));
          exit;
       }
-      // mehar finance #99476 Start
+      // MintHCM #99476 Start
       if (isset($_REQUEST['return_action']) && $_REQUEST['return_action'] == 'SubPanelViewer') {
         // module=Candidates&action=SubPanelViewer&record=b057a593-d886-248a-f583-61a7b889264d
         header("Location: index.php?module=" . $_REQUEST['return_module'] . "&action=SubPanelViewer&record=" . $_REQUEST['return_id']);
       }
-      // mehar finance #99476 End
-      // mehar finance #42401 START
+      // MintHCM #99476 End
+      // MintHCM #42401 START
       else if ( isset($_REQUEST['return_module']) && ( $_REQUEST['return_module'] == 'Calendar' || $_REQUEST['return_module'] == 'Home' ) ) {
          header("Location: index.php?" . Calendar::getRedirectUrl(
                 !empty($_REQUEST['date_start']) ? $_REQUEST['date_start'] : '', 
                 $_REQUEST['return_module']
             )
         );
-         // mehar finance #42401 END
+         // MintHCM #42401 END
       } else {
          if ($redirect) {
              handleRedirect($return_id, 'Calls');

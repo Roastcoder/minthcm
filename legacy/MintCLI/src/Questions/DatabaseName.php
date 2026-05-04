@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Questions;
+namespace MintHCM\MintCLI\Questions;
 
 class DatabaseName extends Question
 {

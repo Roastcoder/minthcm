@@ -1,8 +1,8 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Formulas;
+namespace MintHCM\Lib\MintLogic\Formulas;
 
-use mehar finance\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Formula;
 
 class Equals extends Formula
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace mehar finance\Modules\Users\api\controllers;
+namespace MintHCM\Modules\Users\api\controllers;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use mehar finance\Api\Entities\Users;
+use MintHCM\Api\Entities\Users;
 use Slim\Psr7\Response;
 use Slim\Exception\HttpBadRequestException;
 

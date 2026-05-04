@@ -1,9 +1,9 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Formulas;
+namespace MintHCM\Lib\MintLogic\Formulas;
 
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Formula;
 
 class Validate extends Formula
 {

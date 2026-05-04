@@ -1,11 +1,11 @@
 <?php
 
-namespace mehar finance\Modules\SalaryRanges;
+namespace MintHCM\Modules\SalaryRanges;
 
 use BeanFactory;
-use mehar finance\Lib\Search\ElasticSearch\BaseListACL;
+use MintHCM\Lib\Search\ElasticSearch\BaseListACL;
 use DBManagerFactory;
-use mehar finance\Utils\LegacyConnector;
+use MintHCM\Utils\LegacyConnector;
 
 class SalaryRangesListACL extends BaseListACL
 {

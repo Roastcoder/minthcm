@@ -1,8 +1,8 @@
 <?php
-namespace mehar finance\Lib\Search\ElasticSearch\Operators;
+namespace MintHCM\Lib\Search\ElasticSearch\Operators;
 
-use mehar finance\Lib\Search\ElasticSearch\ElasticOperator;
-use mehar finance\Lib\Search\ElasticSearch\ModulePrefixer;
+use MintHCM\Lib\Search\ElasticSearch\ElasticOperator;
+use MintHCM\Lib\Search\ElasticSearch\ModulePrefixer;
 
 class Nested extends ElasticOperator
 {

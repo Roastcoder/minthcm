@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 require_once 'include/Dashlets/Dashlet.php';
@@ -375,12 +375,12 @@ class DashletGeneric extends Dashlet
                     continue;
                 }
                 // don't handle assigned user filter if filtering my items only
-                // mehar finance Begin #70311
+                // MintHCM Begin #70311
                 if ('assigned_user_id' == $name && $this->mySubordinates) {
                     continue;
                 }
 
-                // mehar finance end #70311
+                // MintHCM end #70311
 
                 $widgetDef = $this->seedBean->field_defs[$name];
 
@@ -431,7 +431,7 @@ class DashletGeneric extends Dashlet
                 }
             }
         }
-        // mehar finance Begin #70311
+        // MintHCM Begin #70311
         include 'modules/Employees/access_config.php';
         $controller = ControllerFactory::getController('Users');
         $subordinates_ids = $controller::getIDOfSubordinates(array($current_user->id));
@@ -443,13 +443,13 @@ class DashletGeneric extends Dashlet
             }
             array_push($returnArray, $my_items_sql);
         }
-        // mehar finance end #70311
+        // MintHCM end #70311
         if ($this->myFavorites) {
             $favorites_sql = "{$this->seedBean->table_name}.id IN (SELECT parent_id FROM favorites WHERE parent_type = '{$this->seedBean->module_name}' AND assigned_user_id = '{$current_user->id}' AND deleted = '0' )";
 
             array_push($returnArray, $favorites_sql);
         }
-        // mehar finance Begin #70311
+        // MintHCM Begin #70311
         if ($this->mySubordinates && !$this->myItemsOnly) {
             $subordinates_sql = "{$this->seedBean->table_name}.assigned_user_id IN('" . join("','", $subordinates_ids) . "')";
             if (isset($GLOBALS["dictionary"][$this->seedBean->object_name]["templates"]['employee_related']) && !in_array($this->seedBean->module_dir, $employee_related_exclude_modules)) {
@@ -458,7 +458,7 @@ class DashletGeneric extends Dashlet
 
             array_push($returnArray, $subordinates_sql);
         }
-        // mehar finance end #70311
+        // MintHCM end #70311
         return $returnArray;
     }
 
@@ -486,9 +486,9 @@ class DashletGeneric extends Dashlet
      */
     public function process($lvsParams = array(), $id = null)
     {
-        // mehar finance #94842 START
+        // MintHCM #94842 START
         global $dashlet_initial_loading;
-        // mehar finance #94842 END
+        // MintHCM #94842 END
         $currentSearchFields = array();
         $configureView = true; // configure view or regular view
         $query = false;
@@ -572,9 +572,9 @@ class DashletGeneric extends Dashlet
             }
 
             $this->lvs->ss->assign('dashletId', $this->id);
-            // mehar finance #94842 START
+            // MintHCM #94842 START
             $this->lvs->ss->assign('dashletInitialLoading', !empty($dashlet_initial_loading) ? $dashlet_initial_loading : false);
-            // mehar finance #94842 END
+            // MintHCM #94842 END
         }
     }
 

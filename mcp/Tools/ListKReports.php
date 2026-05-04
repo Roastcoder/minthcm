@@ -18,7 +18,7 @@ class ListKReports extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Get list of reports available in mehar finance';
+        return 'Get list of reports available in MintHCM';
     }
 
     public function getInputSchema(): ToolInputSchema
@@ -32,7 +32,7 @@ class ListKReports extends AbstractMCPTool
     }
 
     /**
-     * Get list of reports from KReports module available in mehar finance
+     * Get list of reports from KReports module available in MintHCM
      *
      * @param object $arguments Input argument
      * @return CallToolResult

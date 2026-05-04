@@ -1,11 +1,11 @@
 <?php
 
-namespace mehar finance\MintCLI\Commands;
+namespace MintHCM\MintCLI\Commands;
 
-use mehar finance\MintCLI\Services\ClearDirectoryService;
-use mehar finance\MintCLI\Services\OAuth2RepairPermissionsService;
-use mehar finance\MintCLI\Services\RepairAndRebuildJavascriptService;
-use mehar finance\MintCLI\Services\RepairAndRebuildLegacyService;
+use MintHCM\MintCLI\Services\ClearDirectoryService;
+use MintHCM\MintCLI\Services\OAuth2RepairPermissionsService;
+use MintHCM\MintCLI\Services\RepairAndRebuildJavascriptService;
+use MintHCM\MintCLI\Services\RepairAndRebuildLegacyService;
 
 if (! defined('sugarEntry')) {
     define('sugarEntry', true);
@@ -22,12 +22,12 @@ class RepairAndRebuild extends Command
 {
     const API_CACHE_DIR = 'api/cache';
     protected static $defaultName = 'instance:rebuild';
-    protected static $defaultDescription = 'Repair and Rebuild mehar finance Instance';
+    protected static $defaultDescription = 'Repair and Rebuild MintHCM Instance';
 
     protected function configure()
     {
         $this
-            ->setHelp('This command will repair and rebuild mehar finance instance');
+            ->setHelp('This command will repair and rebuild MintHCM instance');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -35,9 +35,9 @@ class RepairAndRebuild extends Command
         $io = new SymfonyStyle($input, $output);
         $previous_dir = getcwd();
 
-        $io->title("Repairing and Rebuilding mehar finance Instance\n");
+        $io->title("Repairing and Rebuilding MintHCM Instance\n");
 
-        $io->block("Rebuilding mehar finance instance...");
+        $io->block("Rebuilding MintHCM instance...");
         chdir('legacy');
         (new RepairAndRebuildLegacyService())->run();
 

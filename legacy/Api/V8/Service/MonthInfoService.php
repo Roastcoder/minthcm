@@ -53,7 +53,7 @@ class MonthInfoService
         foreach ($modules as $key => $value) {
             $module_data = $db->query($this->getModuleIds($employee_id, $start_date, $end_date, $key));
             while (($row = $db->fetchByAssoc($module_data)) != null) {
-                // mehar finance #87119 start
+                // MintHCM #87119 start
                 $module_name = ($key === 'WorkSchedules') ? $key : ucfirst($value);
                 $bean = $this->beanManager->getBeanSafe(
                     $module_name,
@@ -76,7 +76,7 @@ class MonthInfoService
                     'type' => $module_name,
                     'attributes' => $attributes,
                 ];
-                // mehar finance #87119 end
+                // MintHCM #87119 end
             }
         }
 

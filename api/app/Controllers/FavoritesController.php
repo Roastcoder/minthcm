@@ -1,5 +1,5 @@
 <?php
-namespace mehar finance\Api\Controllers;
+namespace MintHCM\Api\Controllers;
 
 use BeanFactory;
 use Psr\Http\Message\ServerRequestInterface as Request;

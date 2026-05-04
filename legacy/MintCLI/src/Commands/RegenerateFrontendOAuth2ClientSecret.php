@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Commands;
+namespace MintHCM\MintCLI\Commands;
 
 if (! defined('sugarEntry')) {
     define('sugarEntry', true);
@@ -51,7 +51,7 @@ class RegenerateFrontendOAuth2ClientSecret extends Command
 
             }
 
-            $service = new \mehar finance\MintCLI\Services\OAuth2Service();
+            $service = new \MintHCM\MintCLI\Services\OAuth2Service();
             if ($service->repairFrontendToken()) {
                 $io->success('Createing or updating OAuth2 client was successful.');
                 return Command::SUCCESS;

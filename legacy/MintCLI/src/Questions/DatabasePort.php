@@ -1,8 +1,8 @@
 <?php
 
-namespace mehar finance\MintCLI\Questions;
+namespace MintHCM\MintCLI\Questions;
 
-use mehar finance\MintCLI\InputValidators\NumericalValidator;
+use MintHCM\MintCLI\InputValidators\NumericalValidator;
 
 class DatabasePort extends Question
 {

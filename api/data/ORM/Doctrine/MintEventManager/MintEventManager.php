@@ -1,6 +1,6 @@
 <?php 
 
-namespace mehar finance\Data\ORM\Doctrine\MintEventManager;
+namespace MintHCM\Data\ORM\Doctrine\MintEventManager;
 
 use Doctrine\Common\EventManager;
 use Doctrine\Common\EventSubscriber;
@@ -8,8 +8,8 @@ use Doctrine\Common\EventSubscriber;
 class MintEventManager
 {
     const SUBSCRIBERS_LOCALIZATIONS = [
-        'mehar finance\\Data\\ORM\\Doctrine\\MintEventManager\\Subscribers\\' => 'data/ORM/Doctrine/MintEventManager/Subscribers/',
-        'mehar finance\\Custom\\Data\\ORM\\Doctrine\\MintEventManager\\Subscribers\\' => 'custom/data/ORM/Doctrine/MintEventManager/Subscribers/',
+        'MintHCM\\Data\\ORM\\Doctrine\\MintEventManager\\Subscribers\\' => 'data/ORM/Doctrine/MintEventManager/Subscribers/',
+        'MintHCM\\Custom\\Data\\ORM\\Doctrine\\MintEventManager\\Subscribers\\' => 'custom/data/ORM/Doctrine/MintEventManager/Subscribers/',
     ];
 
     public static function getEventManager(): EventManager

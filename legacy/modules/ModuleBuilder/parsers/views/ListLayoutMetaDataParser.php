@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -305,7 +305,7 @@ class ListLayoutMetaDataParser extends AbstractMetaDataParser implements MetaDat
          * any where studio !== true, which are not editable but must be preserved
          */
         $newViewdefs = array();
-        $esListViewDefs = []; //mehar finance start #117539
+        $esListViewDefs = []; //MintHCM start #117539
         $originalViewDefs = $this->getOriginalViewDefs();
 
         foreach ($this->_viewdefs as $key => $def) {
@@ -377,7 +377,7 @@ class ListLayoutMetaDataParser extends AbstractMetaDataParser implements MetaDat
                 }
 
                 $newViewdefs [$fieldname] ['default'] = ($i == 0);
-                //mehar finance start #117539
+                //MintHCM start #117539
                 if($this->view == "listview"){
                     $array = "columns";
                     $ESListProperties = ['link', 'default', 'sortable'];
@@ -394,11 +394,11 @@ class ListLayoutMetaDataParser extends AbstractMetaDataParser implements MetaDat
                 } else {
                     $esListViewDefs[$array][$fieldname] = [];
                 }
-                //mehar finance end
+                //MintHCM end
             }
         }
         $this->_viewdefs = $newViewdefs;
-        $this->_eslistviewdefs = $esListViewDefs; //mehar finance start #117539
+        $this->_eslistviewdefs = $esListViewDefs; //MintHCM start #117539
     }
 
     /**

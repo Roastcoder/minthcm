@@ -33,9 +33,9 @@ class AOD_LogicHooks
     */
     public function saveModuleChanges(SugarBean $bean, $event, $arguments)
     {
-        /* mehar finance #127800 START */
+        /* MintHCM #127800 START */
         return;
-        /* mehar finance #127800 END */
+        /* MintHCM #127800 END */
         if ($bean->module_name == 'AOD_Index') {
             return;
         }
@@ -58,9 +58,9 @@ class AOD_LogicHooks
      */
     public function saveModuleDelete(SugarBean $bean, $event, $arguments)
     {
-        /* mehar finance #127800 START */
+        /* MintHCM #127800 START */
         return;
-        /* mehar finance #127800 END */
+        /* MintHCM #127800 END */
         if ($bean->module_name == 'AOD_Index') {
             return;
         }
@@ -83,9 +83,9 @@ class AOD_LogicHooks
      */
     public function saveModuleRestore(SugarBean $bean, $event, $arguments)
     {
-        /* mehar finance #127800 START */
+        /* MintHCM #127800 START */
         return;
-        /* mehar finance #127800 END */
+        /* MintHCM #127800 END */
         if ($bean->module_name == 'AOD_Index') {
             return;
         }

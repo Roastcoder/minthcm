@@ -2,7 +2,7 @@
 
 namespace MintMCP\Server;
 
-use mehar finance\Api\Containers\Doctrine\DoctrineContainerBuilder;
+use MintHCM\Api\Containers\Doctrine\DoctrineContainerBuilder;
 use Doctrine\ORM\EntityManagerInterface;
 
 class DoctrineService

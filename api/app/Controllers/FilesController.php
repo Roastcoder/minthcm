@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Api\Controllers;
+namespace MintHCM\Api\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;

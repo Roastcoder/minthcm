@@ -1,7 +1,7 @@
 <?php
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Formula;
-use mehar finance\Lib\MintLogic\Hook;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Hook;
 
 return [
     'rules' => [
@@ -16,7 +16,7 @@ return [
                             /** @var Workplaces $bean */
                             $room = \BeanFactory::getBean('Rooms', $bean->room_id);
                             if ($room->availability !== 'active') {
-                                throw new \mehar finance\Lib\MintLogic\Exceptions\ValidationException('LBL_ERR_CANT_SELECT_ROOM');
+                                throw new \MintHCM\Lib\MintLogic\Exceptions\ValidationException('LBL_ERR_CANT_SELECT_ROOM');
                             }
                         },
                     ],

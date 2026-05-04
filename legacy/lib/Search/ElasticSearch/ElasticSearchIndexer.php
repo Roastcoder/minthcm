@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2021 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 namespace SuiteCRM\Search\ElasticSearch;
@@ -141,9 +141,9 @@ class ElasticSearchIndexer extends AbstractIndexer
                     $lowercaseModule = strtolower($module);
                     $index = $instance_id . '_' . $lowercaseModule;
                     $this->removeIndex($index);
-                    // mehar finance #121632 START
+                    // MintHCM #121632 START
                     $this->createIndex($index, $this->getDefaultMapParams($module));
-                    // mehar finance #121632 END
+                    // MintHCM #121632 END
                 } catch (Exception $exception) {
                     $message = "Failed to create index $index! Exception details follow";
                     $this->logger->error($message);
@@ -232,7 +232,7 @@ class ElasticSearchIndexer extends AbstractIndexer
         $this->nested_properties = (new \ElasticSearchVardefsReader)->getModuleNestedProperties($seed->object_name);
         try {
             $records_in_module_count = $this->getRecordsInModuleCount($seed, $tableName, $where, $showDeleted);
-            $memory_limit_bytes = \mehar finance\Utils\EnvironmentUtils::getMemoryLimitInBytes();
+            $memory_limit_bytes = \MintHCM\Utils\EnvironmentUtils::getMemoryLimitInBytes();
             do {
                 $batch = $seed->get_list("$tableName.date_entered", $where, $batchOffset, $maxBatchSize, $maxBatchSize, $showDeleted);
                 if (empty($batch['list'])) {
@@ -250,9 +250,9 @@ class ElasticSearchIndexer extends AbstractIndexer
             $this->logger->error($exception);
             return;
         } finally {
-            /* mehar finance START */
+            /* MintHCM START */
             $this->indexBatch($module, []); // Setting index for current module if there are no records
-            /* mehar finance START */
+            /* MintHCM START */
             $GLOBALS['disable_date_format'] = $old_disable_date_format;
         }
         $indexedRecordsCount = $this->indexedRecordsCount - $oldIndexedRecordsCount;
@@ -590,7 +590,7 @@ class ElasticSearchIndexer extends AbstractIndexer
         }
     }
 
-    // mehar finance #121632 START
+    // MintHCM #121632 START
     /**
      * Retrieves the default params to set up an optimised default index for Elasticsearch.
      *
@@ -614,7 +614,7 @@ class ElasticSearchIndexer extends AbstractIndexer
             return [];
     }
     }
-    // mehar finance #121632 END
+    // MintHCM #121632 END
     /**
      * Creates the body of a Elasticsearch request for a given bean.
      *

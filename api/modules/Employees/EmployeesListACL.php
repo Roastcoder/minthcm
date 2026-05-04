@@ -1,10 +1,10 @@
 <?php
 
-namespace mehar finance\Modules\Employees;
+namespace MintHCM\Modules\Employees;
 
-use mehar finance\Lib\Search\ElasticSearch\BaseListACL;
-use mehar finance\Data\BeanFactory;
-use mehar finance\Utils\LegacyConnector;
+use MintHCM\Lib\Search\ElasticSearch\BaseListACL;
+use MintHCM\Data\BeanFactory;
+use MintHCM\Utils\LegacyConnector;
 
 class EmployeesListACL extends BaseListACL
 {

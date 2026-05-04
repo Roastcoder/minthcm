@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Services;
+namespace MintHCM\MintCLI\Services;
 
 require_once('legacy/install/DemoDataInstallation/Services/DemoDataService.php');
 use DemoDataInstallation\Services\DemoDataService;

@@ -1,13 +1,13 @@
 <?php 
 
-namespace mehar finance\Data\ORM\Doctrine\MintRepository\Traits;
+namespace MintHCM\Data\ORM\Doctrine\MintRepository\Traits;
 
 use Elasticsearch\Common\Exceptions\BadRequest400Exception;
 use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use mehar finance\Data\ORM\Doctrine\MintEntity\MintEntity;
-use mehar finance\Lib\Search\ElasticSearch\ElasticResult;
-use mehar finance\Lib\Search\ElasticSearch\ElasticSearch;
-use mehar finance\Lib\Search\Search;
+use MintHCM\Data\ORM\Doctrine\MintEntity\MintEntity;
+use MintHCM\Lib\Search\ElasticSearch\ElasticResult;
+use MintHCM\Lib\Search\ElasticSearch\ElasticSearch;
+use MintHCM\Lib\Search\Search;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpInternalServerErrorException;
 

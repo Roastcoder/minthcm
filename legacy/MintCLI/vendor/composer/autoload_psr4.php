@@ -16,5 +16,5 @@ return array(
     'Symfony\\Component\\String\\' => array($vendorDir . '/symfony/string'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
-    'mehar finance\\MintCLI\\' => array($baseDir . '/src'),
+    'MintHCM\\MintCLI\\' => array($baseDir . '/src'),
 );

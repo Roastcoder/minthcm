@@ -122,7 +122,7 @@ class DBManagerFactory {
       }
    }
 
-   // mehar finance start
+   // MintHCM start
    /**
     * Returns a reference to the DB object for instance $instanceName, or the default
     * instance if one is not specified
@@ -186,7 +186,7 @@ class DBManagerFactory {
       }
       return self::$instances[$instanceName];
    }
-   // mehar finance end
+   // MintHCM end
 
    /**
     * Disconnect all DB connections in the system

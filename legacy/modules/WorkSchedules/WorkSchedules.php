@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 require_once 'include/CalendarActivities/CalendarActivities.php';
@@ -179,9 +179,9 @@ class WorkSchedules extends Basic
             $this->UnpinCycle();
         }
 
-        // mehar finance #76236 START
+        // MintHCM #76236 START
         $this->disableAlertForConfirmedWorkSchedule();
-        // mehar finance #76236 END
+        // MintHCM #76236 END
 
         $this->beforeSave();
         $new_record = empty($this->fetched_row);
@@ -420,7 +420,7 @@ class WorkSchedules extends Basic
         return $this->assigned_user_id == $current_user->id;
     }
 
-    // mehar finance #76236 START
+    // MintHCM #76236 START
     protected function disableAlertForConfirmedWorkSchedule()
     {
         if (!empty($this->id)) {
@@ -433,7 +433,7 @@ class WorkSchedules extends Basic
             }
         }
     }
-    // mehar finance #76236 END
+    // MintHCM #76236 END
 
 
     public function canBeAccepted() {

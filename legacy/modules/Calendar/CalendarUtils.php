@@ -469,11 +469,11 @@ class CalendarUtils
             $clone->repeat_parent_id = $id;
             $clone->update_vcal = false;
             $clone->save(true);
-            //mehar finance #111325 START
+            //MintHCM #111325 START
             if(empty($users_rel_arr)){
                 $users_rel_arr = $clone->users_arr;
             }
-            //mehar finance #111325 END
+            //MintHCM #111325 END
 
             if ($clone->id) {
                 foreach ($users_rel_arr as $user_id) {

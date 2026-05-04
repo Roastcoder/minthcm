@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\MintCLI\Commands;
+namespace MintHCM\MintCLI\Commands;
 
 if (! defined('sugarEntry')) {
     define('sugarEntry', true);

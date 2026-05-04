@@ -63,13 +63,13 @@ class AttributeObjectHelper
         if ($allowedField !== null) {
             $attributes = array_intersect_key($attributes, array_flip($allowedField));
         }
-        // mehar finance #87119 start
+        // MintHCM #87119 start
         $attributes['acl_access'] = [
             'edit' => $bean->ACLAccess('edit'),
             'view' => $bean->ACLAccess('view'),
             'delete' => $bean->ACLAccess('delete'),
         ];
-        // mehar finance #87119 end
+        // MintHCM #87119 end
 
         unset($attributes['id']);
 

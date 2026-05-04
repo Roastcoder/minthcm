@@ -1,8 +1,8 @@
 <?php
 
-use mehar finance\Data\MintDateTime;
-use mehar finance\Lib\MintLogic\Formula;
-use mehar finance\Lib\MintLogic\Hook;
+use MintHCM\Data\MintDateTime;
+use MintHCM\Lib\MintLogic\Formula;
+use MintHCM\Lib\MintLogic\Hook;
 
 return [
     'rules' => [

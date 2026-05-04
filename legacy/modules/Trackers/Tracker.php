@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -102,14 +102,14 @@ class Tracker extends SugarBean
 			$breadCrumb = $_SESSION['breadCrumbs'];
 	        $module_query = '';
 	        if(!empty($modules)) {
-               // mehar finance #100495 START
+               // MintHCM #100495 START
 	           $history_max_viewed = 20;
-               // mehar finance #100495 END
+               // MintHCM #100495 END
 	           $module_query = is_array($modules) ? ' AND module_name IN (\'' . implode("','" , $modules) . '\')' :  ' AND module_name = \'' . $modules . '\'';
 	        } else {
-               // mehar finance #100495 START
+               // MintHCM #100495 START
 	           $history_max_viewed = (!empty($GLOBALS['sugar_config']['history_max_viewed']))? $GLOBALS['sugar_config']['history_max_viewed'] : 20;
-               // mehar finance #100495 END
+               // MintHCM #100495 END
 	        }
 
 	        $query = 'SELECT item_id, item_summary, module_name, id FROM ' . $this->table_name . ' WHERE id = (SELECT MAX(id) as id FROM ' . $this->table_name . ' WHERE user_id = \'' . $user_id . '\' AND deleted = 0 AND visible = 1' . $module_query . ')';
@@ -119,9 +119,9 @@ class Tracker extends SugarBean
 	        }
         }
 
-        // mehar finance #100495 START
+        // MintHCM #100495 START
         $list = $breadCrumb->getBreadCrumbList($modules, $history_max_viewed);
-        // mehar finance #100495 END
+        // MintHCM #100495 END
         $GLOBALS['log']->info("Tracker: retrieving ".(is_countable($list) ? count($list) : 0)." items");
         return $list;
     }

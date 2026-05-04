@@ -1,7 +1,7 @@
 <?php
-namespace mehar finance\Api\Controllers\Module;
+namespace MintHCM\Api\Controllers\Module;
 
-use mehar finance\Data\MassActions\MassActionLoader;
+use MintHCM\Data\MassActions\MassActionLoader;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpForbiddenException;

@@ -10,8 +10,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -125,10 +125,10 @@
 
      // query and create the FREEBUSY lines for SugarCRM Meetings and Calls and
      // return the string
-        /* mehar finance #75792 START */
+        /* MintHCM #75792 START */
         // function create_sugar_freebusy($user_bean, $start_date_time, $end_date_time) {
         public function create_sugar_freebusy($user_bean, $start_date_time, $end_date_time, $with_workschedulers = false) {
-        /* mehar finance #75792 END */
+        /* MintHCM #75792 END */
 
          $ical_array = array();
          global $DO_USER_TIME_OFFSET, $timedate;
@@ -141,11 +141,11 @@
          $activityList = array(
              "Meetings" => array("showCompleted" => true, "start" => "date_start", "end" => "date_end"), "Calls" => array("showCompleted" => true, "start" => "date_start", "end" => "date_end"), "Tasks" => array("showCompleted" => true, "start" => "date_start", "end" => "date_due")
          );
-            /* mehar finance #75792 START */
+            /* MintHCM #75792 START */
             if ($with_workschedulers) {
                 $activityList['WorkSchedules'] = array("showCompleted" => true, "start" => "date_start", "end" => "date_end");
             }
-            /* mehar finance #75792 END */
+            /* MintHCM #75792 END */
 
          $acts_arr = CalendarActivity::get_activities($activityList, $user_bean->id, false, $start_date_time, $end_date_time, 'freebusy');
          // loop thru each activity, get start/end time in UTC, and return FREEBUSY strings
@@ -163,14 +163,14 @@
              $endTimeUTC = $act->end_time->format(self::UTC_FORMAT);
              $ical_array[] = array("FREEBUSY", $startTimeUTC . "/" . $endTimeUTC);
              $ical_array[] = array("X-FREEBUSY-ID", $ID);
-                /* mehar finance #75792 START */
+                /* MintHCM #75792 START */
                 // $ical_array[] = array("X-FREEBUSY-TYPE", get_class($act->sugar_bean));
                 $sugar_bean_class = get_class($act->sugar_bean);
                 if($sugar_bean_class == 'WorkSchedules'){
                     $sugar_bean_class .= "___{$act->sugar_bean->type}";
                 }
                 $ical_array[] = array("X-FREEBUSY-TYPE", $sugar_bean_class);
-                /* mehar finance #75792 END */
+                /* MintHCM #75792 END */
              //$ical_array[] = array(array("X-FREEBUSYID", $ID), array("FREEBUSY", $startTimeUTC ."/". $endTimeUTC));
          }
 
@@ -180,10 +180,10 @@
      }
 
      // return a freebusy vcal string
-        /* mehar finance #75792 START */
+        /* MintHCM #75792 START */
         // function get_vcal_freebusy($user_focus, $cached = true) {
         public function get_vcal_freebusy($user_focus, $cached = true, $with_workschedulers = false) {
-        /* mehar finance #75792 END */
+        /* MintHCM #75792 END */
 
          global $locale, $timedate;
          $ical_array = array();
@@ -236,10 +236,10 @@
              //               {
              //$freebusy = self::create_ical_string_from_array($user_focus,$start_date_time,$end_date_time);
 
-                /* mehar finance #75792 START */
+                /* MintHCM #75792 START */
                 // $str .= $this->create_sugar_freebusy($user_focus, $start_date_time, $end_date_time);
                 $str .= $this->create_sugar_freebusy($user_focus, $start_date_time, $end_date_time, $with_workschedulers);
-                /* mehar finance #75792 END */
+                /* MintHCM #75792 END */
              //               }
          }
 

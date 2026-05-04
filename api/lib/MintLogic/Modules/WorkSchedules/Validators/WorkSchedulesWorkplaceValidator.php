@@ -1,10 +1,10 @@
 <?php
 
-namespace mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators;
+namespace MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators;
 
-use mehar finance\Data\BeanFactory;
-use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
-use mehar finance\Lib\MintLogic\Validator;
+use MintHCM\Data\BeanFactory;
+use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use MintHCM\Lib\MintLogic\Validator;
 
 class WorkSchedulesWorkplaceValidator extends Validator
 {

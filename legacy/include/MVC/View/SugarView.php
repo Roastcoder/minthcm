@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -562,9 +562,9 @@ class SugarView
                 $current_user->full_name == '' || !showFullName() ? $current_user->user_name : $current_user->full_name
             );
             $ss->assign("CURRENT_USER_ID", $current_user->id);
-            $ss->assign("CURRENT_USER_HAS_PHOTO", !empty($current_user->photo)); // mehar finance #63083
-            $ss->assign("CURRENT_USER_DATE_MODIFIED", $current_user->date_modified); //mehar finance #67873
-            $ss->assign("CURRENT_USER_FIRST_NAME", empty($current_user->first_name) ? $current_user->full_name : $current_user->first_name); //mehar finance #58625
+            $ss->assign("CURRENT_USER_HAS_PHOTO", !empty($current_user->photo)); // MintHCM #63083
+            $ss->assign("CURRENT_USER_DATE_MODIFIED", $current_user->date_modified); //MintHCM #67873
+            $ss->assign("CURRENT_USER_FIRST_NAME", empty($current_user->first_name) ? $current_user->full_name : $current_user->first_name); //MintHCM #58625
             // get the last viewed records
             $favorites = BeanFactory::getBean('Favorites');
             $favorite_records = $favorites->getCurrentUserSidebarFavorites();
@@ -574,13 +574,13 @@ class SugarView
             $history = $tracker->get_recently_viewed($current_user->id);
             $ss->assign("recentRecords", $this->processRecentRecords($history));
 
-        // mehar finance #100495 START
+        // MintHCM #100495 START
         $title = $this->bean->name ? $this->bean->name . " » " : '';
         $title .= $this->action == "EditView" && empty($this->bean->id) ? $app_strings['LNK_CREATE'] . " » " : '';
         $title .= $app_list_strings['moduleList'][$this->bean->module_name] ? $app_list_strings['moduleList'][$this->bean->module_name] . " » " : '';
         $title .= $app_strings['LBL_BROWSER_TITLE'];
         $ss->assign('TITLE', $title);
-        // mehar finance #100495 END
+        // MintHCM #100495 END
         }
 
         $bakModStrings = $mod_strings;
@@ -692,11 +692,11 @@ class SugarView
                 }
                 $extraTabs = array();
 
-                // mehar finance #102680 START
+                // MintHCM #102680 START
                 if($max_tabs < 8){
                     $max_tabs = 8;
                 }
-                // mehar finance #102680 END
+                // MintHCM #102680 END
 
                 // Split it in to the tabs that go across the top, and the ones that are on the extra menu.
                 if (count($topTabs) > $max_tabs) {

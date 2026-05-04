@@ -19,7 +19,7 @@ class ESSearchResults extends \SuiteCRM\Search\SearchResults {
             foreach ((array) $beans as $bean) {
                 $obj = BeanFactory::getBean($module, $bean);
 
-                // if a search found a bean but mehar finance does not, it could happens
+                // if a search found a bean but MintHCM does not, it could happens
                 // maybe the bean is deleted but elsasticsearch is not re-indexing yet.
                 // so at this point we trying to rebuild the index and try again to get bean:
                 if (! $obj) {

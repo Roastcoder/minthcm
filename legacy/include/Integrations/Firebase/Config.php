@@ -1,6 +1,6 @@
 <?php
 
-namespace mehar finance\Firebase;
+namespace MintHCM\Firebase;
 
 class Config
 {

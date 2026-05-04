@@ -4,7 +4,7 @@ namespace MintMCP\Tools;
 
 use Mcp\Types\ToolInputSchema;
 use Mcp\Types\CallToolResult;
-use mehar finance\Api\Controllers\Init\Module;
+use MintHCM\Api\Controllers\Init\Module;
 use MintMCP\Tools\Exceptions\ModuleNotAllowedException;
 
 class GetModuleNames extends AbstractMCPTool

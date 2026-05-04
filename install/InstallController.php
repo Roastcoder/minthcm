@@ -6,8 +6,8 @@ require '../legacy/MintCLI/vendor/autoload.php';
 require '../api/vendor/autoload.php';
 require './Installer.php';
 
-use mehar finance\MintCLI\Services\DatabaseService;
-use mehar finance\MintCLI\Services\ElasticsearchService;
+use MintHCM\MintCLI\Services\DatabaseService;
+use MintHCM\MintCLI\Services\ElasticsearchService;
 
 #[\AllowDynamicProperties]
 class InstallController

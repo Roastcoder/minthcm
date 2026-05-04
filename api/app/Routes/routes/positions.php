@@ -1,7 +1,7 @@
 <?php
 
-use mehar finance\Api\Controllers\PositionsController;
-use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
+use MintHCM\Api\Controllers\PositionsController;
+use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "get_competencies" => array(

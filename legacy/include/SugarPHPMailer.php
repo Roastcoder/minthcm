@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
 
@@ -48,9 +48,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
 }
 
 use PHPMailer\PHPMailer\PHPMailer;
-// mehar finance #110041 START
+// MintHCM #110041 START
 use PHPMailer\PHPMailer\OAuth;
-// mehar finance #110041 END
+// MintHCM #110041 END
 
 require_once 'include/OutboundEmail/OutboundEmail.php';
 
@@ -61,12 +61,12 @@ require_once 'include/OutboundEmail/OutboundEmail.php';
 #[\AllowDynamicProperties]
 class SugarPHPMailer extends PHPMailer
 {
-    // mehar finance #110041 START
+    // MintHCM #110041 START
     const ApiMap = [
         'Google' => 'GoogleEmail',
         'Microsoft' => 'MicrosoftEmail',
     ];
-    // mehar finance #110041 END
+    // MintHCM #110041 END
 
     /*
      * var OutboundEmail
@@ -124,12 +124,12 @@ class SugarPHPMailer extends PHPMailer
         $this->protocol = ($this->oe->mail_smtpssl == 1) ? 'ssl://' : $this->protocol;
         $this->SMTPAutoTLS = false;
 
-        // mehar finance #110041 START
+        // MintHCM #110041 START
         if ($this->oe->mail_authtype === 'oauth2') {
             $this->AuthType = 'XOAUTH2';
             $this->setOAuth($this->getOAuth2Config($this->oe->eapm_id));
         }
-        // mehar finance #110041 END
+        // MintHCM #110041 END
     }
 
 
@@ -220,7 +220,7 @@ class SugarPHPMailer extends PHPMailer
             return;
         }
 
-        // mehar finance #110041 START
+        // MintHCM #110041 START
         if ($authType === 'oauth2') {
             $this->isSMTP();
             $this->SMTPAuth = true;
@@ -233,7 +233,7 @@ class SugarPHPMailer extends PHPMailer
             $this->setOAuth($oauthConfig);
             return;
         }
-        // mehar finance #110041 END
+        // MintHCM #110041 END
 
         if ($authType === 'basic') {
             $this->SMTPAuth = true;
@@ -604,7 +604,7 @@ eoq;
         }
     }
 
-    // mehar finance #110041 START
+    // MintHCM #110041 START
     protected function getOAuth2Config($eapm_id)
     {
         if (empty($eapm_id)) {
@@ -639,5 +639,5 @@ eoq;
         $application = self::ApiMap[$application] ?? '';
         return ExternalAPIFactory::loadAPI($application, true);
     }
-    // mehar finance #110041 END
+    // MintHCM #110041 END
 } // end class definition

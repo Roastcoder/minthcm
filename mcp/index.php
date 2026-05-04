@@ -1,7 +1,7 @@
 <?php
 
 /**
- * mehar finance MCP entry-point
+ * MintHCM MCP entry-point
  * ──────────────────────
  */
 

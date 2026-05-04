@@ -1,5 +1,5 @@
 <?php
-namespace mehar finance\Data\ORM\Doctrine\MintTypes\Types;
+namespace MintHCM\Data\ORM\Doctrine\MintTypes\Types;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;

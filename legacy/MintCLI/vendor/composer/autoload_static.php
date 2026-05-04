@@ -36,7 +36,7 @@ class ComposerStaticInit1d5d9f991bac9dac7661dda070ddc4fa
         ),
         'M' => 
         array (
-            'mehar finance\\MintCLI\\' => 16,
+            'MintHCM\\MintCLI\\' => 16,
         ),
     );
 
@@ -81,7 +81,7 @@ class ComposerStaticInit1d5d9f991bac9dac7661dda070ddc4fa
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'mehar finance\\MintCLI\\' => 
+        'MintHCM\\MintCLI\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

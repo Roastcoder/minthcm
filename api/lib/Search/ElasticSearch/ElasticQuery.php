@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
- * Copyright (C) 2018-2024 mehar finance
+ * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
+ * Copyright (C) 2018-2024 MintHCM
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,23 +37,23 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
+ * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
  */
 
-namespace mehar finance\Lib\Search\ElasticSearch;
+namespace MintHCM\Lib\Search\ElasticSearch;
 
 use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use mehar finance\Data\BeanFactory;
-use mehar finance\Lib\Search\Base\SearchQuery;
-use mehar finance\Lib\Search\ElasticSearch\ElasticMapperParser;
-use mehar finance\Lib\Search\ElasticSearch\ElasticQueryOperatorsManager;
-use mehar finance\Lib\Search\ElasticSearch\ModulePrefixer;
-use mehar finance\Utils\ConstantsLoader;
-use mehar finance\Utils\CustomLoader;
-use mehar finance\Utils\LegacyConnector;
+use MintHCM\Data\BeanFactory;
+use MintHCM\Lib\Search\Base\SearchQuery;
+use MintHCM\Lib\Search\ElasticSearch\ElasticMapperParser;
+use MintHCM\Lib\Search\ElasticSearch\ElasticQueryOperatorsManager;
+use MintHCM\Lib\Search\ElasticSearch\ModulePrefixer;
+use MintHCM\Utils\ConstantsLoader;
+use MintHCM\Utils\CustomLoader;
+use MintHCM\Utils\LegacyConnector;
 
 class ElasticQuery extends SearchQuery
 {
@@ -299,10 +299,10 @@ class ElasticQuery extends SearchQuery
     protected function getACLClassForModule(string $module)
     {
         $variants = [
-            ['className' => 'mehar finance\Custom\Modules\\' . $module . '\\' . $module . 'ListACL', 'path' => "custom/modules/{$module}/{$module}ListACL.php"],
-            ['className' => 'mehar finance\Modules\\' . $module . '\\' . $module . 'ListACL', 'path' => "modules/{$module}/{$module}ListACL.php"],
-            ['className' => 'mehar finance\Custom\Lib\Search\ElasticSearch\CustomBaseListACL', 'path' => "lib/Search/ElasticSearch/CustomBaseListACL.php"],
-            ['className' => 'mehar finance\Lib\Search\ElasticSearch\BaseListACL', 'path' => "lib/Search/ElasticSearch/BaseListACL.php"],
+            ['className' => 'MintHCM\Custom\Modules\\' . $module . '\\' . $module . 'ListACL', 'path' => "custom/modules/{$module}/{$module}ListACL.php"],
+            ['className' => 'MintHCM\Modules\\' . $module . '\\' . $module . 'ListACL', 'path' => "modules/{$module}/{$module}ListACL.php"],
+            ['className' => 'MintHCM\Custom\Lib\Search\ElasticSearch\CustomBaseListACL', 'path' => "lib/Search/ElasticSearch/CustomBaseListACL.php"],
+            ['className' => 'MintHCM\Lib\Search\ElasticSearch\BaseListACL', 'path' => "lib/Search/ElasticSearch/BaseListACL.php"],
         ];
 
         foreach ($variants as $variant) {

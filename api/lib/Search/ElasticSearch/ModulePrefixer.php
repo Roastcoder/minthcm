@@ -1,8 +1,8 @@
 <?php
 
-namespace mehar finance\Lib\Search\ElasticSearch;
+namespace MintHCM\Lib\Search\ElasticSearch;
 
-use mehar finance\Lib\Search\ElasticSearch\ElasticMapperParser;
+use MintHCM\Lib\Search\ElasticSearch\ElasticMapperParser;
 
 class ModulePrefixer
 {
