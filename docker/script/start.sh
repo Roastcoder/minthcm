@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILE=/var/www/html/.initialized
+FILE=/var/www/MintHCM/legacy/config.php
 
 if [ -f "$FILE" ]; then
   # Run services
@@ -20,7 +20,7 @@ else
     exit 1
   fi
 
-  touch $FILE
+  # Start apache for installation if needed
   service apache2 start
 
   # Make the MintHCM installation request
