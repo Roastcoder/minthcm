@@ -98,11 +98,11 @@ class FreeTDSManager extends MssqlManager {
       if ( is_array($sql) ) {
          return $this->queryArray($sql, $dieOnError, $msg, $suppress);
       }
-      // MintHCM start
+      // mehar finance start
       if ( stristr(strtolower($sql), 'workschedules ') && ( stristr(strtolower($sql), 'update ') || stristr(strtolower($sql), 'insert ') ) ) {
          $GLOBALS['log']->dev('FreeTDS Query:' . $sql);
       }
-      // MintHCM end
+      // mehar finance end
       $sql = $this->_appendN($sql);
       return parent::query($sql, $dieOnError, $msg, $suppress, $keepResult);
    }

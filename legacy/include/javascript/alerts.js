@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */var AlertObj=function(){this.title='Alert';this.options={};this.options.body=' ';this.options.url_redirect='';this.options.target_module='';this.options.type='info';};var Alerts=function(){};Alerts.prototype.replaceMessages=[];Alerts.prototype.enable=function(){var alert=new AlertObj();if(!("Notification"in window)){alert.title=SUGAR.language.translate('app_strings','MSG_BROWSER_NOTIFICATIONS_UNSUPPORTED');Alerts.prototype.show(alert);return;}
 Notification.requestPermission(function(permission){if(permission==="granted"){alert.title=SUGAR.language.translate('app_strings','MSG_BROWSER_NOTIFICATIONS_ENABLED');}else{alert.title=SUGAR.language.translate('app_strings','MSG_BROWSER_NOTIFICATIONS_DISABLED');}
 Alerts.prototype.show(alert);});};Alerts.prototype.requestPermission=function(){if(!("Notification"in window)){return;}

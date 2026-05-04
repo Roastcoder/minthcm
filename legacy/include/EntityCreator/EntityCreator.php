@@ -5,10 +5,10 @@ require_once 'include/EntityCreator/EntityCreatorDataGenerator.php';
 
 class EntityCreator
 {
-    public const ENTITY_NAMESPACE = 'MintHCM\\Api\\Entities';
+    public const ENTITY_NAMESPACE = 'mehar finance\\Api\\Entities';
     private const ENTITY_FOLDER_PATH = '../api/app/Entities/';
 
-    public const REPOSITORY_FOLDER_PATH = "MintHCM\\Api\\Repositories\\";
+    public const REPOSITORY_FOLDER_PATH = "mehar finance\\Api\\Repositories\\";
 
     private const TPL_DIR_PATH = '/tpls';
 

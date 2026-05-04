@@ -8,11 +8,11 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -40,10 +40,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 namespace SuiteCRM\Search\ElasticSearch;
@@ -136,7 +136,7 @@ class ElasticSearchEngine extends SearchEngine
     *
     * @return array
     */
-    protected function createSearchParams(SearchQuery $query): array  //MintHCM
+    protected function createSearchParams(SearchQuery $query): array  //mehar finance
     {
        $options = $query->getOptions();
        if ($options['filter_by_module']) {
@@ -221,7 +221,7 @@ class ElasticSearchEngine extends SearchEngine
        return $params;
     }
 
-    protected function addBasicSearch($params, $query_string) //MintHCM
+    protected function addBasicSearch($params, $query_string) //mehar finance
     {
        if(!empty($query_string)){
          $query_string = str_replace('+', '', strtolower($query_string));
@@ -241,7 +241,7 @@ class ElasticSearchEngine extends SearchEngine
     }
  
 
-   protected function addPagination($params, $from, $size) //MintHCM
+   protected function addPagination($params, $from, $size) //mehar finance
    {
       if (isset($from) && isset($size)) {
          $from = (($from - 1)<0)? 1 :$from;
@@ -289,7 +289,7 @@ class ElasticSearchEngine extends SearchEngine
     *
     * @return array
     */
-   protected function runElasticSearch(array $params): array //MintHCM
+   protected function runElasticSearch(array $params): array //mehar finance
    {
         return $this->client->search($params);
    }
@@ -302,7 +302,7 @@ class ElasticSearchEngine extends SearchEngine
     *
     * @return array
     */
-    protected function parseHits(array $hits): array //MintHCM
+    protected function parseHits(array $hits): array //mehar finance
     {
         $hitsArray = $hits['hits']['hits'];
 

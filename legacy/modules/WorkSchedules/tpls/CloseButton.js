@@ -38,10 +38,10 @@ class CloseButton extends Button {
                 var planType = $('#type').val() || (this.getTimePanel().taskman._currentPlans.filter(function (i) {
                     return i.id == record_id
                 }))[0].type;
-                // MintHCM #111673 START
+                // mehar finance #111673 START
                 //var dontCheck = [ 'holiday', 'sick', 'occasional_leave', 'overtime', 'excused_absence', 'leave_at_request'].indexOf( planType ) >= 0;
                 var dontCheck = ['holiday', 'sick', 'occasional_leave', 'overtime', 'excused_absence', 'leave_at_request', 'child_care'].indexOf(planType) >= 0;
-                // MintHCM #111673 END
+                // mehar finance #111673 END
                 if (dontCheck || this.checkIfCanBeClosed()) {
                     this.closePlan();
                 }

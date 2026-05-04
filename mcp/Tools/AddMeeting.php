@@ -18,7 +18,7 @@ class AddMeeting extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Adds a new meeting to the MintHCM system';
+        return 'Adds a new meeting to the mehar finance system';
     }
 
     public function getInputSchema(): ToolInputSchema
@@ -212,7 +212,7 @@ class AddMeeting extends AbstractMCPTool
         $resultText .= "Join URL: " . ($meeting->join_url ?? '') . "\n";
         $resultText .= "Creator: " . ($meeting->creator ?? $GLOBALS['current_user']->user_name) . "\n";
         $resultText .= "Modified: " . DateTimeConversion::toUserTZ($meeting->date_modified) . "\n";
-        $resultText .= "MintHCM URL: " . $this->getRecordUrl('Meetings', $meetingId) . "\n";
+        $resultText .= "mehar finance URL: " . $this->getRecordUrl('Meetings', $meetingId) . "\n";
 
         return $resultText;
     }

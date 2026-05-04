@@ -1,21 +1,21 @@
 <?php
 namespace Api\V8\OAuth2\Grant;
 
-use BeanFactory;  // MintHCM #136592
+use BeanFactory;  // mehar finance #136592
 use League\OAuth2\Server\Entities\ClientEntityInterface;
-use League\OAuth2\Server\Grant\PasswordGrant; // MintHCM #131001
+use League\OAuth2\Server\Grant\PasswordGrant; // mehar finance #131001
 use Psr\Http\Message\ServerRequestInterface;
 
 #[\AllowDynamicProperties]
 class MobileGrant extends PasswordGrant
 {
-    private const APP_TOKEN_LAST_USED_INTERVAL = '-60 minutes'; // MintHCM #168518
+    private const APP_TOKEN_LAST_USED_INTERVAL = '-60 minutes'; // mehar finance #168518
     public function getIdentifier()
     {
         return 'mobile';
     }
 
-    // MintHCM #131001 start
+    // mehar finance #131001 start
     public function canRespondToAccessTokenRequest(ServerRequestInterface $request)
     {
         $requestParameters = (array) $request->getParsedBody();
@@ -25,9 +25,9 @@ class MobileGrant extends PasswordGrant
         && array_key_exists('client_id', $requestParameters)
         && $requestParameters['client_id'] == 'mobile';
     }
-    // MintHCM #131001 end
+    // mehar finance #131001 end
 
-    // MintHCM #136592 start
+    // mehar finance #136592 start
     protected function validateUser(ServerRequestInterface $request, ClientEntityInterface $client)
     {
         $user = parent::validateUser($request, $client);
@@ -54,6 +54,6 @@ class MobileGrant extends PasswordGrant
         }
         return $user;
     }
-    // MintHCM #136592 end
+    // mehar finance #136592 end
 
 }

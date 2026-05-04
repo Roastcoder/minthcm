@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 *}
@@ -442,9 +442,9 @@
                                                                                                         </li>
                                                                                                     {/if}
                                                                                                 {/foreach}
-                                                                                                {* MintHCM #102680 START *}
+                                                                                                {* mehar finance #102680 START *}
                                                                                                 {if count($moduleExtraMenu) > 0}
-                                                                                                {* MintHCM #102680 END *}
+                                                                                                {* mehar finance #102680 END *}
                                                                                                     <li class="topnav overflow-toggle-menu">
                                                                                                         <span class="notCurrentTabLeft">&nbsp;</span>
                                                                                                         <span class="dropdown-toggle headerlinks notCurrentTab"><a href="#">{$APP.LBL_MORE}</a></span>
@@ -458,9 +458,9 @@
                                                                                                             {/foreach}
                                                                                                         </ul>
                                                                                                     </li>
-                                                                                                {* MintHCM #102680 START *}
+                                                                                                {* mehar finance #102680 START *}
                                                                                                 {/if}
-                                                                                                {* MintHCM #102680 END *}
+                                                                                                {* mehar finance #102680 END *}
                                                                                             </ul>
                                                                                             <div class="hidden hidden-actions"></div>
                                                                                             {* Hide nav items when the window size is too small to display them *}
@@ -675,7 +675,7 @@
 
                                                                                                         <button id="usermenucollapsed" class="dropdown-toggle btn btn-default usermenucollapsed" data-toggle="dropdown"
                                                                                                                 aria-expanded="true">
-                                                                                                            {* MintHCM #63083 START *}
+                                                                                                            {* mehar finance #63083 START *}
                                                                                                             {if $CURRENT_USER_HAS_PHOTO == false}
                                                                                                                 <span class="suitepicon suitepicon-action-current-user"></span>
                                                                                                             {else}
@@ -683,7 +683,7 @@
                                                                                                                     <img src="index.php?entryPoint=download&id={$CURRENT_USER_ID}_photo&type=Users&time={$CURRENT_USER_DATE_MODIFIED}" />
                                                                                                                 </span>
                                                                                                             {/if}
-                                                                                                            {* MintHCM #63083 END *}
+                                                                                                            {* mehar finance #63083 END *}
                                                                                                         </button>
                                                                                                         <ul class="dropdown-menu user-dropdown user-menu" role="menu" aria-labelledby="dropdownMenu2">
                                                                                                             <li role="presentation">
@@ -780,18 +780,18 @@
                                                                                                     </li>
                                                                                                     <li id="globalLinks" class="dropdown nav navbar-nav globalLinks-desktop">
                                                                                                         <button id="with-label" class="dropdown-toggle user-menu-button" title="{$CURRENT_USER}"data-toggle="dropdown" aria-expanded="true">
-                                                                                                            {* MintHCM #63083 START *}
+                                                                                                            {* mehar finance #63083 START *}
                                                                                                             {if $CURRENT_USER_HAS_PHOTO == false}
                                                                                                                 <span class="suitepicon suitepicon-action-current-user"></span>
                                                                                                             {else}
                                                                                                                 <span class="suitepicon current-user-avatar" >
-                                                                                                                    {* MintHCM #69752 START *}
+                                                                                                                    {* mehar finance #69752 START *}
                                                                                                                     {* <img src="index.php?entryPoint=download&id={$CURRENT_USER_ID}_photo&type=Users" /> *}
                                                                                                                     <img src="index.php?entryPoint=download&id={$CURRENT_USER_ID}_photo&type=Users&time={$CURRENT_USER_DATE_MODIFIED}" />
-                                                                                                                    {* MintHCM #69752 END *}
+                                                                                                                    {* mehar finance #69752 END *}
                                                                                                                 </span>
                                                                                                             {/if}
-                                                                                                            {* MintHCM #63083 END *}
+                                                                                                            {* mehar finance #63083 END *}
                                                                                                             <span class="globallabel-user">{$CURRENT_USER_FIRST_NAME}</span>
                                                                                                             <span class="suitepicon suitepicon-action-caret"></span>
                                                                                                         </button>
@@ -864,17 +864,17 @@
                                                                                                             {/foreach}
                                                                                                             </div>
 
-                                                                                                            <!-- MintHCM #100495 START -->
+                                                                                                            <!-- mehar finance #100495 START -->
                                                                                                             
                                                                                                             <div id="recentlyViewedSidebar" class="recentlyViewedSidebar">
    
-                                                                                                            <!-- MintHCM #100495 END -->
+                                                                                                            <!-- mehar finance #100495 END -->
                                                                                                                 {if is_array($recentRecords) && count($recentRecords) > 0}
                                                                                                                     <h2 class="recent_h3">{$APP.LBL_LAST_VIEWED}</h2>
                                                                                                                 {/if}
-                                                                                                                <!-- MintHCM #100495 START -->
+                                                                                                                <!-- mehar finance #100495 START -->
                                                                                                                 <div class='hiddenScroll'>
-                                                                                                                <!-- MintHCM #100495 END -->
+                                                                                                                <!-- mehar finance #100495 END -->
                                                                                                                 <ul class="nav nav-pills nav-stacked">
                                                                                                                     {foreach from=$recentRecords item=item name=lastViewed}
                                                                                                                         {if $item.module_name != 'Emails' && $item.module_name != 'InboundEmail' && $item.module_name != 'EmailAddresses'}<!--Check to ensure that recently viewed emails or email addresses are not displayed in the recently viewed panel.-->
@@ -900,11 +900,11 @@
                                                                                                                         {/if}
                                                                                                                     {/foreach}
                                                                                                                 </ul>
-                                                                                                                <!-- MintHCM #100495 START -->
+                                                                                                                <!-- mehar finance #100495 START -->
                                                                                                                 </div>
-                                                                                                                <!-- MintHCM #100495 END -->
+                                                                                                                <!-- mehar finance #100495 END -->
                                                                                                             </div>
-                                                                                                            <!-- MintHCM #100495 START -->
+                                                                                                            <!-- mehar finance #100495 START -->
                                                                                                             <!--
                                                                                                             <div id="favoritesSidebar" class="favoritesSidebar">
                                                                                                             -->
@@ -915,18 +915,18 @@
                                                                                                                     height:100%;
                                                                                                                 {/if}
                                                                                                             ">
-                                                                                                            <!-- MintHCM #100495 END -->
+                                                                                                            <!-- mehar finance #100495 END -->
                                                                                                                 {if is_array($favoriteRecords) && count($favoriteRecords) > 0}
                                                                                                                     <h2 class="recent_h3">{$APP.LBL_FAVORITES}</h2>
                                                                                                                 {/if}
-                                                                                                                <!-- MintHCM #100495 START -->
+                                                                                                                <!-- mehar finance #100495 START -->
                                                                                                                 <div class='hiddenScroll'>
-                                                                                                                <!-- MintHCM #100495 END -->
+                                                                                                                <!-- mehar finance #100495 END -->
                                                                                                                 <ul class="nav nav-pills nav-stacked">
                                                                                                                     {foreach from=$favoriteRecords item=item name=lastViewed}
-                                                                                                                        <!-- MintHCM #100495 START -->
+                                                                                                                        <!-- mehar finance #100495 START -->
                                                                                                                         {if $smarty.foreach.lastViewed.index <= 20}
-                                                                                                                        <!-- MintHCM #100495 END -->
+                                                                                                                        <!-- mehar finance #100495 END -->
                                                                                                                             <div class="recently_viewed_link_container_sidebar">
                                                                                                                                 <li class="recentlinks" role="presentation">
                                                                                                                                     {* MINTHCM  #100529 START *}
@@ -944,13 +944,13 @@
                                                                                                                         {/if}
                                                                                                                     {/foreach}
                                                                                                                 </ul>
-                                                                                                            <!-- MintHCM #100495 START -->
+                                                                                                            <!-- mehar finance #100495 START -->
                                                                                                             </div>
-                                                                                                            <!-- MintHCM #100495 END -->
+                                                                                                            <!-- mehar finance #100495 END -->
                                                                                                             </div>
                                                                                                         </div>
 
-                                                                                                        {* MintHCM #100495 START *}
+                                                                                                        {* mehar finance #100495 START *}
                                                                                                         {literal}
                                                                                                             <style type="text/css">
                                                                                                                 div.sidebar {
@@ -987,7 +987,7 @@
                                                                                                                 }
                                                                                                             </style>
                                                                                                         {/literal}
-                                                                                                        {* MintHCM #100495 END *}
+                                                                                                        {* mehar finance #100495 END *}
 
                                                                                                         <!--</div>-->
                                                                                                     </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\SystemRequirements;
+namespace mehar finance\MintCLI\SystemRequirements;
 
 #[\AllowDynamicProperties]
 class SystemRequirements

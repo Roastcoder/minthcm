@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Firebase;
+namespace mehar finance\Firebase;
 
 require_once 'vendor/google/apiclient-services/autoload.php';
 

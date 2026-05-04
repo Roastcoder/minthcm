@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */function clearInboundSettings(){var url=document.getElementById('server_url');var user=document.getElementById('email_user');var prot=document.getElementById('protocol');var pass=document.getElementById('email_password');var port=document.getElementById('port');var inbox=document.getElementById('mailbox');url.value='';user.value='';pass.value='';port.value='';inbox.value='';for(i=0;i<prot.options.length;i++){if(prot.options[i].value==''){prot.options[i].selected=true;}}}
 function checkInboundEmailSettings(){var url=document.getElementById('server_url');var user=document.getElementById('email_user');var prot=document.getElementById('protocol');var pass=document.getElementById('email_password');var port=document.getElementById('port');var inbox=document.getElementById('mailbox');var doCheck=false;var IEAlert=SUGAR.language.get('Users','ERR_IE_MISSING_REQUIRED');if(url.value!=''){doCheck=true;}else if(user.value!=''){doCheck=true;}else if(prot.value!=''){doCheck=true;}else if(pass.value!=''){doCheck=true;}else if(port.value!=''){doCheck=true;}
 if(doCheck==true){if(url.value==''||url.value=='undefined'){alert(IEAlert);return false;}else if(user.value==''||user.value=='undefined'){alert(IEAlert);return false;}else if(prot.value==''||prot.value=='undefined'){alert(IEAlert);return false;}else if(pass.value==''||pass.value=='undefined'){alert(IEAlert);return false;}else if(port.value==''||port.value=='undefined'){alert(IEAlert);return false;}else if(inbox.value==''||inbox.value=='undefined'){alert(IEAlert);return false;}}

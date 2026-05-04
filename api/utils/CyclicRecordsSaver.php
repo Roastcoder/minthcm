@@ -1,11 +1,11 @@
 <?php
 
-namespace MintHCM\Utils;
+namespace mehar finance\Utils;
 
 use DateInterval;
 use DateTime;
-use MintHCM\Data\BeanFactory;
-use MintHCM\Data\MintBean;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Data\MintBean;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 
@@ -90,7 +90,7 @@ class CyclicRecordsSaver
     protected function getEntityClassName(): string
     {
         $moduleName = $this->bean->module_name;
-        return "MintHCM\\Api\\Entities\\{$moduleName}";
+        return "mehar finance\\Api\\Entities\\{$moduleName}";
     }
 
     protected function validate(): void

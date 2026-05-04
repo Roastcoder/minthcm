@@ -115,7 +115,7 @@ if (!window.TWSDashlet) {
                 } else {
                     var planName = _this.getCurrentPlanValue('name') || '';
 
-                    MintHCMDynamicPopupView.init(        
+                    mehar financeDynamicPopupView.init(        
                         SUGAR.language.get('app_strings', 'LBL_WORKSCHEDULES'),
                         'SpentTime',
                         "",

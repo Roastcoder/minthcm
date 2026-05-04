@@ -38,7 +38,7 @@ class Kanban {
             };
         }
 
-        MintHCMDynamicPopupView.init(
+        mehar financeDynamicPopupView.init(
             viewTools.language.get(this.module, 'LBL_MODULE_NAME'),
             this.module,
             item.id,
@@ -51,7 +51,7 @@ class Kanban {
         );
     }
     handleItemAdd (status) {
-        MintHCMDynamicPopupView.init(
+        mehar financeDynamicPopupView.init(
             viewTools.language.get(this.module, 'LBL_MODULE_NAME'),
             this.module,
             null,
@@ -74,7 +74,7 @@ class Kanban {
         }
     }
     showPopupViewWithRequiredFields (itemID, oldOrder, newOrder, oldStatus, newStatus, fieldsToFill) {
-        MintHCMDynamicPopupView.init(
+        mehar financeDynamicPopupView.init(
             viewTools.language.get(this.module, 'LBL_MODULE_NAME'),
             this.module,
             itemID,
@@ -91,16 +91,16 @@ class Kanban {
             fieldsToFill[0],
             function () {
                 this.getKanbanRequiredFieldsErrorMessage(fieldsToFill);
-                let form = document.getElementById(MintHCMDynamicPopupView.formname);
+                let form = document.getElementById(mehar financeDynamicPopupView.formname);
                 form[this.defs.columns_field].value = newStatus;
-                $('#' + MintHCMDynamicPopupView.popup.id + '_close').click(
+                $('#' + mehar financeDynamicPopupView.popup.id + '_close').click(
                     this.restoreAfterError.bind(this, oldOrder, newOrder, oldStatus, newStatus)
                 );
-                $('#' + MintHCMDynamicPopupView.popup.id + ' input#' + MintHCMDynamicPopupView.popup.buttons[1].text).click(
+                $('#' + mehar financeDynamicPopupView.popup.id + ' input#' + mehar financeDynamicPopupView.popup.buttons[1].text).click(
                     this.restoreAfterError.bind(this, oldOrder, newOrder, oldStatus, newStatus)
                 );
                 viewTools.form.calculateSelectors();
-                MintHCMDynamicPopupView.save.call(MintHCMDynamicPopupView);
+                mehar financeDynamicPopupView.save.call(mehar financeDynamicPopupView);
             }.bind(this)
         )
     }

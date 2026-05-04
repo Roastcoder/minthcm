@@ -16,11 +16,9 @@ services:
     stdin_open: true
     env_file:
       - .env
-      - minthcm_config:/var/www/MintHCM/legacy/config.php
-      - minthcm_config_override:/var/www/MintHCM/legacy/config_override.php
-      - minthcm_upload:/var/www/MintHCM/legacy/upload
-      - minthcm_custom:/var/www/MintHCM/legacy/custom
-      - minthcm_htaccess:/var/www/MintHCM/legacy/.htaccess
+    volumes:
+      - minthcm_config:/var/www/html/MintHCM/config
+      - minthcm_upload:/var/www/html/MintHCM/legacy/upload
       - minthcm_cron:/var/spool/cron/crontabs
     networks:
       minthcm:

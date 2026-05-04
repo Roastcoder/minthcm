@@ -260,17 +260,17 @@ if (!window.TimePanel) { // avoid multi-declaration
             start.setMinutes(start.getMinutes() + timeline.offset);
             end.setMinutes(end.getMinutes() + timeline.offset);
             var minutes = (+end - +start) / 1000 / 60;
-            /* MintHCM #93842 START */
+            /* mehar finance #93842 START */
             var dislpayed_minutes = minutes % 60 < 10 ? '0' + minutes % 60 : minutes % 60;
-            /* MintHCM #93842 END */
+            /* mehar finance #93842 END */
             var pos = (+start - +timeline.start) / 1000 / 60;
             var left = (pos) * +div.toFixed(2);
             if (!i.$el) {
                 var css_classes = this.getTimeCellCssClasses(i);
-                /* MintHCM #93842 START */
+                /* mehar finance #93842 START */
                 /* i.$el = $('<span class="' + css_classes + '">' + i.spent_time + '</span>'); */
                 i.$el = $('<span class="' + css_classes + '">' + Math.round(minutes / 60 - 0.5) + ':' + dislpayed_minutes + '</span>');
-                /* MintHCM #93842 END */
+                /* mehar finance #93842 END */
                 var task_number_desc = '';
                 if (i.spendtime_projecttask_id != undefined && i.spendtime_projecttask_id != '') {
                     task_number_desc = ' #' + i.spendtime_projecttask_id;
@@ -280,7 +280,7 @@ if (!window.TimePanel) { // avoid multi-declaration
             }
 
             i.$el.click(function () {
-                MintHCMDynamicPopupView.init(
+                mehar financeDynamicPopupView.init(
                     SUGAR.language.get('app_strings', 'LBL_WORKSCHEDULES'),
                     'SpentTime',
                     i.id,

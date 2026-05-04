@@ -1,12 +1,12 @@
 <?php
 
-namespace MintHCM\Data\ORM\Doctrine\MintRepository;
+namespace mehar finance\Data\ORM\Doctrine\MintRepository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMInvalidArgumentException;
-use MintHCM\Data\ORM\Doctrine\MintEntity\MintEntity;
-use MintHCM\Data\ORM\Doctrine\MintRepository\Traits\EntitiesListTrait;
-use MintHCM\Data\ORM\Doctrine\MintRepository\Traits\LegacyActionsTrait;
+use mehar finance\Data\ORM\Doctrine\MintEntity\MintEntity;
+use mehar finance\Data\ORM\Doctrine\MintRepository\Traits\EntitiesListTrait;
+use mehar finance\Data\ORM\Doctrine\MintRepository\Traits\LegacyActionsTrait;
 
 class MintEntityRepository extends EntityRepository
 {

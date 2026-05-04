@@ -2,7 +2,7 @@
     <LoadingScreen v-if="store.isInitialLoading" />
     <div v-else class="install-view">
         <div class="install-view-title">
-            <h1>MintHCM Setup Wizard</h1>
+            <h1>mehar finance Setup Wizard</h1>
             <span>Version {{ store.version }}</span>
         </div>
         <div class="install-view-container">

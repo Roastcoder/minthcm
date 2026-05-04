@@ -1,10 +1,10 @@
 <?php
 
-namespace MintHCM\MintCLI\Commands;
+namespace mehar finance\MintCLI\Commands;
 
-use MintHCM\MintCLI\Services\DatabaseService;
-use MintHCM\MintCLI\Services\DemoDataCommandService;
-use MintHCM\MintCLI\Services\VardefsService;
+use mehar finance\MintCLI\Services\DatabaseService;
+use mehar finance\MintCLI\Services\DemoDataCommandService;
+use mehar finance\MintCLI\Services\VardefsService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -57,7 +57,7 @@ class DemoDataDumpCommand extends Command
     {
         $QH = $this->getHelper('question');
 
-        $question = new \MintHCM\MintCLI\Questions\WithFiles($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\WithFiles($QH, $input, $output);
         $withFiles = $question->ask();
 
         return [

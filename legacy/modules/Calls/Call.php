@@ -1,6 +1,6 @@
 <?php
 
-// MintHCM #54195
+// mehar finance #54195
 
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -98,9 +98,9 @@ class Call extends SugarBean {
    public $table_name = "calls";
    public $rel_users_table = "calls_users";
    public $rel_contacts_table = "calls_contacts";
-   // MintHCM #54195 Start
+   // mehar finance #54195 Start
    public $rel_candidates_table = "calls_candidates";
-   // MintHCM #54195 End
+   // mehar finance #54195 End
    public $module_dir = 'Calls';
    public $object_name = "Call";
    public $new_schema = true;
@@ -274,7 +274,7 @@ class Call extends SugarBean {
                      unset($reminderData[$r]['invitees'][$i]);
                   }
                   break;
-               // MintHCM #54195 Start
+               // mehar finance #54195 Start
                case "Candidates":
                   if ( in_array($invitee['module_id'], $this->candidates_arr) === false ) {
                      // add to uninvited
@@ -283,7 +283,7 @@ class Call extends SugarBean {
                      unset($reminderData[$r]['invitees'][$i]);
                   }
                   break;
-               // MintHCM #54195 End
+               // mehar finance #54195 End
             }
          }
       }
@@ -543,12 +543,12 @@ class Call extends SugarBean {
          $xtpl->assign("ACCEPT_URL", $sugar_config['site_url'] .
             '/index.php?entryPoint=acceptDecline&module=Calls&contact_id=' . $call->current_notify_user->id . '&record=' . $call->id);
       }
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       elseif ( strtolower(get_class($call->current_notify_user)) == 'candidates' ) {
          $xtpl->assign("ACCEPT_URL", $sugar_config['site_url'] .
             '/index.php?entryPoint=acceptDecline&module=Calls&candidate_id=' . $call->current_notify_user->id . '&record=' . $call->id);
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
       else {
          $xtpl->assign("ACCEPT_URL", $sugar_config['site_url'] .
             '/index.php?entryPoint=acceptDecline&module=Calls&user_id=' . $call->current_notify_user->id . '&record=' . $call->id);
@@ -629,13 +629,13 @@ class Call extends SugarBean {
          $data_values = array('accept_status' => $status);
          $this->set_relationship($this->rel_contacts_table, $relate_values, true, true, $data_values);
       }
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       else if ( $user->object_name == 'Candidates' ) {
          $relate_values = array('candidate_id' => $user->id, 'call_id' => $this->id);
          $data_values = array('accept_status' => $status);
          $this->set_relationship($this->rel_candidates_table, $relate_values, true, true, $data_values);
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
    }
 
    public function get_notification_recipients() {
@@ -653,7 +653,7 @@ class Call extends SugarBean {
          $this->users_arr = array();
       }
 
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       if ( !is_array($this->candidates_arr) ) {
          $this->candidates_arr = array();
       }
@@ -664,7 +664,7 @@ class Call extends SugarBean {
          $GLOBALS['log']->info("Notifications: recipient is $notify_user->new_assigned_user_name");
          $list[$notify_user->id] = $notify_user;
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
 
       foreach ( $this->users_arr as $user_id ) {
          $notify_user = BeanFactory::newBean('Users');

@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Api\Controllers;
+namespace mehar finance\Api\Controllers;
 
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');

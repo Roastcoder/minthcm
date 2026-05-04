@@ -91,13 +91,13 @@ generateAppraisalDialogBox = {
        } );
     },
      showInfoPopup(message) {
-         MintHCMPopup(
+         mehar financePopup(
          '', 
          message, 
          [
              {
                  text: SUGAR.language.languages.app_strings['LBL_OK'],
-                 click: () => { MintHCMPopup.close() }
+                 click: () => { mehar financePopup.close() }
              }
          ],
          {}

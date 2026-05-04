@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 #[\AllowDynamicProperties]
@@ -95,18 +95,18 @@ class EmailMarketing extends SugarBean
         $timedate = TimeDate::getInstance();
 
         $userTimeZone = $current_user->getPreference('timezone');
-        //MintHCM #74238 START
+        //mehar finance #74238 START
         if (!empty($userTimeZone)) {
-            //MintHCM #74238 END
+            //mehar finance #74238 END
             $timeZone = new DateTimeZone($userTimeZone);
 
             if ($dateTime = DateTime::createFromFormat($current_user->getPreference('datef') . ' ' . $current_user->getPreference('timef'), $this->date_start, $timeZone)) {
                 $dateStart = $timedate->asDb($dateTime);
                 $this->date_start = $dateStart;
             }
-            //MintHCM #74238 START
+            //mehar finance #74238 START
         }
-        //MintHCM #74238 END
+        //mehar finance #74238 END
         return parent::save($check_notify);
     }
 

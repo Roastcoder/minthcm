@@ -20,7 +20,7 @@ class CountRecords extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Count the number of records in a MintHCM module. Always use get_module_fields first if you are unsure about the available fields for filtering.';
+        return 'Count the number of records in a mehar finance module. Always use get_module_fields first if you are unsure about the available fields for filtering.';
     }
 
     public function getInputSchema(): ToolInputSchema

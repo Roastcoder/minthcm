@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Services;
+namespace mehar finance\MintCLI\Services;
 
 use Configurator;
 use LanguageManager;

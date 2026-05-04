@@ -12,11 +12,11 @@ class Filter
     public const OP_LT = '<';
     public const OP_LTE = '<=';
     public const OP_LIKE = 'LIKE';
-    // MintHCM Start #84318
+    // mehar finance Start #84318
     public const OP_NOT_LIKE = 'NOT LIKE';
     public const OP_IN = 'IN';
     public const OP_NOT_IN = 'NOT IN';
-    // MintHCM End #84318
+    // mehar finance End #84318
 
     public const OP_AND = 'AND';
     public const OP_OR = 'OR';
@@ -83,7 +83,7 @@ class Filter
                     $tableName,
                     $field,
                     constant(sprintf('%s::OP_%s', self::class, strtoupper($op))),
-                    $this->parseValues($op, $value) // MintHCM #84318
+                    $this->parseValues($op, $value) // mehar finance #84318
                 );
             }
         }
@@ -136,7 +136,7 @@ class Filter
         }
     }
 
-    // MintHCM Start #84318
+    // mehar finance Start #84318
     protected function parseValues($operator, $value)
     {
         switch ($operator) {
@@ -146,5 +146,5 @@ class Filter
         }
         return $this->db->quoted($value);
     }
-    // MintHCM End #84318
+    // mehar finance End #84318
 }

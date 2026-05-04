@@ -1,8 +1,8 @@
 <?php
 
-use MintHCM\Lib\MintLogic\Formula;
-use MintHCM\Lib\MintLogic\Hook;
-use MintHCM\Lib\MintLogic\Validators\IsUnique;
+use mehar finance\Lib\MintLogic\Formula;
+use mehar finance\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Validators\IsUnique;
 
 return [
     'bean' => [

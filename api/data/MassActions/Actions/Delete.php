@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Data\MassActions\Actions;
+namespace mehar finance\Data\MassActions\Actions;
 
-use MintHCM\Data\MassActions\MassAction;
+use mehar finance\Data\MassActions\MassAction;
 
 class Delete extends MassAction
 {

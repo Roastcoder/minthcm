@@ -1,6 +1,6 @@
 <?php
 
-// MintHCM #54195
+// mehar finance #54195
 
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -46,9 +46,9 @@ if ( !defined('sugarEntry') || !sugarEntry ) {
  #[\AllowDynamicProperties]
 class Meeting extends SugarBean {
 
-   // MintHCM #44718 START
+   // mehar finance #44718 START
    private static $repeatSaveRoudTripCounter = 0;
-   // MintHCM #44718 END
+   // mehar finance #44718 END
    // Stored fields
    public $id;
    public $date_entered;
@@ -100,9 +100,9 @@ class Meeting extends SugarBean {
    public $table_name = "meetings";
    public $rel_users_table = "meetings_users";
    public $rel_contacts_table = "meetings_contacts";
-   // MintHCM #54195 Start
+   // mehar finance #54195 Start
    public $rel_candidates_table = "meetings_candidates";
-   // MintHCM #54195 End
+   // mehar finance #54195 End
    public $module_dir = "Meetings";
    public $object_name = "Meeting";
    public $importable = true;
@@ -250,13 +250,13 @@ class Meeting extends SugarBean {
 
       $return_id = parent::save($check_notify);
 
-      // MintHCM #111604 start
+      // mehar finance #111604 start
       // dev note: whole condition should be moved to new frontend API in Mint4 in order to separate Controllers and Model
       if ( $this->shouldBeProcessedApi() ) {
         $this->createRelationshipFromApi();
         $this->saveRepeatlyApi();
       }
-      // MintHCM #111604 end
+      // mehar finance #111604 end
 
       if ($this->status != $bean->fetched_row['status'] && $this->status == 'Held') {
          $this->closeRelatedTraining();
@@ -264,9 +264,9 @@ class Meeting extends SugarBean {
          
       if ( $this->update_vcal ) {
          vCal::cache_sugar_vcal($current_user);
-         // MintHCM start
+         // mehar finance start
          self::updateRelatedInvites($return_id);
-         // MintHCM end
+         // mehar finance end
       }
 
       if ( isset($_REQUEST['reminders_data']) && !self::$remindersInSaving || isset($_REQUEST['reminders_data']) && empty($this->saving_reminders_data) ) {
@@ -342,7 +342,7 @@ class Meeting extends SugarBean {
                      unset($reminderData[$r]['invitees'][$i]);
                   }
                   break;
-               // MintHCM #54195 Start
+               // mehar finance #54195 Start
                case "Candidates":
                   if ( in_array($invitee['module_id'], $this->candidates_arr) === false ) {
                      // add to uninvited
@@ -351,7 +351,7 @@ class Meeting extends SugarBean {
                      unset($reminderData[$r]['invitees'][$i]);
                   }
                   break;
-               // MintHCM #54195 End
+               // mehar finance #54195 End
             }
          }
       }
@@ -370,13 +370,13 @@ class Meeting extends SugarBean {
 
       if ( $this->update_vcal ) {
          vCal::cache_sugar_vcal($current_user);
-         // MintHCM start
+         // mehar finance start
          self::updateRelatedInvites($id);
-         // MintHCM end
+         // mehar finance end
       }
    }
 
-   // MintHCM start
+   // mehar finance start
 
    public static function updateRelatedInvites($meeting_id) {
       $db = DBManagerFactory::getInstance();
@@ -393,7 +393,7 @@ class Meeting extends SugarBean {
       }
    }
 
-   // MintHCM end
+   // mehar finance end
 
    public function get_summary_text() {
         return (string)$this->name;
@@ -569,10 +569,10 @@ class Meeting extends SugarBean {
          if ( empty($action) ) {
             $action = "index";
          }
-         // MintHCM start #36257,#122649
+         // mehar finance start #36257,#122649
          $setCompleteUrl = "<a id='meeting_{$this->id}' onclick='SUGAR.util.closeActivityPanel.show(\"{$this->module_dir}\",\"{$this->id}\",\"Held\",\"listview\",\"1\", this);'>";
          //$setCompleteUrl = "<a id='{$this->id}' onclick='SUGAR.util.closeActivityPanel.show(\"{$this->module_dir}\",\"{$this->id}\",\"Held\",\"listview\",\"1\");'>";
-         // MintHCM end #36257,#122649
+         // mehar finance end #36257,#122649
          if ( $this->ACLAccess('edit') ) {
             $meeting_fields['SET_COMPLETE'] = $setCompleteUrl . "<span class='suitepicon suitepicon-action-clear'></span></a></b>";
          } else {
@@ -657,12 +657,12 @@ class Meeting extends SugarBean {
             $meetingCurrentNotifyUserId . '&record=' .
             $meetingId);
       }
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       elseif ( strtolower(get_class($meeting->current_notify_user)) == 'candidates' ) {
          $xtpl->assign("ACCEPT_URL", $sugar_config['site_url'] .
             '/index.php?entryPoint=acceptDecline&module=Meetings&candidate_id=' . $meeting->current_notify_user->id . '&record=' . $meeting->id);
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
       else {
          $xtpl->assign("ACCEPT_URL", $sugar_config['site_url'] .
             '/index.php?entryPoint=acceptDecline&module=Meetings&user_id=' .
@@ -803,13 +803,13 @@ class Meeting extends SugarBean {
             vCal::cache_sugar_vcal($user);
          }
       }
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       else if ( $user->object_name == 'Candidates' ) {
          $relate_values = array('candidate_id' => $user->id, 'meeting_id' => $this->id);
          $data_values = array('accept_status' => $status);
          $this->set_relationship($this->rel_candidates_table, $relate_values, true, true, $data_values);
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
    }
 
    public function get_notification_recipients() {
@@ -823,34 +823,34 @@ class Meeting extends SugarBean {
          $this->users_arr = array();
       }
 
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       if ( !is_array($this->candidates_arr) ) {
          $this->candidates_arr = array();
       }
 
       foreach ( $this->candidates_arr as $candidate_id ) {
          $notify_user = BeanFactory::getBean('Candidates', $candidate_id);
-         // MintHCM #129887 Start
+         // mehar finance #129887 Start
          if (empty($notify_user->id)) {
             $GLOBALS['log']->fatal("Missing candidate {$candidate_id} in Meeting::get_notification_recipients");
             continue;
          }
-         // MintHCM #129887 End
+         // mehar finance #129887 End
          $notify_user->new_assigned_user_name = $notify_user->full_name;
          $GLOBALS['log']->info("Notifications: recipient is $notify_user->new_assigned_user_name");
          $list[$notify_user->id] = $notify_user;
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
 
       foreach ( $this->users_arr as $user_id ) {
         $notify_user = BeanFactory::newBean('Users');
          $notify_user->retrieve($user_id);
-         // MintHCM #129887 Start
+         // mehar finance #129887 Start
          if (empty($notify_user->id)) {
             $GLOBALS['log']->fatal("Missing user {$user_id} in Meeting::get_notification_recipients");
             continue;
          }
-         // MintHCM #129887 End
+         // mehar finance #129887 End
          $notify_user->new_assigned_user_name = $notify_user->full_name;
          $GLOBALS['log']->info("Notifications: recipient is $notify_user->new_assigned_user_name");
          $list[$notify_user->id] = $notify_user;
@@ -936,12 +936,12 @@ class Meeting extends SugarBean {
     * @see SugarBean::afterImportSave()
     */
    public function afterImportSave() {
-      // MintHCM #54195 Start
+      // mehar finance #54195 Start
       if ( $this->parent_type === 'Candidates' ) {
          $this->load_relationship('candidates');
          $this->candidates->add($this->parent_id);
       }
-      // MintHCM #54195 End
+      // mehar finance #54195 End
 
       parent::afterImportSave();
    }
@@ -960,7 +960,7 @@ class Meeting extends SugarBean {
       return '';
    }
 
-   // MintHCM #44718 START
+   // mehar finance #44718 START
    public function shouldBeProcessed() {
       return !($_REQUEST['module'] != $this->module_name || self::$repeatSaveRoudTripCounter || empty($_REQUEST['repeat_type']) || empty($_REQUEST['date_start']));
    }
@@ -990,10 +990,10 @@ class Meeting extends SugarBean {
          CalendarUtils::save_repeat_activities($this, $repeatArr);
       }
    }
-   // MintHCM #44718 END
+   // mehar finance #44718 END
 
 
-   // MintHCM #111604 start
+   // mehar finance #111604 start
    protected function shouldBeProcessedApi() {
       return !( self::$repeatSaveRoudTripCounter || empty($this->repeat_type) || empty($this->date_start) || !empty($this->fetched_row)
       || empty($_SERVER['REQUEST_URI']) || substr($_SERVER['REQUEST_URI'], -14, 14) != "/Api/V8/module");
@@ -1069,7 +1069,7 @@ class Meeting extends SugarBean {
       }
    }
 }
-// MintHCM #111604 end
+// mehar finance #111604 end
 
 // end class def
 // External API integration, for the dropdown list of what external API's are available

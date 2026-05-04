@@ -48,7 +48,7 @@ require_once('include/json_config.php');
 #[\AllowDynamicProperties]
 class MeetingsViewEdit extends ViewEdit {
 
-   //MintHCM #44718 START
+   //mehar finance #44718 START
    private function assignStrings() {
       global $app_list_strings, $mod_strings;
       $this->ss->assign('APPLIST', $app_list_strings);
@@ -112,7 +112,7 @@ class MeetingsViewEdit extends ViewEdit {
       parent::preDisplay();
    }
 
-   //MintHCM #44718 END
+   //mehar finance #44718 END
 
    /**
     * @see SugarView::display()

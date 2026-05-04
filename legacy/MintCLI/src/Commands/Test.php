@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Commands;
+namespace mehar finance\MintCLI\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Completion\CompletionInput;

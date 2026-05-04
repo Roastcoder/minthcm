@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 $mod_strings = array(
     'LBL_ASSIGNED_TO_ID' => 'Assigned User Id',
@@ -104,14 +104,14 @@ $mod_strings = array(
     'LBL_SURVEYS_SENT' => 'Surveys Sent',
     'LBL_DISTINCT_SURVEYS_SENT' => 'Distinct Surveys Sent',
     'LBL_OPTIONS' => 'Options',
-    //MintHCM #102681 START
+    //mehar finance #102681 START
     'LBL_SURVEY_CLOSED' => 'Thanks for your interest but this survey is now closed',
     'LBL_SURVEY_THANKS_FOR_COMPLETING' => 'Thanks for completing this survey',
     'LBL_SURVEY_RETURN_BUTTON' => 'Return to system',
     'LBL_SURVEY_ALREADY_FILLED' => 'This survey has already been completed by you',
     'LBL_SURVEY_EMPLOYEE_NOT_EXSIST' => 'Sorry, you do not have access to this survey',
     'LBL_SURVEY_YOUR_ANSWER_PLACEHOLDER' => 'Your answer',
-    //MintHCM #102681 END
+    //mehar finance #102681 END
     'LBL_DRAFT' => 'Draft',
     'LBL_SUBMIT' => 'Submit',
     'LBL_STARS' => 'Stars',

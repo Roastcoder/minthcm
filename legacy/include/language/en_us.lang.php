@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2025 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2025 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -106,8 +106,8 @@ $app_list_strings = array(
         'TrackerQueries' => 'Tracker Queries',
         'FAQ' => 'FAQ',
         'Newsletters' => 'Newsletters',
-        'SugarFeed' => 'MintHCM Feed',
-        'SugarFavorites' => 'MintHCM Favorites',
+        'SugarFeed' => 'mehar finance Feed',
+        'SugarFavorites' => 'mehar finance Favorites',
         'OAuthKeys' => 'OAuth Consumer Keys',
         'OAuthTokens' => 'OAuth Tokens',
         'OAuth2Clients' => 'OAuth Clients',
@@ -200,7 +200,7 @@ $app_list_strings = array(
         'Documents' => 'Document',
         'Sync' => 'Sync',
         'Users' => 'User',
-        'SugarFavorites' => 'MintHCM Favorites',
+        'SugarFavorites' => 'mehar finance Favorites',
         'Candidates' => 'Candidate',
         'Resources' => 'Resource',
         'Candidatures' => 'Candidature',
@@ -408,7 +408,7 @@ $app_list_strings = array(
     ),
     'meeting_type_dom' => array(
         'Other' => 'Other',
-        'Sugar' => 'MintHCM',
+        'Sugar' => 'mehar finance',
     ),
     'call_status_default' => 'Planned',
     'call_status_dom' => array(
@@ -843,7 +843,7 @@ $app_list_strings = array(
     ),
 
     'dom_email_link_type' => array(
-        'sugar' => 'MintHCM Email Client',
+        'sugar' => 'mehar finance Email Client',
         'mailto' => 'External Email Client',
     ),
 
@@ -1245,12 +1245,12 @@ $app_strings = array(
     'LBL_EMAIL_REMOVE_SMTP_WARNING' => 'Warning! The outbound account you are trying to delete is associated to an existing inbound account. Are you sure you want to continue?',
     'LBL_EMAIL_ADDRESSES' => 'Email',
     'LBL_EMAIL_ADDRESS_PRIMARY' => 'Email Address',
-    'LBL_EMAIL_ARCHIVE_TO_SUITE' => 'Import to MintHCM',
+    'LBL_EMAIL_ARCHIVE_TO_SUITE' => 'Import to mehar finance',
     'LBL_EMAIL_ASSIGNMENT' => 'Assignment',
     'LBL_EMAIL_ATTACH_FILE_TO_EMAIL' => 'Attach',
     'LBL_EMAIL_ATTACHMENT' => 'Attach',
     'LBL_EMAIL_ATTACHMENTS' => 'From Local System',
-    'LBL_EMAIL_ATTACHMENTS2' => 'From MintHCM Documents',
+    'LBL_EMAIL_ATTACHMENTS2' => 'From mehar finance Documents',
     'LBL_EMAIL_ATTACHMENTS3' => 'Template Attachments',
     'LBL_EMAIL_ATTACHMENTS_FILE' => 'File',
     'LBL_EMAIL_ATTACHMENTS_DOCUMENT' => 'Document',
@@ -1297,7 +1297,7 @@ $app_strings = array(
     'LBL_EMAIL_ERROR_CHECK_IE_SETTINGS' => 'Please check your settings.',
     'LBL_EMAIL_ERROR_DESC' => 'Errors were detected: ',
     'LBL_EMAIL_DELETE_ERROR_DESC' => 'You do not have access to this area. Contact your site administrator to obtain access.',
-    'LBL_EMAIL_ERROR_DUPE_FOLDER_NAME' => 'MintHCM Folder names must be unique.',
+    'LBL_EMAIL_ERROR_DUPE_FOLDER_NAME' => 'mehar finance Folder names must be unique.',
     'LBL_EMAIL_ERROR_EMPTY' => 'Please enter some search criteria.',
     'LBL_EMAIL_ERROR_GENERAL_TITLE' => 'An error has occurred',
     'LBL_EMAIL_ERROR_MESSAGE_DELETED' => 'Message Removed from Server',
@@ -1358,7 +1358,7 @@ $app_strings = array(
     'LBL_EMAIL_IE_DELETE_SUCCESSFUL' => 'Deletion successful.',
     'LBL_EMAIL_IE_SAVE' => 'Saving Mail Account Information',
     'LBL_EMAIL_IMPORTING_EMAIL' => 'Importing Email',
-    'LBL_EMAIL_IMPORT_EMAIL' => 'Import into MintHCM',
+    'LBL_EMAIL_IMPORT_EMAIL' => 'Import into mehar finance',
     'LBL_EMAIL_IMPORT_SETTINGS' => 'Import Settings',
     'LBL_EMAIL_INVALID' => 'Invalid',
     'LBL_EMAIL_LOADING' => 'Loading...',
@@ -1379,10 +1379,10 @@ $app_strings = array(
     'LBL_EMAIL_MENU_RENAME_FOLDER' => 'Rename Folder',
     'LBL_EMAIL_MENU_RENAMING_FOLDER' => 'Renaming Folder',
     'LBL_EMAIL_MENU_MAKE_SELECTION' => 'Please make a selection before trying this operation.',
-    'LBL_EMAIL_MENU_HELP_ADD_FOLDER' => 'Create a Folder (remote or in MintHCM)',
-    'LBL_EMAIL_MENU_HELP_DELETE_FOLDER' => 'Delete a Folder (remote or in MintHCM)',
+    'LBL_EMAIL_MENU_HELP_ADD_FOLDER' => 'Create a Folder (remote or in mehar finance)',
+    'LBL_EMAIL_MENU_HELP_DELETE_FOLDER' => 'Delete a Folder (remote or in mehar finance)',
     'LBL_EMAIL_MENU_HELP_EMPTY_TRASH' => 'Empties all Trash folders for your mail accounts',
-    'LBL_EMAIL_MENU_HELP_RENAME_FOLDER' => 'Rename a Folder (remote or in MintHCM)',
+    'LBL_EMAIL_MENU_HELP_RENAME_FOLDER' => 'Rename a Folder (remote or in mehar finance)',
     'LBL_EMAIL_MESSAGES' => 'messages',
 
     'LBL_EMAIL_ML_NAME' => 'List Name',
@@ -1492,10 +1492,10 @@ $app_strings = array(
     'LBL_SMTPTYPE_EXCHANGE' => 'Microsoft Exchange',
     'LBL_SMTPTYPE_OTHER' => 'Other',
     'LBL_EMAIL_SPACER_MAIL_SERVER' => '[ Remote Folders ]',
-    'LBL_EMAIL_SPACER_LOCAL_FOLDER' => '[ MintHCM Folders ]',
+    'LBL_EMAIL_SPACER_LOCAL_FOLDER' => '[ mehar finance Folders ]',
     'LBL_EMAIL_SUBJECT' => 'Subject',
     'LBL_EMAIL_SUCCESS' => 'Success',
-    'LBL_EMAIL_SUITE_FOLDER' => 'MintHCM Folder',
+    'LBL_EMAIL_SUITE_FOLDER' => 'mehar finance Folder',
     'LBL_EMAIL_TEMPLATE_EDIT_PLAIN_TEXT' => 'Email template body is empty',
     'LBL_EMAIL_TEMPLATES' => 'Templates',
     'LBL_EMAIL_TO' => 'To',
@@ -1546,7 +1546,7 @@ $app_strings = array(
     'ERR_EXTERNAL_API_SAVE_FAIL' => 'An error occurred when trying to save to the external account.',
     'ERR_NO_DB' => 'Could not connect to the database. Please refer to system logs for details (0).',
     'ERR_DB_FAIL' => 'Database failure. Please refer to system logs for details.',
-    'ERR_DB_VERSION' => 'MintHCM {0} Files May Only Be Used With A MintHCM {1} Database.',
+    'ERR_DB_VERSION' => 'mehar finance {0} Files May Only Be Used With A mehar finance {1} Database.',
     'LBL_ACTIVITIES_SUBPANEL_TITLE' => 'Activities',
     'LBL_ACCUMULATED_HISTORY_BUTTON_KEY' => 'H',
     'LBL_ACCUMULATED_HISTORY_BUTTON_LABEL' => 'View Summary',
@@ -1572,7 +1572,7 @@ $app_strings = array(
     'LBL_BACK' => 'Back',
     'LBL_BILLING_ADDRESS' => 'Billing Address',
     'LBL_QUICK_CREATE' => 'Create ',
-    'LBL_BROWSER_TITLE' => 'MintHCM - Open Source HCM system',
+    'LBL_BROWSER_TITLE' => 'mehar finance - Open Source HCM system',
     'LBL_BY' => 'by',
     'LBL_CALL' => 'Call',
     'LBL_CALL_1' => 'Call',
@@ -1978,19 +1978,19 @@ $app_strings = array(
     'LBL_DASHLET_CONFIGURE_DISPLAY_ROWS' => 'Display Rows',
 
     // MySugar status strings
-    'LBL_MAX_DASHLETS_REACHED' => 'You have reached the maximum number of MintHCM Dashlets your adminstrator has set. Please remove a MintHCM Dashlet to add more.',
-    'LBL_ADDING_DASHLET' => 'Adding MintHCM Dashlet...',
-    'LBL_ADDED_DASHLET' => 'MintHCM Dashlet Added',
-    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this MintHCM Dashlet?',
-    'LBL_REMOVING_DASHLET' => 'Removing MintHCM Dashlet...',
-    'LBL_REMOVED_DASHLET' => 'MintHCM Dashlet Removed',
+    'LBL_MAX_DASHLETS_REACHED' => 'You have reached the maximum number of mehar finance Dashlets your adminstrator has set. Please remove a mehar finance Dashlet to add more.',
+    'LBL_ADDING_DASHLET' => 'Adding mehar finance Dashlet...',
+    'LBL_ADDED_DASHLET' => 'mehar finance Dashlet Added',
+    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this mehar finance Dashlet?',
+    'LBL_REMOVING_DASHLET' => 'Removing mehar finance Dashlet...',
+    'LBL_REMOVED_DASHLET' => 'mehar finance Dashlet Removed',
     'LBL_MAX_DASHLET_COLUMNS' => "Maximum of %s columns can be displayed.",
     'LBL_RETRIEVING_XML_DATA' => "There was a problem retrieving the XML data:\n",
 
     // MySugar Menu Options
 
     'LBL_LOADING_PAGE' => 'Loading page, please wait...',
-    'LBL_RELOAD_PAGE' => 'Please <a href="javascript: window.location.reload()">reload the window</a> to use this MintHCM Dashlet.',
+    'LBL_RELOAD_PAGE' => 'Please <a href="javascript: window.location.reload()">reload the window</a> to use this mehar finance Dashlet.',
     'LBL_ADD_DASHLETS' => 'Add Dashlets',
     'LBL_CLOSE_DASHLETS' => 'Close',
     'LBL_OPTIONS' => 'Options',
@@ -3111,7 +3111,7 @@ $app_list_strings['timezone_dom'] = array(
 );
 
 $app_list_strings['eapm_list'] = array(
-    'Sugar' => 'MintHCM',
+    'Sugar' => 'mehar finance',
     'WebEx' => 'WebEx',
     'GoToMeeting' => 'GoToMeeting',
     'IBMSmartCloud' => 'IBM SmartCloud',
@@ -3866,10 +3866,10 @@ $app_list_strings['moduleList']['SurveyQuestionResponses'] = 'Survey Question Re
 $app_list_strings['moduleList']['SurveyQuestions'] = 'Survey Questions';
 $app_list_strings['moduleList']['SurveyQuestionOptions'] = 'Survey Question Options';
 $app_list_strings['survey_status_list']['Draft'] = 'Draft';
-//MintHCM #74241 START
+//mehar finance #74241 START
 //$app_list_strings['survey_status_list']['Public'] = 'Public';
 $app_list_strings['survey_status_list']['Active'] = 'Active';
-//MintHCM #74241 END
+//mehar finance #74241 END
 $app_list_strings['survey_status_list']['Closed'] = 'Closed';
 $app_list_strings['surveys_question_type']['Text'] = 'Text';
 $app_list_strings['surveys_question_type']['Textbox'] = 'Textbox';
@@ -3954,7 +3954,7 @@ $app_strings['MSG_BROWSER_NOTIFICATIONS_ENABLED'] = 'Desktop notifications are n
 $app_strings['MSG_BROWSER_NOTIFICATIONS_DISABLED'] = 'Desktop notifications are disabled for this web browser. Use your browser preferences to enable them again.';
 $app_strings['MSG_BROWSER_NOTIFICATIONS_UNSUPPORTED'] = 'This browser does not support desktop notifications.';
 
-$app_strings['LBL_GOOGLE_SYNC_ERR'] = 'MintHCM Google Sync - ERROR';
+$app_strings['LBL_GOOGLE_SYNC_ERR'] = 'mehar finance Google Sync - ERROR';
 $app_strings['LBL_THERE_WAS_AN_ERR'] = 'There was an error: ';
 $app_strings['LBL_CLICK_HERE'] = 'Click here';
 $app_strings['LBL_TO_CONTINUE'] = ' to continue.';
@@ -4686,7 +4686,7 @@ $app_strings['LBL_MINT4_SETUP_WIZARD_LOCALE_SETTINGS_NAME_FORMAT'] = 'Display na
 $app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_TITLE'] = 'Setup complete';
 $app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_SUBTITLE'] = 'A couple of useful links:';
 $app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_BTN'] = 'Start Using Mint';
-$app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_MINTHCMORG'] = 'MintHCM.org website';
+$app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_MINTHCMORG'] = 'mehar finance.org website';
 $app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_DOCUMENTATION'] = 'Documentation';
 $app_strings['LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_SUPPORT'] = 'Support forum';
 

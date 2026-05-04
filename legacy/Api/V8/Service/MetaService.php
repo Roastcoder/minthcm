@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 namespace Api\V8\Service;
@@ -110,12 +110,12 @@ class MetaService
      */
     public function getModuleList(Request $request)
     {
-        // MintHCM #87119 start
+        // mehar finance #87119 start
         global $current_user;
         if (empty($current_user->id)) {
             $this->setCurrentUserGlobal($request);
         }
-        // MintHCM #87119 end
+        // mehar finance #87119 end
         $modules = $this->moduleListProvider->getModuleList();
 
         $dataResponse = new DataResponse('modules', '');
@@ -285,7 +285,7 @@ class MetaService
                         continue;
                     }
                     if (empty($v) && $v !== '0') {
-                        continue; // #MintHCM #131001 - empty panel name causes a fatal error
+                        continue; // #mehar finance #131001 - empty panel name causes a fatal error
                     }
                     if (empty($module_fields[$v['name']])) {
                         continue;
@@ -333,22 +333,22 @@ class MetaService
 
     protected function getSubpanelSetup(\SubPanelDefinitions $sb)
     {
-        // MintHCM #87119 start
+        // mehar finance #87119 start
         global $current_user;
         $visible_modules = query_module_access_list($current_user);
         \ACLController::filterModuleList($visible_modules, false);
-        // MintHCM #87119 end
+        // mehar finance #87119 end
         $array = [];
         $hidden_subpanels = $sb->get_hidden_subpanels();
         foreach ($sb->layout_defs['subpanel_setup'] as $name => $defs) {
             if (in_array(strtolower($defs['module'] ?? ''), $hidden_subpanels)) {
                 continue;
             }
-            // MintHCM #87119 start
+            // mehar finance #87119 start
             if (!in_array($defs['module'], $visible_modules)) {
                 continue;
             }
-            // MintHCM #87119 end
+            // mehar finance #87119 end
             $module_bean = \BeanFactory::newBean($defs['module']);
             $array[$name]['properties'] = $defs;
             if (!empty($module_bean) && $module_bean instanceof \SugarBean) {
@@ -360,7 +360,7 @@ class MetaService
         return $array;
     }
 
-    // MintHCM #87119 start
+    // mehar finance #87119 start
     /**
      * @param Request $request
      */
@@ -376,5 +376,5 @@ class MetaService
 
         $GLOBALS['current_user'] = $currentUser;
     }
-    // MintHCM #87119 end
+    // mehar finance #87119 end
 }

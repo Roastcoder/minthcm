@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */if(typeof(SUGAR.field)=='undefined'){SUGAR.field=new Object();}
 if(typeof(SUGAR.field.file)=='undefined'){SUGAR.field.file={deleteAttachment:function(elemBaseName,docTypeName,elem){ajaxStatus.showStatus(SUGAR.language.get("app_strings","LBL_REMOVING_ATTACHMENT"));elem.form.deleteAttachment.value=1;elem.form.action.value="deleteattachment";var callback=SUGAR.field.file.deleteAttachmentCallbackGen(elemBaseName,docTypeName);var success=function(data){if(data){callback(data.responseText);}}
 YAHOO.util.Connect.setForm(elem.form);var cObj=YAHOO.util.Connect.asyncRequest('POST','index.php',{success:success,failure:success});elem.form.deleteAttachment.value=0;elem.form.action.value="";},deleteAttachmentCallbackGen:function(elemBaseName,docTypeName){return function(text){if(text=='true'){document.getElementById(elemBaseName+'_new').style.display='';ajaxStatus.hideStatus();document.getElementById(elemBaseName+'_old').innerHTML='';if(docTypeName){document.getElementById(docTypeName).disabled=false;}

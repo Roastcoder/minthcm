@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -72,11 +72,11 @@ class OutboundEmail
         'mail_smtpssl',
         'smtp_from_name',
         'smtp_from_addr',
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         'mail_authtype',
         'eapm_id',
         'authorized_account',
-        // MintHCM #110041 END
+        // mehar finance #110041 END
     );
 
     /**
@@ -98,11 +98,11 @@ class OutboundEmail
     public $mail_smtpssl; // bool
     public $mail_smtpdisplay; // calculated value, not in DB
     public $new_with_id = false;
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     public $eapm_id;
     public $authorized_account;
     public $mail_authtype;
-    // MintHCM #110041 END
+    // mehar finance #110041 END
     public $auth_type; // no_auth, oauth2, external_oauth
     public $external_oauth_connection_id; // no_auth, oauth2, external_oauth
 

@@ -1,8 +1,8 @@
 <?php
 
-use MintHCM\Api\Controllers\FilesController;
-use MintHCM\Api\Middlewares\Params\ParamTypes\FileType;
-use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
+use mehar finance\Api\Controllers\FilesController;
+use mehar finance\Api\Middlewares\Params\ParamTypes\FileType;
+use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "get_files" => array(

@@ -1,6 +1,6 @@
 <?php
-use MintHCM\Lib\MintLogic\Hook;
-use MintHCM\Lib\MintLogic\Formula;
+use mehar finance\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Formula;
 
 return [
     'rules' => [
@@ -39,7 +39,7 @@ return [
                 'update' => function ($bean) {
                     $delegation_id = $bean->delegation_id;
                     if (!empty($delegation_id)) {
-                        $delegation = MintHCM\Data\BeanFactory::getBean('Delegations', $delegation_id);
+                        $delegation = mehar finance\Data\BeanFactory::getBean('Delegations', $delegation_id);
                         if ($delegation && !empty($delegation->assigned_user_id)) {
                             return [
                                 'assigned_user_id' => $delegation->assigned_user_id,

@@ -1,9 +1,9 @@
 <?php
 
-namespace MintHCM\Lib\MintLogic;
+namespace mehar finance\Lib\MintLogic;
 
-use MintHCM\Data\MintBean;
-use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
+use mehar finance\Data\MintBean;
+use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
 
 class MintLogic
 {

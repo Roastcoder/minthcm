@@ -296,11 +296,11 @@ class MssqlManager extends DBManager
         }
 
         $sql = $this->_appendN($sql);
-        // MintHCM start
+        // mehar finance start
         if ( stristr(strtolower($sql), 'workschedules ') && ( stristr(strtolower($sql), 'update ') || stristr(strtolower($sql), 'insert ') ) ) {
          $GLOBALS['log']->dev('Mssql Query:' . $sql);
         }
-        // MintHCM end
+        // mehar finance end
 
         $GLOBALS['log']->info('Query:' . $sql);
         $this->checkConnection();

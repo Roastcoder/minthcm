@@ -3,7 +3,7 @@
  }
  window.viewTools.api = {
     /**
-     * Function for communication  with MintHCM by controller functionality
+     * Function for communication  with mehar finance by controller functionality
      * Please, set params as array (in "{}" clause)
      * @param {*String} module - Name of called module
      * @param {*String} action - Name of called module action
@@ -64,7 +64,7 @@
        }
     },
     /**
-     * Function for communication  with MintHCM by custom/api.php
+     * Function for communication  with mehar finance by custom/api.php
      * Please, set params as array (in "{}" clause)
      * @param {*String} module - Name of called module
      * @param {*String} action - Name of called module action
@@ -281,9 +281,9 @@
        viewTools.form.scrollToFirstError();
     },
     scrollToFirstError: function () {
-       if($( '.MintHCMPopup-body' ).length && $( '.MintHCMPopup-body' ).css('display') != 'none' ) {  // scroll in popup
-          $( '.MintHCMPopup-body' ).animate({
-             scrollTop: $( '.validation-message' ).first().parent().offset().top - $( '.MintHCMPopup-body' ).offset().top + $( '.MintHCMPopup-body' ).scrollTop()
+       if($( '.mehar financePopup-body' ).length && $( '.mehar financePopup-body' ).css('display') != 'none' ) {  // scroll in popup
+          $( '.mehar financePopup-body' ).animate({
+             scrollTop: $( '.validation-message' ).first().parent().offset().top - $( '.mehar financePopup-body' ).offset().top + $( '.mehar financePopup-body' ).scrollTop()
           }, 1000);
        }
        else {  // scroll in std editView
@@ -393,15 +393,15 @@
      var label_object = handler.closest( ".edit-view-row-item" ).children( ".label" );
      if ( required === true ) {
        label_object.append( "<span class='required'>*</span>" );
-       //MintHCM #116937 Start
+       //mehar finance #116937 Start
        label_object.addClass('bold_required_field');
-       //MintHCM #116937 End
+       //mehar finance #116937 End
      } 
      else {
        label_object.children( "span.required" ).remove();
-       //MintHCM #116937 Start
+       //mehar finance #116937 Start
        label_object.removeClass('bold_required_field');
-       //MintHCM #116937 End
+       //mehar finance #116937 End
      }
   },
     setFieldReadonly: function ( handler, is_readonly ) {

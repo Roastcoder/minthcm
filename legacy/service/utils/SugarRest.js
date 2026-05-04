@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */if(typeof(SugarRest)=='undefined'){SugarRest=function(proxy_url,server_url,application_name){this.proxy_url=proxy_url;this.server_url=server_url;this.session_id=false;this.user_id=false;this.application_name=application_name;}
 SugarRest.prototype.call=function(method,args,callback,params,response_type){if(!callback)callback=this.log;console.log(callback);query=this.getQuery(method,args,response_type);YAHOO.util.Connect.asyncRequest('POST',this.proxy_url,{success:callback,failure:callback,scope:this,argument:params},query);}
 SugarRest.prototype.getQuery=function(method,args,response_type){if(!response_type)response_type='JSON';query='method='+method+'&input_type=JSON&response_type='+response_type;if(args!=null){m=YAHOO.lang.JSON.stringify(args);query+='&rest_data='+m;}

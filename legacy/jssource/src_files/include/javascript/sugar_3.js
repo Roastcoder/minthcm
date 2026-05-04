@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 
@@ -4280,10 +4280,10 @@ SUGAR.language = function () {
 
     get: function (module, str) {
       if (typeof SUGAR.language.languages[module] == 'undefined' || typeof SUGAR.language.languages[module][str] == 'undefined') {
-        // MintHCM Start
+        // mehar finance Start
         console.warn('SUGAR.language: Missing Label: ' + str + ' in module: ' + module);
         return str;
-        // MintHCM End
+        // mehar finance End
       }
       return SUGAR.language.languages[module][str];
     },
@@ -4981,13 +4981,13 @@ SUGAR.append(SUGAR.util, {
                 var callback = {
                   success: function () {
                     //If the parent entry is not found, refresh the entire page
-                                            /* MintHCM #122649 START */
+                                            /* mehar finance #122649 START */
                                             var parent;
                                             // parent = $( 'div[id^="dashlet_entire_"]' ).has( $( "#" + id ) );
                                             if(childElement.length != 0){
                                                 parent = $( 'div[id^="dashlet_entire_"]' ).has( $( "#" + childElement.id ) );
                                                }
-                                            /* MintHCM #122649 END */
+                                            /* mehar finance #122649 END */
                                            if ( jQuery.isEmptyObject(parent) || parent.length === 0 ) {
                                               window.location.reload( true )
                                            } else {
@@ -5012,10 +5012,10 @@ SUGAR.append(SUGAR.util, {
       SUGAR.util.closeActivityPanel.panel.setHeader(SUGAR.language.get("app_strings", "LBL_CLOSE_ACTIVITY_HEADER"));
       SUGAR.util.closeActivityPanel.panel.render(document.body);
       SUGAR.util.closeActivityPanel.panel.show();
-         // MintHCM 114934 START
+         // mehar finance 114934 START
          $("#closeActivityDialog .container-close").text(SUGAR.language.get( "app_strings", "LNK_CLOSE"));
          $("#closeActivityDialog .container-close").css("margin-right","10px");
-        // MintHCM 114934 END
+        // mehar finance 114934 END
     }
   },
 

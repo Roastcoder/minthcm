@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -2237,11 +2237,11 @@ abstract class DBManager
                         return 0;
                     }
 
-                    // MintHCM #119576 START
+                    // mehar finance #119576 START
                     if ('' === $val) {
                         return "NULL";
                     }
-                    // MintHCM #119576 END
+                    // mehar finance #119576 END
                     return intval($val);
                 case 'bigint':
                     // ViewTools #69225 START
@@ -2257,11 +2257,11 @@ abstract class DBManager
                         return 0;
                     }
 
-                    // MintHCM #119576 START
+                    // mehar finance #119576 START
                     if ('' === $val) {
                         return "NULL";
                     }
-                    // MintHCM #119576 END
+                    // mehar finance #119576 END
                     return $val;
                 case 'float':
                     if (!empty($fieldDef['required']) && '' == $val) {
@@ -2271,10 +2271,10 @@ abstract class DBManager
 
                         return 0;
                     }
-                    // MintHCM #129887 START
+                    // mehar finance #129887 START
                     //return $val === '' ? 'NULL' : (float)$val; // Fix #9440 - Forcing default null value for numeric fields.
                     return '' === $val ? 'NULL' : (float) unformat_number($val); // Fix #9440 - Forcing default null value for numeric fields.
-                // MintHCM #129887 END
+                // mehar finance #129887 END
                 case 'time':
                 case 'date':
                     // empty date can't be '', so convert it to either NULL or empty date value
@@ -3122,7 +3122,7 @@ abstract class DBManager
                 ) {
                     $change = false;
                     if (trim((string) $before_value) !== trim((string) $after_value)) {
-                        //MintHCM start
+                        //mehar finance start
                         if ('checklist' == $field_type) {
                             $before = getArrayFromJSONString($before_value);
                             $after = getArrayFromJSONString($after_value);
@@ -3166,7 +3166,7 @@ abstract class DBManager
                                 }
                             }
                         } else
-                        //MintHCM end
+                        //mehar finance end
                         // decode value for field type of 'text' or 'varchar' to check before audit if the value contain trip tags or special character
                         if ('varchar' == $field_type || 'name' == $field_type || 'text' == $field_type) {
                             $decode_before_value = strip_tags(html_entity_decode((string) $before_value));

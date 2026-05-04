@@ -32,6 +32,6 @@ Embrace the spirit of open source by actively participating in the community. Of
 Recognize that community contributions are voluntary and may take time. Exercise patience and gratitude towards those who generously give their time and expertise to the project.
 
 ## Report Violations
-If you witness behavior that violates this Code of Conduct, please report it to the community moderators at contact@minthcm.org. All reports will be handled confidentially and investigated promptly.
+If you witness behavior that violates this Code of Conduct, please report it to the community moderators at contact@meharadvisory.com. All reports will be handled confidentially and investigated promptly.
 
 We reserve the right to remove any content or suspend individuals who violate these guidelines. This Code of Conduct applies to all community interactions, whether within project spaces or in public forums where you represent MintHCM.

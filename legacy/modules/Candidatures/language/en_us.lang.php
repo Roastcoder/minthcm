@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 /*
  * Your installation or use of this SugarCRM file is subject to the applicable
@@ -138,7 +138,7 @@ $mod_strings = array(
     'LBL_CURRENCY_SYMBOL' => 'Currency Symbol',
     'LBL_CONVERT_TO_EMPLOYEE' => 'Convert to Employee',
     'LBL_CONVERT_TO_EMPLOYEE_DESCRIPTION' => 'Below you can decide whether you want to create an Employee or a User.<br>
-If you create a User, you will need to provide a login, which will be used to sign in to the MintHCM system.<br>
+If you create a User, you will need to provide a login, which will be used to sign in to the mehar finance system.<br>
 If you create an Employee, it will not be possible to log in to this account.<br>
 <br>
 Please note that every User is also an Employee.',

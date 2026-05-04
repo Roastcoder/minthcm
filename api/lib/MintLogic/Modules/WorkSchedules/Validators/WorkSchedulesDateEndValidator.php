@@ -1,9 +1,9 @@
 <?php
 
-namespace MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators;
+namespace mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators;
 
-use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
-use MintHCM\Lib\MintLogic\Validator;
+use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
+use mehar finance\Lib\MintLogic\Validator;
 use SugarDateTime;
 
 class WorkSchedulesDateEndValidator extends Validator

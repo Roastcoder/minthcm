@@ -1,4 +1,4 @@
-var MintHCMDynamicPopupView = {
+var mehar financeDynamicPopupView = {
     popup: null,
     init: function (title, module_name, record_id, options) {
         viewTools.cache.form_beforeSave_enforced = [];
@@ -23,7 +23,7 @@ var MintHCMDynamicPopupView = {
         }
         this.go(url);
 
-        this.id = "MintHCMDynamicPopupView";
+        this.id = "mehar financeDynamicPopupView";
         this.title = title || "";
         this.module_name = module_name || "";
         this.record_id = record_id || [];
@@ -47,7 +47,7 @@ var MintHCMDynamicPopupView = {
                 validation_is_ok = check_form(this.formname) && validation_is_ok;
                 if (validation_is_ok) {
                     showLoadingScreen(viewTools.language.get("app_strings", "LBL_SAVING"), viewTools.language.get("app_strings", "LBL_SAVING"));
-                    MintHCMDynamicPopupView.submitForm(_form);
+                    mehar financeDynamicPopupView.submitForm(_form);
                 } else {
                     viewTools.form.focusOnFirstError();
                     viewTools.form.onValidationEnd();
@@ -57,9 +57,9 @@ var MintHCMDynamicPopupView = {
         }
 
         this.close = function () {
-            MintHCMDynamicPopupView.popup = null;
+            mehar financeDynamicPopupView.popup = null;
             window.onbeforeunload = null;
-            MintHCMPopup.close();
+            mehar financePopup.close();
         }
 
 
@@ -92,9 +92,9 @@ var MintHCMDynamicPopupView = {
                 left: true,
             });
             if (this.options.isDetailView) {
-                cont = cont.replace(/\#content /g, ".MintHCMPopup-body ");
+                cont = cont.replace(/\#content /g, ".mehar financePopup-body ");
             }
-            this.popup = MintHCMPopup(
+            this.popup = mehar financePopup(
                 this.title,
                 cont,
                 buttons,
@@ -104,11 +104,11 @@ var MintHCMDynamicPopupView = {
                 this.options.onShow || null
             );
 
-            $('.MintHCMPopup > .MintHCMPopup-container').css({ "min-width": "70vw", "max-height": "100vh" });
-            $('.MintHCMPopup .MintHCMPopup-body').css({ "max-height": "70vh" });
-            $('.MintHCMPopup .MintHCMPopup-buttons').css({ "min-height": "5vh" });
+            $('.mehar financePopup > .mehar financePopup-container').css({ "min-width": "70vw", "max-height": "100vh" });
+            $('.mehar financePopup .mehar financePopup-body').css({ "max-height": "70vh" });
+            $('.mehar financePopup .mehar financePopup-buttons').css({ "min-height": "5vh" });
 
-            let found_form_name = $('.MintHCMPopup .MintHCMPopup-body form').attr('name');
+            let found_form_name = $('.mehar financePopup .mehar financePopup-body form').attr('name');
             if (found_form_name != undefined) {
                 this.formname = found_form_name;
             }
@@ -153,7 +153,7 @@ var MintHCMDynamicPopupView = {
     go: function (url) {
 
         if (YAHOO.lang.trim(url) != "") {
-            var con = YAHOO.util.Connect, ui = MintHCMDynamicPopupView;
+            var con = YAHOO.util.Connect, ui = mehar financeDynamicPopupView;
 
             // ajaxUILoc XSS protection:
             // window.location = url; is vulnerable to XSS attack
@@ -220,9 +220,9 @@ var MintHCMDynamicPopupView = {
             data: string,
             success: function (msg) {
                 closeLoadingScreen();
-                MintHCMDynamicPopupView.popup = null;
+                mehar financeDynamicPopupView.popup = null;
                 window.onbeforeunload = null;
-                MintHCMPopup.close();
+                mehar financePopup.close();
                 YAHOO.util.Connect.resetFormState();
                 viewTools.GUI.statusBox.showStatus(viewTools.language.get('app_strings', 'LBL_SAVED'), 'success', 5000);
                 if (typeof this.options.postSaveCallback == 'function') {

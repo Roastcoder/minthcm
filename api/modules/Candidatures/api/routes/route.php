@@ -1,7 +1,7 @@
 <?php
 
-use MintHCM\Modules\Candidatures\api\controllers\Convert;
-use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
+use mehar finance\Modules\Candidatures\api\controllers\Convert;
+use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "convert" => array(

@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Services;
+namespace mehar finance\MintCLI\Services;
 
 #[\AllowDynamicProperties]
 class ElasticsearchService
@@ -28,10 +28,10 @@ class ElasticsearchService
         $version = $response['version']['number'];
         $major_version = explode('.', $version)[0];
         if ($major_version !== '7') {
-            return $this->error("MintHCM currently supports only Elasticsearch 7.x, you tried to connect with $major_version");
+            return $this->error("mehar finance currently supports only Elasticsearch 7.x, you tried to connect with $major_version");
         }
         if (version_compare($version, '7.10.0', '<')) {
-            return $this->error("MintHCM requires Elasticsearch 7.10 or higher, you have $version");
+            return $this->error("mehar finance requires Elasticsearch 7.10 or higher, you have $version");
         }
 
         return $this->ok();

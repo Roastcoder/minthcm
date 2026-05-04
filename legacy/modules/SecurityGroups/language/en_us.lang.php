@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -116,7 +116,7 @@ $mod_strings = array(
    'LBL_POST' => 'Post',
    'LBL_SELECT_GROUP_ERROR' => 'Please select a Organizational unit and try again.',
    'LBL_GROUP_SELECT' => 'Select which organizational units should have access to this record',
-   'LBL_ERROR_DUPLICATE' => 'Due to a possible duplicate detected by MintHCM you will have to manually add Organizational Unit to your newly created record.',
+   'LBL_ERROR_DUPLICATE' => 'Due to a possible duplicate detected by mehar finance you will have to manually add Organizational Unit to your newly created record.',
    'LBL_INBOUND_EMAIL' => 'Inbound email account',
    'LBL_INBOUND_EMAIL_DESC' => 'Only allow access to an email account if user belongs to a organizational unit that is assigned to the mail account.',
    'LBL_PRIMARY_GROUP' => 'Primary Organizational Unit',

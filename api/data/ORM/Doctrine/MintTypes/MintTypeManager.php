@@ -1,14 +1,14 @@
 <?php
 
-namespace MintHCM\Data\ORM\Doctrine\MintTypes;
+namespace mehar finance\Data\ORM\Doctrine\MintTypes;
 
 use Doctrine\DBAL\Types\Type;
 
 class MintTypeManager
 {
     const TYPE_LOCATION = [
-        'MintHCM\\Data\\ORM\\Doctrine\\MintTypes\\Types\\' => 'data/ORM/Doctrine/MintTypes/Types/',
-        'MintHCM\\Custom\\Data\\ORM\\Doctrine\\MintTypes\\Types\\' => 'custom/data/ORM/Doctrine/MintTypes/Types/',
+        'mehar finance\\Data\\ORM\\Doctrine\\MintTypes\\Types\\' => 'data/ORM/Doctrine/MintTypes/Types/',
+        'mehar finance\\Custom\\Data\\ORM\\Doctrine\\MintTypes\\Types\\' => 'custom/data/ORM/Doctrine/MintTypes/Types/',
     ];
 
     public static function registerTypes(): void

@@ -1,7 +1,7 @@
 <?php
 
-use MintHCM\Modules\Users\api\controllers\UserNameUnique;
-use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
+use mehar finance\Modules\Users\api\controllers\UserNameUnique;
+use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
 
 $routes = array(
     "isUserNameUnique" => array(

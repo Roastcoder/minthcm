@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -95,7 +95,7 @@ $mod_strings = array(
     'LBL_FAX' => 'Fax:',
     'LBL_EMAIL' => 'Email Address:',
     'LBL_EMAIL_LINK_TYPE' => 'Email Client',
-    'LBL_EMAIL_LINK_TYPE_HELP' => '<b>MintHCM Mail Client:</b> Send emails using the email client in the MintHCM application.<br><b>External Mail Client:</b> Send email using an email client outside of the MintHCM application, such as Microsoft Outlook.',
+    'LBL_EMAIL_LINK_TYPE_HELP' => '<b>mehar finance Mail Client:</b> Send emails using the email client in the mehar finance application.<br><b>External Mail Client:</b> Send email using an email client outside of the mehar finance application, such as Microsoft Outlook.',
     'LBL_HOME_PHONE' => 'Home Phone:',
     'LBL_WORK_PHONE' => 'Work Phone:',
     'LBL_EMPLOYEE_STATUS' => 'Employee Status:',
@@ -199,10 +199,10 @@ $mod_strings = array(
     'LBL_EMPLOYEES_CONFIRMATION_BUTTON_CONFIRM' => 'YES',
     'LBL_EMPLOYEES_CONFIRMATION_BUTTON_CANCEL' => 'NO',
     'LBL_DEPUTY'=>'Deputy', 
-    /* MintHCM #84233 START */
+    /* mehar finance #84233 START */
     'LBL_CANDIDATES_MODULE_DUP' => 'Candidates',
     'MSG_SHOW_DUPLICATES' => 'The record you are about to create might be a duplicate of a Candidates or Employees record that already exists. Candidates and Employees records containing similar names are listed below.<br>Click Create to continue creating this new Candidate, or select an existing listed below.',
-    /* MintHCM #84233 END */
+    /* mehar finance #84233 END */
 
     'LBL_FACTOR_AUTH_INTERFACE' => 'Two Factor Authentication Interface:',
     'LBL_EDITOR_TYPE' => 'Editor',

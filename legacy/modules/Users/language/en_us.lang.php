@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -74,7 +74,7 @@ $mod_strings = array(
     'ERR_USER_NAME_EXISTS_1' => 'The user name ',
     'ERR_USER_NAME_EXISTS_2' => ' already exists. Duplicate user names are not allowed. Please change the user name to be unique.',
     'ERR_USER_NAME_EXISTS_3' => 'The user name already exists',
-    'ERR_USER_IS_LOCKED_OUT' => 'This user is locked out of the MintHCM application and cannot log in using his/her existing password.',
+    'ERR_USER_IS_LOCKED_OUT' => 'This user is locked out of the mehar finance application and cannot log in using his/her existing password.',
     'ERR_PASSWORD_MINPWDLENGTH' => 'Password should contain at least %d characters.',
     'ERR_PASSWORD_ONEUPPER' => 'Password should contain uppercase characters.',
     'ERR_PASSWORD_ONELOWER' => 'Password should contain lowercase characters.',
@@ -142,7 +142,7 @@ $mod_strings = array(
     'LBL_EMAIL' => 'Email Address',
     'LBL_EMAIL_CHARSET' => 'Outbound Character Set',
     'LBL_EMAIL_LINK_TYPE' => 'Email Client',
-    'LBL_EMAIL_LINK_TYPE_HELP' => '<b>MintHCM Mail Client:</b> Send emails using the email client in the MintHCM application.<br><b>External Mail Client:</b> Send email using an email client outside of the MintHCM application, such as Microsoft Outlook.',
+    'LBL_EMAIL_LINK_TYPE_HELP' => '<b>mehar finance Mail Client:</b> Send emails using the email client in the mehar finance application.<br><b>External Mail Client:</b> Send email using an email client outside of the mehar finance application, such as Microsoft Outlook.',
     'LBL_EMAIL_NOT_SENT' => 'System is unable to process your request. Please contact the system administrator.',
     'LBL_EMAIL_SIGNATURE_ERROR1' => 'This signature requires a name.',
     'LBL_EMAIL_TEMPLATE_MISSING' => 'No email template is selected for the email containing the password that will be sent to the user. Please select an email template in the Password Management page.',
@@ -159,7 +159,7 @@ $mod_strings = array(
     'LBL_FIRST_NAME' => 'First Name',
     'LBL_SYSTEM_GENERATED_PASSWORD' => 'System Generated Password',
     'LBL_GENERATE_PASSWORD_BUTTON_LABEL' => 'Reset Password',
-    'LBL_GROUP_DESC' => 'Use for assigning items to a group (example: for Inbound Email). This type cannot login through the MintHCM web interface.',
+    'LBL_GROUP_DESC' => 'Use for assigning items to a group (example: for Inbound Email). This type cannot login through the mehar finance web interface.',
     'LBL_GROUP_USER' => 'Group User',
     'LBL_HIDE_TABS' => 'Hide Modules',
     'LBL_HOME_PHONE' => 'Home Phone',
@@ -232,7 +232,7 @@ $mod_strings = array(
     'LBL_PASSWORD_EXPIRATION_TIME' => 'Your password has expired. Please provide a new password.',
     'LBL_PSW_MODIFIED' => 'Password Last Changed',
     'LBL_PHONE' => 'Phone',
-    'LBL_PORTAL_ONLY_DESC' => 'Use for the Portal API. This type cannot login through the MintHCM web interface.',
+    'LBL_PORTAL_ONLY_DESC' => 'Use for the Portal API. This type cannot login through the mehar finance web interface.',
     'LBL_PORTAL_ONLY_USER' => 'Portal API User',
     'LBL_POSTAL_CODE' => 'Postal Code',
     'LBL_PRIMARY_ADDRESS' => 'Primary Address',
@@ -243,7 +243,7 @@ $mod_strings = array(
     'LBL_RECEIVE_NOTIFICATIONS_TEXT' => 'Receive an email notification when a record is assigned to you.',
     'LBL_RECEIVE_NOTIFICATIONS' => 'Notify on Assignment',
     'LBL_REGULAR_USER' => 'Regular User',
-    'LBL_REMINDER_TEXT' => 'Set a default for reminders for calls and meetings. Pop-up notifications appear for all invitees using MintHCM. Email reminders are sent to all invitees.',
+    'LBL_REMINDER_TEXT' => 'Set a default for reminders for calls and meetings. Pop-up notifications appear for all invitees using mehar finance. Email reminders are sent to all invitees.',
     'LBL_REMINDER' => 'Reminders',
     'LBL_REMINDER_POPUP' => 'Popup',
     'LBL_REMINDER_EMAIL_ALL_INVITEES' => 'Email all invitees',
@@ -285,7 +285,7 @@ $mod_strings = array(
     'LBL_SORT_MODULES_DESCRIPTION' => 'Order modules by name in the navigation drop down.',
     'LBL_COUNT_COLLAPSED_SUBPANELS' => 'Show collapsed subpanel hint',
     'LBL_COUNT_COLLAPSED_SUBPANELS_DESCRIPTION' => 'When subpanels are collapsed, shows a hint to indicate if the subpanel is empty or contains records.',
-    'LBL_SUITE_LOGIN' => 'Is MintHCM User',
+    'LBL_SUITE_LOGIN' => 'Is mehar finance User',
     'LBL_THEME' => 'Themes',
     'LBL_TIME_FORMAT_TEXT' => 'Set the display format for time stamps',
     'LBL_TIME_FORMAT' => 'Time Format',
@@ -303,7 +303,7 @@ $mod_strings = array(
     'LBL_WORK_PHONE' => 'Work Phone',
     'LBL_YOUR_PUBLISH_URL' => 'Publish at my location',
     'LBL_ICAL_PUB_URL' => 'iCal integration URL',
-    'LBL_ICAL_PUB_URL_HELP' => 'Use this URL to subscribe to the MintHCM calendar within iCal.',
+    'LBL_ICAL_PUB_URL_HELP' => 'Use this URL to subscribe to the mehar finance calendar within iCal.',
     'LNK_NEW_USER' => 'Create New User',
     'LNK_NEW_GROUP_USER' => 'Create Group User',
     'LNK_USER_LIST' => 'View Users',
@@ -353,13 +353,13 @@ $mod_strings = array(
     // Wizard
     'LBL_WIZARD_TITLE' => 'User Wizard',
     'LBL_WIZARD_WELCOME_TAB' => 'Welcome',
-    'LBL_WIZARD_WELCOME_TITLE' => 'Welcome to MintHCM!',
+    'LBL_WIZARD_WELCOME_TITLE' => 'Welcome to mehar finance!',
     'LBL_WIZARD_WELCOME' => 'a fresh way to do HR!',
     'LBL_WIZARD_NEXT_BUTTON' => 'Next >',
     'LBL_WIZARD_BACK_BUTTON' => '< Back',
     'LBL_WIZARD_SKIP_BUTTON' => 'Skip',
     'LBL_WIZARD_FINISH_BUTTON' => 'Finish',
-    'LBL_WIZARD_FINISH_TITLE' => 'You are ready to use MintHCM!',
+    'LBL_WIZARD_FINISH_TITLE' => 'You are ready to use mehar finance!',
     'LBL_WIZARD_FINISH_SITE_DESC' => 'Visit our website to learn more about features and latest news.',
     'LBL_WIZARD_FINISH_DOCUMENTATION' => 'Documentation',
     'LBL_WIZARD_FINISH_DOCUMENTATION_DESC' => 'Read guides and get to know the system.',
@@ -368,7 +368,7 @@ $mod_strings = array(
     'LBL_WIZARD_PERSONALINFO' => 'Your Information',
     'LBL_WIZARD_LOCALE' => 'Your Locale',
     //Wizard Scenarios
-    'LBL_WIZARD_LOCALE_DESC' => 'Specify your time zone and how you would like dates, currencies and names to appear in MintHCM.',
+    'LBL_WIZARD_LOCALE_DESC' => 'Specify your time zone and how you would like dates, currencies and names to appear in mehar finance.',
     'LBL_WIZARD_SMTP_DESC' => 'Provide your email account username and password for the default outbound email server.',
     'LBL_EAPM_SUBPANEL_TITLE' => 'External Accounts',
     'LBL_EDITLAYOUT' => 'Edit Layout' /* for 508 compliance fix */,
@@ -393,7 +393,7 @@ $mod_strings = array(
     'LBL_ENTER_FOLDER_NAME' => 'Please enter a folder name',
     'LBL_ERROR_SELECT_MODULE' => 'Please select a module for the Related to field',
     'ERR_ARCHIVE_EMAIL' => 'Error: Select emails to archive.',
-    'LBL_ADD_DASHLETS' => 'Add MintHCM Dashlets',
+    'LBL_ADD_DASHLETS' => 'Add mehar finance Dashlets',
     'LBL_ADD_DOCUMENT' => 'Add Documents',
     'LBL_ADD_ENTRIES' => 'Add Entries',
     'LBL_ADD_FILE' => 'Add Files',
@@ -586,11 +586,11 @@ $mod_strings = array(
     'LBL_EMAIL_INBOUND_TYPE_HELP' => '<b>Personal</b>: Email account accessible by you. Only you can manage and import emails from this account.<br><b>Group</b>: Email account accessible by members of specified teams. Team members can manage and import emails from this account.<br><b>Group - auto-import</b>: Email account accessible by members of specified teams. Emails are automatically imported as records.',
     'LBL_ADDRESS_BOOK_SEARCH_HELP' => 'Enter an email address, First Name, Last Name or Account Name to find recipients.',
     'LBL_EMPTY_EMAIL_BODY' => '<p><span style="color: #888888;"><em>This Message Has No Content</em></span></p>',
-    'LBL_TEST_EMAIL_SUBJECT' => 'Test Email from MintHCM',
+    'LBL_TEST_EMAIL_SUBJECT' => 'Test Email from mehar finance',
     'LBL_NO_SUBJECT' => '(no subject)',
     'LBL_CHECKING_ACCOUNT' => 'Checking Account',
     'LBL_OF' => 'of',
-    'LBL_TEST_EMAIL_BODY' => 'This email was sent in order to test the outgoing mail server information provided in the MintHCM application. A successful receipt of this email indicates that the outgoing mail server information provided is valid.',
+    'LBL_TEST_EMAIL_BODY' => 'This email was sent in order to test the outgoing mail server information provided in the mehar finance application. A successful receipt of this email indicates that the outgoing mail server information provided is valid.',
     // for outbound email dialog
     'LBL_MAIL_SMTPAUTH_REQ' => 'Use SMTP Authentication?',
     'LBL_EDIT_LAYOUT' => 'Edit Layout' /* for 508 compliance fix */,
@@ -625,7 +625,7 @@ $mod_strings = array(
     // for Google Token/Synchronization settings
     'LBL_GOOGLE_API_SETTINGS' => 'Google Account Synchronization',
     'LBL_GOOGLE_API_TOKEN' => 'Google API Token',
-    'LBL_GOOGLE_API_TOKEN_HELP' => 'Use this to authorize MintHCM to access your Google Calendar. This is required for synchronization. Don\'t forget to check the "Enable Calendar Sync" checkbox when done.',
+    'LBL_GOOGLE_API_TOKEN_HELP' => 'Use this to authorize mehar finance to access your Google Calendar. This is required for synchronization. Don\'t forget to check the "Enable Calendar Sync" checkbox when done.',
     'LBL_GSYNC_CAL' => 'Enable Calendar Sync',
     // END Google Token/Synchronization settings
     'LBL_POSITION_NAME' => 'Position',

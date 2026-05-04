@@ -1,11 +1,11 @@
 <?php
 
-namespace MintHCM\Lib\Search\ElasticSearch;
+namespace mehar finance\Lib\Search\ElasticSearch;
 
-use MintHCM\Lib\Search\ElasticSearch\ModulePrefixer;
-use MintHCM\Lib\Search\ElasticSearch\ESListACLHelper;
-use MintHCM\Data\BeanFactory;
-use MintHCM\Utils\LegacyConnector;
+use mehar finance\Lib\Search\ElasticSearch\ModulePrefixer;
+use mehar finance\Lib\Search\ElasticSearch\ESListACLHelper;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Utils\LegacyConnector;
 
 #[\AllowDynamicProperties]
 class BaseListACL

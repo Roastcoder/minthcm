@@ -1100,7 +1100,7 @@
 				// IMAGE
 				if(this.image) {
 					image = document.createElement('img');
-					image.className ="face"; // MintHCM
+					image.className ="face"; // mehar finance
 					image.src = this.image;
 					node.appendChild(image);
 				}

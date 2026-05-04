@@ -1,7 +1,7 @@
 <?php
 
-use MintHCM\Lib\MintLogic\Hook;
-use MintHCM\Lib\MintLogic\Formula;
+use mehar finance\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Formula;
 
 return [
     'rules' => [

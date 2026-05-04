@@ -10,8 +10,8 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -39,10 +39,10 @@ if (!defined('sugarEntry') || !sugarEntry) {
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 
@@ -128,12 +128,12 @@ class ListViewData
      */
     public function getReverseSortOrder($current_order)
     {
-        /* MintHCM #82984 START */
+        /* mehar finance #82984 START */
         if (empty($current_order)){
             return 'DESC';
         }
         else{
-        /* MintHCM #82984 END */
+        /* mehar finance #82984 END */
             return (strcmp(strtolower($current_order), 'asc') == 0)?'DESC':'ASC';
         }
     }
@@ -338,7 +338,7 @@ class ListViewData
         if (!isset($params['custom_order_by'])) {
             $params['custom_order_by'] = '';
         }
-        // MintHCM START - Order Query at least by ID
+        // mehar finance START - Order Query at least by ID
         $custom_order_by = '';
         if (!empty(trim((string) $ret_array['order_by']))) {
             $custom_order_by .= ' , ';
@@ -349,7 +349,7 @@ class ListViewData
             $custom_order_by .= ' ' . trim(ltrim(trim((string) $params['custom_order_by']), ',')) . ' , ';
         }
         $params['custom_order_by'] = $custom_order_by . " {$seed->table_name}.id ASC ";
-        // MintHCM END - Order Query at least by ID
+        // mehar finance END - Order Query at least by ID
         $main_query = $ret_array['select'] . $params['custom_select'] . $ret_array['from'] . $params['custom_from'] . $ret_array['inner_join']. $ret_array['where'] . $params['custom_where'] . $ret_array['order_by'] . $params['custom_order_by'];
         //C.L. - Fix for 23461
         if (empty($_REQUEST['action']) || $_REQUEST['action'] != 'Popup') {
@@ -567,14 +567,14 @@ class ListViewData
                 }
             }
         }
-        //MintHCM #104078 Start
+        //mehar finance #104078 Start
         if ('asc' == $_POST["lvso"]) {
             $pageData["ordering"]["sortOrder"] = 'DESC';
         }
         if ('desc' == $_POST["lvso"]) {
             $pageData["ordering"]["sortOrder"] = 'ASC';
         }
-        //MintHCM #104078 End
+        //mehar finance #104078 End
         return array('data'=>$data , 'pageData'=>$pageData, 'query' => $queryString);
     }
 

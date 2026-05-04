@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -55,7 +55,7 @@ $mod_strings = array(
    'LBL_OOTB_CAMPAIGN' => 'Run Nightly Mass Email Campaigns',
    'LBL_OOTB_PRUNE' => 'Prune Database on 1st of Month',
    'LBL_OOTB_TRACKER' => 'Prune Tracker Tables',
-   'LBL_OOTB_SUITEFEEDS' => 'Prune MintHCM Feed Tables',
+   'LBL_OOTB_SUITEFEEDS' => 'Prune mehar finance Feed Tables',
    'LBL_OOTB_LUCENE_INDEX' => 'Perform Lucene Index',
    'LBL_OOTB_OPTIMISE_INDEX' => 'Optimise AOD Index',
    'LBL_OOTB_SEND_EMAIL_REMINDERS' => 'Run Email Reminder Notifications',
@@ -108,7 +108,7 @@ $mod_strings = array(
    'LBL_JOB' => 'Job',
    'LBL_JOB_URL' => 'Job URL',
    'LBL_LAST_RUN' => 'Last Successful Run',
-   'LBL_MODULE_NAME' => 'MintHCM Scheduler',
+   'LBL_MODULE_NAME' => 'mehar finance Scheduler',
    'LBL_MODULE_TITLE' => 'Schedulers',
    'LBL_NAME' => 'Job Name',
    'LBL_NEVER' => 'Never',
@@ -134,10 +134,10 @@ $mod_strings = array(
    'NTC_LIST_ORDER' => 'Set the order this schedule will appear in the Scheduler dropdown lists',
    'LBL_CRON_INSTRUCTIONS_WINDOWS' => 'To Setup Windows Scheduler',
    'LBL_CRON_INSTRUCTIONS_LINUX' => 'To Setup Crontab',
-   'LBL_CRON_LINUX_DESC1' => 'In order to run MintHCM Schedulers, edit your web server user\'s crontab file with this command:',
+   'LBL_CRON_LINUX_DESC1' => 'In order to run mehar finance Schedulers, edit your web server user\'s crontab file with this command:',
    'LBL_CRON_LINUX_DESC2' => '... and add the following line to the crontab file:',
    'LBL_CRON_LINUX_DESC3' => 'You should do this only after the installation is concluded.',
-   'LBL_CRON_WINDOWS_DESC' => 'In order to run the MintHCM schedulers, create a batch file to run using Windows Scheduled Tasks. The batch file should include the following commands:',
+   'LBL_CRON_WINDOWS_DESC' => 'In order to run the mehar finance schedulers, create a batch file to run using Windows Scheduled Tasks. The batch file should include the following commands:',
 // Subpanels
    'LBL_JOBS_SUBPANEL_TITLE' => 'Job Log',
    'LBL_EXECUTE_TIME' => 'Execute Time',
@@ -148,7 +148,7 @@ $mod_strings = array(
    'LBL_POLLMONITOREDINBOXESFORBOUNCEDCAMPAIGNEMAILS' => 'Run Nightly Process Bounced Campaign Emails',
    'LBL_PRUNEDATABASE' => 'Prune Database on 1st of Month',
    'LBL_TRIMTRACKER' => 'Prune Tracker Tables',
-   'LBL_TRIMSUGARFEEDS' => 'Prune MintHCM Feed Tables',
+   'LBL_TRIMSUGARFEEDS' => 'Prune mehar finance Feed Tables',
    'LBL_SENDEMAILREMINDERS' => 'Run Email Reminders Sending',
    'LBL_CLEANJOBQUEUE' => 'Cleanup Job Queue',
    'LBL_REMOVEDOCUMENTSFROMFS' => 'Removal of documents from filesystem',
@@ -166,10 +166,10 @@ $mod_strings = array(
    'LBL_INVALID_SPENT_TIMES_NOTIFICATION_BODY' => "Invalid Spent times found!",
    'LBL_NOTIFIER_DEFAULT_SUBJECT' => "Invalid records found!",
    'LBL_NOTIFIER_DEFAULT_BODY' => "Invalid records found! ",
-    //MintHCM #102685 START
+    //mehar finance #102685 START
     'LBL_CLEARVCALCRON' => 'Clear vCal',
     'LBL_UPDATE_NEWS_DISPLAY_DATE' => 'Update News Display Date',
-    //MintHCM #102685 END
+    //mehar finance #102685 END
    'LBL_REBUILDVIEWTOOLS' => 'Rebuild View Tools',
    'LBL_EXECUTEVIEWTOOLSQUEUE' => 'Execute View Tools Queue',
    

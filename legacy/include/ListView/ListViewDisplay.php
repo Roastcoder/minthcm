@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -136,9 +136,9 @@ class ListViewDisplay
         $id_field = 'id',
         $id = null
     ) {
-        // MintHCM #94842 START
+        // mehar finance #94842 START
         global $dashlet_initial_loading;
-        // MintHCM #94842 END
+        // mehar finance #94842 END
         $this->should_process = true;
         if (isset($seed->module_dir) && !$this->shouldProcess($seed->module_dir)) {
             return false;
@@ -161,7 +161,7 @@ class ListViewDisplay
 
         $filter_fields = $this->setupFilterFields($filter_fields);
 
-        // MintHCM #94842 START
+        // mehar finance #94842 START
         if($dashlet_initial_loading){
             $data = [];
         } else {
@@ -177,7 +177,7 @@ class ListViewDisplay
             $id
         );
         }
-        // MintHCM #94842 END
+        // mehar finance #94842 END
 
         $this->fillDisplayColumnsWithVardefs();
 
@@ -239,9 +239,9 @@ class ListViewDisplay
      */
     public function process($file, $data, $htmlVar)
     {
-        // MintHCM #94842 START
+        // mehar finance #94842 START
         global $dashlet_initial_loading;
-        // MintHCM #94842 END
+        // mehar finance #94842 END
         if (!is_array($data)) {
             LoggerManager::getLogger()->warn('Row data must be an array, ' . gettype($data) . ' given.');
             $data = [];
@@ -249,9 +249,9 @@ class ListViewDisplay
             LoggerManager::getLogger()->warn('Row data must be an array, ' . gettype($data['data']) . ' given and converting to an array.');
         }
         $this->rowCount = count((array)($data['data'] ?? []));
-        // MintHCM #94842 START
+        // mehar finance #94842 START
         if (empty($dashlet_initial_loading) && !isset($data['pageData']['bean'])) {
-            // MintHCM #94842 END
+            // mehar finance #94842 END
             $GLOBALS['log']->warn("List view process error: Invalid data, bean is not set");
             return false;
         }

@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 *}
@@ -65,7 +65,7 @@
 <header>
     <div class="p_login">
 <div class="p_login_top">
-    <a title="MintHCM" href="#">MintHCM</a>
+    <a title="mehar finance" href="#">mehar finance</a>
 </div>
 </div>
     </header>    
@@ -272,13 +272,13 @@
             </tr>
             <tr>
                 <td>
-                    <a href="https://minthcm.org/" class="button back" target="_blank">minthcm.org</a>
+                    <a href="https://meharadvisory.com/" class="button back" target="_blank">meharadvisory.com</a>
                 </td>
                 <td>
-                    <a href="https://minthcm.org/documentation/" class="button back" target="_blank">{$MOD.LBL_WIZARD_FINISH_DOCUMENTATION}</a>
+                    <a href="https://meharadvisory.com/documentation/" class="button back" target="_blank">{$MOD.LBL_WIZARD_FINISH_DOCUMENTATION}</a>
                 </td>
                 <td>
-                    <a href="https://minthcm.org/support/" class="button back" target="_blank">{$MOD.LBL_WIZARD_FINISH_FORUMS}</a>
+                    <a href="https://meharadvisory.com/support/" class="button back" target="_blank">{$MOD.LBL_WIZARD_FINISH_FORUMS}</a>
                 </td>
             </tr>
             <tr>

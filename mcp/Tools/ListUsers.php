@@ -17,7 +17,7 @@ class ListUsers extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Retrieve a list of users and their details available in MintHCM.';
+        return 'Retrieve a list of users and their details available in mehar finance.';
     }
 
     public function getInputSchema(): ToolInputSchema

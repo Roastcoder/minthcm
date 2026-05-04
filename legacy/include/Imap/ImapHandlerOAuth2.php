@@ -890,7 +890,7 @@ class ImapHandlerOAuth2 implements ImapHandlerInterface
      */
     public function isValidStream($stream): bool
     {
-        // MintHCM must implement or be abstract
+        // mehar finance must implement or be abstract
         return true;
     }
 
@@ -916,7 +916,7 @@ class ImapHandlerOAuth2 implements ImapHandlerInterface
         string $auth_type
     ): array
     {
-        // MintHCM must implement or be abstract
+        // mehar finance must implement or be abstract
         return [];
     }
 

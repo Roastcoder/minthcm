@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\InputValidators;
+namespace mehar finance\MintCLI\InputValidators;
 
 #[\AllowDynamicProperties]
 abstract class RegExpValidator extends Validator

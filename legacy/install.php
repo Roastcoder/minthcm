@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2020 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2023 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2023 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry')) {
     define('sugarEntry', true);
@@ -81,7 +81,7 @@ if (check_php_version() === -1) {
     $msg .= constant('SUITECRM_PHP_MIN_VERSION') . ', ';
     //  $msg .= 'is not recommended due to the large number of fixed bugs, including security fixes, ';
     // $msg .= 'released in the more modern versions.<br />';
-    $msg .= 'You are using PHP version  ' . constant('PHP_VERSION') . ', witch is not supported by MintHCM '; // ', which is EOL: <a href="http://php.net/eol.php">http://php.net/eol.php</a>.<br />';
+    $msg .= 'You are using PHP version  ' . constant('PHP_VERSION') . ', witch is not supported by mehar finance '; // ', which is EOL: <a href="http://php.net/eol.php">http://php.net/eol.php</a>.<br />';
     //$msg .= 'Please consider upgrading your PHP version. Instructions on <a href="http://php.net/migration70">http://php.net/migration70</a>. ';
     die($msg);
 }

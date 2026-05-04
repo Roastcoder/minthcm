@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 function setSymbolValue(id) {
@@ -383,7 +383,7 @@ function set_chooser()
 function add_checks(f) {
     return true;
 }
-// MintHCM #111578 Start
+// mehar finance #111578 Start
 function handleSubmitWithEnter() {
     $('#EditView').keypress(function(e) {
         if (e.keyCode === 13) {
@@ -392,7 +392,7 @@ function handleSubmitWithEnter() {
         }
     });
 }
-// MintHCM #111578 End
+// mehar finance #111578 End
 // Autoruns
 function onUserEditView() {
     YAHOO.util.Event.onContentReady('user_theme_picker',function() {
@@ -411,7 +411,7 @@ function onUserEditView() {
     setSymbolValue(document.getElementById('currency_select').options[document.getElementById('currency_select').selectedIndex].value);
     setSigDigits();
     user_status_display(document.getElementById('UserType'));
-    // MintHCM #111578 Start
+    // mehar finance #111578 Start
     handleSubmitWithEnter();
-    // MintHCM #111578 End
+    // mehar finance #111578 End
 }

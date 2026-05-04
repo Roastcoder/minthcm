@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 /**
@@ -146,11 +146,11 @@ class VardefManager {
          if ( empty($GLOBALS['dictionary'][$object]['indices']) ) {
             $GLOBALS['dictionary'][$object]['indices'] = array();
          }
-         // MintHCM #122704 START
+         // mehar finance #122704 START
          if ( empty($GLOBALS['dictionary'][$object]['elasticsearch']) ) {
             $GLOBALS['dictionary'][$object]['elasticsearch'] = array();
          }
-         // MintHCM #122704 END
+         // mehar finance #122704 END
 
          $GLOBALS['dictionary'][$object]['fields'] = array_merge($templates[$template]['fields'], $GLOBALS['dictionary'][$object]['fields']);
          if ( !empty($templates[$template]['relationships']) ) {
@@ -159,7 +159,7 @@ class VardefManager {
          if ( !empty($templates[$template]['indices']) ) {
             $GLOBALS['dictionary'][$object]['indices'] = array_merge($templates[$template]['indices'], $GLOBALS['dictionary'][$object]['indices']);
          }
-         // MintHCM #122704 START
+         // mehar finance #122704 START
          if ( !empty($templates[$template]['elasticsearch']) ) {
             foreach(array_keys($templates[$template]['elasticsearch']) as $key) {
                 if (!empty($GLOBALS['dictionary'][$object]['elasticsearch'][$key])) {
@@ -169,7 +169,7 @@ class VardefManager {
                 }
             }
          }
-         // MintHCM #122704 END
+         // mehar finance #122704 END
          if(isset($templates[$template]['doctrineEntity']) && empty($GLOBALS['dictionary'][$object]['doctrineEntity'])){
             $GLOBALS['dictionary'][$object]['doctrineEntity'] = array_merge([], $templates[$template]['doctrineEntity']);
          }

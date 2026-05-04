@@ -1,12 +1,12 @@
 <?php
 
-namespace MintHCM\Data\ORM\Doctrine\MintEventManager\Subscribers;
+namespace mehar finance\Data\ORM\Doctrine\MintEventManager\Subscribers;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
-use MintHCM\Data\ORM\Doctrine\MintEntity\MintEntity;
+use mehar finance\Data\ORM\Doctrine\MintEntity\MintEntity;
 
 class CustomEntitySubscriber implements EventSubscriber
 {

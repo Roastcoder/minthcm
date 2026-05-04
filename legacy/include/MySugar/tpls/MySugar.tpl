@@ -195,12 +195,12 @@
                                           defaultSkin: ''
                                        },
                                        onSuccess: function () {
-                                          // MintHCM - avoid loading script if document is not ready yet:
+                                          // mehar finance - avoid loading script if document is not ready yet:
                                           if ( document.readyState !== 'complete' ) {
                                              setTimeout( arguments.callee, 50 );
                                              return false;
                                           }
-                                          // MintHCM end;
+                                          // mehar finance end;
                                           initMySugar();
                                           initmySugarCharts();
                                           SUGAR.mySugar.maxCount = {/literal}{$maxCount}{literal};

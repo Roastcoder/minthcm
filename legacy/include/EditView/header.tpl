@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 *}
@@ -83,9 +83,9 @@
 {{$field}}
 {{/foreach}}
 {{/if}}
-{* MintHCM #81007 START *}
+{* mehar finance #81007 START *}
 {if empty($smarty.request.minthcm_popup)}
-{* MintHCM #81007 END*}
+{* mehar finance #81007 END*}
 {{if empty($form.button_location) || $form.button_location == 'top'}}
 {{if !empty($form) && !empty($form.buttons)}}
    {{foreach from=$form.buttons key=val item=button}}
@@ -100,9 +100,9 @@
 {{/if}}
 {{/if}}
 {{sugar_action_menu buttons=$header_buttons class="fancymenu" flat=true}}
-{* MintHCM #81007 START *}
+{* mehar finance #81007 START *}
 {/if}
-{* MintHCM #81007 END*}
+{* mehar finance #81007 END*}
 </td>
 <td align='right' class="edit-view-pagination">{{$ADMIN_EDIT}}
 {{if $panelCount == 0}}

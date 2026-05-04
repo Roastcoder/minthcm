@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -57,7 +57,7 @@ require_once __DIR__ . '/../../modules/InboundEmail/temp.php';
 #[\AllowDynamicProperties]
 class InboundEmail extends SugarBean
 {
-       // MintHCM #110041 START
+       // mehar finance #110041 START
     /**
      * Maps EAPM application names to their appropriate API names
      */
@@ -65,7 +65,7 @@ class InboundEmail extends SugarBean
       'Google' => 'GoogleEmail',
       'Microsoft' => 'MicrosoftEmail',
   ];
-  // MintHCM #110041 END
+  // mehar finance #110041 END
     // Module specific
     public $conn;
     public $purifier;
@@ -84,10 +84,10 @@ class InboundEmail extends SugarBean
     public $server_url;
     public $email_user;
     public $email_password;
-   // MintHCM #110041 START
+   // mehar finance #110041 START
    public $eapm_id;
    public $authorized_account;
-   // MintHCM #110041 END
+   // mehar finance #110041 END
     public $port;
     public $service;
     public $mailbox;
@@ -329,7 +329,7 @@ class InboundEmail extends SugarBean
      */
     public function __construct(ImapHandlerInterface $imapHandler = null, MailMimeParser $mailParser = null)
     {
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         parent::__construct();
         global $sugar_config;
 
@@ -350,7 +350,7 @@ class InboundEmail extends SugarBean
         if (isset($sugar_config['site_url'])) {
             $this->imagePrefix = $sugar_config['site_url'] . '/cache/images/';
         }
-        // MintHCM #110041 END
+        // mehar finance #110041 END
     }
 
     /**
@@ -364,9 +364,9 @@ class InboundEmail extends SugarBean
         if (null === $this->imap) {
             if (null === $imap) {
                 $imapFactory = new ImapHandlerFactory();
-            // MintHCM #110041 START
+            // mehar finance #110041 START
             $imap = $imapFactory->getImapHandler(null, !empty($this->eapm_id));
-            // MintHCM #110041 END
+            // mehar finance #110041 END
             }
             $this->imap = $imap;
         }
@@ -390,7 +390,7 @@ class InboundEmail extends SugarBean
             $this->retrieveMailBoxFolders();
         }
 
-       // MintHCM #110041 START
+       // mehar finance #110041 START
        if ($this->getImap()->isAvailable()) {
           /*
            * 1: Open
@@ -402,7 +402,7 @@ class InboundEmail extends SugarBean
            $this->getImap()->setTimeout(2, 60);
            $this->getImap()->setTimeout(3, 60);
         }
-        // MintHCM #110041 END
+        // mehar finance #110041 END
 
         return $ret;
     }
@@ -670,9 +670,9 @@ class InboundEmail extends SugarBean
             $uids,
             FT_UID
         );
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       $emailHeaders = $emailSortedHeaders;
-      // MintHCM #110041 END
+      // mehar finance #110041 END
         $emailHeaders = json_decode(json_encode($emailHeaders), true);
         if (isset($columns['has_attachment'])) {
             // get attachment status
@@ -805,9 +805,9 @@ class InboundEmail extends SugarBean
             if ($this->isPop3Protocol()) {
                 $uid = $this->getCorrectMessageNoForPop3($uid);
             }
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Inbound Email connection is not a resource for getting Formatted Raw Source');
 
                 return null;
@@ -859,9 +859,9 @@ class InboundEmail extends SugarBean
             $uid = $this->getCorrectMessageNoForPop3($uid);
         }
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbound Email connection is not a resource');
 
             return null;
@@ -908,9 +908,9 @@ class InboundEmail extends SugarBean
         }
         $this->connectMailserver();
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( !empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             $uids = $this->getImap()->search("ALL", SE_UID);
         } else {
             LoggerManager::getLogger()->warn('connection is not a valid resource to empty trush');
@@ -1823,9 +1823,9 @@ class InboundEmail extends SugarBean
     {
         $fetchedOverviews = array();
       if ( $this->isPop3Protocol() ) {
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Connection is not a valid resource but it is a POP3 Protocol');
             } else {
                 $fetchedOverviews = $this->getImap()->fetchOverview($msgno);
@@ -1835,9 +1835,9 @@ class InboundEmail extends SugarBean
                 }
             }
         } else {
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Connection is not a valid resource');
             } else {
                 $fetchedOverviews = $this->getImap()->fetchOverview($uid, FT_UID);
@@ -1884,9 +1884,9 @@ class InboundEmail extends SugarBean
         }
         $this->setCacheTimestamp($mailbox);
         $GLOBALS['log']->info("[EMAIL] Performing IMAP search using criteria [{$criteria}] on mailbox [{$mailbox}] for user [{$current_user->user_name}]");
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->warn('checkEmailOneMailbox: connection is not a valid resource');
             $searchResults = null;
         } else {
@@ -1931,9 +1931,9 @@ class InboundEmail extends SugarBean
         }
 
       if ( $this->mailbox != $trashFolder ) {
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->warn('connection is not a valid resource for checkEmailOneMailbox()');
                 $searchResults = null;
             } else {
@@ -2041,9 +2041,9 @@ class InboundEmail extends SugarBean
             }
 
          if ( $this->mailbox != $trashFolder ) {
-            // MintHCM #110041 START
+            // mehar finance #110041 START
             if ( empty($this->conn) ) {
-            // MintHCM #110041 END
+            // mehar finance #110041 END
                     LoggerManager::getLogger()->warn('mailbox != trash folder but connection is not a valid resource for checkEmailOneMailbox()');
                     $searchResults = null;
                 } else {
@@ -2089,9 +2089,9 @@ class InboundEmail extends SugarBean
             } // if
         } // if
       if ( !$cacheDataExists ) {
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Inbound Email Connection is not a valid resource.');
             } else {
                 $searchResults = $this->getImap()->search($criteria, SE_UID);
@@ -2210,9 +2210,9 @@ class InboundEmail extends SugarBean
         }
 
         $GLOBALS['log']->info("INBOUNDEMAIL: using [ {$criteria} ]");
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->warn('connection is not a valid resource for getMailboxProcessCount()');
             $searchResults = null;
         } else {
@@ -2531,9 +2531,9 @@ class InboundEmail extends SugarBean
             return false;
         }
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbound Email connection is not a valid resource for marking Emails');
 
             return false;
@@ -2598,9 +2598,9 @@ class InboundEmail extends SugarBean
             unlink($file);
         }
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inboun Email Connenction is not a valid resource for deleting Folder');
         } elseif ($this->getImap()->unsubscribe($this->getImap()->utf7Encode($connectString))) {
             if ($this->getImap()->deleteMailbox($connectString)) {
@@ -2663,9 +2663,9 @@ class InboundEmail extends SugarBean
         $mbox .= $delimiter . str_replace($delimiter, "_", $name);
         $connectString = $this->getConnectString('', $mbox);
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inboun Email Connectrion is not a valid resource for saving new folder');
         } elseif ($this->getImap()->createMailbox($this->getImap()->utf7Encode($connectString))) {
             $this->getImap()->subscribe($this->getImap()->utf7Encode($connectString));
@@ -3391,9 +3391,9 @@ class InboundEmail extends SugarBean
         );
         $login = $this->email_user;
         $passw = $this->email_password;
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         $accessToken = $this->getAccessToken();
-        // MintHCM #110041 END
+        // mehar finance #110041 END
         $foundGoodConnection = false;
         foreach ($serviceArr as $k => $serviceTest) {
             $errors = '';
@@ -3402,9 +3402,9 @@ class InboundEmail extends SugarBean
             $GLOBALS['log']->debug($l . ': I-E testing string: ' . $serviceTest);
 
             // open the connection and try the test string
-            // MintHCM #110041 START
+            // mehar finance #110041 START
             $this->conn = $this->getImapConnection($serviceTest, $login, $passw, $accessToken);
-            // MintHCM #110041 END
+            // mehar finance #110041 END
 
             if (($errors = $this->getImap()->getLastError()) || ($alerts = $this->getImap()->getAlerts())) {
                 // login failure means don't bother trying the rest
@@ -3436,9 +3436,9 @@ class InboundEmail extends SugarBean
                 $foundGoodConnection = true;
             }
 
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( !empty($this->getImap()->getConnection()) ) {
-        // MintHCM #110041 END
+        // mehar finance #110041 END
             if ( !$this->isPop3Protocol() ) {
                     $serviceTest = str_replace("INBOX", "", $serviceTest);
                     $boxes = $this->getImap()->getMailboxes($serviceTest, "*");
@@ -4081,9 +4081,9 @@ class InboundEmail extends SugarBean
      */
     public function getMessageTextFromSingleMimePart($msgNo, $section, $structure)
     {
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbound Email Connection in not a valid resource for getting message text from a single mime part.');
 
             return false;
@@ -4482,9 +4482,9 @@ class InboundEmail extends SugarBean
 
             return trim($ret);
         }
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       return $arr;
-      // MintHCM #110041 END
+      // mehar finance #110041 END
     }
 
     /**
@@ -4753,9 +4753,9 @@ class InboundEmail extends SugarBean
 
         // download the attachment if we didn't do it yet
         if (!file_exists($uploadDir . $fileName)) {
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Inbounc Email Connection is not valid resource for saving attachment binaries.');
 
                 return false;
@@ -5075,9 +5075,9 @@ class InboundEmail extends SugarBean
         global $sugar_config;
         global $current_user;
 
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         if ( empty($this->conn) ) {
-        // MintHCM #110041 END
+        // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbounc Email Connection is not valid resource for getting duplicate email id.');
 
             return false;
@@ -5142,9 +5142,9 @@ class InboundEmail extends SugarBean
         // UNCOMMENT THIS IF YOU HAVE THIS PROBLEM!  See notes on Bug # 45477
         // $this->markEmails($uid, "read");
 
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         if ( empty($this->conn) ) {
-        // MintHCM #110041 END
+        // mehar finance #110041 END
             LoggerManager::getLogger()->warn('Connection is not a valid resource for importOneEmail()');
             $header = null;
             $fullHeader = null;
@@ -6358,9 +6358,9 @@ class InboundEmail extends SugarBean
             $this->stored_options = base64_encode(serialize($storedOptions));
             $this->save();
         } else {
-            // MintHCM #110041 START
+            // mehar finance #110041 START
             if ( empty($this->conn) ) {
-            // MintHCM #110041 END
+            // mehar finance #110041 END
                 LoggerManager::getLogger()->fatal('Inbound Email Connection is not valid resource for getting New Message Ids.');
 
                 return false;
@@ -6384,9 +6384,9 @@ class InboundEmail extends SugarBean
         $service = empty($service) ? $this->getServiceString() : $service;
         $mbox = empty($mbox) ? $this->mailbox : $mbox;
 
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       $connectString = '{' . $this->server_url . ':' . $this->port . '/ssl/service=' . $this->protocol . $service . '}';
-      // MintHCM #110041 END
+      // mehar finance #110041 END
         $connectString .= ($includeMbox) ? $mbox : "";
 
         return $connectString;
@@ -6397,9 +6397,9 @@ class InboundEmail extends SugarBean
      */
     public function disconnectMailserver()
     {
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( !empty($this->conn) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
             $this->getImap()->close();
         }
     }
@@ -6485,9 +6485,9 @@ class InboundEmail extends SugarBean
         /*
          * Try to recycle the current connection to reduce response times
          */
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( !empty($this->getImap()->getConnection()) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
             if ($force) {
                 // force disconnect
                 $this->getImap()->close();
@@ -6500,31 +6500,31 @@ class InboundEmail extends SugarBean
         }
 
         // final test
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       if ( empty($this->getImap()->getConnection()) && !$test ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
             $this->conn = $this->getImapConnection(
                 $connectString,
                 $this->email_user,
                 $this->email_password,
-                 // MintHCM #110041 START
+                 // mehar finance #110041 START
                  $this->getAccessToken(),
-                 // MintHCM #110041 END
+                 // mehar finance #110041 END
                 CL_EXPUNGE
             );
         }
 
         if ($test) {
-          // MintHCM #110041 START
+          // mehar finance #110041 START
           if ( $opts == false && empty($this->getImap()->getConnection()) ) {
-            // MintHCM #110041 END
+            // mehar finance #110041 END
                 $this->conn = $this->getImapConnection(
                     $connectString,
                     $this->email_user,
                     $this->email_password,
-                    // MintHCM #110041 START
+                    // mehar finance #110041 START
                     $this->getAccessToken(),
-                    // MintHCM #110041 END
+                    // mehar finance #110041 END
                     CL_EXPUNGE
                 );
             }
@@ -6557,9 +6557,9 @@ class InboundEmail extends SugarBean
 
             $this->getImap()->getErrors(); // collapse error stack
 
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          if ( !empty($this->getImap()->getConnection()) ) {
-         // MintHCM #110041 END
+         // mehar finance #110041 END
                 $this->getImap()->close();
             } else {
                 LoggerManager::getLogger()->warn('Connection is not a valid resource.');
@@ -6567,9 +6567,9 @@ class InboundEmail extends SugarBean
 
 
             return $msg;
-      // MintHCM #110041 START
+      // mehar finance #110041 START
       } elseif ( empty($this->getImap()->getConnection()) ) {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
             $GLOBALS['log']->info('Couldn\'t connect to mail server id: ' . $this->id);
 
             return "false";
@@ -6608,10 +6608,10 @@ class InboundEmail extends SugarBean
      *
      * @return resource|boolean  Connection resource on success, FALSE on failure
      */
-   // MintHCM #110041 START
+   // mehar finance #110041 START
    protected function getImapConnection($mailbox, $username, $password, $accessToken, $options = 0) 
    {
-      // MintHCM #110041 END
+      // mehar finance #110041 END
         $connection = null;
         $authenticators = ['', 'GSSAPI', 'NTLM'];
 
@@ -6624,9 +6624,9 @@ class InboundEmail extends SugarBean
                 $params = [];
             }
 
-         // MintHCM #110041 START
+         // mehar finance #110041 START
          $password = $accessToken ?? $password;
-         // MintHCM #110041 END
+         // mehar finance #110041 END
             $connection = $this->getImap()->open($mailbox, $username, $password, $options, 0, $params);
         }
 
@@ -7277,9 +7277,9 @@ class InboundEmail extends SugarBean
      */
     public function deleteMessageOnMailServerForPop3($uid)
     {
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         if ( empty($this->conn) ) {
-        // MintHCM #110041 END
+        // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbound Email connection is not a resource for deleting Message On Mail Server For Pop3');
 
             return false;
@@ -8239,9 +8239,9 @@ eoq;
         // ids's count limit for batch processing
         $limit = 20;
 
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         if ( empty($this->conn) ) {
-        // MintHCM #110041 END
+        // mehar finance #110041 END
             LoggerManager::getLogger()->fatal('Inbound Email connection is not a resource for getting New Emails For Synced Mailbox');
 
             return false;
@@ -8421,7 +8421,7 @@ eoq;
         return $uid;
     }
 
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     protected function getAccessToken()
     {
         if (empty($this->eapm_id)) {
@@ -8442,7 +8442,7 @@ eoq;
         $application = self::ApiMap[$application] ?? '';
         return ExternalAPIFactory::loadAPI($application, true);
     }
-    // MintHCM #110041 END
+    // mehar finance #110041 END
 }
 
 // end class definition

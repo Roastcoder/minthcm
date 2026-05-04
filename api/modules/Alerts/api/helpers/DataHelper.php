@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Modules\Alerts\api\helpers;
+namespace mehar finance\Modules\Alerts\api\helpers;
 
 use Alert;
 

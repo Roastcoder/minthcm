@@ -1,12 +1,12 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use MintHCM\Api\ApiManager;
-use MintHCM\Api\Config\AppConfig;
-use MintHCM\Data\ORM\Doctrine\DoctrineContainerBuilder;
-use MintHCM\Utils\CustomLoader;
+use mehar finance\Api\ApiManager;
+use mehar finance\Api\Config\AppConfig;
+use mehar finance\Data\ORM\Doctrine\DoctrineContainerBuilder;
+use mehar finance\Utils\CustomLoader;
 use Slim\Factory\AppFactory;
-use MintHCM\tests\lib\Middlewares\Parsers\AppJsonBodyParserMiddleware;
+use mehar finance\tests\lib\Middlewares\Parsers\AppJsonBodyParserMiddleware;
 
 abstract class ApiTest extends TestCase
 {

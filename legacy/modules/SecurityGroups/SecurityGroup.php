@@ -69,7 +69,7 @@ class SecurityGroup extends SecurityGroup_sugar {
                        WHERE   secr_list.user_id = " . $table_name . '.id
                                AND secg.deleted = 0)' . $sql;
         } else {
-         // MintHCM #60146, #94842 START
+         // mehar finance #60146, #94842 START
          $focus = BeanFactory::getBean($module);
          $sql = ' OR ( ' . str_replace( $focus->table_name, $table_name,  $focus->getOwnerWhere($user_id)) . ' ) ';
 
@@ -84,7 +84,7 @@ class SecurityGroup extends SecurityGroup_sugar {
                       AND secr.deleted = 0
                       AND secr.module = '$module'
                       AND secg.deleted = 0)" . $sql;
-         // MintHCM #60146, #94842 END
+         // mehar finance #60146, #94842 END
       }
    }
 

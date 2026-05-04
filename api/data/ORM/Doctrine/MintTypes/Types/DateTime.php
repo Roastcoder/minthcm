@@ -1,12 +1,12 @@
 <?php
-namespace MintHCM\Data\ORM\Doctrine\MintTypes\Types;
+namespace mehar finance\Data\ORM\Doctrine\MintTypes\Types;
 
 use DateTimeInterface;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\DateTimeType;
-use MintHCM\Data\MintDateTime;
-use MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeInterface;
+use mehar finance\Data\MintDateTime;
+use mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeInterface;
 
 /**
  * Type that maps an SQL DATETIME/TIMESTAMP to a PHP MintDateTime object.

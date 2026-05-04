@@ -280,9 +280,9 @@ r22618 - 2007-05-09 15:36:06 -0700 (Wed, 09 May 2007) - clee - Added file.
  */
 function smarty_function_sugar_button($params, &$smarty)
 {
-    /* MintHCM #128807 START */
+    /* mehar finance #128807 START */
     global $app_strings;
-    /* MintHCM #128807 END */
+    /* mehar finance #128807 END */
     if (empty($params['module'])) {
         $smarty->trigger_error("sugar_button: missing required param (module)");
     } elseif (empty($params['id'])) {
@@ -310,7 +310,7 @@ function smarty_function_sugar_button($params, &$smarty)
 
 			case "CANCEL":
                 //If the return action is not empty and the return action is detail view and the id is not empty
-                /* MintHCM #128807 #176343 START */
+                /* mehar finance #128807 #176343 START */
                 $cancelButton = "
                 {literal}
                     <script type='text/javascript'>
@@ -326,7 +326,7 @@ function smarty_function_sugar_button($params, &$smarty)
                     </script>
                 {/literal}
                 ";
-                /* MintHCM #128807 END */
+                /* mehar finance #128807 END */
                 $cancelButton .= '{if !empty($smarty.request.return_action) && ($smarty.request.return_action == "DetailView" && !empty($smarty.request.return_id))}';
                 $cancelButton .= '<a href="#/modules/{$smarty.request.return_module|escape:"url"}/DetailView/{$smarty.request.return_id|escape:"url"}" accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" class="button" name="button" id="'.$type.$location.'">{$APP.LBL_CANCEL_BUTTON_LABEL}</a> ';
 
@@ -350,7 +350,7 @@ function smarty_function_sugar_button($params, &$smarty)
                 $cancelButton .= '{else}';
                 $cancelButton .= '<a href="#/modules/{$smarty.request.return_module|escape:"url"}/index/{$smarty.request.return_id|escape:"url"}" accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" class="button" name="button" id="'.$type.$location.'">{$APP.LBL_CANCEL_BUTTON_LABEL}</a> ';
                 $cancelButton .= '{/if}';
-                /* MintHCM #176343 END */
+                /* mehar finance #176343 END */
 
                 //$cancelButton = '{$smarty.request.return_action}'.'{$smarty.request.return_module}';              
                 $output = $cancelButton;

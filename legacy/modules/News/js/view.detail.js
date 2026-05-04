@@ -9,11 +9,11 @@ async function changeNewsStatus(status) {
         });
  
         if (!hasTarget) {
-            MintHCMPopup.alert(viewTools.language.get('News', 'LBL_NO_TARGET_MSG'));
+            mehar financePopup.alert(viewTools.language.get('News', 'LBL_NO_TARGET_MSG'));
             return;
         }
 
-        const shouldSetStatus = await MintHCMPopup.confirm(viewTools.language.get('News', 'LBL_DIALOG_TEXT'))
+        const shouldSetStatus = await mehar financePopup.confirm(viewTools.language.get('News', 'LBL_DIALOG_TEXT'))
         if (shouldSetStatus) setNewsStatus(status)
 
     } else if (status === 'archived') {

@@ -222,11 +222,11 @@ class SqlsrvManager extends MssqlManager
         $sql = $this->_appendN($sql);
 
         $this->countQuery($sql);
-        // MintHCM start
+        // mehar finance start
         if ( stristr(strtolower($sql), 'workschedules ') && ( stristr(strtolower($sql), 'update ') || stristr(strtolower($sql), 'insert ') ) ) {
             $GLOBALS['log']->dev('SQLSRV Query:' . $sql);
         }
-        // MintHCM end
+        // mehar finance end
         $GLOBALS['log']->info('Query:' . $sql);
         $this->checkConnection();
         $this->query_time = microtime(true);

@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2023 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2023 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,17 +36,17 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 *}
 
-{* MintHCM #94842 START *}
+{* mehar finance #94842 START *}
 <link rel="stylesheet" type="text/css" href="include/Dashlets/DashletGenericDisplayStyle.css" />
-{* MintHCM #94842 END *}
+{* mehar finance #94842 END *}
 <script type="text/javascript" src="modules/WorkSchedules/tpls/Button.js"></script>
 <script type="text/javascript" src="modules/WorkSchedules/tpls/AcceptWorkPlanButton.js"></script>
 <script type="text/javascript" src="modules/WorkSchedules/tpls/RejectWorkPlanButton.js"></script>
@@ -115,7 +115,7 @@
             </table>
         </td>
     </tr>
-    {* MintHCM #94842 START *}
+    {* mehar finance #94842 START *}
     {if $dashletInitialLoading }
     <tr height='20'>
         <td class="dashlet-loader-container">
@@ -123,7 +123,7 @@
         </td>
     </tr>
     {else}
-    {* MintHCM #94842 END *}
+    {* mehar finance #94842 END *}
     <tr height='20'>
         {counter start=0 name="colCounter" print=false assign="colCounter"}
         {assign var='datahide' value=""}
@@ -138,9 +138,9 @@
 					<!-- dashlet: {$dashletId} -->
 	                <a href='#' onclick='return SUGAR.mySugar.retrieveDashlet("{$dashletId}", "{$pageData.urls.orderBy}{$params.orderBy|default:$colHeader|lower}&sugar_body_only=1&id={$dashletId}", false, false, true, $(this).closest("div[id^=pageNum_][id$=_div]").parent().parent())' class='listViewThLinkS1' title="{$arrowAlt}">{sugar_translate label=$params.label module=$pageData.bean.moduleDir}</a>&nbsp;&nbsp;
 	                {if $params.orderBy|default:$colHeader|lower == $pageData.ordering.orderBy}
-	                    {* MintHCM #82984 START *}
+	                    {* mehar finance #82984 START *}
 						{if $pageData.ordering.sortOrder == 'DESC'}
-						{* MintHCM #82984 END *}
+						{* mehar finance #82984 END *}
                             {capture assign="imageName"}arrow_down.{$arrowExt}{/capture}
                             {capture assign="alt_sort"}{sugar_translate label='LBL_ALT_SORT_DESC'}{/capture}
 							<span class="suitepicon suitepicon-action-sorting-descending" title="{$alt_sort}"></span>
@@ -167,9 +167,9 @@
 		<td  class='td_alt' nowrap="nowrap" width='1%'>&nbsp;</td>
 		{/if}
     </tr>
-    {* MintHCM #94842 START *}
+    {* mehar finance #94842 START *}
     {/if}
-    {* MintHCM #94842 END *}
+    {* mehar finance #94842 END *}
 	</thead>
 	{foreach name=rowIteration from=$data key=id item=rowData}
 		{if $smarty.foreach.rowIteration.iteration is odd}
@@ -224,7 +224,7 @@
 	    	</tr>
 	{foreachelse}
 	<tr height='20' class='{$rowColor[0]}S1'>
-        {* MintHCM #94842 START *}
+        {* mehar finance #94842 START *}
         {if $dashletInitialLoading }
         <td colspan="{$colCount}" class="dashlet-loader-container">
             <em>{$APP.LBL_DASHLETS_PROCESSING}</em>
@@ -233,7 +233,7 @@
             <em>{$APP.LBL_NO_DATA}</em>
         {/if}
         </td>
-        {* MintHCM #94842 END *}
+        {* mehar finance #94842 END *}
 	</tr>
 	{/foreach}
 </table>

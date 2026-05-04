@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -67,7 +67,7 @@ $mod_strings = array(
 
     'ERR_ARCHIVE_EMAIL' => 'Error: Select emails to archive.',
     'ERR_DELETE_RECORD' => 'Error: You must specify a record number to delete the account.',
-   'LBL_ADD_DASHLETS' => 'Add MintHCM Dashlets',
+   'LBL_ADD_DASHLETS' => 'Add mehar finance Dashlets',
     'LBL_ADD_DOCUMENT' => 'Add Documents',
     'LBL_ADD_ENTRIES' => 'Add Entries',
     'LBL_ADD_FILE' => 'Add Files',
@@ -294,11 +294,11 @@ $mod_strings = array(
     'LBL_HAS_INVALID_EMAIL_CC' => 'The address(es) in the Cc field are invalid',
     'LBL_HAS_INVALID_EMAIL_BCC' => 'The address(es) in the Bcc field are invalid',
     'LBL_HAS_INVALID_EMAIL_TO' => 'The address(es) in the To field are invalid',
-   'LBL_TEST_EMAIL_SUBJECT' => 'Test Email from MintHCM',
+   'LBL_TEST_EMAIL_SUBJECT' => 'Test Email from mehar finance',
     'LBL_NO_SUBJECT' => '(no subject)',
     'LBL_CHECKING_ACCOUNT' => 'Checking Account',
     'LBL_OF' => 'of',
-   'LBL_TEST_EMAIL_BODY' => 'This email was sent in order to test the outgoing mail server information provided in the MintHCM application. A successful receipt of this email indicates that the outgoing mail server information provided is valid.',
+   'LBL_TEST_EMAIL_BODY' => 'This email was sent in order to test the outgoing mail server information provided in the mehar finance application. A successful receipt of this email indicates that the outgoing mail server information provided is valid.',
     // for outbound email dialog
     'LBL_MISSING_DEFAULT_OUTBOUND_SMTP_SETTINGS' => 'The administrator has not yet configured the default outbound account. Unable to send test email.',
     'LBL_MAIL_SMTPAUTH_REQ' => 'Use SMTP Authentication?',
@@ -400,7 +400,7 @@ $mod_strings = array(
 
    'LBL_FROM_ADDR_NAME' => 'From Address',
    'LBL_EMAILS_EMPLOYEES_REL' => 'Emails:Employees',
-   'LBL_ORPHANED_COMMENT' => 'Emails that exist in MintHCM but were deleted from the email server.',
+   'LBL_ORPHANED_COMMENT' => 'Emails that exist in mehar finance but were deleted from the email server.',
    'LBL_LAST_SYNCED_COMMENT' => 'Date and time when the email was last synced with the server.',
    'LBL_FROM_ADDR_NAME_COMMENT' => 'Name of the sender of the email.',
    'LBL_REPLY_TO_ADDR_COMMENT' => 'Email address for replies.',

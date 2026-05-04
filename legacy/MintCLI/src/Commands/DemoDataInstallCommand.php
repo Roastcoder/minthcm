@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Commands;
+namespace mehar finance\MintCLI\Commands;
 
 require_once('legacy/install/DemoDataInstallation/Install/DemoDataInstall.php');
 use DemoDataInstallation\Install\DemoDataInstall;
@@ -10,8 +10,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-use MintHCM\MintCLI\Services\DatabaseService;
-use MintHCM\MintCLI\Services\DemoDataCommandService;
+use mehar finance\MintCLI\Services\DatabaseService;
+use mehar finance\MintCLI\Services\DemoDataCommandService;
 
 class DemoDataInstallCommand extends Command
 {

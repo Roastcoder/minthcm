@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 
@@ -119,9 +119,9 @@ function getEncryptedPassword(login, password, mailbox) {
 	return words;
 } // fn
 
-// MintHCM #110041 START
+// mehar finance #110041 START
 function ie_test_open_popup_with_submit(module_name, action, pageTarget, width, height, mail_server, protocol, port, login, password, mailbox, ssl, personal, formName, ie_id, eapm_id, connectionString = null, auth_type, externalOauthConnectionName, externalOauthConnectionId)
-// MintHCM #110041 END
+// mehar finance #110041 END
 {
 	if (!formName) formName = "testSettingsView";
 	var words = getEncryptedPassword(login, password, mailbox);
@@ -151,9 +151,9 @@ function ie_test_open_popup_with_submit(module_name, action, pageTarget, width, 
 		+ '&ie_id=' + ie_id
         + '&personal=' + isPersonal
         + '&auth_type=' + auth_type
-        // MintHCM #110041 START
+        // mehar finance #110041 START
         + '&eapm_id=' + eapm_id;
-        // MintHCM #110041 END
+        // mehar finance #110041 END
 
 	if (externalOauthConnectionName && externalOauthConnectionId){
         URL += '&externalOauthConnectionName=' + externalOauthConnectionName
@@ -261,9 +261,9 @@ function isDataValid(formName, validateMonitoredFolder) {
 
 } // fn
 
-// MintHCM #110041 START
+// mehar finance #110041 START
 function getFoldersListForInboundAccount(module_name, action, pageTarget, width, height, mail_server, protocol, port, login, password, mailbox, ssl, personal, searchFieldValue, formName, eapm_id, extraParams = null) {
-// MintHCM #110041 END
+// mehar finance #110041 END
 	if (!formName) formName = "testSettingsView";
 
 	var words = getEncryptedPassword(login, password, mailbox);
@@ -284,10 +284,10 @@ function getFoldersListForInboundAccount(module_name, action, pageTarget, width,
         + '&mailbox=' + words[2]
         + '&ssl=' + ssl
         + '&personal=' + isPersonal
-        // MintHCM #110041 START
+        // mehar finance #110041 START
 		+ '&searchField='+ searchFieldValue;
         + '&eapm_id='+ eapm_id;
-        // MintHCM #110041 END
+        // mehar finance #110041 END
 	
 	if(extraParams && typeof extraParams === 'object' && Object.keys(extraParams).length) {
 		Object.keys(extraParams).forEach(function (key) {

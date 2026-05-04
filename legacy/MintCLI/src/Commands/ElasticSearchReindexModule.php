@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Commands;
+namespace mehar finance\MintCLI\Commands;
 
 if (! defined('sugarEntry')) {
     define('sugarEntry', true);
@@ -21,7 +21,7 @@ use SuiteCRM\Search\ElasticSearch\ElasticSearchIndexer;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use MintHCM\MintCLI\Services\ElasticsearchService;
+use mehar finance\MintCLI\Services\ElasticsearchService;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Monolog\Logger;
 
@@ -75,7 +75,7 @@ class ElasticSearchReindexModule extends Command
     {
         $QH = $this->getHelper('question');
 
-        $question = new \MintHCM\MintCLI\Questions\ModuleName($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ModuleName($QH, $input, $output);
         $module_name = $question->ask();
 
         return [

@@ -1,6 +1,6 @@
 <?php 
 
-namespace MintHCM\Data\ORM\Doctrine\MintTypes;
+namespace mehar finance\Data\ORM\Doctrine\MintTypes;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 

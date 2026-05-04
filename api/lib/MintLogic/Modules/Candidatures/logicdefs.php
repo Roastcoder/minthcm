@@ -1,8 +1,8 @@
 <?php
 
-use MintHCM\Data\BeanFactory;
-use MintHCM\Lib\MintLogic\Formula;
-use MintHCM\Lib\MintLogic\Hook;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Lib\MintLogic\Formula;
+use mehar finance\Lib\MintLogic\Hook;
 
 return [
     'rules' => [

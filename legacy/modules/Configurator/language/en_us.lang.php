@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -116,7 +116,7 @@ $mod_strings = array(
    'VERIFY_CLIENT_IP' => 'Validate user IP address',
    'LOCK_HOMEPAGE' => 'Prevent user customizable Homepage layout',
    'LOCK_SUBPANELS' => 'Prevent user customizable subpanel layout',
-   'MAX_DASHLETS' => 'Maximum number of MintHCM Dashlets on Homepage',
+   'MAX_DASHLETS' => 'Maximum number of mehar finance Dashlets on Homepage',
    'SYSTEM_NAME' => 'System Name:',
    'SYSTEM_NAME_WIZARD' => 'Name:',
    'SYSTEM_NAME_HELP' => 'This is the name that displays in the title bar of your browser.',
@@ -140,7 +140,7 @@ $mod_strings = array(
    'LBL_LDAP_GROUP_USER_ATTR_DESC' => 'The unique identifier of the person that will be used to check if they are a member of the group Example: <em>uid</em>',
    'LBL_LDAP_GROUP_ATTR_DESC' => 'The attribute of the Group that will be used to filter against the User Attribute Example: <em>memberUid</em>',
    'LBL_LDAP_GROUP_ATTR' => 'Group Attribute:',
-   'LBL_LDAP_USER_FILTER_DESC' => 'Any additional filter params to apply when authenticating users e.g.<em>is_minthcm_user=1 or (is_minthcm_user=1)(is_recruiter=1)</em>',
+   'LBL_LDAP_USER_FILTER_DESC' => 'Any additional filter params to apply when authenticating users e.g.<em>is_mehar finance_user=1 or (is_mehar finance_user=1)(is_recruiter=1)</em>',
    'LBL_LDAP_LOGIN_ATTRIBUTE' => 'Login Attribute:',
    'LBL_LDAP_BIND_ATTRIBUTE' => 'Bind Attribute:',
    'LBL_LDAP_BIND_ATTRIBUTE_DESC' => 'For Binding the LDAP User Examples:[<b>AD:</b>&nbsp;userPrincipalName] [<b>openLDAP:</b>&nbsp;dn] [<b>Mac&nbsp;OS&nbsp;X:</b>&nbsp;uid] ',
@@ -148,13 +148,13 @@ $mod_strings = array(
    'LBL_LDAP_SERVER_HOSTNAME_DESC' => 'Example: ldap.example.com or ldaps://ldap.example.com for SSL',
    'LBL_LDAP_SERVER_PORT_DESC' => 'Example: <em>389 or 636 for SSL</em>',
    'LBL_LDAP_GROUP_NAME' => 'Group Name:',
-   'LBL_LDAP_GROUP_NAME_DESC' => 'Example <em>cn=MintHCM</em>',
+   'LBL_LDAP_GROUP_NAME_DESC' => 'Example <em>cn=mehar finance</em>',
    'LBL_LDAP_USER_DN_DESC' => 'Example: <em>ou=people,dc=example,dc=com</em>',
-   'LBL_LDAP_AUTO_CREATE_USERS_DESC' => 'If an authenticated user does not exist, one will be created in MintHCM.',
+   'LBL_LDAP_AUTO_CREATE_USERS_DESC' => 'If an authenticated user does not exist, one will be created in mehar finance.',
    'LBL_LDAP_ENC_KEY' => 'Encryption Key:',
    'DEVELOPER_MODE' => 'Developer Mode',
    'SHOW_DOWNLOADS_TAB' => 'Display Downloads Tab',
-   'SHOW_DOWNLOADS_TAB_HELP' => 'When selected, the Download tab will appear in the User settings and provide users with access to MintHCM plug-ins and other available files',
+   'SHOW_DOWNLOADS_TAB_HELP' => 'When selected, the Download tab will appear in the User settings and provide users with access to mehar finance plug-ins and other available files',
    'LBL_LDAP_ENC_KEY_DESC' => 'For SOAP authentication when using LDAP.',
    'LDAP_ENC_KEY_NO_FUNC_DESC' => 'The php_mcrypt extension must be enabled in your php.ini file.',
    'LDAP_ENC_KEY_NO_FUNC_OPENSSL_DESC' => 'The openssl extension must be enabled in your php.ini file.',
@@ -194,17 +194,17 @@ $mod_strings = array(
    //Wizard Scenarios
    'LBL_WIZARD_TITLE' => 'Admin Wizard',
    'LBL_WIZARD_WELCOME_TAB' => 'Welcome',
-   'LBL_WIZARD_WELCOME_TITLE' => 'Welcome to MintHCM!',
-   'LBL_WIZARD_WELCOME' => 'Click <b>Next</b> to brand, localize and configure MintHCM now. If you wish to configure MintHCM later, click <b>Skip</b>.',
+   'LBL_WIZARD_WELCOME_TITLE' => 'Welcome to mehar finance!',
+   'LBL_WIZARD_WELCOME' => 'Click <b>Next</b> to brand, localize and configure mehar finance now. If you wish to configure mehar finance later, click <b>Skip</b>.',
    'LBL_WIZARD_NEXT_BUTTON' => 'Next >',
    'LBL_WIZARD_BACK_BUTTON' => '< Back',
    'LBL_WIZARD_SKIP_BUTTON' => 'Skip',
    'LBL_WIZARD_CONTINUE_BUTTON' => 'Continue',
    'LBL_WIZARD_FINISH_TITLE' => 'Basic system configuration is complete',
    'LBL_WIZARD_SYSTEM_TITLE' => 'Branding',
-   'LBL_WIZARD_SYSTEM_DESC' => 'Provide your organization\'s name and logo in order to brand your MintHCM.',
-   'LBL_WIZARD_LOCALE_DESC' => 'Specify how you would like data in MintHCM to be displayed, based on your geographical location. The settings you provide here will be the default settings. Users will be able set their own preferences.',
-   'LBL_WIZARD_SMTP_DESC' => 'Provide the email account that will be used to send emails, such as the assignment notifications and new user passwords. Users will receive emails from MintHCM, as sent from the specified email account.',
+   'LBL_WIZARD_SYSTEM_DESC' => 'Provide your organization\'s name and logo in order to brand your mehar finance.',
+   'LBL_WIZARD_LOCALE_DESC' => 'Specify how you would like data in mehar finance to be displayed, based on your geographical location. The settings you provide here will be the default settings. Users will be able set their own preferences.',
+   'LBL_WIZARD_SMTP_DESC' => 'Provide the email account that will be used to send emails, such as the assignment notifications and new user passwords. Users will receive emails from mehar finance, as sent from the specified email account.',
    'LBL_LOADING' => 'Loading...' /* for 508 compliance fix */,
    'LBL_DELETE' => 'Delete' /* for 508 compliance fix */,
    'LBL_WELCOME' => 'Welcome' /* for 508 compliance fix */,

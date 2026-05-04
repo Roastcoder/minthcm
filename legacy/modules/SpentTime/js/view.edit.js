@@ -1,6 +1,6 @@
 $(document).ready(function () {
     checkComboDateStart();
-    if ($('#EditView').parent().prop('className') == 'MintHCMPopup-body') {
+    if ($('#EditView').parent().prop('className') == 'mehar financePopup-body') {
         $('div .buttons #SAVE').hide();
         $('div .buttons #CANCEL').hide();
     }
@@ -378,7 +378,7 @@ function getDateMinutesOptionValue(date_id, schedule_date_end_m) {
 
 function recalculateSpendTime() {
     var date_start = moment($("#date_start").val(), viewTools.date.getDateTimeFormat());
-    if ($('#EditView').parent().prop('className') == 'MintHCMPopup-body') {
+    if ($('#EditView').parent().prop('className') == 'mehar financePopup-body') {
         var date_start = moment($(".edit-view-row #date_start").val(), viewTools.date.getDateTimeFormat());
     }
     var date_end = moment($("#date_end").val(), viewTools.date.getDateTimeFormat());
@@ -440,7 +440,7 @@ function setDoneRatioByRemainingHours() {
 
 function recalculateDateEnd() {
     var new_date = moment($("#date_start").val(), viewTools.date.getDateTimeFormat());
-    if ($('#EditView').parent().prop('className') == 'MintHCMPopup-body') {
+    if ($('#EditView').parent().prop('className') == 'mehar financePopup-body') {
         new_date = moment($(".edit-view-row #date_start").val(), viewTools.date.getDateTimeFormat());
     }
     if (new_date._d.toString() != "Invalid Date") {

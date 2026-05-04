@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Data\MassActions;
+namespace mehar finance\Data\MassActions;
 
 abstract class MassAction
 {

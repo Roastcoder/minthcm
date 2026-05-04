@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Modules\Alerts\api\controllers;
+namespace mehar finance\Modules\Alerts\api\controllers;
 
-use MintHCM\Modules\Alerts\api\helpers\DataHelper;
+use mehar finance\Modules\Alerts\api\helpers\DataHelper;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;
 

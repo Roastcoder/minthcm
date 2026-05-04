@@ -23,7 +23,7 @@
         .panel-content {
             display: none;
         }
-        {* MintHCM #110809 START *}
+        {* mehar finance #110809 START *}
         #KReportViewer-PresentationContainer-1036 div.top-scroll-wrapper{
             overflow-x: auto; 
         }
@@ -57,7 +57,7 @@
             overflow: visible !important;
             width: max-content !important;
         }
-        {* MintHCM #110809 END *}
+        {* mehar finance #110809 END *}
     {/literal}
 </style>
 {* Mint end #42089 *}
@@ -68,6 +68,6 @@
 <script type="text/javascript" src="modules/KReports/js/KReporterCommon.js?{$smarty.now}"></script>
 <script type="text/javascript" src="modules/KReports/js/KReporterViewer.js?{$smarty.now}"></script>
 <div style="width: 100%" id="kreportviewer"></div>
-{* MintHCM #110809 START *}
+{* mehar finance #110809 START *}
 <script type="text/javascript" src="modules/KReports/js/KReportsScrollManager.js"></script>
-{* MintHCM #110809 END *}
+{* mehar finance #110809 END *}

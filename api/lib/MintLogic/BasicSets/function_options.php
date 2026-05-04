@@ -1,6 +1,6 @@
 <?php
 
-use MintHCM\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Hook;
 
 return [
     'rules' => [

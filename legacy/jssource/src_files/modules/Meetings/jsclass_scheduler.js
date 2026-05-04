@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 
@@ -107,9 +107,9 @@ SugarWidgetListView.prototype.display = function () {
 
       html += '<tr class="' + className + '">';
       html += '<td><span class="suitepicon suitepicon-module-' + bean.module.toLowerCase().replace( '_', '-' ) + '"></span></td>';
-        // MintHCM #54195 #59793  #43484 Start
+        // mehar finance #54195 #59793  #43484 Start
         if (bean.module == 'Resources' || bean.module == "SecurityGroup") {
-        // MintHCM #43484 End
+        // mehar finance #43484 End
          html += '<td>' + bean.fields.name + '</td><td></td><td></td>';
       } else {
          html += '<td>' + bean.fields.full_name + '</td>';
@@ -120,7 +120,7 @@ SugarWidgetListView.prototype.display = function () {
             html += '<td>' + bean.fields.phone_work + '</td>';
          }
       }
-        // MintHCM #54195 #59793 
+        // mehar finance #54195 #59793 
       html += '<td align="right">';
       //	hidden = 'hidden';
       hidden = 'visible';
@@ -137,7 +137,7 @@ SugarWidgetListView.prototype.display = function () {
 
    div.innerHTML = html;
 }
-// MintHCM #43484 Start
+// mehar finance #43484 Start
 SugarWidgetSchedulerAttendees.get_users = function (list_row) {
 
     if (typeof (GLOBAL_REGISTRY.result_list[list_row]) != 'undefined') {
@@ -175,7 +175,7 @@ SugarWidgetSchedulerAttendees.userOnList = function (id){
     return user_on_list;
 }
 
-// MintHCM #43484 End
+// mehar finance #43484 End
 SugarWidgetListView.prototype.display_loading = function () {
 
 }
@@ -220,10 +220,10 @@ SugarWidgetSchedulerSearch.submit = function ( form ) {
    }
 
    var query = {
-        // MintHCM #54195 #59793 #43484 #117141 Start
+        // mehar finance #54195 #59793 #43484 #117141 Start
         "modules": ["Users", "Candidates", "Resources", "SecurityGroups"],
         "field_list": [ 'id', 'name', 'full_name', 'email1', 'phone_work', 'phone_mobile', 'show_on_employees', 'group_type'],
-        // MintHCM #54195 #59793 #43484 #117141 End
+        // mehar finance #54195 #59793 #43484 #117141 End
         "group": "and",
         "conditions": conditions
    };
@@ -408,13 +408,13 @@ SugarWidgetScheduler.fill_invitees = function ( form ) {
       } else if ( GLOBAL_REGISTRY.focus.users_arr[i].module == 'Contact' ) {
          form.contact_invitees.value += GLOBAL_REGISTRY.focus.users_arr[i].fields.id + ",";
       }
-      // MintHCM #54195 #59793 Start 
+      // mehar finance #54195 #59793 Start 
       else if ( GLOBAL_REGISTRY.focus.users_arr[i].module == 'Candidates' ) {
          form.candidate_invitees.value += GLOBAL_REGISTRY.focus.users_arr[i].fields.id + ",";
       } else if ( GLOBAL_REGISTRY.focus.users_arr[i].module == 'Resources' ) {
          form.resource_invitees.value += GLOBAL_REGISTRY.focus.users_arr[i].fields.id + ",";
       }
-      // MintHCM #54195 #59793 End
+      // mehar finance #54195 #59793 End
    }
 }
 
@@ -454,14 +454,14 @@ SugarWidgetScheduler.update_time = function () {
    GLOBAL_REGISTRY.focus.fields.duration_hours = document.forms[form_name].duration_hours.value;
    GLOBAL_REGISTRY.focus.fields.duration_minutes = document.forms[form_name].duration_minutes.value;
    GLOBAL_REGISTRY.focus.fields.datetime_start = SugarDateTime.mysql2jsDateTime( GLOBAL_REGISTRY.focus.fields.date_start, GLOBAL_REGISTRY.focus.fields.time_start );
-    /* MintHCM #122808 START */
+    /* mehar finance #122808 START */
     if(GLOBAL_REGISTRY['users_rows'] != undefined){
         GLOBAL_REGISTRY['users_rows'] = [];
     }
     if(GLOBAL_REGISTRY['users_rows_ids'] != undefined){
         GLOBAL_REGISTRY['users_rows_ids'] = {};
     }
-    /* MintHCM #122808 END */
+    /* mehar finance #122808 END */
    GLOBAL_REGISTRY.scheduler_attendees_obj.init();
    GLOBAL_REGISTRY.scheduler_attendees_obj.display();
 }
@@ -621,7 +621,7 @@ SugarWidgetScheduler.getScheduleDetails = function ( beans, ids ) {
            width,
            theme
            );
-   // MintHCM #59793 Start
+   // mehar finance #59793 Start
    if ( _.contains( beans, 'Reservationss' ) ) {
         viewTools.api.callCustomApi({
             module: 'Reservations', action: 'getReservations', dataPOST: { reservations_ids: ids }, callback: function (data) {
@@ -695,7 +695,7 @@ SugarWidgetScheduler.getScheduleDetails = function ( beans, ids ) {
          $dialog.html( containers );
       } );
    }
-   // MintHCM #59793 End
+   // mehar finance #59793 End
 }
 //////////////////////////////////////////////////
 // class: SugarWidgetSchedulerAttendees
@@ -742,19 +742,19 @@ SugarWidgetSchedulerAttendees.prototype.init = function () {
    GLOBAL_REGISTRY.focus.fields.datetime_start = SugarDateTime.mysql2jsDateTime( GLOBAL_REGISTRY.focus.fields.date_start, GLOBAL_REGISTRY.focus.fields.time_start );
 
    this.timeslots = new Array();
-   /* MintHCM #75792 START */
+   /* mehar finance #75792 START */
    /* this.hours = 9; */
    this.hours = parseInt(document.forms[form_name].duration_hours.value) + (parseInt(document.forms[form_name].duration_minutes.value) > 0 ? 1 : 0);
    if (this.hours > 12) {
        this.hours = 12;
    }
-   /* MintHCM #75792 END */
+   /* mehar finance #75792 END */
    this.segments = 4;
-   /* MintHCM #75792 START */
+   /* mehar finance #75792 START */
    /* this.start_hours_before = 4; */
    this.start_hours_before = 2;
    this.hours += this.start_hours_before * 2;
-   /* MintHCM #75792 END */
+   /* mehar finance #75792 END */
 
    var minute_interval = 15;
    var dtstart = GLOBAL_REGISTRY.focus.fields.datetime_start;
@@ -845,13 +845,13 @@ SugarWidgetSchedulerAttendees.prototype.display = function () {
    html += '<td>&nbsp;</td>';
    html += '</tr>';
 
-    /* MintHCM #122808 START */
+    /* mehar finance #122808 START */
     if ( typeof (GLOBAL_REGISTRY) == 'undefined' ) {
         return;
     }
 
     GLOBAL_REGISTRY['schedulerTable'] = html;
-    /* MintHCM #122808 START */
+    /* mehar finance #122808 START */
 
    html += '</table>';
    if ( this.parentNode.childNodes.length < 1 )
@@ -861,11 +861,11 @@ SugarWidgetSchedulerAttendees.prototype.display = function () {
 
    var thetable = "schedulerTable";
 
-    /* MintHCM #122808 START */
+    /* mehar finance #122808 START */
     // if ( typeof (GLOBAL_REGISTRY) == 'undefined' ) {
     //     return;
     // }
-    /* MintHCM #122808 END */
+    /* mehar finance #122808 END */
 
    //set the current user (as event-coordinator) so that they can be added to invitee list
    //only IF the first removed flag has not been set AND this is a new record
@@ -884,7 +884,7 @@ SugarWidgetSchedulerAttendees.prototype.display = function () {
       row.focus_bean = GLOBAL_REGISTRY.focus.users_arr[i];
       row.data_position = i;
       GLOBAL_REGISTRY.focus.users_arr_hash[ GLOBAL_REGISTRY.focus.users_arr[i]['fields']['id']] = GLOBAL_REGISTRY.focus.users_arr[i];
-      // MintHCM #59793 Start
+      // mehar finance #59793 Start
       if ( GLOBAL_REGISTRY.focus.users_arr[i].module === 'Resources' ) {
          row.thetableid = thetable;
          if ( typeof (GLOBAL_REGISTRY['freebusy_adjusted']) == 'undefined' || typeof (GLOBAL_REGISTRY['freebusy_adjusted'][row.focus_bean.fields.id]) == 'undefined' ) {
@@ -912,25 +912,25 @@ SugarWidgetSchedulerAttendees.prototype.display = function () {
       } else {
          row.load( thetable );
       }
-      // MintHCM #59793 End
+      // mehar finance #59793 End
    }
 }
 SugarWidgetSchedulerAttendees.form_add_attendee = function (list_row) {
 
     if (typeof (GLOBAL_REGISTRY.result_list[list_row]) != 'undefined' && typeof (GLOBAL_REGISTRY.focus.users_arr_hash[GLOBAL_REGISTRY.result_list[list_row].fields.id]) == 'undefined' &&
-    // MintHCM #43484 Start
+    // mehar finance #43484 Start
     GLOBAL_REGISTRY.result_list[list_row].module !="SecurityGroup"
-    // MintHCM #43484 End
+    // mehar finance #43484 End
     ) {
       GLOBAL_REGISTRY.focus.users_arr[ GLOBAL_REGISTRY.focus.users_arr.length ] = GLOBAL_REGISTRY.result_list[list_row];
    }
 
 
-    // MintHCM #43484 Start
+    // mehar finance #43484 Start
     if(GLOBAL_REGISTRY.result_list[list_row].module == 'SecurityGroup'){
         SugarWidgetSchedulerAttendees.get_users(list_row);
     }
-        // MintHCM #43484 End
+        // mehar finance #43484 End
    GLOBAL_REGISTRY.scheduler_attendees_obj.display();
 }
 
@@ -964,46 +964,46 @@ SugarWidgetScheduleRow.prototype.load = function ( thetableid ) {
 }
 
 SugarWidgetScheduleRow.prototype.display = function () {
-    /* MintHCM #122808 START */
+    /* mehar finance #122808 START */
     if(GLOBAL_REGISTRY['users_rows'] == undefined){
         GLOBAL_REGISTRY['users_rows'] = [];
     }
     if(GLOBAL_REGISTRY['users_rows_ids'] == undefined){
         GLOBAL_REGISTRY['users_rows_ids'] = {};
     }
-    /* MintHCM #122808 END */
+    /* mehar finance #122808 END */
    SUGAR.util.doWhen( "document.getElementById('" + this.thetableid + "') != null", function () {
       let tr;
       this.thetable = document.getElementById( this.thetableid );
 
       if ( typeof (this.element) != 'undefined' ) {
          if ( this.element.parentNode != null )
-            /* MintHCM #122808 START */
+            /* mehar finance #122808 START */
             //this.thetable.deleteRow( this.element.rowIndex );
-            /* MintHCM #122808 END */
+            /* mehar finance #122808 END */
          tr = document.createElement( 'tr' );
-         /* MintHCM #122808 START */
+         /* mehar finance #122808 START */
          //this.thetable.appendChild( tr );
-         /* MintHCM #122808 END */
+         /* mehar finance #122808 END */
       } else {
-        /* MintHCM #122808 START */
+        /* mehar finance #122808 START */
         //tr = this.thetable.insertRow( this.thetable.rows.length );
          tr = document.createElement( 'tr' );
-         /* MintHCM #122808 END */
+         /* mehar finance #122808 END */
       }
-      // MintHCM #139132 Start
+      // mehar finance #139132 Start
       if (tr) {
         $(tr).attr('data-position', this.data_position);
         this.thetable.appendChild( tr );
         tr.className = "schedulerAttendeeRow";
         $( tr ).attr( 'data-id', this.focus_bean.fields.id );
-        // MintHCM #54195 #59793 Start
+        // mehar finance #54195 #59793 Start
         if ( this.focus_bean.module == 'Candidates' || this.focus_bean.module == 'Resources' ) {
           $( tr ).attr( 'data-module', this.focus_bean.module );
         } else {
           $( tr ).attr( 'data-module', this.focus_bean.module + 's' );
         }
-        // MintHCM #54195 #59793 End
+        // mehar finance #54195 #59793 End
         td = document.createElement( 'td' );
         tr.appendChild( td );
         //insertCell(tr.cells.length);
@@ -1040,7 +1040,7 @@ SugarWidgetScheduleRow.prototype.display = function () {
         //}
         this.element = tr;
         this.element_index = this.thetable.rows.length - 1;
-    // MintHCM #139132 end
+    // mehar finance #139132 end
 
         $('#'+this.thetableid).each(function() {
             let collection = Array.from(this.querySelectorAll('.schedulerAttendeeRow'))
@@ -1055,12 +1055,12 @@ SugarWidgetScheduleRow.prototype.display = function () {
             })
         });
 
-        /* MintHCM #122808 START */
+        /* mehar finance #122808 START */
         if(GLOBAL_REGISTRY['users_rows_ids'] != undefined && !(this.focus_bean.fields.id in GLOBAL_REGISTRY['users_rows_ids'])){
             GLOBAL_REGISTRY['users_rows_ids'][this.focus_bean.fields.id] = tr.outerHTML;
             GLOBAL_REGISTRY['users_rows'].push(tr);
         }
-        /* MintHCM #122808 END */
+        /* mehar finance #122808 END */
       }
    }, null, this );
 }
@@ -1078,14 +1078,14 @@ SugarWidgetScheduleRow.deleteRow = function ( bean_id ) {
          GLOBAL_REGISTRY.focus.users_arr.splice( i, 1 );
          //set first remove flag to true for processing in display() function
          GLOBAL_REGISTRY.FIRST_REMOVE = true;
-         /* MintHCM #122808 START */
+         /* mehar finance #122808 START */
          if(GLOBAL_REGISTRY['users_rows_ids'][bean_id] != undefined){
             if($.inArray(GLOBAL_REGISTRY['users_rows_ids'][bean_id], GLOBAL_REGISTRY['users_rows']) != -1){
                 GLOBAL_REGISTRY['users_rows'].splice($.inArray(GLOBAL_REGISTRY['users_rows_ids'][bean_id], GLOBAL_REGISTRY['users_rows']),1);
                 delete GLOBAL_REGISTRY['users_rows_ids'][bean_id];
             }
          }
-         /* MintHCM #122808 END */
+         /* mehar finance #122808 END */
          GLOBAL_REGISTRY.container.root_widget.display();
       }
    }
@@ -1166,14 +1166,14 @@ SugarWidgetScheduleRow.prototype.add_freebusy_nodes = function ( tr, attendee ) 
       if ( is_loaded ) {
          // if there's a freebusy stack in this slice
          if ( typeof (GLOBAL_REGISTRY['freebusy_adjusted'][this.focus_bean.fields.id][this.timeslots[i].hash]) != 'undefined' ) {
-            /* MintHCM #75792 START */
+            /* mehar finance #75792 START */
             /*  $( td ).addClass( 'free' ); */
-            /* MintHCM #75792 START */
+            /* mehar finance #75792 START */
 
             var dataid = '',
                     module = '';
             $.each( GLOBAL_REGISTRY['freebusy_adjusted'][this.focus_bean.fields.id][this.timeslots[i].hash]['records'], function ( index, value ) {
-               /* MintHCM #75792 START */
+               /* mehar finance #75792 START */
                if (value.startsWith('WorkSchedules')) {
                    var ws_type = value.split('___')[1];
                    if (ws_type != undefined) {
@@ -1182,7 +1182,7 @@ SugarWidgetScheduleRow.prototype.add_freebusy_nodes = function ( tr, attendee ) 
                    return;
                }
                $( td ).addClass( 'free' );
-               /* MintHCM #75792 END */
+               /* mehar finance #75792 END */
                if ( dataid == '' )
                   dataid = index;
                else

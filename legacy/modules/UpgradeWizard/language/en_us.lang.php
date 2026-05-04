@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2019 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -54,7 +54,7 @@ $mod_strings = array(
     'ERR_UW_FILE_NOT_DELETED' => 'Problem removing package ',
     'ERR_UW_FILE_NOT_READABLE' => 'File could not be read.',
     'ERR_UW_FILE_NOT_WRITABLE' => 'File cannot be moved or written to',
-    'ERR_UW_LOG_FILE_UNWRITABLE' => './upgradeWizard.log could not be created/written to. Please fix permissions on your MintHCM directory.',
+    'ERR_UW_LOG_FILE_UNWRITABLE' => './upgradeWizard.log could not be created/written to. Please fix permissions on your mehar finance directory.',
     'ERR_UW_MBSTRING_FUNC_OVERLOAD' => 'mbstring.func_overload set to a value higher than 1. Please change this in your php.ini and restart the web server.',
     'ERR_UW_NO_FILE_UPLOADED' => 'Please specify a file and try again!',
     'ERR_UW_NO_FILES' => 'An error occurred, no files were found to check.',
@@ -65,9 +65,9 @@ $mod_strings = array(
     'ERR_UW_ONLY_PATCHES' => 'You can only upload patches on this page.',
     'ERR_UW_PREFLIGHT_ERRORS' => 'Errors Found During Preflight Check',
     'ERR_UW_UPLOAD_ERR' => 'There was an error uploading the file, please try again!<br>' . PHP_EOL,
-    'ERR_UW_VERSION' => 'MintHCM System Version: ',
+    'ERR_UW_VERSION' => 'mehar finance System Version: ',
     'ERR_UW_PHP_VERSION' => 'PHP Version: ',
-    'ERR_UW_SUITECRM_VERSION' => 'MintHCM System Version: ',
+    'ERR_UW_SUITECRM_VERSION' => 'mehar finance System Version: ',
     'ERR_UW_WRONG_TYPE' => 'This page is not for running ',
     'LBL_BUTTON_BACK' => '< Back',
     'LBL_BUTTON_CANCEL' => 'Cancel',
@@ -88,7 +88,7 @@ $mod_strings = array(
     'LBL_UW_COMMIT_ADD_TASK_DESC_1' => 'Backups of Overwritten Files are in the following directory: ' . PHP_EOL,
     'LBL_UW_COMMIT_ADD_TASK_DESC_2' => 'Manually merge the following files: ' . PHP_EOL,
     'LBL_UW_COMMIT_ADD_TASK_NAME' => 'Upgrade Process: Manually Merge Files',
-    'LBL_UW_COMMIT_ADD_TASK_OVERVIEW' => 'Please use whichever diff method is most familiar to you to merge these files. Until this is complete, your MintHCM installation will be in an uncertain state, and the upgrade incomplete.',
+    'LBL_UW_COMMIT_ADD_TASK_OVERVIEW' => 'Please use whichever diff method is most familiar to you to merge these files. Until this is complete, your mehar finance installation will be in an uncertain state, and the upgrade incomplete.',
     'LBL_UW_COMPLETE' => 'Complete',
     'LBL_UW_COMPLIANCE_ALL_OK' => 'All System Settings Requirements Satisfied',
     'LBL_UW_COMPLIANCE_CALLTIME' => 'PHP Setting: Call Time Pass By Reference',
@@ -174,8 +174,8 @@ $mod_strings = array(
 
     'LBL_UW_SKIPPED_FILES_TITLE' => 'Skipped Files',
     'LBL_UW_SQL_RUN' => 'Check when SQL has been manually run',
-    'LBL_UW_START_DESC' => 'This wizard will assist you in upgrading this MintHCM instance.',
-    'LBL_UW_START_DESC2' => 'Note: We highly recommend that you create a copy of the MintHCM instance you use in production, and test the upgrade package before deploying the new version. If you have changed the "composer.json" file, please run <pre>composer update</pre>, after the upgrade process has completed.',
+    'LBL_UW_START_DESC' => 'This wizard will assist you in upgrading this mehar finance instance.',
+    'LBL_UW_START_DESC2' => 'Note: We highly recommend that you create a copy of the mehar finance instance you use in production, and test the upgrade package before deploying the new version. If you have changed the "composer.json" file, please run <pre>composer update</pre>, after the upgrade process has completed.',
     'LBL_UW_START_DESC3' => 'Click Next to perform a check on your system to make sure that the system is ready for the upgrade. The check includes file permissions, database privileges and server settings.',
     'LBL_UW_START_UPGRADED_UW_DESC' => 'The new Upgrade Wizard will now resume the upgrade process. Please continue your upgrade.',
     'LBL_UW_START_UPGRADED_UW_TITLE' => 'Welcome to the new Upgrade Wizard',
@@ -214,7 +214,7 @@ $mod_strings = array(
     'LBL_UW_SHOW_OLD_SCHEMA_TO_DROP' => 'Show Old Schema that could be dropped',
     'LBL_UW_SKIPPED_QUERIES_ALREADY_EXIST' => 'Skipped Queries',
     'LBL_INCOMPATIBLE_PHP_VERSION' => 'Php version 5 or above is required.',
-    'ERR_CHECKSYS_PHP_INVALID_VER' => 'Your version of PHP is not supported by MintHCM. You will need to install a version that is compatible with the MintHCM application. Please consult the Compatibility Matrix in the Release Notes for supported PHP Versions. Your version is ',
+    'ERR_CHECKSYS_PHP_INVALID_VER' => 'Your version of PHP is not supported by mehar finance. You will need to install a version that is compatible with the mehar finance application. Please consult the Compatibility Matrix in the Release Notes for supported PHP Versions. Your version is ',
     //including some strings from moduleinstall that are used in Upgrade
     'LBL_ML_ACTION' => 'Action',
     'LBL_ML_CANCEL' => 'Cancel',
@@ -243,9 +243,9 @@ $mod_strings = array(
     'LBL_UW_CONFIRM_LAYOUT_RESULTS' => 'Confirm Layout Results',
     'LBL_UW_CONFIRM_LAYOUT_RESULTS_DESC' => 'The following layouts were merged successfully:',
     'LBL_SELECT_FILE' => 'Select File:',
-    'ERROR_VERSION_INCOMPATIBLE' => 'The uploaded file is not compatible with this version of MintHCM: ',
+    'ERROR_VERSION_INCOMPATIBLE' => 'The uploaded file is not compatible with this version of mehar finance: ',
     'ERROR_PHP_VERSION_INCOMPATIBLE' => 'The uploaded file is not compatible with this version of PHP: ',
-    'ERROR_SUITECRM_VERSION_INCOMPATIBLE' => 'The uploaded file is not compatible with this version of MintHCM: ',
+    'ERROR_SUITECRM_VERSION_INCOMPATIBLE' => 'The uploaded file is not compatible with this version of mehar finance: ',
     'LBL_LANGPACKS' => 'Language Packs' /*for 508 compliance fix*/,
     'LBL_MODULELOADER' => 'Module Loader' /*for 508 compliance fix*/,
     'LBL_PATCHUPGRADES' => 'Patch Upgrades' /*for 508 compliance fix*/,

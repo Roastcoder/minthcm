@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\MintCLI\Services;
+namespace mehar finance\MintCLI\Services;
 
-use MintHCM\MintCLI\SystemRequirements\SystemRequirements;
+use mehar finance\MintCLI\SystemRequirements\SystemRequirements;
 
 #[\AllowDynamicProperties]
 class AppVersionService

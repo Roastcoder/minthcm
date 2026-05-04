@@ -1,6 +1,6 @@
 <?php
 
-use MintHCM\MintCLI\Installer\Installer as CLIInstaller;
+use mehar finance\MintCLI\Installer\Installer as CLIInstaller;
 use SuiteCRM\Search\ElasticSearch\ElasticSearchIndexer;
 
 #[\AllowDynamicProperties]

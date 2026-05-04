@@ -1,7 +1,7 @@
 <?php
 
-namespace MintHCM\MintCLI\Questions;
-use MintHCM\MintCLI\InputValidators\NotEmptyValidator;
+namespace mehar finance\MintCLI\Questions;
+use mehar finance\MintCLI\InputValidators\NotEmptyValidator;
 
 class ModuleName extends Question
 {

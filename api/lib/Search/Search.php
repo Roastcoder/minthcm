@@ -9,8 +9,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -38,13 +38,13 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
-namespace MintHCM\Lib\Search;
+namespace mehar finance\Lib\Search;
 
 #[\AllowDynamicProperties]
 class Search
@@ -64,11 +64,11 @@ class Search
         if (empty($class_name) || !is_string($class_name)) {
             return null;
         }
-        if (class_exists("MintHCM\Custom\Lib\Search\\" . $class_name . '\\' . $class_name)) {
-            return "MintHCM\Custom\Lib\Search\\" . $class_name . '\\' . $class_name;
+        if (class_exists("mehar finance\Custom\Lib\Search\\" . $class_name . '\\' . $class_name)) {
+            return "mehar finance\Custom\Lib\Search\\" . $class_name . '\\' . $class_name;
         }
-        if (class_exists("MintHCM\Lib\Search\\" . $class_name . '\\' . $class_name)) {
-            return "MintHCM\Lib\Search\\" . $class_name . '\\' . $class_name;
+        if (class_exists("mehar finance\Lib\Search\\" . $class_name . '\\' . $class_name)) {
+            return "mehar finance\Lib\Search\\" . $class_name . '\\' . $class_name;
         }
         return null;
     }

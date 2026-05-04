@@ -23,7 +23,7 @@ class ImagePreviewParams extends BaseParam
             [
                 ParamOption\Id::class,
                 ParamOption\ModuleName::class,
-                ParamOption\Timestamp::class, // MintHCM #87887
+                ParamOption\Timestamp::class, // mehar finance #87887
             ]
         );
     }

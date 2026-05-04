@@ -1,9 +1,9 @@
 <?php
 
-namespace MintHCM\Lib\MintLogic\Validators;
+namespace mehar finance\Lib\MintLogic\Validators;
 
-use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
-use MintHCM\Lib\MintLogic\Validator;
+use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
+use mehar finance\Lib\MintLogic\Validator;
 
 class IsUnique extends Validator
 {

@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */function closePopup(){var closePopup=window.opener.get_close_popup();if(closePopup){window.close();}}
 function confirmDialog(arrayContents,formName){var newData='';var labels='';var oldData='';SUGAR.util.globalEval("var data = {"+arrayContents.join(",")+"}");var opener=window.opener.document;for(var key in data){var displayValue=replaceHTMLChars(data[key]);if(opener.forms[formName]&&opener.getElementById(key+'_label')!=null&&!key.match(/account/)){var dataLabel=opener.getElementById(key+'_label').innerHTML.replace(/\n/gi,'').replace(/<\/?[^>]+(>|$)/g,"");labels+=dataLabel+' \n';newData+=dataLabel+' '+displayValue+'\n';if(window.opener.document.forms[formName].elements[key]){oldData+=dataLabel+' '+opener.forms[formName].elements[key].value+'\n';}}}
 var popupConfirm=0;if(data['account_id']&&(newData.split("\n").length-1)>2){if(newData!=oldData&&oldData!=labels){if(confirm(SUGAR.language.get('app_strings','NTC_OVERWRITE_ADDRESS_PHONE_CONFIRM')+'\n\n'+newData)){popupConfirm=1;}else{popupConfirm=-1;}}}

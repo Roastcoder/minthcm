@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -257,13 +257,13 @@ class SearchForm
             }
         }
 
-        /* MintHCM #92823 START */
+        /* mehar finance #92823 START */
         if(!empty($_REQUEST['displayColumns'])){
             $this->th->ss->assign('DISPLAY_COLUMNS',$_REQUEST['displayColumns']);
         } else {
             $this->th->ss->assign('DISPLAY_COLUMNS',$_REQUEST['mint_displayColumns']);
         }      
-        /* MintHCM #92823 END */
+        /* mehar finance #92823 END */
 
         $this->th->ss->assign('TAB_ARRAY', $this->tabs);
 
@@ -441,11 +441,11 @@ class SearchForm
                         }
                         $value = implode(', ', $values);
                     }
-                // MintHCM #69594  START
+                // mehar finance #69594  START
                 else if($value[0] == '[' && $value[strlen($value) - 1] == ']'){
                     $value = $defs['options'][substr($value, 1, -1)];
                 }
-                // MintHCM #69594 END
+                // mehar finance #69594 END
                     $data[$labelText] = $type == 'bool' ? '&#10004' : $value;
                 }
             }
@@ -908,10 +908,10 @@ class SearchForm
     public function generateSearchWhere($add_custom_fields = false, $module = '')
     {
         global $timedate;
-        // MintHCM begin #70311
+        // mehar finance begin #70311
         include 'modules/Employees/access_config.php';
         $employee_assignable = isset($GLOBALS["dictionary"][$this->seed->object_name]["templates"]['employee_related'])? true:false;
-        // MintHCM end #70311
+        // mehar finance end #70311
         $db = $this->seed->db;
         $this->searchColumns = array();
         $values = $this->searchFields;
@@ -1289,12 +1289,12 @@ class SearchForm
                         }
 
                   switch ( strtolower($operator) ) {
-                            // MintHCM start
+                            // mehar finance start
                             case 'subquery_with_in':
                                 $new_subquery = str_replace('{0}', $field_value, $parms['subquery']);
                                 $where .= "{$db_field} IN ($new_subquery)";
                                 break;
-                            // MintHCM end
+                            // mehar finance end
                             case 'subquery':
                                 $in = 'IN';
                                 if (isset($parms['subquery_in_clause'])) {
@@ -1393,7 +1393,7 @@ class SearchForm
                                 $where .= $db_field . ' not in (' . $field_value . ')';
                                 break;
                             case 'in':
-                                // MintHCM begin #70311
+                                // mehar finance begin #70311
                                 if(!empty($parms['my_subordinates'])){
                                     if($employee_assignable){
                                         $where .= " (". $db_field . ' IN (' . $field_value . ') OR employee_id IN (' . $field_value . ') ) ';
@@ -1403,10 +1403,10 @@ class SearchForm
                                 } else {
                                     $where .= $db_field . ' in (' . $field_value . ')';
                                 }
-                                // MintHCM end #70311
+                                // mehar finance end #70311
                                 break;
                             case '=':
-                                // MintHCM begin #70311
+                                // mehar finance begin #70311
                                 if ( $type == 'bool' && $field_value == 0 ) {
                                     $where .= "($db_field = 0 OR $db_field IS NULL)";
                                 } 
@@ -1419,7 +1419,7 @@ class SearchForm
                                 }else {
                                     $where .= $db_field . " = " . $db->quoteType($type, $field_value);
                                 }
-                                // MintHCM end #70311
+                                // mehar finance end #70311
                                 break;
                             // tyoung bug 15971 - need to add these special cases into the $where query
                             case 'custom_enum':
@@ -1503,7 +1503,7 @@ class SearchForm
                                     $where .= ' OR ' . $db_field . " in (" . $field_value . ')';
                                 }
                                 break;
-                            //MintHCM #69594 START
+                            //mehar finance #69594 START
                             case 'last_week':
                                 global $timedate, $current_user;
                                 $start = $timedate->now(true);
@@ -1598,7 +1598,7 @@ class SearchForm
                                 $formatted_date = $modify_date->format($timedate->get_db_date_time_format());
                                 $where .= "($db_field >= '{$formatted_current_date}' AND $db_field <= '{$formatted_date}')";
                                 break;
-                            //MintHCM #69594 END
+                            //mehar finance #69594 END
                         }
                     }
                 }
@@ -1641,7 +1641,7 @@ class SearchForm
      */
     public static function retrieveSearchDefs($module)
     {
-        global $current_user, $db; // MintHCM
+        global $current_user, $db; // mehar finance
         $searchdefs = array();
         $searchFields = array();
 
@@ -1668,7 +1668,7 @@ class SearchForm
         if (file_exists('custom/modules/' . $module . '/metadata/SearchFields.php')) {
             require('custom/modules/' . $module . '/metadata/SearchFields.php');
         }
-        // MintHCM Start
+        // mehar finance Start
         $sql = "SELECT id from users WHERE reports_to_id = '{$current_user->id}'";
         if($db->getOne($sql)){
            $searchdefs[$module]['layout']['basic_search'][] = array('name' => 'my_subordinates', 'label' => 'LBL_SUBORDINATES_FILTER', 'type' => 'bool');
@@ -1692,7 +1692,7 @@ class SearchForm
              }
            }
         }
-        // MintHCM End
+        // mehar finance End
         return array('searchdefs' => $searchdefs, 'searchFields' => $searchFields);
     }
 

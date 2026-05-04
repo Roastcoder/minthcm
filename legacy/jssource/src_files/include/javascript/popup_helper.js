@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 
@@ -254,7 +254,7 @@ function send_back_selected(module, form, field, error_message, request_data) {
   closePopup();
 
   SUGAR.util.globalEval("var call_back_function = window.opener." + request_data.call_back_function);
-  //MintHCM #81369 Start
+  //mehar finance #81369 Start
   //   var result_data = {
   //     "form_name": form_name,
   //     "selection_list": selection_list_array,
@@ -269,7 +269,7 @@ function send_back_selected(module, form, field, error_message, request_data) {
     "select_entire_list": form.select_entire_list.value,
     "current_query_by_page":form.current_query_by_page.value.replaceAll("&#38;",''),
   };
-  //MintHCM #81369 End
+  //mehar finance #81369 End
   call_back_function(result_data);
 }
 

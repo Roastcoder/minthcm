@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */var subtabCount=[];var subtabModules=[];var tabLabelToValue=[];StudioTabGroup=function(){this.lastEditTabGroupLabel=-1;};StudioTabGroup.prototype.editTabGroupLabel=function(id,done){if(!done){if(this.lastEditTabGroupLabel!=-1)StudioTabGroup.prototype.editTabGroupLabel(this.lastEditTabGroupLabel,true);document.getElementById('tabname_'+id).style.display='none';document.getElementById('tablabel_'+id).style.display='';document.getElementById('tabother_'+id).style.display='none';try{document.getElementById('tablabel_'+id).focus();}
 catch(er){}
 this.lastEditTabGroupLabel=id;YAHOO.util.DragDropMgr.lock();}else{this.lastEditTabGroupLabel=-1;document.getElementById('tabname_'+id).innerHTML=escape(document.getElementById('tablabel_'+id).value);document.getElementById('tabname_'+id).style.display='';document.getElementById('tablabel_'+id).style.display='none';document.getElementById('tabother_'+id).style.display='';YAHOO.util.DragDropMgr.unlock();}}

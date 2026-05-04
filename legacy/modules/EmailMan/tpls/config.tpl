@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 -->
 
@@ -59,9 +59,9 @@ function change_state(radiobutton) {
 		radiobutton.form['massemailer_tracking_entities_location'].value=null;
 	}
 }
-// MintHCM #110041 START
+// mehar finance #110041 START
 var authInfo = {/literal}{$js_authinfo}{literal}
-// MintHCM #110041 END
+// mehar finance #110041 END
 -->
 </script>
 {/literal}
@@ -72,19 +72,19 @@ var authInfo = {/literal}{$js_authinfo}{literal}
 	<input type="hidden" name="return_module" value="{$RETURN_MODULE}">
 	<input type="hidden" name="return_action" value="{$RETURN_ACTION}">
 	<input type="hidden" name="source_form" value="config" />
-    <!-- MintHCM #110041 START -->
+    <!-- mehar finance #110041 START -->
     <input type="hidden" name="eapm_id" id="eapm_id" value="{$eapm_id}" />
     <input type="hidden" name="authorized_account" id="authorized_account" value="{$authorized_account}" />
     <input type="hidden" name="mail_authtype" id="mail_authtype" value="{$mail_authtype}" />
-    <!-- MintHCM #110041 END -->
+    <!-- mehar finance #110041 END -->
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 
 		<td>
-            <!-- MintHCM #110041 START -->
+            <!-- mehar finance #110041 START -->
 			<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" accessKey="{$APP.LBL_SAVE_BUTTON_KEY}" class="button primary" onclick="this.form.action.value='Save';return save_data(this);" type="submit" name="button" id="btn_save" value=" {$APP.LBL_SAVE_BUTTON_LABEL} ">
-            <!-- MintHCM #110041 END -->
+            <!-- mehar finance #110041 END -->
 			<input title="{$APP.LBL_CANCEL_BUTTON_TITLE}" accessKey="{$APP.LBL_CANCEL_BUTTON_KEY}" class="button" onclick="this.form.action.value='{$RETURN_ACTION}'; this.form.module.value='{$RETURN_MODULE}';" type="submit" name="button" value=" {$APP.LBL_CANCEL_BUTTON_LABEL} ">
 		</td>
 		<td align="right" nowrap>
@@ -134,7 +134,7 @@ var authInfo = {/literal}{$js_authinfo}{literal}
 						<tr>
 							<td colspan="4">
 								<div id="smtpButtonGroup" class="yui-buttongroup">
-                                    <!-- MintHCM #110041 START -->
+                                    <!-- mehar finance #110041 START -->
                                     <span id="google_oauth2" class="yui-button yui-radio-button{if $mail_smtptype == 'google_oauth2'} yui-button-checked{/if}">
                                         <span class="first-child">
                                             <button type="button" name="mail_smtptype" value="google_oauth2" class="btn btn-danger">
@@ -180,11 +180,11 @@ var authInfo = {/literal}{$js_authinfo}{literal}
                                             </button>
                                         </span>
                                     </span>
-                                    <!-- MintHCM #110041 END -->
+                                    <!-- mehar finance #110041 END -->
 								</div>
                                 </td>
                         </tr>
-                        <!-- MintHCM #110041 START -->
+                        <!-- mehar finance #110041 START -->
                         <tr id="auth_block" style="display:none">
                             <td colspan="4">
                                 <div id="auth_warning">
@@ -193,19 +193,19 @@ var authInfo = {/literal}{$js_authinfo}{literal}
                                 <button type="button" id="auth_button" name="auth_button" style="margin:10px 2px" onclick="authorize();">{$APP.LBL_EMAIL_AUTHORIZE}</button>
                             </td>
                         </tr>
-                        <!-- MintHCM #110041 END -->
+                        <!-- mehar finance #110041 END -->
 						<tr>
 							<td colspan="4">
 								<div id="smtp_settings">
 									<table width="100%" cellpadding="0" cellspacing="0">
-                                        <!-- MintHCM #110041 START -->
+                                        <!-- mehar finance #110041 START -->
                                         <tr id="mailsettings0">
                                             <td width="20%" scope="row"><span id="auth_status_label">{$MOD.LBL_AUTH_STATUS}</span></td>
                                             <td width="30%" ><input type="text" id="auth_status" name="auth_status" tabindex="1" size="25" maxlength="64" value="{if !empty($eapm_id)}{$APP.LBL_EMAIL_AUTHORIZED}{/if}{if empty($eapm_id)}{$APP.LBL_EMAIL_NOT_AUTHORIZED}{/if}" disabled></td>
                                             <td width="20%" scope="row"><span id="auth_email_label">{$MOD.LBL_AUTHORIZED_ACCOUNT}</span></td>
                                             <td width="30%" ><input type="text" id="auth_email" name="auth_email" size="25" maxlength="64" value="{$authorized_account}" tabindex='1' disabled></td>
                                         </tr>
-                                        <!-- MintHCM #110041 END -->
+                                        <!-- mehar finance #110041 END -->
 										<tr id="mailsettings1">
 											<td width="20%" scope="row"><span id="mail_smtpserver_label">{$MOD.LBL_MAIL_SMTPSERVER}</span> <span class="required">{$APP.LBL_REQUIRED_SYMBOL}</span></td>
 											<td width="30%" ><input type="text" id="mail_smtpserver" name="mail_smtpserver" tabindex="1" size="25" maxlength="255" value="{$mail_smtpserver}"></td>
@@ -266,7 +266,7 @@ var authInfo = {/literal}{$js_authinfo}{literal}
 								</div>
 							</td>
 						</tr>
-						<!-- MintHCM #110041 START -->
+						<!-- mehar finance #110041 START -->
 						<tr><td colspan="4">&nbsp;</tr>
 						<tr>
 							<td width="15%"><input type="button" class="btn btn-info" value="{$APP.LBL_EMAIL_TEST_OUTBOUND_SETTINGS}" onclick="testOutboundSettings();">&nbsp;</td>
@@ -274,7 +274,7 @@ var authInfo = {/literal}{$js_authinfo}{literal}
 							<td width="40%">&nbsp;</td>
 							<td width="40%">&nbsp;</td>
 						</tr>
-						<!-- MintHCM #110041 END -->
+						<!-- mehar finance #110041 END -->
 					</table>
 				</div>
 			</div>
@@ -570,9 +570,9 @@ var authInfo = {/literal}{$js_authinfo}{literal}
 </div>
 
 <div style="padding-top:2px;">
-            <!-- MintHCM #110041 START -->
+            <!-- mehar finance #110041 START -->
 			<input title="{$APP.LBL_SAVE_BUTTON_TITLE}" class="button primary" onclick="this.form.action.value='Save';return save_data(this);" type="submit" name="button" value=" {$APP.LBL_SAVE_BUTTON_LABEL} ">
-            <!-- MintHCM #110041 END -->
+            <!-- mehar finance #110041 END -->
 			<input title="{$APP.LBL_CANCEL_BUTTON_TITLE}" class="button" onclick="this.form.action.value='{$RETURN_ACTION}'; this.form.module.value='{$RETURN_MODULE}';" type="submit" name="button" value=" {$APP.LBL_CANCEL_BUTTON_LABEL} ">
 </div>
 
@@ -614,7 +614,7 @@ function testOutboundSettings() {
     var smtpPort = document.getElementById('mail_smtpport').value;
     var smtpssl  = document.getElementById('mail_smtpssl').value;
     var mailsmtpauthreq = document.getElementById('mail_smtpauth_req');
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     var smtpType = document.getElementById('EditView').mail_smtptype.value;
     var eapmId = document.getElementById('EditView').eapm_id.value;
     var authAccount = document.getElementById('authorized_account').value;
@@ -625,7 +625,7 @@ function testOutboundSettings() {
         overlay("{/literal}{$APP.LBL_EMAIL_ACCOUNT_NOT_AUTHORIZED}{literal}", errorMessage, 'alert');
         return false;
     }
-    // MintHCM #110041 END
+    // mehar finance #110041 END
     if(trim(smtpServer) == '') {
         isError = true;
         errorMessage += "{/literal}{$APP.LBL_EMAIL_ACCOUNTS_SMTPSERVER}{literal}" + "<br/>";
@@ -690,7 +690,7 @@ function sendTestEmail()
     var smtpssl  = document.getElementById('mail_smtpssl').value;
     var mailsmtpauthreq = document.getElementById('mail_smtpauth_req');
     var mail_sendtype = document.getElementById('mail_sendtype').value;
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     var smtppass = trim(document.getElementById('mail_smtppass').value);
     var smtpType = document.getElementById('EditView').mail_smtptype.value;
     var eapmId = document.getElementById('EditView').eapm_id.value;
@@ -703,7 +703,7 @@ function sendTestEmail()
 	                      "&mail_smtppass=" + encodeURIComponent(smtppass) + "&outboundtest_to_address=" + encodeURIComponent(toAddress) +
                           "&outboundtest_from_address=" + fromAddress + "&mail_from_name=" + from_name + "&mail_smtptype=" + smtpType  + "&mail_authtype=" + authType + "&eapm_id=" + eapmId + "&authorized_account=" + authAccount;
 
-    // MintHCM #110041 END
+    // mehar finance #110041 END
 	YAHOO.util.Connect.asyncRequest("POST", "index.php?action=testOutboundEmail&module=EmailMan&to_pdf=true&sugar_body_only=true", callbackOutboundTest, postDataString);
 }
 function testOutboundSettingsDialog() {
@@ -741,19 +741,19 @@ function notify_setrequired(f) {
 
 	document.getElementById("smtp_settings").style.display = (f.mail_sendtype.value == "SMTP") ? "inline" : "none";
 	document.getElementById("smtp_settings").style.visibility = (f.mail_sendtype.value == "SMTP") ? "visible" : "hidden";
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     if (document.getElementById('EditView').mail_authtype.value !== 'oauth2') {
 	document.getElementById("smtp_auth1").style.display = (document.getElementById('mail_smtpauth_req').checked) ? "" : "none";
 	document.getElementById("smtp_auth1").style.visibility = (document.getElementById('mail_smtpauth_req').checked) ? "visible" : "hidden";
 	document.getElementById("smtp_auth2").style.display = (document.getElementById('mail_smtpauth_req').checked) ? "" : "none";
 	document.getElementById("smtp_auth2").style.visibility = (document.getElementById('mail_smtpauth_req').checked) ? "visible" : "hidden";
     }
-    // MintHCM #110041 END
+    // mehar finance #110041 END
 
 	return true;
 }
 
-// MintHCM #110041 START
+// mehar finance #110041 START
 function setDefaultSMTPPort()
 {
     var smtpPortField;
@@ -766,7 +766,7 @@ function setDefaultSMTPPort()
         first_load = false;
     }
 }
-// MintHCM #110041 END
+// mehar finance #110041 END
 
 /**
 *  If the outlook options are all set on page load then enable the outlook field so that the user has an indication
@@ -795,7 +795,7 @@ function setOutlookDefault()
 YAHOO.util.Event.onDOMReady(setOutlookDefault);
 notify_setrequired(document.ConfigureSettings);
 
-// MintHCM #110041 START
+// mehar finance #110041 START
 function authorize() {
     var smtpType = document.getElementById('EditView').mail_smtptype.value;
     if (authInfo[smtpType]['auth_url']) {
@@ -849,11 +849,11 @@ function save_data(form) {
     }
     return result;
 }
-// MintHCM #110041 END
+// mehar finance #110041 END
 
 function changeEmailScreenDisplay(smtptype, clear)
 {
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     document.getElementById("auth_block").style.display = 'none';
     document.getElementById("mailsettings0").style.display = 'none';
     document.getElementById("smtp_auth1").style.display = '';
@@ -861,14 +861,14 @@ function changeEmailScreenDisplay(smtptype, clear)
     document.getElementById("smtp_auth1").style.visibility = 'visible';
     document.getElementById("smtp_auth2").style.visibility = 'visible';
     document.getElementById("mail_smtpauth_req").disabled = false;
-    // MintHCM #110041 END
+    // mehar finance #110041 END
 
     if(clear) {
-        // MintHCM #110041 START
+        // mehar finance #110041 START
 	    document.getElementById("mail_authtype").value = '';
         document.getElementById("eapm_id").value = '';
         document.getElementById("authorized_account").value = '';
-        // MintHCM #110041 END
+        // mehar finance #110041 END
 	    document.getElementById("mail_smtpserver").value = '';
 	    document.getElementById("mail_smtpport").value = '25';
 	    document.getElementById("mail_smtpauth_req").checked = true;
@@ -916,7 +916,7 @@ function changeEmailScreenDisplay(smtptype, clear)
         document.getElementById("mail_smtppass_label").innerHTML = '{/literal}{$MOD.LBL_GMAIL_SMTPPASS}{literal}';
         document.getElementById("mail_smtpuser_label").innerHTML = '{/literal}{$MOD.LBL_GMAIL_SMTPUSER}{literal}';
         break;
-    // MintHCM #110041 START
+    // mehar finance #110041 START
     case 'exchange_online':
         document.getElementById("mail_smtpport_label").innerHTML = '{/literal}{$MOD.LBL_EXCHANGE_SMTPPORT}{literal}';
         document.getElementById("mail_smtpserver_label").innerHTML = '{/literal}{$MOD.LBL_EXCHANGE_SMTPSERVER}{literal}';
@@ -935,7 +935,7 @@ function changeEmailScreenDisplay(smtptype, clear)
         };
         handleOauth2TabSwitch(smtptype, defaults);
         break;
-    // MintHCM #110041 END
+    // mehar finance #110041 END
     case "exchange":
         if ( document.getElementById("mail_smtpserver").value == 'smtp.mail.yahoo.com'
                 || document.getElementById("mail_smtpserver").value == 'smtp.gmail.com' ) {
@@ -954,7 +954,7 @@ function changeEmailScreenDisplay(smtptype, clear)
     setDefaultSMTPPort();
     notify_setrequired(document.ConfigureSettings);
 }
-// MintHCM #110041 START
+// mehar finance #110041 START
 var handleOauth2TabSwitch = function(smtptype, defaults) {
 	// Hide the username/password fields
 	document.getElementById("smtp_auth1").style.display = 'none';
@@ -990,7 +990,7 @@ var handleOauth2TabSwitch = function(smtptype, defaults) {
 	document.getElementById('auth_status').value = authInfo[smtptype]['eapm_id'] ?
 			'{/literal}{$APP.LBL_EMAIL_AUTHORIZED}{literal}' : '{/literal}{$APP.LBL_EMAIL_NOT_AUTHORIZED}{literal}';
 }
-// MintHCM #110041 END
+// mehar finance #110041 END
 var oButtonGroup = new YAHOO.widget.ButtonGroup("smtpButtonGroup");
 oButtonGroup.subscribe('checkedButtonChange', function(e)
 {

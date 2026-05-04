@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */var rhandle=new RevisionListHandler();var from_popup_return=false;function document_set_return(popup_reply_data){from_popup_return=true;var form_name=popup_reply_data.form_name;var name_to_value_array=popup_reply_data.name_to_value_array;related_doc_id='EMPTY';for(var the_key in name_to_value_array){if(the_key!='toJSON'){var displayValue=name_to_value_array[the_key];displayValue=displayValue.replace('&#039;',"'");displayValue=displayValue.replace('&amp;',"&");displayValue=displayValue.replace('&gt;',">");displayValue=displayValue.replace('&lt;',"<");displayValue=displayValue.replace('&quot; ',"\"");if(the_key=='related_doc_id'){related_doc_id=displayValue;}
 window.document.forms[form_name].elements[the_key].value=displayValue;}}
 related_doc_id=YAHOO.lang.JSON.stringify(related_doc_id);var conditions=new Array();conditions[conditions.length]={"name":"document_id","op":"starts_with","value":related_doc_id};var query={"module":"DocumentRevisions","field_list":['id','revision','date_entered'],"conditions":conditions,"order":{'by':'date_entered','desc':true}};result=global_rpcClient.call_method('query',query,true);rhandle.display(result);}

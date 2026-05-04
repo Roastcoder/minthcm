@@ -1,12 +1,12 @@
 <?php
 
-namespace MintHCM\MintCLI\Commands;
+namespace mehar finance\MintCLI\Commands;
 
-use MintHCM\MintCLI\Installer\Installer;
-use MintHCM\MintCLI\Services\AppVersionService;
-use MintHCM\MintCLI\Services\DatabaseService;
-use MintHCM\MintCLI\Services\ElasticsearchService;
-use MintHCM\MintCLI\Services\ServerService;
+use mehar finance\MintCLI\Installer\Installer;
+use mehar finance\MintCLI\Services\AppVersionService;
+use mehar finance\MintCLI\Services\DatabaseService;
+use mehar finance\MintCLI\Services\ElasticsearchService;
+use mehar finance\MintCLI\Services\ServerService;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -16,12 +16,12 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class Install extends Command
 {
     protected static $defaultName = 'install';
-    protected static $defaultDescription = 'Install MintHCM system';
+    protected static $defaultDescription = 'Install mehar finance system';
 
     protected function configure()
     {
         $this
-            ->setHelp('This command allows you to install MintHCM system.')
+            ->setHelp('This command allows you to install mehar finance system.')
         ;
     }
 
@@ -32,7 +32,7 @@ class Install extends Command
         $AppVerService = new AppVersionService();
         $elasticsearchService = new ElasticsearchService();
 
-        $io->title("Welcome to the MintHCM Installer.\nProvide all of the information to start installation process.");
+        $io->title("Welcome to the mehar finance Installer.\nProvide all of the information to start installation process.");
 
         $userData = $this->collectUserData($input, $output);
         
@@ -74,14 +74,14 @@ class Install extends Command
         $installer->setupFilesPermissions();
         $backendInstallationStatus = $installer->installBackendApplication();
         if (!$backendInstallationStatus) {
-            $io->error("An error occured while installing MintHCM. Check install.log file for more details.");
+            $io->error("An error occured while installing mehar finance. Check install.log file for more details.");
             return Command::FAILURE;
         }
 
         $io->section('Installing UX...');
         $frontendInstallationStatus = $installer->installFrontendApplication();
         if (!$frontendInstallationStatus) {
-            $io->error("An error occured while installing MintHCM. Check install.log file for more details.");
+            $io->error("An error occured while installing mehar finance. Check install.log file for more details.");
             return Command::FAILURE;
         }
 
@@ -108,60 +108,60 @@ class Install extends Command
     {
         $QH = $this->getHelper('question');
 
-        $question = new \MintHCM\MintCLI\Questions\SystemAdminName($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\SystemAdminName($QH, $input, $output);
         $systemAdminName = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\SystemAdminPassword($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\SystemAdminPassword($QH, $input, $output);
         $systemAdminPassword = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabaseHost($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabaseHost($QH, $input, $output);
         $databaseHost = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabasePort($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabasePort($QH, $input, $output);
         $databasePort = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabaseUsername($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabaseUsername($QH, $input, $output);
         $databaseUsername = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabasePassword($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabasePassword($QH, $input, $output);
         $databasePassword = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabaseName($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabaseName($QH, $input, $output);
         $databaseName = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DatabaseCollation($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DatabaseCollation($QH, $input, $output);
         $databaseCollation = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\ElasticsearchHost($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ElasticsearchHost($QH, $input, $output);
         $elasticsearchHost = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\ElasticsearchPort($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ElasticsearchPort($QH, $input, $output);
         $elasticsearchPort = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\ElasticsearchUsername($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ElasticsearchUsername($QH, $input, $output);
         $elasticsearchUsername = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\ElasticsearchPassword($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ElasticsearchPassword($QH, $input, $output);
         $elasticsearchPassword = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\DemoData($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\DemoData($QH, $input, $output);
         $demoData = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\SSL($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\SSL($QH, $input, $output);
         $ssl = $question->ask();
 
         $serverService = new ServerService();
         $protocl = $ssl ? 'https://' : 'http://';
         $url = $protocl . $serverService->getHostName() . $serverService->getDirectorySeparator() . $serverService->getScriptDirectory();
 
-        $question = new \MintHCM\MintCLI\Questions\SiteURL($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\SiteURL($QH, $input, $output);
         $question->setDefaultValue($url);
         $siteUrl = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\ApplicationRoot($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\ApplicationRoot($QH, $input, $output);
         $rootDirectory = $question->ask();
 
-        $question = new \MintHCM\MintCLI\Questions\RebuildFrontend($QH, $input, $output);
+        $question = new \mehar finance\MintCLI\Questions\RebuildFrontend($QH, $input, $output);
         $rebuildFrontend = $question->ask();
 
         return [

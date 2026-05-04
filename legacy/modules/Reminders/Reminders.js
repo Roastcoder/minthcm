@@ -95,11 +95,11 @@ var Reminders = {
       // this function need a scheduler table!
       $( 'table#schedulerTable tr.schedulerAttendeeRow' ).each( function ( i, e ) {
          var dataModule = $( e ).attr( 'data-module' );
-         // MintHCM #59793 start
+         // mehar finance #59793 start
          if ( dataModule === 'Resources' ) {
             return true;
          }
-         // MintHCM #59793 end
+         // mehar finance #59793 end
          var dataId = $( e ).attr( 'data-id' );
          var relatedValue = $( e ).find( 'td[scope="row"]' ).first().text();
 

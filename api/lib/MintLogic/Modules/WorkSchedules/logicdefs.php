@@ -1,14 +1,14 @@
 <?php
 
-use MintHCM\Data\BeanFactory;
-use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
-use MintHCM\Lib\MintLogic\Formula;
-use MintHCM\Lib\MintLogic\Hook;
-use MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesDateEndValidator;
-use MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesDurationHoursValidator;
-use MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesTypeExistsValidator;
-use MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesTypeWorkOffValidator;
-use MintHCM\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesWorkplaceValidator;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
+use mehar finance\Lib\MintLogic\Formula;
+use mehar finance\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesDateEndValidator;
+use mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesDurationHoursValidator;
+use mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesTypeExistsValidator;
+use mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesTypeWorkOffValidator;
+use mehar finance\Lib\MintLogic\Modules\WorkSchedules\Validators\WorkSchedulesWorkplaceValidator;
 
 return [
     'rules' => [

@@ -201,7 +201,7 @@ class UsersController extends SugarController
         // redirect to home
         SugarApplication::redirect('index.php?action=index&module=Home');
 
-        require 'modules/Users/Save.php'; // MintHCM #62537
+        require 'modules/Users/Save.php'; // mehar finance #62537
     }
 
     protected function action_saveftsmodules()

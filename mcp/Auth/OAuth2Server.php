@@ -11,7 +11,7 @@ use MintMCP\Auth\Utils\UrlHelper;
 use MintMCP\Server\Logger;
 
 /**
- * OAuth2 Server Implementation for MintHCM
+ * OAuth2 Server Implementation for mehar finance
  * 
  * Provides OAuth 2.1 functionality including authorization code flow,
  * token refresh, and userinfo endpoints
@@ -59,7 +59,7 @@ class OAuth2Server
 
         return [
             'resource' => $domainUrl . '/',
-            'resource_name' => 'MintHCM MCP Server',
+            'resource_name' => 'mehar finance MCP Server',
             'authorization_servers' => [$domainUrl],
             'jwks_uri' => $domainUrl . '/oauth/jwks',
             'scopes_supported' => ['openid', 'profile', 'mcp:read', 'mcp:write'],

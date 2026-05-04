@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Firebase\PushNotifications;
+namespace mehar finance\Firebase\PushNotifications;
 
-class MintTestPush extends \MintHCM\Firebase\PushNotification
+class MintTestPush extends \mehar finance\Firebase\PushNotification
 {
     public function execute($data = []): bool
     {

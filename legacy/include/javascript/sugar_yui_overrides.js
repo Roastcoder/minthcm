@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */YAHOO.widget.Panel.prototype.configClose=function(type,args,obj){var val=args[0],oClose=this.close,strings=this.cfg.getProperty("strings"),fc;if(val){if(!oClose){if(!this.m_oCloseIconTemplate){this.m_oCloseIconTemplate=document.createElement("a");this.m_oCloseIconTemplate.className="container-close";this.m_oCloseIconTemplate.href="#";}
 oClose=this.m_oCloseIconTemplate.cloneNode(true);fc=this.innerElement.firstChild;if(fc){if(fc.className==this.m_oCloseIconTemplate.className){this.innerElement.replaceChild(oClose,fc);}else{this.innerElement.insertBefore(oClose,fc);}}else{this.innerElement.appendChild(oClose);}
 oClose.innerHTML=(strings&&strings.close)?strings.close:"&#160;";YAHOO.util.Event.on(oClose,"click",this._doClose,this,true);this.close=oClose;}else{oClose.style.display="block";}}else{if(oClose){oClose.style.display="none";}}}

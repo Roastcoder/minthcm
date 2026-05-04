@@ -1,13 +1,13 @@
-var MintHCMPopup = function (title, body, buttons, options, onShow) {
-    var classPopup = new MintHCMPopupClass(title, body, buttons, options, onShow);
+var mehar financePopup = function (title, body, buttons, options, onShow) {
+    var classPopup = new mehar financePopupClass(title, body, buttons, options, onShow);
     return classPopup.init();
 }
-MintHCMPopup.close = function () {
-    var id = $( '.MintHCMPopup' ).last().attr( 'id' );
+mehar financePopup.close = function () {
+    var id = $( '.mehar financePopup' ).last().attr( 'id' );
     $('#' + id).remove();
 };
 
-class MintHCMPopupClass {
+class mehar financePopupClass {
 
     constructor(title, body, buttons, options, onShow, load_id) {
         this.id = load_id || Date.now();
@@ -23,23 +23,23 @@ class MintHCMPopupClass {
             if ( undefined !== $( '#' + this.id ).get( 0 ) ) {
                 $( '#' + this.id ).remove();
             }
-            $( 'body' ).append( '<div class="MintHCMPopup" id="' + this.id + '">' + this.getBody() + '</div>' );
+            $( 'body' ).append( '<div class="mehar financePopup" id="' + this.id + '">' + this.getBody() + '</div>' );
             setTimeout( function () { //special timeout. Javasript has to wait on finishing append. So, does not remove the TimeOut
                 this.onShow();
             }.bind(this), 0 );
             if ( typeof this.options.noCloseButton !== 'undefined' && this.options.noCloseButton ) {
-                $( '.MintHCMPopup-header' ).removeClass( 'MintHCMPopup-close' );
+                $( '.mehar financePopup-header' ).removeClass( 'mehar financePopup-close' );
             } else {
                 $( '#' + this.id + '_close' ).click( this.close );
             }
             if ( typeof this.options.css !== 'undefined' && this.options.css ) {
-                $( '#' + this.id + '> .MintHCMPopup-container' ).css( this.options.css );
+                $( '#' + this.id + '> .mehar financePopup-container' ).css( this.options.css );
             }
             this.setButtonsEvents();
         };
 
         this.getBody = function () {
-            var body = _.template( '<div class="MintHCMPopup-container"><div class="MintHCMPopup-header MintHCMPopup-close"><div class="MintHCMPopup-title"><input id="<%= id %>_hidenId" type="hidden" value="<%= id %>"></input><%= title %></div><span id="<%=id %>_close" class="suitepicon suitepicon-action-clear"></span><div style="clear: both;"></div></div><div class="MintHCMPopup-body"><%= body %></div><div class="MintHCMPopup-buttons"><%= buttons %></div></div>' );
+            var body = _.template( '<div class="mehar financePopup-container"><div class="mehar financePopup-header mehar financePopup-close"><div class="mehar financePopup-title"><input id="<%= id %>_hidenId" type="hidden" value="<%= id %>"></input><%= title %></div><span id="<%=id %>_close" class="suitepicon suitepicon-action-clear"></span><div style="clear: both;"></div></div><div class="mehar financePopup-body"><%= body %></div><div class="mehar financePopup-buttons"><%= buttons %></div></div>' );
             return body( {
                 title: this.title,
                 body: this.body,
@@ -70,7 +70,7 @@ class MintHCMPopupClass {
 
         this.setButtonsEvents = function () {
             const _this = this;
-            $( '#' + this.id + ' .MintHCMPopup-buttons input' ).each( function () {
+            $( '#' + this.id + ' .mehar financePopup-buttons input' ).each( function () {
                 $( this ).click( _this.buttons.find(btn => btn.text === $(this).val())?.click );
             } );
         };
@@ -95,12 +95,12 @@ class MintHCMPopupClass {
 var showLoadingScreen = function (title, message) {
     var loading;
     if (message) {
-        var body = "<div class='MintHCMPopup-load'><img src='themes/default/images/loading.gif' alt='loading'></img><div class='MintHCMPopup-load-message'><span>" + message + "</span></div></div>";
+        var body = "<div class='mehar financePopup-load'><img src='themes/default/images/loading.gif' alt='loading'></img><div class='mehar financePopup-load-message'><span>" + message + "</span></div></div>";
     }
     else {
-        var body = "<div class='MintHCMPopup-load'><img src='themes/default/images/loading.gif' alt='loading'></img></div>";
+        var body = "<div class='mehar financePopup-load'><img src='themes/default/images/loading.gif' alt='loading'></img></div>";
     }
-    loading = new MintHCMPopupClass(title, body, '', { noCloseButton: true }, '', 'load');
+    loading = new mehar financePopupClass(title, body, '', { noCloseButton: true }, '', 'load');
     loading.init();
     return loading;
 };
@@ -109,16 +109,16 @@ var closeLoadingScreen = function () {
     return true;
 };
 
-MintHCMPopup.confirm = function (body, options = {}) {
+mehar financePopup.confirm = function (body, options = {}) {
     return new Promise((resolve) => {
-        MintHCMPopup(
+        mehar financePopup(
             viewTools.language.get('app_strings', 'LBL_CONFIRM'),
             body,
             [
                 {
                     text: options.customLabels?.noBtn || viewTools.language.get('app_strings', 'LBL_NO'),
                     click: () => {
-                        MintHCMPopup.close();
+                        mehar financePopup.close();
                         resolve(false);
                     },
                     left: true,
@@ -126,7 +126,7 @@ MintHCMPopup.confirm = function (body, options = {}) {
                 {
                     text: options.customLabels?.yesBtn || viewTools.language.get('app_strings', 'LBL_YES'),
                     click: () => {
-                        MintHCMPopup.close();
+                        mehar financePopup.close();
                         resolve(true);
                     },
                     primary: true,
@@ -140,16 +140,16 @@ MintHCMPopup.confirm = function (body, options = {}) {
     });
 }
 
-MintHCMPopup.alert = function (body, options = {}) {
+mehar financePopup.alert = function (body, options = {}) {
     return new Promise((resolve) => {
-        MintHCMPopup(
+        mehar financePopup(
             '',
             body,
             [
                 {
                     text: options.customLabels?.confirmBtn || viewTools.language.get('app_strings', 'LBL_OK'),
                     click: () => {
-                        MintHCMPopup.close();
+                        mehar financePopup.close();
                         resolve(true);
                     },
                     primary: true,

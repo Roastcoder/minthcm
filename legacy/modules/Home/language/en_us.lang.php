@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -70,7 +70,7 @@ $mod_strings = array(
     'LBL_NO_RESULTS_IN_MODULE' => '-- No Results --',
     'LBL_NO_RESULTS' => '<h2>There were no results found. Please search again.</h2><br>',
     'LBL_NO_RESULTS_TIPS' => '<h3>Search Tips:</h3><ul><li>Make sure you have the proper categories selected above.</li><li>Broaden your search criteria.</li><li>If you still cannot find any results try the advanced search option.</li></ul>',
-    'LBL_ADD_DASHLETS' => 'Add MintHCM Dashlets',
+    'LBL_ADD_DASHLETS' => 'Add mehar finance Dashlets',
     'LBL_WEBSITE_TITLE' => 'Website',
     'LBL_RSS_TITLE' => 'News Feed',
     'LBL_CLOSE_DASHLETS' => 'Close',
@@ -103,11 +103,11 @@ $mod_strings = array(
         'Tools' => 'Tools',
         'Miscellaneous' => 'Miscellaneous',
     ),
-    'LBL_ADDING_DASHLET' => 'Adding MintHCM Dashlet...',
-    'LBL_ADDED_DASHLET' => 'MintHCM Dashlet Added',
-    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this MintHCM Dashlet?',
-    'LBL_REMOVING_DASHLET' => 'Removing MintHCM Dashlet...',
-    'LBL_REMOVED_DASHLET' => 'MintHCM Dashlet Removed',
+    'LBL_ADDING_DASHLET' => 'Adding mehar finance Dashlet...',
+    'LBL_ADDED_DASHLET' => 'mehar finance Dashlet Added',
+    'LBL_REMOVE_DASHLET_CONFIRM' => 'Are you sure you want to remove this mehar finance Dashlet?',
+    'LBL_REMOVING_DASHLET' => 'Removing mehar finance Dashlet...',
+    'LBL_REMOVED_DASHLET' => 'mehar finance Dashlet Removed',
     'LBL_DASHLET_CONFIGURE_GENERAL' => 'General',
     'LBL_DASHLET_CONFIGURE_FILTERS' => 'Filters',
     'LBL_DASHLET_CONFIGURE_MY_ITEMS_ONLY' => 'Only My Items',
@@ -115,11 +115,11 @@ $mod_strings = array(
     'LBL_DASHLET_CONFIGURE_MY_SUBORDINATES' => 'Only My Subordinates Items',
     'LBL_DASHLET_CONFIGURE_TITLE' => 'Title',
     'LBL_DASHLET_CONFIGURE_DISPLAY_ROWS' => 'Display Rows',
-    'LBL_DASHLET_DELETE' => 'Delete MintHCM Dashlet',
-    'LBL_DASHLET_REFRESH' => 'Refresh MintHCM Dashlet',
-    'LBL_DASHLET_EDIT' => 'Edit MintHCM Dashlet',
+    'LBL_DASHLET_DELETE' => 'Delete mehar finance Dashlet',
+    'LBL_DASHLET_REFRESH' => 'Refresh mehar finance Dashlet',
+    'LBL_DASHLET_EDIT' => 'Edit mehar finance Dashlet',
     // Default out-of-box names for tabs
-    'LBL_HOME_PAGE_1_NAME' => 'My MintHCM',
+    'LBL_HOME_PAGE_1_NAME' => 'My mehar finance',
     'LBL_RECRUITMENT_DASHBOARD' => 'Recruitment',
     'LBL_HR_MANAGER_DASHBOARD' => 'HR - Manager',
     'LBL_MY_TEAM_DASHBOARD' => 'My Team',
@@ -130,7 +130,7 @@ $mod_strings = array(
     'LBL_SEARCH' => 'Search',
     'LBL_CLEAR' => 'Clear',
     'LBL_BASIC_CHARTS' => 'Basic Charts',
-    'LBL_DASHLET_SEARCH' => 'Find MintHCM Dashlet',
+    'LBL_DASHLET_SEARCH' => 'Find mehar finance Dashlet',
 //ABOUT page
     'LBL_VERSION' => 'Version',
     'LBL_BUILD' => 'Build',
@@ -139,8 +139,8 @@ $mod_strings = array(
     'LBL_DASHLET_INCORRECT_URL' => 'Incorrect website location is specified',
     'LBL_DASHLET_OPT_URL' => 'Website Location',
     'LBL_DASHLET_OPT_HEIGHT' => 'Dashlet Height (in pixels)',
-    'LBL_DASHLET_SUITE_NEWS' => 'MintHCM News',
-    'LBL_DASHLET_DISCOVER_SUITE' => 'Discover MintHCM',
+    'LBL_DASHLET_SUITE_NEWS' => 'mehar finance News',
+    'LBL_DASHLET_DISCOVER_SUITE' => 'Discover mehar finance',
     'LBL_BASIC_SEARCH' => 'Quick Filter' /* for 508 compliance fix */,
     'LBL_ADVANCED_SEARCH' => 'Advanced Filter' /* for 508 compliance fix */,
     'LBL_TOUR_HOME' => 'Home Icon',
@@ -152,7 +152,7 @@ $mod_strings = array(
     'LBL_TOUR_SEARCH' => 'Full Text Search',
     'LBL_TOUR_SEARCH_DESCRIPTION' => 'Search just got a whole lot better.',
     'LBL_TOUR_NOTIFICATIONS' => 'Notifications',
-    'LBL_TOUR_NOTIFICATIONS_DESCRIPTION' => 'MintHCM application notifications would go here.',
+    'LBL_TOUR_NOTIFICATIONS_DESCRIPTION' => 'mehar finance application notifications would go here.',
     'LBL_TOUR_PROFILE' => 'Profile',
     'LBL_TOUR_PROFILE_DESCRIPTION' => 'Access profile, settings and logout.',
     'LBL_TOUR_QUICKCREATE' => 'Quick Create',
@@ -163,31 +163,31 @@ $mod_strings = array(
     'LBL_TOUR_CUSTOM_DESCRIPTION' => 'Custom integrations would go here.',
     'LBL_TOUR_BRAND' => 'Your Brand',
     'LBL_TOUR_BRAND_DESCRIPTION' => 'Your logo goes here. You can mouse over for more info.',
-    'LBL_TOUR_WELCOME' => 'Welcome to MintHCM',
-    'LBL_TOUR_WATCH' => 'Watch What\'s New in MintHCM',
+    'LBL_TOUR_WELCOME' => 'Welcome to mehar finance',
+    'LBL_TOUR_WATCH' => 'Watch What\'s New in mehar finance',
     'LBL_TOUR_FEATURES' => '<ul style=""><li class="icon-ok">New simplifed navigation bar</li><li class="icon-ok">New collapsible footer</li><li class="icon-ok">Improved Search</li><li class="icon-ok">Updated actions menu</li></ul><p>and much more!</p>',
     'LBL_TOUR_VISIT' => 'For more information please visit our application',
     'LBL_TOUR_DONE' => 'You\'re Done!',
     'LBL_TOUR_REFERENCE_1' => 'You can always reference our',
     'LBL_TOUR_REFERENCE_2' => 'through the "Support Forum" link under the profile tab.',
     'LNK_TOUR_DOCUMENTATION' => 'documentation',
-    'LBL_TOUR_CALENDAR_URL_1' => 'Do you share your MintHCM calendar with 3rd party applications, such as Microsoft Outlook or Exchange? If so, you have a new URL. This new, more secure URL includes a personal key which will prevent unauthorized publishing of your calendar.',
+    'LBL_TOUR_CALENDAR_URL_1' => 'Do you share your mehar finance calendar with 3rd party applications, such as Microsoft Outlook or Exchange? If so, you have a new URL. This new, more secure URL includes a personal key which will prevent unauthorized publishing of your calendar.',
     'LBL_TOUR_CALENDAR_URL_2' => 'Retrieve your new shared calendar URL.',
     'LBL_ABOUT' => 'About',
     'LBL_EDIT_ALL_RECURRENCES' => 'Edit All Recurrences',
     'LBL_REMOVE_ALL_RECURRENCES' => 'Delete All Recurrences',
     'LBL_CONFIRM_REMOVE' => 'Are you sure you want to remove the record?',
     'LBL_ABOUT_TITLE' => 'A fresh way to do HR!',
-    'LBL_ABOUT_CHAPTER_1' => 'MintHCM is a system made on the strong foundation of two worldwide known applications SuiteCRM and SugarCRM CE. It is entirely Open for modifications. We invite you to contribute to its core and joining our thriving community. Join Team MintHCM now!',
-    'LBL_ABOUT_CHAPTER_2_TITLE' => 'A short story about MintHCM',
-    'LBL_ABOUT_CHAPTER_2' => 'A while before coming up with the idea for MintHCM we have had a simple need of our own. We have faced several difficulties trying to manage our team. As a group of experienced developers, we have had the advantage of being able to help ourselves there. First, we have created a simple time tracking and leave management software. It made our life so much easier, that we have decided to continue and cover as many aspects of Employee Journey as possible. As it now is a fully mature IT product... why not share it with the world?',
+    'LBL_ABOUT_CHAPTER_1' => 'mehar finance is a system made on the strong foundation of two worldwide known applications SuiteCRM and SugarCRM CE. It is entirely Open for modifications. We invite you to contribute to its core and joining our thriving community. Join Team mehar finance now!',
+    'LBL_ABOUT_CHAPTER_2_TITLE' => 'A short story about mehar finance',
+    'LBL_ABOUT_CHAPTER_2' => 'A while before coming up with the idea for mehar finance we have had a simple need of our own. We have faced several difficulties trying to manage our team. As a group of experienced developers, we have had the advantage of being able to help ourselves there. First, we have created a simple time tracking and leave management software. It made our life so much easier, that we have decided to continue and cover as many aspects of Employee Journey as possible. As it now is a fully mature IT product... why not share it with the world?',
     'LBL_ABOUT_CHAPTER_3_TITLE' => 'What does it do?',
-    'LBL_ABOUT_CHAPTER_3' => 'Over a couple of very productive months, we have expanded the basic modules and built a platform perfectly suitable for modern, vibrant companies. Thanks to MintHCM it is possible to efficiently carry out recruitment procedures, organize business trips, handle employer branding campaigns and many more. Everything with a help of several professionally developed mechanisms. For a detailed description of MintHCM\'s features go to <a href="https://minthcm.org/features/" target="_blank">https://minthcm.org/features/</a>.',
+    'LBL_ABOUT_CHAPTER_3' => 'Over a couple of very productive months, we have expanded the basic modules and built a platform perfectly suitable for modern, vibrant companies. Thanks to mehar finance it is possible to efficiently carry out recruitment procedures, organize business trips, handle employer branding campaigns and many more. Everything with a help of several professionally developed mechanisms. For a detailed description of mehar finance\'s features go to <a href="https://meharadvisory.com/features/" target="_blank">https://meharadvisory.com/features/</a>.',
     'LBL_ABOUT_CHAPTER_4_TITLE' => 'Why open source?',
-    'LBL_ABOUT_CHAPTER_4' => 'Knowing the benefits of open source solutions, we have decided to make our product available to wider audience. We made sure that MintHCM could be downloaded from our website and installed on a private server without additional charges. It is also possible to make individual adjustments to the code. That way it is rather simple to meet specific requirements of any enterprise. It means that every organization can take our product and turn it into a tool that will serve them best. Do not hesitate to <a href="https://minthcm.org/contact/" target="_blank">contact us</a> with such a necessity!',
+    'LBL_ABOUT_CHAPTER_4' => 'Knowing the benefits of open source solutions, we have decided to make our product available to wider audience. We made sure that mehar finance could be downloaded from our website and installed on a private server without additional charges. It is also possible to make individual adjustments to the code. That way it is rather simple to meet specific requirements of any enterprise. It means that every organization can take our product and turn it into a tool that will serve them best. Do not hesitate to <a href="https://meharadvisory.com/contact/" target="_blank">contact us</a> with such a necessity!',
     'LBL_ABOUT_CHAPTER_5_TITLE' => 'Get involved!',
-    'LBL_ABOUT_CHAPTER_5' => 'Together with the official launch of our product, we invite the open source community to participate in its further improvement. We are huge believers in the agile development, and we will continue to work on perfecting the system. Having that said, we are open to your contribution, suggestions, and modifications. Please use our <a href="https://minthcm.org/support/" target="_blank">forum</a> to ask questions, leave relevant feedback or propose an original approach.',
-    'LBL_ABOUT_FINISH' => 'Ready? Set? MintHCM!',
+    'LBL_ABOUT_CHAPTER_5' => 'Together with the official launch of our product, we invite the open source community to participate in its further improvement. We are huge believers in the agile development, and we will continue to work on perfecting the system. Having that said, we are open to your contribution, suggestions, and modifications. Please use our <a href="https://meharadvisory.com/support/" target="_blank">forum</a> to ask questions, leave relevant feedback or propose an original approach.',
+    'LBL_ABOUT_FINISH' => 'Ready? Set? mehar finance!',
     'LBL_SAVE_BUTTON' => 'Save',
     'LBL_DELETE_BUTTON' => 'Delete',
     'LBL_APPLY_BUTTON' => 'Apply',

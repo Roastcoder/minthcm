@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Api\Repositories;
+namespace mehar finance\Api\Repositories;
 
-use MintHCM\Data\ORM\Doctrine\MintRepository\MintEntityRepository;
+use mehar finance\Data\ORM\Doctrine\MintRepository\MintEntityRepository;
 
 class CurrenciesRepository extends MintEntityRepository
 {

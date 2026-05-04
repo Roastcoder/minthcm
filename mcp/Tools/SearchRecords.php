@@ -21,7 +21,7 @@ class SearchRecords extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Retrieve a list of records from a MintHCM module matching given filters. You should use get_module_names to get available modules and get_module_fields to get fields available in the module. Supports pagination via offset and limit parameters.';
+        return 'Retrieve a list of records from a mehar finance module matching given filters. You should use get_module_names to get available modules and get_module_fields to get fields available in the module. Supports pagination via offset and limit parameters.';
     }
 
     public function getInputSchema(): ToolInputSchema

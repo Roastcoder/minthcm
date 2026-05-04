@@ -2,7 +2,7 @@
     <div class="install-view-completed">
         <h1>Finished</h1>
         <MintStatusBox type="success">
-            Your MintHCM installation is ready. Go ahead and log-in as an administrator.
+            Your mehar finance installation is ready. Go ahead and log-in as an administrator.
         </MintStatusBox>
         <MintButton variant="primary" text="Go to login" style="width: 100%" @click="goToLogin" />
     </div>

@@ -1,10 +1,10 @@
 <?php 
 
-namespace MintHCM\Data\ORM\Doctrine\MintEntity;
+namespace mehar finance\Data\ORM\Doctrine\MintEntity;
 
 use Doctrine\ORM\EntityManagerInterface;
-use MintHCM\Data\ORM\Doctrine\MintTypes\MintTypeManager;
-use MintHCM\Utils\LegacyConnector;
+use mehar finance\Data\ORM\Doctrine\MintTypes\MintTypeManager;
+use mehar finance\Utils\LegacyConnector;
 
 class PropertiesManager
 {

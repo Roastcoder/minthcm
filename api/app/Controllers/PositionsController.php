@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Api\Controllers;
+namespace mehar finance\Api\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Psr7\Response;
@@ -44,7 +44,7 @@ class PositionsController
 
     private function getEntity(string $entity_name)
     {
-        $class = "MintHCM\\Api\\Entities\\$entity_name";
+        $class = "mehar finance\\Api\\Entities\\$entity_name";
         if (! class_exists($class)) {
             throw new \Exception("Entity class $class does not exist");
         }

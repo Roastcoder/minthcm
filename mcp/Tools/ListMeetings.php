@@ -17,7 +17,7 @@ class ListMeetings extends AbstractMCPTool
 
     public function getDescription(): string
     {
-        return 'Retrieves a list of meetings from the MintHCM system.';
+        return 'Retrieves a list of meetings from the mehar finance system.';
     }
 
     public function getInputSchema(): ToolInputSchema

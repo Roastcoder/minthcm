@@ -1,7 +1,7 @@
 <?php
 
 /**
- * MintHCM #52883 #59127
+ * mehar finance #52883 #59127
  * We need to reload preferences, because they can be updated anytime
  * Second change, adds DMForced property sending to Smarty template
  */
@@ -46,9 +46,9 @@ if (!defined('sugarEntry') || !sugarEntry) {
  * display the words  "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  * ****************************************************************************** */
 
-// MintHCM #94842 START
+// mehar finance #94842 START
 global $current_user, $sugar_version, $sugar_config, $beanFiles, $dashlet_initial_loading;
-// MintHCM #94842 END
+// mehar finance #94842 END
 
 require_once 'include/MySugar/MySugar.php';
 
@@ -63,11 +63,11 @@ require_once $cachefile;
 
 require 'modules/Home/dashlets.php';
 
-// MintHCM start #52883
+// mehar finance start #52883
 if (is_object($current_user->_userPreferenceFocus)) {
     $current_user->_userPreferenceFocus->reloadPreferences('Home');
 }
-// MintHCM end #52883
+// mehar finance end #52883
 $pages = $current_user->getPreference('pages', 'Home');
 $dashlets = $current_user->getPreference('dashlets', 'Home');
 
@@ -231,11 +231,11 @@ foreach ($pages[$activePage]['columns'] as $colNum => $column) {
                     $sugar_smarty->assign('lock_homepage', true);
                 }
 
-                // MintHCM #94842 START
+                // mehar finance #94842 START
                 $dashlet_initial_loading = true;
                 $dashlet->process($lvsParams, $id);
                 $dashlet_initial_loading = false;
-                // MintHCM #94842 STOP
+                // mehar finance #94842 STOP
                 try {
                     $display[$colNum]['dashlets'][$id]['display'] = $dashlet->display();
                     $display[$colNum]['dashlets'][$id]['displayHeader'] = $dashlet->getHeader();
@@ -262,9 +262,9 @@ while ($i < (is_countable($pages) ? count($pages) : 0)) {
         $pageTabs[$i]['pageTitle'] = $pages[$i]['pageTitle'];
         $divPages[] = $i;
     }
-    // MintHCM start #52883
+    // mehar finance start #52883
     $pageTabs[$i]['DMForced'] = isset($pages[$i]['DMForced']) ? $pages[$i]['DMForced'] : 0;
-    // MintHCM end #52883
+    // mehar finance end #52883
     $i++;
 }
 

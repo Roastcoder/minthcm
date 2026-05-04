@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,13 +37,13 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 require_once 'include/Notifications/NotificationPlugin.php';
-require_once 'include/Integrations/Firebase/autoload.php'; // MintHCM #122506
+require_once 'include/Integrations/Firebase/autoload.php'; // mehar finance #122506
 
 class WorkSchedulesNotPlandForTwoWeeks extends NotificationPlugin
 {
@@ -68,13 +68,13 @@ class WorkSchedulesNotPlandForTwoWeeks extends NotificationPlugin
                 ->setAssignedUserId($work_schedule['id'])->setRelatedBean($work_schedule['id'], 'Users')
                 ->setDescription(translate('LBL_TWO_WEEKS_ALERT', 'WorkSchedules'))->setType($this->getType())
                 ->saveAsAlert(true,$options)->WebPush(true,true,$options);
-            // MintHCM #136592 start
-            (new MintHCM\Firebase\PushNotifications\GeneralNotificationToUser())->execute([
+            // mehar finance #136592 start
+            (new mehar finance\Firebase\PushNotifications\GeneralNotificationToUser())->execute([
                 'user_id' => $work_schedule['id'],
                 'title' => translate('LBL_LIST_TITLE', 'WorkSchedules'),
                 'body' => translate('LBL_TWO_WEEKS_ALERT', 'WorkSchedules')
             ]);
-            // MintHCM #136592 end
+            // mehar finance #136592 end
         }
     }
 

@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */YAHOO.namespace("SUGAR");(function(){var sw=YAHOO.SUGAR,Event=YAHOO.util.Event,Connect=YAHOO.util.Connect,Dom=YAHOO.util.Dom;sw.MessageBox={progressTemplate:"{body}<br><div class='sugar-progress-wrap'><div class='sugar-progress-bar'/></div>",promptTemplate:"{body}:<input id='sugar-message-prompt' class='sugar-message-prompt' name='sugar-message-prompt'></input>",show:function(config){var myConf=sw.MessageBox.config={type:'message',modal:true,width:240,id:'sugarMsgWindow',close:true,title:"Alert",msg:" ",buttons:[]};if(config['type']&&config['type']=="prompt"){myConf['buttons']=[{text:SUGAR.language.get("app_strings","LBL_EMAIL_CANCEL"),handler:YAHOO.SUGAR.MessageBox.hide},{text:SUGAR.language.get("app_strings","LBL_EMAIL_OK"),handler:config['fn']?function(){var returnValue=config['fn'](YAHOO.util.Dom.get("sugar-message-prompt").value);if(typeof(returnValue)=="undefined"||returnValue){YAHOO.SUGAR.MessageBox.hide();}}:YAHOO.SUGAR.MessageBox.hide,isDefault:true}];}else if((config['type']&&config['type']=="alert")){myConf['buttons']=[{text:SUGAR.language.get("app_strings","LBL_EMAIL_OK"),handler:config['fn']?function(){YAHOO.SUGAR.MessageBox.hide();config['fn']();}:YAHOO.SUGAR.MessageBox.hide,isDefault:true}]}else if((config['type']&&config['type']=="confirm")){myConf['buttons']=[{text:SUGAR.language.get("app_strings","LBL_EMAIL_YES"),handler:config['fn']?function(){config['fn']('yes');YAHOO.SUGAR.MessageBox.hide();}:YAHOO.SUGAR.MessageBox.hide,isDefault:true},{text:SUGAR.language.get("app_strings","LBL_EMAIL_NO"),handler:config['fn']?function(){config['fn']('no');YAHOO.SUGAR.MessageBox.hide();}:YAHOO.SUGAR.MessageBox.hide}];}
 else if((config['type']&&config['type']=="plain")){myConf['buttons']=[];}
 for(var i in config){myConf[i]=config[i];}

@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\MintCLI\Questions;
+namespace mehar finance\MintCLI\Questions;
 
-use MintHCM\MintCLI\InputValidators\NoWhitespaceValidator;
+use mehar finance\MintCLI\InputValidators\NoWhitespaceValidator;
 use Symfony\Component\Console\Question\Question as BasicQuestion;
 use Symfony\Component\Console\Style\SymfonyStyle;
 

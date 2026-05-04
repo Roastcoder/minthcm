@@ -10,7 +10,7 @@ generateOnboardingOffboarding = {
    init: function () {
       viewTools.GUI.fieldErrorUnmark();
       $.get(this.tpl, function (tpl) {
-         this.popup = MintHCMPopup(
+         this.popup = mehar financePopup(
             viewTools.language.get('app_strings', 'LBL_GENERATEONBOARDINGOFFBOARDING_POPUP_TITLE'),
             this.getPopupBody(tpl),
             [{
@@ -23,7 +23,7 @@ generateOnboardingOffboarding = {
                         parent_id,
                         employees_ids,
                         date_start);
-                     MintHCMPopup.close();
+                     mehar financePopup.close();
                   }.bind(this));
                }.bind(this)
             }],
@@ -85,7 +85,7 @@ generateOnboardingOffboarding = {
       });
    },
    showErrors: function (errors) {
-      MintHCMPopup(
+      mehar financePopup(
          viewTools.language.get('app_strings', 'LBL_GENERATEONBOARDINGOFFBOARDING_ERROR'),
          this.getErrorPopupBody(errors)
       );

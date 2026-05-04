@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\MintCLI\Questions;
+namespace mehar finance\MintCLI\Questions;
 
 class SiteURL extends Question
 {

@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -35,10 +35,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */initMySugar=function(){SUGAR.mySugar=function(){var originalLayout=null;var configureDashletId=null;var currentDashlet=null;var leftColumnInnerHTML=null;var leftColObj=null;var maxCount;var warningLang;var closeDashletsDialogTimer=null;var activeTab=activePage;var current_user=current_user_id;var module=moduleName;var charts={};if(module=='Dashboard'){cookiePageIndex=current_user+"_activeDashboardPage";}
 else{cookiePageIndex=current_user+"_activePage";}
 var homepage_dd;return{getLayout:function(asString){columns=[];for(je=0;je<3;je++){dashlets=document.getElementById('col_'+activeTab+'_'+je);if(dashlets!=null){dashletIds=[];for(wp=0;wp<dashlets.childNodes.length;wp++){if(typeof dashlets.childNodes[wp].id!='undefined'&&dashlets.childNodes[wp].id.match(/dashlet_[\w-]*/)){dashletIds.push(dashlets.childNodes[wp].id.replace(/dashlet_/,''));}}

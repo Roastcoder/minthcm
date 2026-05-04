@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -484,11 +484,11 @@ class UserViewHelper
         $publish_key = $this->bean->getPreference('calendar_publish_key');
         $this->ss->assign('CALENDAR_PUBLISH_KEY', $publish_key);
 
-        /* MintHCM #138652 START */
+        /* mehar finance #138652 START */
         $site_url = rtrim($sugar_config['site_url'], '/');
         $publish_url = $site_url . '/vcal_server.php';
         $token = "?";
-        /* MintHCM #138652 END */
+        /* mehar finance #138652 END */
 
         //determine if the web server is running IIS
         //if so then change the publish url
@@ -506,9 +506,9 @@ class UserViewHelper
             $publish_url .= '&user_name=' . $this->bean->user_name;
         }
 
-        /* MintHCM #138652 START */
+        /* mehar finance #138652 START */
         $ical_url = $site_url . "/ical_server.php?type=ics&key=<span id=\"ical_pub_key_span\">$publish_key</span>";
-        /* MintHCM #138652 END */
+        /* mehar finance #138652 END */
 
         if (!empty($this->bean->email1)) {
             $ical_url .= '&email=' . $this->bean->email1;
@@ -517,14 +517,14 @@ class UserViewHelper
         }
 
         $this->ss->assign("CALENDAR_PUBLISH_URL", $publish_url);
-        /* MintHCM #138652 START */
+        /* mehar finance #138652 START */
         $this->ss->assign("CALENDAR_SEARCH_URL", $site_url . "/vcal_server.php?type=vfb&key=<span id=\"search_pub_key_span\">$publish_key</span>&email=%NAME%@%SERVER%");
-        /* MintHCM #138652 END */
+        /* mehar finance #138652 END */
         $this->ss->assign("CALENDAR_ICAL_URL", $ical_url);
 
-        /* MintHCM #138652 START */
+        /* mehar finance #138652 START */
         $this->ss->assign("SETTINGS_URL", $site_url);
-        /* MintHCM #138652 END */
+        /* mehar finance #138652 END */
 
         // Set Google Auth variables
         $this->setGoogleAuthVariables($sugar_config);
@@ -650,7 +650,7 @@ class UserViewHelper
         }
 
         $chooser->args['id'] = 'edit_tabs';
-        /* MintHCM #125694 START */
+        /* mehar finance #125694 START */
         //$chooser->args['values_array'] = $controller->get_tabs($this->bean);
         $chooser->args['values_array'] = $controller->get_tabs($this->bean, true);
         if(isset($chooser->args['values_array'][0]['Home'])){
@@ -662,7 +662,7 @@ class UserViewHelper
         if(isset($chooser->args['values_array'][2]['Home'])){
             unset($chooser->args['values_array'][2]['Home']);
         }
-        /* MintHCM #125694 END */
+        /* mehar finance #125694 END */
         foreach ($chooser->args['values_array'][0] as $key => $value) {
             $chooser->args['values_array'][0][$key] = $app_list_strings['moduleList'][$key];
         }

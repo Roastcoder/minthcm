@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Lib\MintLogic;
+namespace mehar finance\Lib\MintLogic;
 
-use MintHCM\Lib\MintLogic\Formulas;
+use mehar finance\Lib\MintLogic\Formulas;
 
 abstract class Formula
 {

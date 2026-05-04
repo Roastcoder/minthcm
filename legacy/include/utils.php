@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2021 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 if (!defined('sugarEntry') || !sugarEntry) {
@@ -438,7 +438,7 @@ function get_sugar_config_defaults(): array
             ],
         ],
         'google_auth_json' => '',
-        'history_max_viewed' => 20, // MintHCM #100495
+        'history_max_viewed' => 20, // mehar finance #100495
         'installer_locked' => true,
         'import_max_records_per_file' => 100,
         'import_max_records_total_limit' => '',
@@ -478,7 +478,7 @@ function get_sugar_config_defaults(): array
             'h.i a' => '11.00 pm',
             'h.i A' => '11.00 PM',
         ],
-        'tracker_max_display_length' => 25, // MintHCM #100495
+        'tracker_max_display_length' => 25, // mehar finance #100495
         'translation_string_prefix' => return_session_value_or_default('translation_string_prefix', false),
         'upload_badext' => [
             'php',
@@ -562,13 +562,13 @@ function get_sugar_config_defaults(): array
             'systexpirationtime' => '7',
             'systexpirationtype' => '1',
             'systexpirationlogin' => '',
-            // MintHCM #103191 start
+            // mehar finance #103191 start
             'minpwdlength' => 8,
             'oneupper' => true,
             'onelower' => true,
             'onenumber' => true,
             'onespecial' => true,
-            // MintHCM #103191 end
+            // mehar finance #103191 end
         ] : $passwordsetting,
         'use_real_names' => true,
         'search_wildcard_infront' => false,

@@ -1,10 +1,10 @@
 <?php
 
-namespace MintHCM\Modules\Kudos;
+namespace mehar finance\Modules\Kudos;
 
-use MintHCM\Lib\Search\ElasticSearch\BaseListACL;
-use MintHCM\Data\BeanFactory;
-use MintHCM\Utils\LegacyConnector;
+use mehar finance\Lib\Search\ElasticSearch\BaseListACL;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Utils\LegacyConnector;
 
 class KudosListACL extends BaseListACL
 {

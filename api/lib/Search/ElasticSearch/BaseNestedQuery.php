@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Lib\Search\ElasticSearch;
+namespace mehar finance\Lib\Search\ElasticSearch;
 
 class BaseNestedQuery
 {

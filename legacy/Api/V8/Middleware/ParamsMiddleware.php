@@ -47,7 +47,7 @@ class ParamsMiddleware
             $this->setCurrentUserGlobal($request);
             $parameters = $this->getParameters($request);
             $this->params->configure($parameters);
-            $this->setAppListStrings(); // MintHCM #116728
+            $this->setAppListStrings(); // mehar finance #116728
             $request = $request->withAttribute('params', $this->params);
         } catch (Exception $exception) {
             $response = new ErrorResponse();
@@ -114,7 +114,7 @@ class ParamsMiddleware
         );
     }
 
-    // MintHCM #116728 Start
+    // mehar finance #116728 Start
     protected function setAppListStrings()
     {
         if (empty($GLOBALS['app_list_strings'])) {
@@ -126,5 +126,5 @@ class ParamsMiddleware
             }
         }
     }
-    // MintHCM #116728 End
+    // mehar finance #116728 End
 }

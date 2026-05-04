@@ -6,8 +6,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2021 SalesAgility Ltd.
 *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  *
  * This program is free software; you can redistribute it and/or modify it under
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
 namespace SuiteCRM\Search;
@@ -134,7 +134,7 @@ class SearchResults
             foreach ((array)$beans as $bean) {
                 $obj = BeanFactory::getBean($module, $bean);
 
-                // if a search found a bean but MintHCM does not, it could happens
+                // if a search found a bean but mehar finance does not, it could happens
                 // maybe the bean is deleted but elsasticsearch is not re-indexing yet.
                 // so at this point we trying to rebuild the index and try again to get bean:
                 if (!$obj) {
@@ -296,7 +296,7 @@ class SearchResults
         if (!$relId) {
             $relId = '';
         }
-        return (is_object($relId))?$obj->id:$relId; //MintHCM team #60792
+        return (is_object($relId))?$obj->id:$relId; //mehar finance team #60792
     }
 
     /**

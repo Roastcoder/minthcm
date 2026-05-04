@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -63,7 +63,7 @@ use SuiteCRM\Utility\SuiteValidator;
 #[\AllowDynamicProperties]
 class GoogleSyncBase
 {
-    /** @var User The MintHCM User Bean we're currently working with */
+    /** @var User The mehar finance User Bean we're currently working with */
     protected $workingUser;
 
     /** @var \Google\Client The Google client object for the current sync job */
@@ -81,7 +81,7 @@ class GoogleSyncBase
     /** @var string The Calendar ID */
     protected $calendarId;
 
-    /** @var array An array of MintHCM meeting id's that we've already synced this session */
+    /** @var array An array of mehar finance meeting id's that we've already synced this session */
     protected $syncedList = array();
 
     /** @var object A Database Instance */
@@ -144,7 +144,7 @@ class GoogleSyncBase
     /**
      * Creates and Sets the Google client in the object
      *
-     * @param string $id : the MintHCM user id
+     * @param string $id : the mehar finance user id
      *
      * @return bool Success/Failure
      * @throws GoogleSyncException
@@ -166,7 +166,7 @@ class GoogleSyncBase
     /**
      * Set the Google client up for the user by id
      *
-     * @param string $id : the MintHCM user id
+     * @param string $id : the mehar finance user id
      *
      * @return \Google\Client|false Google\Client on success. False on failure.
      * @throws GoogleSyncException if user invalid, unable to retrive the user, or json error
@@ -248,7 +248,7 @@ class GoogleSyncBase
     /**
      * Initialize Service for User
      *
-     * @param string $id The MintHCM user id
+     * @param string $id The mehar finance user id
      *
      * @return bool Success/Failure
      * @throws GoogleSyncException if $id is invalid
@@ -292,7 +292,7 @@ class GoogleSyncBase
      * Retrieve List of meetings owned by the Current Working User
      *
      *
-     * @return array Array of MintHCM Meeting Beans
+     * @return array Array of mehar finance Meeting Beans
      * @throws GoogleSyncException if $this->workingUser->id is invalid
      * @throws GoogleSyncException if unable to get Meetings bean
      */
@@ -354,7 +354,7 @@ class GoogleSyncBase
         // find the id of the 'SuiteCRM' calendar ... in the future, this will set the calendar of the users choosing.
         $this->calendarId = $this->getSuiteCRMCalendar($calendarList);
 
-        // if the MintHCM calendar doesn't exist... Create it!
+        // if the mehar finance calendar doesn't exist... Create it!
         if (!$this->isCalendarExists()) {
             $this->logger->info(__FILE__ . ':' . __LINE__ . ' ' . __METHOD__ . ' - ' . 'Unable to find the SuiteCRM Google Calendar, wiping current sync data & creating it!');
             $helper = new GoogleSyncHelper;
@@ -375,7 +375,7 @@ class GoogleSyncBase
     }
 
     /**
-     * find the id of the 'MintHCM' calendar ... in the future, this will return the calendar of the users choosing.
+     * find the id of the 'mehar finance' calendar ... in the future, this will return the calendar of the users choosing.
      *
      * @param \Google\Service\Calendar\CalendarList $calendarList
      *
@@ -488,11 +488,11 @@ class GoogleSyncBase
     }
 
     /**
-     * Get a MintHCM meeting by Google Event ID
+     * Get a mehar finance meeting by Google Event ID
      *
      * @param string $event_id The Google Event ID
      *
-     * @return \Meeting|null MintHCM Meeting Bean if found, null if not found
+     * @return \Meeting|null mehar finance Meeting Bean if found, null if not found
      * @throws GoogleSyncException if more than one meeting matches $event_id
      * @throws GoogleSyncException If unable to retrieve meeting bean
      */
@@ -546,13 +546,13 @@ class GoogleSyncBase
     }
 
     /**
-     * Push event from MintHCM to Google Calendar
+     * Push event from mehar finance to Google Calendar
      *
      * If the google event is not provided, a new one will be created
      * and inserted. If one is provided, the existing Google Event will
      * be updated.
      *
-     * @param Meeting|null $event_local : MintHCM Meeting Bean
+     * @param Meeting|null $event_local : mehar finance Meeting Bean
      * @param \Google\Service\Calendar\Event|null $event_remote (optional) \Google\Service\Calendar\Event Object
      *
      * @return string|bool Meeting Id on success, false on failure
@@ -585,7 +585,7 @@ class GoogleSyncBase
             throw new GoogleSyncException('GCalendar insert/update failed.', GoogleSyncException::GEVENT_INSERT_OR_UPDATE_FAILURE);
         }
 
-        // Set the MintHCM Meeting's last sync timestamp, and google id. Return the saved meeting id from called method.
+        // Set the mehar finance Meeting's last sync timestamp, and google id. Return the saved meeting id from called method.
         return $this->setLastSync($event_local, $return->getId());
     }
 
@@ -621,9 +621,9 @@ class GoogleSyncBase
     }
 
     /**
-     * Pull event from Google Calendar to MintHCM
+     * Pull event from Google Calendar to mehar finance
      *
-     * If the MintHCM Meeting is not provided, a new one will be created
+     * If the mehar finance Meeting is not provided, a new one will be created
      * and inserted. If one is provided, the existing meeting will be updated.
      *
      * @param \Google\Service\Calendar\Event|null $event_remote \Google\Service\Calendar\Event Object
@@ -666,9 +666,9 @@ class GoogleSyncBase
     }
 
     /**
-     * Delete MintHCM Meeting
+     * Delete mehar finance Meeting
      *
-     * @param Meeting|null $meeting MintHCM Meeting Bean
+     * @param Meeting|null $meeting mehar finance Meeting Bean
      *
      * @return string|bool Meeting Id on success, false on failure (from setLastSync, since that's what saves the record)
      */
@@ -687,7 +687,7 @@ class GoogleSyncBase
      * Delete Google Event
      *
      * @param \Google\Service\Calendar\Event|null $event \Google\Service\Calendar\Event Object
-     * @param String $meeting_id MintHCM Meeting Id
+     * @param String $meeting_id mehar finance Meeting Id
      *
      * @return string Meeting Id on success
      * @throws GoogleSyncException If Google Service Unset
@@ -750,7 +750,7 @@ class GoogleSyncBase
             throw new InvalidArgumentException('Argument 1 not passed to GoogleSyncBase::clearPopups()');
         }
 
-        // Disable all popup reminders for the MintHCM meeting, and mark reminders where email is disabled as deleted.
+        // Disable all popup reminders for the mehar finance meeting, and mark reminders where email is disabled as deleted.
         $eventIdQuoted = $this->db->quoted($event_id);
         $sql = sprintf("UPDATE reminders SET popup = '0', deleted = CASE WHEN email = '0' THEN '1' ELSE deleted	END WHERE related_event_module_id = %s AND deleted = '0'", $eventIdQuoted);
         $res = $this->db->query($sql);
@@ -761,12 +761,12 @@ class GoogleSyncBase
     }
 
     /**
-     * Update MintHCM Meeting from Google Calendar Event
+     * Update mehar finance Meeting from Google Calendar Event
      *
-     * @param Meeting $event_local MintHCM Meeting Bean
+     * @param Meeting $event_local mehar finance Meeting Bean
      * @param \Google\Service\Calendar\Event $event_remote Google\Service\Calendar\Event Object
      *
-     * @return Meeting|bool MintHCM Meeting Bean or false on failure
+     * @return Meeting|bool mehar finance Meeting Bean or false on failure
      * @throws GoogleSyncException if the Google Event is missing required data
      */
     protected function updateSuitecrmMeetingEvent(Meeting $event_local, Google\Service\Calendar\Event $event_remote)
@@ -809,14 +809,14 @@ class GoogleSyncBase
         $hours = floor($tmins / 60);
         $mins = $tmins % 60;
 
-        // Set Start/End/Duration in MintHCM Meeting and Assigned User
+        // Set Start/End/Duration in mehar finance Meeting and Assigned User
         $event_local->date_start = gmdate("Y-m-d H:i:s", $starttime);
         $event_local->date_end = gmdate("Y-m-d H:i:s", $endtime);
         $event_local->duration_hours = $hours;
         $event_local->duration_minutes = $mins;
         $event_local->assigned_user_id = $this->workingUser->id;
 
-        // Disable all popup reminders for the MintHCM meeting. We add them back from Google event below.
+        // Disable all popup reminders for the mehar finance meeting. We add them back from Google event below.
         $event_id = $event_local->id;
         $this->clearPopups($event_id);
 
@@ -842,11 +842,11 @@ class GoogleSyncBase
     }
 
     /**
-     * Create MintHCM Meeting event
+     * Create mehar finance Meeting event
      *
      * @param \Google\Service\Calendar\Event $event_remote The Google\Service\Calendar\Event we're creating a SuiteCRM Meeting for
      *
-     * @return Meeting|bool MintHCM Meeting Bean or false on failure
+     * @return Meeting|bool mehar finance Meeting Bean or false on failure
      * @throws GoogleSyncException if fails to retrive meeting
      */
     protected function createSuitecrmMeetingEvent(Google\Service\Calendar\Event $event_remote)
@@ -863,9 +863,9 @@ class GoogleSyncBase
     }
 
     /**
-     * Update Google Calendar Event from MintHCM Meeting
+     * Update Google Calendar Event from mehar finance Meeting
      *
-     * @param Meeting $event_local MintHCM Meeting Bean
+     * @param Meeting $event_local mehar finance Meeting Bean
      * @param \Google\Service\Calendar\Event $event_remote Google Event Object
      *
      * @return \Google\Service\Calendar\Event
@@ -919,9 +919,9 @@ class GoogleSyncBase
     }
 
     /**
-     * Create New Google Event object for MintHCM Meeting
+     * Create New Google Event object for mehar finance Meeting
      *
-     * @param Meeting $event_local MintHCM Meeting Bean
+     * @param Meeting $event_local mehar finance Meeting Bean
      *
      * @return \Google\Service\Calendar\Event Google\Service\Calendar\Event Object
      */
@@ -936,7 +936,7 @@ class GoogleSyncBase
 
         $event_remote_empty->setExtendedProperties($extendedProperties);
 
-        //Set the Google Event up to match the MintHCM one
+        //Set the Google Event up to match the mehar finance one
         $event_remote = $this->updateGoogleCalendarEvent($event_local, $event_remote_empty);
 
         return $event_remote;
@@ -966,7 +966,7 @@ class GoogleSyncBase
      * This *must* be called *after* the sync is done
      * This also saves the event, so you don't need to do it twice. Just call this.
      *
-     * @param Meeting $event_local MintHCM Meeting bean
+     * @param Meeting $event_local mehar finance Meeting bean
      * @param string $gEventId (optional) The ID that Google has for the event.
      *
      * @return string Meeting Id on success

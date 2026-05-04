@@ -1,5 +1,5 @@
 <?php
-namespace MintHCM\MintCLI\Services;
+namespace mehar finance\MintCLI\Services;
 
 class VardefsService
 {

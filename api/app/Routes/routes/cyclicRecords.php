@@ -1,7 +1,7 @@
 <?php
 
-use MintHCM\Api\Middlewares\Params\ParamTypes\StringType;
-use MintHCM\Api\Controllers\CyclicRecordsController;
+use mehar finance\Api\Middlewares\Params\ParamTypes\StringType;
+use mehar finance\Api\Controllers\CyclicRecordsController;
 
 $routes = array(
     

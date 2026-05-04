@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Lib\MintLogic;
+namespace mehar finance\Lib\MintLogic;
 
 abstract class Validator
 {

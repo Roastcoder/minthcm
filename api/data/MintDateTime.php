@@ -1,11 +1,11 @@
 <?php
 
-namespace MintHCM\Data;
+namespace mehar finance\Data;
 
 use Doctrine\ORM\EntityManagerInterface;
-use MintHCM\Api\Entities\Users;
-use MintHCM\Api\Entities\UserPreferences;
-use MintHCM\Api\Repositories\UserPreferencesRepository;
+use mehar finance\Api\Entities\Users;
+use mehar finance\Api\Entities\UserPreferences;
+use mehar finance\Api\Repositories\UserPreferencesRepository;
 
 class MintDateTime extends \DateTime
 {

@@ -1,8 +1,8 @@
 <?php
 
-use MintHCM\Lib\MintLogic\Exceptions\ValidationException;
-use MintHCM\Lib\MintLogic\Hook;
-use MintHCM\Lib\MintLogic\Validators\IsInRange;
+use mehar finance\Lib\MintLogic\Exceptions\ValidationException;
+use mehar finance\Lib\MintLogic\Hook;
+use mehar finance\Lib\MintLogic\Validators\IsInRange;
 
 return [
     'rules' => [

@@ -7,8 +7,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM,
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance,
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -36,10 +36,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM"
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo.
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo.
  * If the display of the logos is not reasonably feasible for technical reasons, the
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -309,7 +309,7 @@ $out = <<<EOQ
    <script src="themes/SuiteP/js/responsiveslides.min.js"></script>
 </head>
 <body>
-    <!--MintHCM installer-->
+    <!--mehar finance installer-->
     <div id="install_container">
     <div id="install_box">
         <header id="install_header">
@@ -322,7 +322,7 @@ $out = <<<EOQ
             <!--
             <div id="steps"><p>{$mod_strings['LBL_STEP1']}</p><i class="icon-progress-0"></i><i class="icon-progress-1"></i><i class="icon-progress-2"></i><i class="icon-progress-3"></i><i class="icon-progress-4"></i><i class="icon-progress-5"></i><i class="icon-progress-6"></i><i class="icon-progress-7"></i></div>
             -->
-            <div class="install_img"><a href="https://meharadvisory.com" target="_blank"><img src="{$sugar_md}" alt="MintHCM"></a></div>
+            <div class="install_img"><a href="https://meharadvisory.com" target="_blank"><img src="{$sugar_md}" alt="mehar finance"></a></div>
         </header>
 	        <form action="install.php" method="post" name="form" id="form">
 	        	<div id="install_content">

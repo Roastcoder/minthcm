@@ -1,7 +1,7 @@
 <?php
 
 
-use MintHCM\Lib\MintLogic\Validators\ReservationValidator;
+use mehar finance\Lib\MintLogic\Validators\ReservationValidator;
 
 return [
     'bean' => [

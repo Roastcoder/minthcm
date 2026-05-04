@@ -1,6 +1,6 @@
 <?php
 
-// MintHCM #54195 - Addition of support for candidates in adding participants to the meeting
+// mehar finance #54195 - Addition of support for candidates in adding participants to the meeting
 
 if ( !defined('sugarEntry') || !sugarEntry ) {
    die('Not A Valid Entry Point');
@@ -350,7 +350,7 @@ EOQ;
                }
             }
 
-            // MintHCM #54195 Start
+            // mehar finance #54195 Start
             // Get all candidates for the meeting
             if ( !empty($_POST['candidate_invitees']) ) {
                $candidateInvitees = explode(',', trim($_POST['candidate_invitees'], ','));
@@ -376,8 +376,8 @@ EOQ;
                   $focus->candidates->delete($focus->id, $u);
                }
             }
-            // MintHCM #54195 End
-            // MintHCM #59793 Start
+            // mehar finance #54195 End
+            // mehar finance #59793 Start
             // Get all resources for the meeting
             if ( !empty($_POST['resource_invitees']) ) {
                $resourceInvitees = explode(',', trim($_POST['resource_invitees'], ','));
@@ -403,7 +403,7 @@ EOQ;
                   $focus->resources->delete($focus->id, $u);
                }
             }
-            // MintHCM #59793 End
+            // mehar finance #59793 End
             ////	END REMOVE
             ///////////////////////////////////////////////////////////////////////////
             ///////////////////////////////////////////////////////////////////////////
@@ -412,23 +412,23 @@ EOQ;
             $focus->users_arr = $userInvitees;
             $focus->contacts_arr = array();
             $focus->contacts_arr = $contactInvitees;
-            // MintHCM #54195 Start
+            // mehar finance #54195 Start
             $focus->candidates_arr = array();
             $focus->candidates_arr = $candidateInvitees;
-            // MintHCM #54195 End
-            // MintHCM #59793 Start
+            // mehar finance #54195 End
+            // mehar finance #59793 Start
             $focus->resources_arr = array();
             $focus->resources_arr = $resourceInvitees;
-            // MintHCM #59793 End
+            // mehar finance #59793 End
 
             if ( !empty($_POST['parent_id']) && $_POST['parent_type'] == 'Contacts' ) {
                $focus->contacts_arr[] = $_POST['parent_id'];
             }
-            // MintHCM #54195 Start
+            // mehar finance #54195 Start
             if ( !empty($_POST['parent_id']) && $_POST['parent_type'] == 'Candidates' ) {
                $focus->candidates_arr[] = $_POST['parent_id'];
             }
-            // MintHCM #54195 End
+            // mehar finance #54195 End
             // Call the Meeting module's save function to handle saving other fields besides
             // the users and contacts relationships
             $focus->update_vcal = false;    // Bug #49195 : don't update vcal b/s related users aren't saved yet, create vcal cache below
@@ -485,7 +485,7 @@ EOQ;
                }
             }
 
-            // MintHCM #54195 Start
+            // mehar finance #54195 Start
             // Process Candidates
             $existing_candidates = array();
             if ( !empty($_POST['existing_candidate_invitees']) ) {
@@ -507,8 +507,8 @@ EOQ;
                   $focus->db->query($qU);
                }
             }
-            // MintHCM #54195 End
-            // MintHCM #59793 Start
+            // mehar finance #54195 End
+            // mehar finance #59793 Start
             // Process Resources
             $existing_resources = array();
             if ( !empty($_POST['existing_resource_invitees']) ) {
@@ -524,17 +524,17 @@ EOQ;
                   $focus->resources->add($resource_id);
                }
             }
-            // MintHCM #59793 End
+            // mehar finance #59793 End
             // Bug #49195 : update vcal
             vCal::cache_sugar_vcal($current_user);
-            // MintHCM START
+            // mehar finance START
             Meeting::updateRelatedInvites($focus->id);
-            // MintHCM END
-            // MintHCM #44718 START
+            // mehar finance END
+            // mehar finance #44718 START
             if ( $focus->shouldBeProcessed() ) {
                $focus->saveRepeatly();
             }
-            // MintHCM #44718 END
+            // mehar finance #44718 END
             // CCL - Comment out call to set $current_user as invitee
             // set organizer to auto-accept
             if ( $focus->assigned_user_id == $current_user->id && $newBean ) {
@@ -552,14 +552,14 @@ EOQ;
          exit;
       }
 
-      // MintHCM start #42401
+      // mehar finance start #42401
       if ( isset($_REQUEST['return_module']) && ($_REQUEST['return_module'] == 'Calendar' || $_REQUEST['return_module'] == 'Home') ) {
          header("Location: index.php?" . Calendar::getRedirectUrl(
                 !empty($_REQUEST['date_start']) ? $_REQUEST['date_start'] : '', 
                 $_REQUEST['return_module']
             )
         );
-         // MintHCM end #42401
+         // mehar finance end #42401
       } else {
             if ( $redirect ) {
                 handleRedirect($return_id, 'Meetings');

@@ -1,8 +1,8 @@
 <?php
 
-namespace MintHCM\Lib\Search\ElasticSearch;
+namespace mehar finance\Lib\Search\ElasticSearch;
 
-use MintHCM\Data\BeanFactory;
+use mehar finance\Data\BeanFactory;
 
 class ESListACLHelper
 {

@@ -27,7 +27,7 @@ class VarDefHelper
      *
      * @return array of modules vardefs
      */
-    // MintHCM Start #84951
+    // mehar finance Start #84951
     public function getModuleVardefs($bean)
     {
         $arr = [];
@@ -36,5 +36,5 @@ class VarDefHelper
         }
         return $arr;
     }
-    // MintHCM End #84951
+    // mehar finance End #84951
 }

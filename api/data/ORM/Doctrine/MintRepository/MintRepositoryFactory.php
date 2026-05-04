@@ -1,6 +1,6 @@
 <?php
 
-namespace MintHCM\Data\ORM\Doctrine\MintRepository;
+namespace mehar finance\Data\ORM\Doctrine\MintRepository;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
@@ -10,8 +10,8 @@ use Doctrine\ORM\Repository\RepositoryFactory;
 class MintRepositoryFactory implements RepositoryFactory
 {
     private const ENTITY_NAMESPACES = [
-        'MintHCM\Api\Entities',
-        'MintHCM\Custom\Api\Entities',
+        'mehar finance\Api\Entities',
+        'mehar finance\Custom\Api\Entities',
     ];
 
     private DefaultRepositoryFactory $defaultFactory;

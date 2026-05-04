@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
  *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,25 +37,25 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 
-namespace MintHCM\Lib\Search\ElasticSearch;
+namespace mehar finance\Lib\Search\ElasticSearch;
 
 use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use MintHCM\Lib\Search\ElasticSearch\ModulePrefixer;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Equals;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Exists;
-use MintHCM\Lib\Search\ElasticSearch\Operators\MatchOperator;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Nested;
-use MintHCM\Lib\Search\ElasticSearch\Operators\QueryString;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Range;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Term;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Terms;
-use MintHCM\Lib\Search\ElasticSearch\Operators\Wildcard;
+use mehar finance\Lib\Search\ElasticSearch\ModulePrefixer;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Equals;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Exists;
+use mehar finance\Lib\Search\ElasticSearch\Operators\MatchOperator;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Nested;
+use mehar finance\Lib\Search\ElasticSearch\Operators\QueryString;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Range;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Term;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Terms;
+use mehar finance\Lib\Search\ElasticSearch\Operators\Wildcard;
 
 #[\AllowDynamicProperties]
 class ElasticQueryOperatorsManager

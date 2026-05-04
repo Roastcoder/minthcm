@@ -67,7 +67,7 @@
     function addRelatedField() {
         nextRelatedEmployeeId = relatedEmployeeId + 1; 
         if (relatedEmployeeId == 1) {
-            $(".MintHCMPopup-container").css("max-height", "550px");
+            $(".mehar financePopup-container").css("max-height", "550px");
         }
         let html = '';
         html += '<div id="related-employee-' + nextRelatedEmployeeId + '" type="relate" field="<%= relate_field_name %>_name_' + nextRelatedEmployeeId + '">';

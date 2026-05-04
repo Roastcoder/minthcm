@@ -52,11 +52,11 @@ class SugarWidgetSubPanelTopSelectButtonForAllocations extends SugarWidgetSubPan
    public function display($widget_data, $additionalFormFields = NULL, $nonbutton = false) {
     global $app_strings;
 
-    // MintHCM #57338 START
+    // mehar finance #57338 START
     if ( !parent::checkAccess($widget_data['subpanel_definition']->get_module_name()) ) {
        return;
     }
-    // MintHCM #57338 END
+    // mehar finance #57338 END
 
     $initial_filter = '';
 

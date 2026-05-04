@@ -81,9 +81,9 @@
 
         </div>
     </div>
-    <!--  MintHCM start !-->
+    <!--  mehar finance start !-->
     <script src="modules/Administration/js/repairPrivateSecurityGroups.js"></script>
-    <!--  MintHCM end !-->
+    <!--  mehar finance end !-->
 </div>
 
 

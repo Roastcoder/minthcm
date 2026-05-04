@@ -1,9 +1,9 @@
 <?php
 
-namespace MintHCM\MintCLI\Questions;
+namespace mehar finance\MintCLI\Questions;
 
-use MintHCM\MintCLI\InputValidators\NoWhitespaceValidator;
-use MintHCM\MintCLI\InputValidators\YesNoValidator;
+use mehar finance\MintCLI\InputValidators\NoWhitespaceValidator;
+use mehar finance\MintCLI\InputValidators\YesNoValidator;
 use Symfony\Component\Console\Question\ConfirmationQuestion as BasicConfirmationQuestion;
 use Symfony\Component\Console\Style\SymfonyStyle;
 

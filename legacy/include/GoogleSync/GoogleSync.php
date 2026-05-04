@@ -8,8 +8,8 @@
  * SuiteCRM is an extension to SugarCRM Community Edition developed by SalesAgility Ltd.
  * Copyright (C) 2011 - 2018 SalesAgility Ltd.
 *
- * MintHCM is a Human Capital Management software based on SuiteCRM developed by MintHCM, 
- * Copyright (C) 2018-2024 MintHCM
+ * mehar finance is a Human Capital Management software based on SuiteCRM developed by mehar finance, 
+ * Copyright (C) 2018-2024 mehar finance
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License version 3 as published by the
@@ -37,10 +37,10 @@
  *
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by SugarCRM" 
- * logo and "Supercharged by SuiteCRM" logo and "Reinvented by MintHCM" logo. 
+ * logo and "Supercharged by SuiteCRM" logo and "Reinvented by mehar finance" logo. 
  * If the display of the logos is not reasonably feasible for technical reasons, the 
  * Appropriate Legal Notices must display the words "Powered by SugarCRM" and 
- * "Supercharged by SuiteCRM" and "Reinvented by MintHCM".
+ * "Supercharged by SuiteCRM" and "Reinvented by mehar finance".
  */
 if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
@@ -67,7 +67,7 @@ class GoogleSync extends GoogleSyncBase
     /**
      * Gets the combined titles of a Meeting/Event pair for Logging
      *
-     * @param Meeting|null $meeting The MintHCM Meeting
+     * @param Meeting|null $meeting The mehar finance Meeting
      * @param \Google\Service\Calendar\Event|null $event The Google Event
      *
      * @return string The combined title
@@ -94,7 +94,7 @@ class GoogleSync extends GoogleSyncBase
      * Helper method for doSync
      *
      * @param string $action The action to take with the two events
-     * @param Meeting|null $meeting The MintHCM Meeting
+     * @param Meeting|null $meeting The mehar finance Meeting
      * @param \Google\Service\Calendar\Event|null $event The Google Event
      *
      * @return bool Success/Failure
@@ -141,7 +141,7 @@ class GoogleSync extends GoogleSyncBase
     /**
      * Perform the sync for a user
      *
-     * @param string $id The MintHCM user id
+     * @param string $id The mehar finance user id
      *
      * @return bool true, unless an exception is thrown by called function
      */
@@ -151,7 +151,7 @@ class GoogleSync extends GoogleSyncBase
 
         $meetings = $this->getUserMeetings($id);
 
-        // First, we look for MintHCM meetings that are not on Google
+        // First, we look for mehar finance meetings that are not on Google
         foreach ($meetings as $meeting) {
             $gevent = null;
             if (!empty($meeting->gsync_id)) {
@@ -177,8 +177,8 @@ class GoogleSync extends GoogleSyncBase
      *
      * The user id is used as the key
      *
-     * @param string $id : the MintHCM user id
-     * @param string $name : the MintHCM user name.
+     * @param string $id : the mehar finance user id
+     * @param string $name : the mehar finance user name.
      *  Not really used for anything other than reference.
      *
      * @return bool Success/Failure

@@ -1,6 +1,6 @@
 <?php
 
-use MintHCM\MintCLI\Services\DatabaseService;
+use mehar finance\MintCLI\Services\DatabaseService;
 
 #[\AllowDynamicProperties]
 class InstallService

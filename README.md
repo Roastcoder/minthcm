@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://minthcm.org/" target="_blank">
-        <img width="25%" src="https://minthcm.org/minthcm-logo.svg" alt="MintHCM logo">
+    <a href="https://meharadvisory.com/" target="_blank">
+        <img width="25%" src="https://meharadvisory.com/minthcm-logo.svg" alt="MintHCM logo">
     </a>
 </p>
 <br/>
@@ -13,7 +13,7 @@
     </a>
 </p>
 
-[minthcm.org](https://minthcm.org/) is an **open-source, AI-native HCM platform** designed for **Agentic Engineering**.
+[meharadvisory.com](https://meharadvisory.com/) is an **open-source, AI-native HCM platform** designed for **Agentic Engineering**.
 
 Build, customize, and deploy HR systems powered by AI agents — with full control over your data, architecture, and infrastructure.
 
@@ -118,17 +118,17 @@ Thanks to the open code of both SugarCRM CE and SuiteCRM we were able to reintro
 
 <br/>
 
-<img src="https://minthcm.org/wp-content/uploads/2023/11/MintHCM4-gif.gif">
+<img src="https://meharadvisory.com/wp-content/uploads/2023/11/MintHCM4-gif.gif">
 
 This repository contains a source code of MintHCM system.
 
 ## Installation 🖥
 
-The installation process is described in this guide: [minthcm.org/support/minthcm-installation-guide/](https://minthcm.org/support/minthcm-installation-guide/)
+The installation process is described in this guide: [meharadvisory.com/support/minthcm-installation-guide/](https://meharadvisory.com/support/minthcm-installation-guide/)
 
 ## API 🧩
 
-MintHCM is based on SuiteCRM, so the API is very similar. However there are a few important differences, that we covered in this guide: [minthcm.org/support/how-to-use-mint-api/](https://minthcm.org/support/how-to-use-mint-api/)
+MintHCM is based on SuiteCRM, so the API is very similar. However there are a few important differences, that we covered in this guide: [meharadvisory.com/support/how-to-use-mint-api/](https://meharadvisory.com/support/how-to-use-mint-api/)
 
 ## Community and Contributions 🤝
 
@@ -143,7 +143,7 @@ You can download and contribute your own translation packages via our [Crowdin p
 ## Do you have a problem? Maybe you'd like to ask us about something? ❌
 
 
-*  ❓  If you are looking for help, create a new topic on our [forum](https://minthcm.org/support/). 
+*  ❓  If you are looking for help, create a new topic on our [forum](https://meharadvisory.com/support/). 
 
 *  🐛 If you found a bug, create a new issue on the [GitHub](https://github.com/minthcm/minthcm/issues).
 

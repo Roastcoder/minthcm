@@ -1,11 +1,11 @@
 <?php
 
-namespace MintHCM\Modules\WorkSchedules\api\controllers;
+namespace mehar finance\Modules\WorkSchedules\api\controllers;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
-use MintHCM\Data\BeanFactory;
-use MintHCM\Utils\LegacyConnector;
+use mehar finance\Data\BeanFactory;
+use mehar finance\Utils\LegacyConnector;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Psr7\Response;
