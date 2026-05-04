@@ -37850,3 +37850,144 @@ readers do not read off random characters that represent icons */
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* Redesign for split screen login */
+.p_login {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+    background: #f4f7f6 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.p_login_left {
+    display: none !important; /* Mobile first */
+}
+
+.p_login_right {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.p_login_middle {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+}
+
+#loginform {
+    background: #fff !important;
+    padding: 30px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+    width: 100% !important;
+    max-width: 400px !important;
+}
+
+.companylogo img {
+    max-width: 200px !important;
+    margin-bottom: 20px !important;
+}
+
+@media (min-width: 768px) {
+    .p_login {
+        flex-direction: row !important;
+    }
+
+    .p_login_left {
+        display: flex !important;
+        flex: 1.4 !important;
+        background: url('../../../../../themes/SuiteP/images/auth_bg.png') no-repeat center center !important;
+        background-size: cover !important;
+        position: relative !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: white !important;
+        padding: 60px !important;
+    }
+
+    .p_login_left::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: linear-gradient(135deg, rgba(20, 93, 123, 0.8) 0%, rgba(8, 56, 75, 0.4) 100%) !important;
+    }
+
+    .p_login_left .info-content {
+        position: relative !important;
+        z-index: 1 !important;
+        max-width: 500px !important;
+    }
+
+    .p_login_left h1 {
+        font-size: 3.5rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 1rem !important;
+        letter-spacing: -1px !important;
+        color: white !important;
+    }
+
+    .p_login_left p {
+        font-size: 1.25rem !important;
+        opacity: 0.9 !important;
+        margin-bottom: 2rem !important;
+        color: white !important;
+    }
+
+    .p_login_left .features-list {
+        list-style: none !important;
+        padding: 0 !important;
+        margin-top: 2rem !important;
+    }
+
+    .p_login_left .features-list li {
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
+        display: flex !important;
+        align-items: center !important;
+        color: white !important;
+    }
+
+    .p_login_left .features-list li::before {
+        content: '✓' !important;
+        margin-right: 1rem !important;
+        color: #009976 !important;
+        font-weight: bold !important;
+    }
+
+    .p_login_right {
+        flex: 1 !important;
+        background: white !important;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05) !important;
+    }
+
+    #loginform {
+        box-shadow: none !important;
+        max-width: 450px !important;
+    }
+}
+
+.p_login_bottom {
+    padding: 20px !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    color: #888 !important;
+}
+
+.p_login_bottom a {
+    color: #888 !important;
+    text-decoration: none !important;
+}
