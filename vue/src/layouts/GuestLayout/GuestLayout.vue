@@ -1,7 +1,7 @@
 <template>
     <slot></slot>
     <footer>
-        <a href="https://minthcm.org" target="_blank"> www.minthcm.org </a>
+        <a href="https://meharadvisory.com" target="_blank"> www.meharadvisory.com </a>
     </footer>
 </template>
 

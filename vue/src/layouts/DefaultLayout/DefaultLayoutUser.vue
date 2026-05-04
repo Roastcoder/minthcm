@@ -67,7 +67,7 @@ const menuItems = computed<MenuListItem[]>(() => {
     items.push({
         title: languages.label('LBL_MINT4_USER_MENU_SUPPORT'),
         icon: 'face-agent',
-        onClick: () => window.open('https://minthcm.org/support/', '_blank'),
+        onClick: () => window.open('https://meharadvisory.com/support/', '_blank'),
     })
     items.push({
         title: languages.label('LBL_MINT4_USER_MENU_ABOUT'),

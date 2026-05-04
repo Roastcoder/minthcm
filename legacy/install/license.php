@@ -88,7 +88,7 @@ $out =<<<EOQ
     <div id="install_box">
         <div id='licenseDiv'>
         <header id="install_header">
-            <div class="install_img"><a href="https://minthcm.org" target="_blank"><img src="{$sugar_md}" alt="MintHCM"></a></div>
+            <div class="install_img"><a href="https://meharadvisory.com" target="_blank"><img src="{$sugar_md}" alt="MintHCM"></a></div>
             <div id="steps"><p>{$mod_strings['LBL_STEP2']}</p><i class="icon-progress-0" id="complete"></i><i class="icon-progress-1"></i><i class="icon-progress-2"></i><i class="icon-progress-3"></i><i class="icon-progress-4"></i><i class="icon-progress-5"></i><i class="icon-progress-6"></i><i class="icon-progress-7"></i></div>        <form action="install.php" method="post" name="setConfig" id="form">
         </header>
             <textarea class="licensetext" cols="80" rows="20" readonly>{$license_file}</textarea>
@@ -210,7 +210,7 @@ function callSysCheck(){
             </div>
 
 <footer id="install_footer">
-    <p id="footer_links"><a href="https://minthcm.org" target="_blank">Visit minthcm.org</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://minthcm.org/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
+    <p id="footer_links"><a href="https://meharadvisory.com" target="_blank">Visit meharadvisory.com</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://meharadvisory.com/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
 </footer>
 </div>
 </body>

@@ -97,7 +97,7 @@ $out = <<<EOQ
         <div id="install_box">
             <header id="install_header">
                 <div id="steps"><p>{$mod_strings['LBL_STEP3']}</p><i class="icon-progress-0" id="complete"></i><i class="icon-progress-1" id="complete"></i><i class="icon-progress-2"></i><i class="icon-progress-3"></i><i class="icon-progress-4"></i><i class="icon-progress-5"></i><i class="icon-progress-6"></i><i class="icon-progress-7"></i></div>
-                <div class="install_img"><a href="https://minthcm.org"><img src="{$sugar_md}" alt="MintHCM"></a></div>
+                <div class="install_img"><a href="https://meharadvisory.com"><img src="{$sugar_md}" alt="MintHCM"></a></div>
             </header>
             <form action="install.php" method="post" name="form" id="form">
             <div id="install_content">
@@ -136,7 +136,7 @@ $out .= <<<EOQ2
             </form>
         </div>
         <footer id="install_footer">
-    <p id="footer_links"><a href="https://minthcm.org" target="_blank">Visit minthcm.org</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://minthcm.org/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
+    <p id="footer_links"><a href="https://meharadvisory.com" target="_blank">Visit meharadvisory.com</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://meharadvisory.com/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
 </footer>
 </div>
 </body>

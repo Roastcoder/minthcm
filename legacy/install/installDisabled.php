@@ -97,7 +97,7 @@ $out =<<<EOQ
     </tr>
   </table>
   <footer id="install_footer">
-    <p id="footer_links"><a href="https://minthcm.org" target="_blank">Visit minthcm.org</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://minthcm.org/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
+    <p id="footer_links"><a href="https://meharadvisory.com" target="_blank">Visit meharadvisory.com</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://meharadvisory.com/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
 </footer>
 </body>
 </html>

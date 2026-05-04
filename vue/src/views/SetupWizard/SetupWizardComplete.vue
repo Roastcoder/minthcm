@@ -6,17 +6,17 @@
         <div class="setup-wizard-complete-subtitle">
             {{ languages.label('LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_SUBTITLE') }}
         </div>
-        <div class="setup-wizard-complete-link" @click="openInNew('https://minthcm.org')">
+        <div class="setup-wizard-complete-link" @click="openInNew('https://meharadvisory.com')">
             <v-icon icon="mdi-earth" size="20" />
             <span>{{ languages.label('LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_MINTHCMORG') }}</span>
             <v-icon icon="mdi-open-in-new" class="ms-auto" size="20" />
         </div>
-        <div class="setup-wizard-complete-link" @click="openInNew('https://minthcm.org/documentation')">
+        <div class="setup-wizard-complete-link" @click="openInNew('https://meharadvisory.com/documentation')">
             <v-icon icon="mdi-file-document-multiple" size="20" />
             <span>{{ languages.label('LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_DOCUMENTATION') }}</span>
             <v-icon icon="mdi-open-in-new" class="ms-auto" size="20" />
         </div>
-        <div class="setup-wizard-complete-link" @click="openInNew('https://minthcm.org/support')">
+        <div class="setup-wizard-complete-link" @click="openInNew('https://meharadvisory.com/support')">
             <v-icon icon="mdi-forum" size="20" />
             <span>{{ languages.label('LBL_MINT4_SETUP_WIZARD_COMPLETE_SCREEN_SUPPORT') }}</span>
             <v-icon icon="mdi-open-in-new" class="ms-auto" size="20" />

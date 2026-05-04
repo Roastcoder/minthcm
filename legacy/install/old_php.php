@@ -105,7 +105,7 @@ $out = <<<EOQ
         <form action="install.php" method="post" name="setConfig" id="form">
             <header id="install_header">
                 <h1 id="welcomelink">{$mod_strings['LBL_TITLE_WELCOME']} {$setup_sugar_version} {$mod_strings['LBL_WELCOME_SETUP_WIZARD']}</h1>
-                <div class="install_img"><a href="https://minthcm.org" target="_blank"><img src="{$sugar_md}" alt="MintHCM"></a></div>
+                <div class="install_img"><a href="https://meharadvisory.com" target="_blank"><img src="{$sugar_md}" alt="MintHCM"></a></div>
             </header>
 		<div id="content">
 			<h2>{$mod_strings['LBL_OLD_PHP']}</h2>
@@ -134,7 +134,7 @@ $out = <<<EOQ
             <p><img src='install/processing.gif' alt="{$mod_strings['LBL_LICENSE_CHECKING']}"> <br>{$mod_strings['LBL_LICENSE_CHECKING']}</p>
     </div>
 	<footer id="install_footer">
-        <p id="footer_links"><a href="https://minthcm.org" target="_blank">Visit minthcm.org</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://minthcm.org/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
+        <p id="footer_links"><a href="https://meharadvisory.com" target="_blank">Visit meharadvisory.com</a> | <a href="https://minthcm.com" target="_blank">Visit minthcm.com</a> | <a href="https://meharadvisory.com/support/" target="_blank">Support Forums</a> | <a href="LICENSE.txt" target="_blank">License</a></p>
     </footer>
     </div>
 <script>

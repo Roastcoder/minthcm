@@ -78,7 +78,7 @@ if (
 );
 }
 $global_control_links['training'] = array(
-'linkinfo' => array($app_strings['LBL_TRAINING'] => 'javascript:void(window.open(\'https://minthcm.org/support/\'))'),
+'linkinfo' => array($app_strings['LBL_TRAINING'] => 'javascript:void(window.open(\'https://meharadvisory.com/support/\'))'),
 'submenu' => ''
  );
 
